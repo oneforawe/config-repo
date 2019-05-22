@@ -12,8 +12,8 @@ shells for all users.  The file `.profile` is included for backwards
 compatibility, since that's the login script filename originally used by
 `/bin/sh`.
 
-When bash is invoked as a non-login interactive shell, it executes this file,
-if it exists: `~/.bashrc`.
+When bash is invoked as a non-login shell, it executes this file, if it exists:
+`~/.bashrc`.
 
 Each of these files may `source` other files, that is, refer bash to those files
 for execution.
