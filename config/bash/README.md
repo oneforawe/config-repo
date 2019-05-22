@@ -24,11 +24,11 @@ So, my plan is the following:
 
 | file            | purpose |
 | --------------- | ------- |
-| `.profile`      | contain non-bash-specific configs for shells (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?) |
-| `.bashrc`       | contain bash-specific interactive-shell configs |
+| `.profile`      | contain non-bash-specific login-shell configs for shells (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?) |
 | `.bash_login`   | contain bash-specific login-shell-specific configs |
-| `.bash_profile` | contain re-directs to `.profile`, `.bash_login`, and `.bashrc` |
-| other bash config files | for organizational purposes, some blocks of code may be kept in separate files, sourced by the top three files in this table |
+| `.bashrc`       | contain bash-specific interactive-shell configs |
+| `.bash_profile` | contain login-shell configs via re-directs to `.profile` and `.bash_login` and via a conditional re-direct to `.bashrc` (for interactive login shells) |
+| other bash config files | for organizational purposes, some blocks of code are kept in separate files (`.bashrc_prompt`, `.bashrc_aliases`, `.bashrc_etc`), sourced by the top three files in this table |
 
 ## references
 
