@@ -14,6 +14,9 @@ here to share config ideas and enable you to try out my setup.
 
 ## Installation
 
+WARNING: This code risks deleting (over-writing) important files. It was made
+for my convenience, not for the safety of your files.
+
 1. Clone the repo to copy the files:  
    `git clone https://github.com/oneforawe/config-files.git ~/.config-files`
 
