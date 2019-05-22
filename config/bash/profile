@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# filename: profile   (linked from ~/.profile)
+# purpose: For non-bash-specific configs for shells
+#   (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?).
+
+
+# (from MacOS system)
+
+# Recommended by "brew doctor" [2019-01-08]
+#echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
+export PATH="/usr/local/sbin:$PATH"
+
+# To include kaggle API
+export PATH="/Users/zero/.local/bin:$PATH"

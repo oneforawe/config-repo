@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# filename: bashrc_etc   (linked from ~/.bashrc_etc)
+# purpose: Set interactive-shell configs not already set for prompt
+#   and commands (functions and aliases).
+
+# This file is sourced from ~/.bashrc (which is for interactive shells).
+
+
+# Use vi key bindings in shell (starting in insert mode),
+# instead of emacs key bindings
+set -o vi
+
+# Use `thefuck` - for suggesting command-line mistake re-writes.
+eval $(thefuck --alias)
+
+# Determine the window title
+PROMPT_COMMAND='echo -ne "\033]0;${TERM_PROGRAM} bashy > ${PWD##*/}\007"'
+
+
+# Got the following stuff from Brandon Landry:
+# ============================================
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+
+# Don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# Enable tab completion with sudo.
+complete -cf sudo
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+

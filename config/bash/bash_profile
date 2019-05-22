@@ -1,38 +1,32 @@
 #!/usr/bin/env bash
-# filename: .bash_profile
-# (the first bash dot-file sourced?)
-
-# Shell dot-files / init-files / initialization-files / rc-files / run-commands files
-# in order of priority:  .profile  .bash_profile  .bashrc
-# (where to verify that order?)
-
-# When bash is invoked as a login shell (interactive or non-interactive
-# with the --login option) it executes the following (in order):
-#  /etc/profile, ~/.bash_profile, ~/.bash_login, ~/.profile  (~/.bashrc?)
-# For explanation, see the bash man page.
+# filename: bash_profile   (linked from ~/.bash_profile)
+# purpose: This config file is executed automatically by bash for login shells
+#   but not non-login shells.
 
 
-# If ~/.profile exists (which it does), "source" it???
-# (I need to learn the proper vocabulary.)
+# Non-BASH-specific configs are in ~/.profile
+# If `~/.profile` exists (which it does), source/execute it.
 if [ -f ~/.profile ] ; then
-    . ~/.profile
+    source ~/.profile
 fi
 
-# If the shell is interactive, source ~/.bashrc
+# BASH-specific login-shell-specific configs are in ~/.bash_login
+# (However, currently I don't have any need for login-shell-specific configs.)
+
+
+# BASH-specific interactive-shell configs are in ~/.bashrc
+# If the shell is interactive and `~/.bashrc` exists, source/execute it.
 case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
+#case "$-" in
+#    *i*) # (the shell is interactive)
+#         if [ -r ~/.bashrc ]; then . ~/.bashrc; fi
+#         ;;
+#    *)   # (the shell is not interactive)
+#         ;;
+#esac
 
-# This website (http://wikemacs.org/wiki/Installing_Emacs_on_OS_X)
-# (maybe) said to put this alias here
-#alias emacs="/usr/local/Cellar/emacs/24.x/Emacs.app/Contents/MacOS/Emacs -nw"
-# HOWEVER, note that when installing cask with
-# "brew install cask"
-# I received this message:
-# Caveats
-# Emacs Lisp files have been installed to:
-#  /usr/local/share/emacs/site-lisp/cask
-#alias emacs="/usr/local/Cellar/emacs"
-#alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 
+# MAYBE DON'T NEED THIS HERE:
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

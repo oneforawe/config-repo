@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# filename: bashrc   (linked from ~/.bashrc)
+# purpose: This config file is executed automatically by bash for non-login
+#   shells but not (automatically) for login shells.
+
+
+# Notes:  This config file is executed automatically by bash for non-login
+#   shells but not (automatically) for login shells.  This config file is
+#   executed for interactive shells and (strangely) for non-interactive
+#   remote shells (see reference [1]).
+
+# Look into this:
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+
+# In `.bash_profile` (for login-shells),
+# this file is sourced *if* the shell is interactive.
+
+# But for remote shells (associated with rsh, ssh, or rcp, scp, sftp, etc) that
+# are non-interactive, we first need to make sure that this file does nothing.
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# For interactive shells, execute the commands in the following config files:
+source ~/.bashrc_prompt
+source ~/.bashrc_aliases
+source ~/.bashrc_etc
+
+
+# References:
+# [1] https://unix.stackexchange.com/questions/257571/why-does-bashrc-check-
+#     whether-the-current-shell-is-interactive
