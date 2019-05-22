@@ -28,7 +28,7 @@ So, my plan is the following:
 | `.bash_login`   | contain bash-specific login-shell-specific configs |
 | `.bashrc`       | contain bash-specific interactive-shell configs |
 | `.bash_profile` | contain login-shell configs via re-directs to `.profile` and `.bash_login` and via a conditional re-direct to `.bashrc` (for interactive login shells) |
-| other bash config files | for organizational purposes, some blocks of code are kept in separate files (`.bashrc_prompt`, `.bashrc_aliases`, `.bashrc_etc`), sourced by the top three files in this table |
+| other bash config files | For organizational purposes, some blocks of code may be kept in separate files, sourced by the top three files in this table.  For example, three files (`.bashrc_prompt`, `.bashrc_aliases`, `.bashrc_etc`) are sourced by `.bashrc`. |
 
 ## references
 
@@ -37,3 +37,4 @@ So, my plan is the following:
 * http://tristram.squarespace.com/home/2012/7/20/why-profile-bash_profile-and-bash_login.html
 * https://serverfault.com/questions/261802/what-are-the-functional-differences-between-profile-bash-profile-and-bashrc
 * http://mywiki.wooledge.org/DotFiles
+
