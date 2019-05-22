@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# filename: .bash_profile
+# (the first bash dot-file sourced?)
+
+# Shell dot-files / init-files / initialization-files / rc-files / run-commands files
+# in order of priority:  .profile  .bash_profile  .bashrc
+# (where to verify that order?)
+
+# When bash is invoked as a login shell (interactive or non-interactive
+# with the --login option) it executes the following (in order):
+#  /etc/profile, ~/.bash_profile, ~/.bash_login, ~/.profile  (~/.bashrc?)
+# For explanation, see the bash man page.
+
+
+# If ~/.profile exists (which it does), "source" it???
+# (I need to learn the proper vocabulary.)
+if [ -f ~/.profile ] ; then
+    . ~/.profile
+fi
+
+# If the shell is interactive, source ~/.bashrc
+case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
+
+# This website (http://wikemacs.org/wiki/Installing_Emacs_on_OS_X)
+# (maybe) said to put this alias here
+#alias emacs="/usr/local/Cellar/emacs/24.x/Emacs.app/Contents/MacOS/Emacs -nw"
+# HOWEVER, note that when installing cask with
+# "brew install cask"
+# I received this message:
+# Caveats
+# Emacs Lisp files have been installed to:
+#  /usr/local/share/emacs/site-lisp/cask
+#alias emacs="/usr/local/Cellar/emacs"
+#alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/zero/Tools/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/zero/Tools/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# This doesn't seem to be necessary. Is conda not initializing in the bash shell?
+#conda-off > /dev/null
