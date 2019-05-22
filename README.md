@@ -9,7 +9,7 @@ the respective files in this repo.
 
 The purpose of this repo is mostly for my own convenience when setting up my
 working environments on new machines.  But for anyone who's curious, it's also
-here for you to share config ideas and enable you to try out my setup.
+here to share config ideas and enable you to try out my setup.
 
 
 ## Installation
