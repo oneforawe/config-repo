@@ -1,18 +1,26 @@
 # Configuration Files
 
-This repository contains my personal user configuration files.  The purpose of
-this repo is mostly for my own convenience when setting up my own working
-environments on new machines.  But for anyone who's curious, it's also here for
-you to peruse or try out and to share ideas.
+This repository contains:
+
+1. my personal user configuration files, and
+
+2. a script to setup the config files by creating links from the home folder to
+the respective files in this repo.
+
+The purpose of this repo is mostly for my own convenience when setting up my
+working environments on new machines.  But for anyone who's curious, it's also
+here for you to share config ideas and enable you to try out my setup.
+
 
 ## Installation
 
-Clone the repo to copy the files:  
+1. Clone the repo to copy the files:  
    `git clone https://github.com/oneforawe/config-files.git ~/.config-files`
 
-Run this command to over-write existing configuration files with links to the
+2. Run this command to over-write existing configuration files with links to the
 config files in this repo:  
    `bash ~/.config-files/setup/link-config-files.sh`
+
 
 ## Terminology
 

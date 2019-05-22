@@ -5,6 +5,7 @@
 .DS_Store
 
 # Specific sub-folders
+config/bash/Notes
 config/bash/old/*
 config/bash/alt/*
 
