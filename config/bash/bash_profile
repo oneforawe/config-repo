@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 # filename: bash_profile   (linked from ~/.bash_profile)
-# purpose: This config file is executed automatically by bash for login shells
+# purpose: For setting login-shell configs, both non-interactive & interactive.
+
+
+# Note: This config file is executed automatically by bash for login shells
 #   but not non-login shells.
 
 
-# Non-BASH-specific configs are in ~/.profile
+# Non-BASH-specific login-shell-specific configs are in ~/.profile
 # If `~/.profile` exists (which it does), source/execute it.
 if [ -f ~/.profile ] ; then
     source ~/.profile
@@ -12,10 +15,13 @@ fi
 
 # BASH-specific login-shell-specific configs are in ~/.bash_login
 # (However, currently I don't have any need for login-shell-specific configs.)
-
+# If `~/.bash_login` exists (which it doesn't), source/execute it.
+if [ -f ~/.bash_login ] ; then
+    source ~/.bash_login
+fi
 
 # BASH-specific interactive-shell configs are in ~/.bashrc
-# If the shell is interactive and `~/.bashrc` exists, source/execute it.
+# If the (login) shell is interactive and `~/.bashrc` exists, source/execute it.
 case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
 #case "$-" in
 #    *i*) # (the shell is interactive)

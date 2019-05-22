@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 # filename: bashrc   (linked from ~/.bashrc)
-# purpose: This config file is executed automatically by bash for non-login
-#   shells but not (automatically) for login shells.
+# purpose: For setting interactive shell configs.
 
 
-# Notes:  This config file is executed automatically by bash for non-login
-#   shells but not (automatically) for login shells.  This config file is
-#   executed for interactive shells and (strangely) for non-interactive
-#   remote shells (see reference [1]).
+# Notes:
+# 1. This config file is executed automatically by bash for non-login shells but
+#    not (automatically) for login shells.
+# 2. In `.bash_profile` (for login-shells), this file is sourced *if* the shell
+#    is interactive.
+# 3. So this config file is executed for interactive shells.
+# 4. This config file is also (strangely) called for non-interactive remote
+#    shells (see reference [1]), so we have to prevent execution for this
+#    non-interactive remote-shell case.
 
 # Look into this:
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -15,15 +19,14 @@
 # for examples
 
 
-# In `.bash_profile` (for login-shells),
-# this file is sourced *if* the shell is interactive.
-
-# But for remote shells (associated with rsh, ssh, or rcp, scp, sftp, etc) that
-# are non-interactive, we first need to make sure that this file does nothing.
-# If not running interactively, don't do anything
+# FIRST:
+# For remote shells (associated with rsh, ssh, or rcp, scp, sftp, etc) that
+# are non-interactive, we need to make sure that this file does nothing.
+# If running non-interactively, do nothing
 [[ $- != *i* ]] && return
 
-# For interactive shells, execute the commands in the following config files:
+# For all other (interactive) shells, execute the commands in the following
+# config files:
 source ~/.bashrc_prompt
 source ~/.bashrc_aliases
 source ~/.bashrc_etc
