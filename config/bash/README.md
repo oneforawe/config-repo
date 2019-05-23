@@ -71,8 +71,8 @@ So, my plan is the following:
       <td>  organization
       </td>
       <td>  For organizational purposes, some blocks of code may be kept in
-            separate files, sourced by the top three files in this table.  For
-            example, three files (<code>.bashrc_prompt</code>,
+            separate files, sourced by the middle three files in this table.
+            For example, three files (<code>.bashrc_prompt</code>,
             <code>.bashrc_aliases</code>, <code>.bashrc_etc</code>) are sourced
             by <code>.bashrc</code>.
       </td>
