@@ -3,7 +3,7 @@
 For an explanation of bash, one can start with the bash man page.  Below I
 summarize some of my imperfect understanding.  To get clarity on how bash
 handles its config files, see the table (for bash) and flow-chart in
-reference 2.
+reference 2 below.
 
 When bash is invoked as a login shell (interactive or non-interactive with the
 `--login` option), it executes `/etc/profile` and then the first existing,
