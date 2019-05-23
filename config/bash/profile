@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # filename: profile   (linked from ~/.profile)
 # purpose: For setting non-bash-specific configs for shells
 #   (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?).

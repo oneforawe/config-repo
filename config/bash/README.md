@@ -30,6 +30,66 @@ So, my plan is the following:
 | `.bash_profile` | login           | contain login-shell configs via re-directs to `.profile` and `.bash_login` and via a conditional re-direct to `.bashrc` (for interactive login shells) |
 | other bash config files | organization | For organizational purposes, some blocks of code may be kept in separate files, sourced by the top three files in this table.  For example, three files (`.bashrc_prompt`, `.bashrc_aliases`, `.bashrc_etc`) are sourced by `.bashrc`. |
 
+
+## (experimenting with source: html instead of markdown)
+
+<table>
+  <tbody>
+    <tr>
+      <th> file         </th>
+      <th> abbr purpose </th>
+      <th> purpose      </th>
+    </tr>
+    <tr>
+      <td>  `.bashrc`
+      </td>
+      <td>  interactive
+      </td>
+      <td>  contain bash-specific interactive-shell configs
+      </td>
+    </tr>
+    <tr>
+      <td>  `.profile`
+      </td>
+      <td>  login, non-bash
+      </td>
+      <td>  contain non-bash-specific login-shell configs for shells
+            (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?)
+      </td>
+    </tr>
+    <tr>
+      <td>  `.bash_login`
+      </td>
+      <td>  login, bash
+      </td>
+      <td>  contain bash-specific login-shell-specific configs
+      </td>
+    </tr>
+    <tr>
+      <td>  `.bash_profile`
+      </td>
+      <td>  login
+      </td>
+      <td>  contain login-shell configs via re-directs to `.profile` and
+            `.bash_login` and via a conditional re-direct to `.bashrc`
+            (for interactive login shells)
+      </td>
+    </tr>
+    <tr>
+      <td>  other bash config files
+      </td>
+      <td>  organization
+      </td>
+      <td>  For organizational purposes, some blocks of code may be kept in
+            separate files, sourced by the top three files in this table.  For
+            example, three files (`.bashrc_prompt`, `.bashrc_aliases`,
+            `.bashrc_etc`) are sourced by `.bashrc`.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 ## references
 
 * https://superuser.com/questions/789448/choosing-between-bashrc-profile-bash-profile-etc
