@@ -8,6 +8,6 @@
 config/bash/Notes
 config/bash/old/*
 config/bash/alt/*
-config/fish/test.md
+config/fish/test.sh
 config/fish/old/
 
