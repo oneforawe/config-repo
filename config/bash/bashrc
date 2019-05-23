@@ -20,10 +20,10 @@
 
 
 # FIRST:
-# For remote shells (associated with rsh, ssh, or rcp, scp, sftp, etc) that
-# are non-interactive, we need to make sure that this file does nothing.
-# If running non-interactively, do nothing
-[[ $- != *i* ]] && return
+# For remote shells (associated with rsh, ssh, or rcp, scp, sftp, etc) that are
+# non-interactive, we need to make sure that this file does nothing (returns).
+# If running non-interactively, then return.
+if [[ $- != *i* ]] ; then return ; fi
 
 # For all other (interactive) shells, execute the commands in the following
 # config files:

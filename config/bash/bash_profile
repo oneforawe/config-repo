@@ -8,9 +8,7 @@
 
 
 # Non-BASH-specific login-shell-specific configs are in ~/.profile
-# If `~/.profile` exists (which it does) and is readable, source/execute it.
-# (emulate the sh shell, since `.profile` is meant for sh-level configuration)
-if [[ -r ~/.profile ]] ; then emulate sh -c 'source ~/.profile' ; fi
+source ~/.profile
 
 # BASH-specific login-shell-specific configs are in ~/.bash_login
 # (However, currently I don't have any need for login-shell-specific configs.)
@@ -18,10 +16,8 @@ if [[ -r ~/.profile ]] ; then emulate sh -c 'source ~/.profile' ; fi
 if [[ -r ~/.bash_login ]] ; then source ~/.bash_login ; fi
 
 # BASH-specific interactive-shell configs are in ~/.bashrc
-# If the (login) shell is interactive and `~/.bashrc` exists and is readable,
-# source/execute it.
-#case "$-" in *i*) if [ -r ~/.bashrc ]; then source ~/.bashrc; fi ;; esac
+# If the (login) shell is interactive, source/execute `~/.bashrc`.
 if [[ $- == *i* ]] ; then
-    if [[ -r ~/.bashrc ]] ; then source ~/.bashrc ; fi ;
+    source ~/.bashrc ;
 fi
 
