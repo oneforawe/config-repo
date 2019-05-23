@@ -44,9 +44,9 @@ So, my plan is the following:
     </tr>
     <tr>
       <td>
-
+            
             `.bashrc`
-
+            
       </td>
       <td>  interactive
       </td>
