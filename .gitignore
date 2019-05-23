@@ -6,8 +6,9 @@
 
 # Specific sub-folders
 config/bash/Notes
-config/bash/old/*
-config/bash/alt/*
+config/bash/old/
+config/bash/alt/
 config/fish/test.sh
 config/fish/old/
+config/zsh/old/
 

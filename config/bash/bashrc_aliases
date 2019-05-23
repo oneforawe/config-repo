@@ -275,7 +275,7 @@ function conda-on {
     add_conda_anaconda_to_PATH
     printf "The PATH environment variable is now set to\n"
     printf "  %s\n" $PATH
-    printf "The conda (package manager) and the Anaconda (package distribution) should be activated now.\n\n"
+    printf "The conda (package manager) and the Anaconda (package distribution) should be activated now.\n"
 
     # activate conda base environment (?)
     conda activate
@@ -309,7 +309,7 @@ function conda-off {
     remove_conda_anaconda_from_PATH
     printf "The PATH environment variable is now set to\n"
     printf "    %s\n" $PATH
-    printf "The conda (and Anaconda) should be de-activated now.\n\n"
+    printf "The conda (and Anaconda) should be de-activated now.\n"
 
     # for virtualenv and virtualenvwrapper (take-down?)
     # ?

@@ -7,7 +7,7 @@
 #   but not non-login shells.
 
 
-# Non-BASH-specific login-shell-specific configs are in ~/.profile
+# Non-BASH-specific login-shell configs are in ~/.profile
 source ~/.profile
 
 # BASH-specific login-shell-specific configs are in ~/.bash_login

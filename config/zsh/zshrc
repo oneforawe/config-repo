@@ -3,6 +3,17 @@
 # purpose: For setting interactive shell configs.
 
 
+# Note:
+# 1. This config file is executed automatically by zsh for both login and non-
+#    login shells (unlike `.bashrc`, which is only auto-executed for non-login).
+# 2. So, in `.zprofile` (for login-shells), this file does *not* need to be
+#    sourced (unlike in `.bash_profile`, where `.bashrc` *is* sourced *if* the
+#    shell is interactive).
+# 3. I don't know if this config file has issues like `.bashrc` does with
+#    non-interactive remote shells.  Might be worth investigating.
+
+
+
 #############################
 # Edits When Installing OMZ #
 #############################
@@ -135,8 +146,8 @@ __conda_setup="$('/Users/zero/Tools/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh"
+    if [[ -f /Users/zero/Tools/anaconda3/etc/profile.d/conda.sh ]] ; then
+        source /Users/zero/Tools/anaconda3/etc/profile.d/conda.sh
     else
         export PATH="/Users/zero/Tools/anaconda3/bin:$PATH"
     fi

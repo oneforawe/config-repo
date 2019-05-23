@@ -4,19 +4,20 @@
 
 
 # Notes:
-# 1. This config file is executed automatically by bash for non-login shells but
-#    not (automatically) for login shells.
+# 1. This config file is executed automatically by bash for non-login
+#    interactive shells but not (automatically) for login interactive shells.
 # 2. In `.bash_profile` (for login-shells), this file is sourced *if* the shell
 #    is interactive.
-# 3. So this config file is executed for interactive shells.
+# 3. So this config file is thereby executed for all interactive shells.
 # 4. This config file is also (strangely) called for non-interactive remote
 #    shells (see reference [1]), so we have to prevent execution for this
 #    non-interactive remote-shell case.
 
 # Look into this:
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# See /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples.  So maybe I should just say:
+# 1. This config file is auto-executed by bash for all non-login shells. (?)
 
 
 # FIRST:
@@ -25,8 +26,7 @@
 # If running non-interactively, then return.
 if [[ $- != *i* ]] ; then return ; fi
 
-# For all other (interactive) shells, execute the commands in the following
-# config files:
+# For all other (interactive) shells, source/execute the following config files:
 source ~/.bashrc_prompt
 source ~/.bashrc_aliases
 source ~/.bashrc_etc
