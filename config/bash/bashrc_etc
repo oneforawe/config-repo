@@ -14,7 +14,7 @@ set -o vi
 eval $(thefuck --alias)
 
 # Determine the window title
-PROMPT_COMMAND='echo -ne "\033]0;${TERM_PROGRAM} bashy > ${PWD##*/}\007"'
+PROMPT_COMMAND='echo -ne "\033]0;${TERM_PROGRAM} > ${PWD##*/}\007"'
 
 
 # Got the following stuff from Brandon Landry:
