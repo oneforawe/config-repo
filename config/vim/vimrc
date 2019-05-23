@@ -1,0 +1,184 @@
+" filename: .vimrc  (vim initialization 'run-commands' file)
+
+" TODO: Get tabbed auto-completion working (see CleverTab below)
+" TODO: Get code block folding to *not* get rid of syntax highlighting
+" TODO: Get code block folding to work as desired for top-level indentation
+"       (See, EG, my hangman.py file and the `class Hangman:` line, which
+"        I would expect to be folded.)
+"       (Temporary success: use shift-tab to open everything backwards)
+" TODO: Get code block folding to work exactly like it works for me with
+"        emacs in org-mode: expanding the deeper layers upon further tabbing
+
+
+set encoding=utf-8          " use utf-8 encoding
+
+set t_Co=256                " enable 256 colors
+colors zenburn              " color scheme
+set colorcolumn=72,80       " highlight for standard code line widths
+syntax on                   " enable syntax highlighting
+
+filetype plugin indent on   " enable filetype plugins and indentation rules
+set tabstop=4               " render space characters as 4 spaces
+set softtabstop=4           " backspace erases all spaces to next tab stop
+set shiftwidth=4            " use 4 spaces for each step of (auto)indent
+set expandtab               " expand <Tab> keypresses to spaces
+
+set scrolloff=5             " show 10 lines of context around cursor
+set viminfo='20,<1000       " remember marks for previous 20 files;
+                            " save max of 1000 lines for each region
+set wildmenu
+set path+=**
+set completeopt=menu
+
+" set color of autocomplete popup menu
+highlight Pmenu ctermbg=238
+
+" highlight tabs
+autocmd BufNewFile,BufReadPost,FileReadPost * syntax match Tab "\t"
+highlight Tab ctermbg=238 guibg=#444444
+
+" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+
+" code block folding
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" use `z+a` `z+c` and/or `z+o` to toggle, close, open folds
+" I'd like this to work using tab..
+" (and I'd like it to look very different from the default behavior).
+"set foldmethod=indent
+"set foldnestmax=10
+"set nofoldenable
+"set foldlevel=1
+"set shiftwidth=2
+
+function IndentedBlockFoldExpr(line_number)
+    let current_indent = indent(a:line_number) / &shiftwidth
+    let next_indent = indent(a:line_number + 1) / &shiftwidth
+    if getline(a:line_number) =~ '\v^\s*$'
+        return -1
+    endif
+    if getline(a:line_number + 1) =~ '\v^\s*$'
+        return current_indent
+    endif
+    if next_indent > current_indent
+        return ">" . next_indent
+    elseif next_indent < current_indent
+        return "<" . current_indent
+    else
+        return current_indent
+    endif
+endfunction
+
+function IndentedBlockFoldText(fold_start)
+    return getline(a:fold_start) . " #…"
+endfunction
+
+function ToggleFold()
+    if foldclosed(line('.')) >= 0
+        silent! normal zv
+    else
+        silent! normal za
+    endif
+endfunction
+
+function SetIndentedBlockFolding()
+    setlocal foldmethod=expr
+    setlocal foldexpr=IndentedBlockFoldExpr(v:lnum)
+    setlocal foldtext=IndentedBlockFoldText(v:foldstart)
+    setlocal fillchars=fold:\    " escaped space
+    highlight Folded ctermfg=NONE ctermbg=NONE
+    nnoremap <buffer> <silent> <tab> :<c-u>call ToggleFold()<cr>
+endfunction
+
+autocmd BufRead,BufNewFile *.py call SetIndentedBlockFolding()
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Tab-completion for variable/function names, etc, while in insert mode
+
+" Attempt to use CleverTab package:
+"call CleverTab#OmniFirst()
+" (this didn't work, had error:
+"  Error detected while processing /Users/zero/.vimrc:
+"  line  105:
+"  E117: Unknown function: CleverTab#OmniFirst)
+
+" http://vim.wikia.com/wiki/Smart_mapping_for_tab_completion
+function! CleverTab()
+    if pumvisible()
+        return "\<C-N>"
+    endif
+        if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
+        return "\<Tab>"
+    elseif exists('&omnifunc') && &omnifunc != ''
+        return "\<C-X>\<C-O>"
+    else
+        return "\<C-N>"
+    endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" I got the following text by following the vimtutor ($ vimtutor)...
+" lesson 7.2 suggested using the following command
+" r $VIMRUNTIME/vimrc_example.vim
+
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  set backup		" keep a backup file (restore to previous version)
+  " [I commented this out. -zero]  if has('persistent_undo')
+  " [I commented this out. -zero]    set undofile	" keep an undo file (undo changes after closing)
+  " [I commented this out. -zero]  endif
+endif
+
+if &t_Co > 2 || has("gui_running")
+  " Switch on highlighting the last used search pattern.
+  set hlsearch
+endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+  " For all text files set 'textwidth' to 78 characters.
+  "autocmd FileType text setlocal textwidth=78
+  augroup END
+else
+  set autoindent		" always set autoindenting on
+endif " has("autocmd")
+
+" Add optional packages.
+"
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+if has('syntax') && has('eval')
+  packadd matchit
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" more code folding... (will this interact badly with the above functions?)
+" (using vim-fold-cycle from
+" https://github.com/arecarn/vim-fold-cycle/blob/master/plugin/fold_cycle.vim )
+"let g:fold_cycle_default_mapping = 0 "disable default mappings
+nmap <Tab> <Plug>(fold-cycle-open) " I want <Tab> to cycle through ALL states..
+"nmap <Tab> <Plug>(fold-cycle-toggle-all) " but none of these options..
+"nmap <Tab> <Plug>(fold-cycle-open-all)   " does that
+nmap <S-Tab> <Plug>(fold-cycle-close)
+" The best option is to use <S-Tab> (shift-tab) to cycle through ~ALL states
+" in a backwards fashion.
+"

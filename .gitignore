@@ -11,4 +11,5 @@ config/bash/alt/
 config/fish/test.sh
 config/fish/old/
 config/zsh/old/
+config/vim/old/
 
