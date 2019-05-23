@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # filename: link-config-files.sh
-# This script links/installs the configuration files.
+# purpose: Automate installing/linking the user configuration files.
 
 # TODO: Create function that doesn't just link but checks for pre-existing
 #       files, saves them into a backup location such as

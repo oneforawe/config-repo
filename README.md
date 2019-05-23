@@ -34,5 +34,6 @@ any file or folder starting with a period (a "dot") is treated as a hidden file
 or hidden folder.
 
 Configuration files are also called config-files, dot-files, initialization
-files, init-files, run-commands files, rc-files, and so on.
+files, init-files, run-commands files, rc-files, and possibly environment files,
+variable files, and so on.
 
