@@ -34,6 +34,7 @@ So, my plan is the following:
 ## (experimenting with source: html instead of markdown)
 
 <div  markdown=1>
+
 <table>
   <tbody>
     <tr>
@@ -42,7 +43,10 @@ So, my plan is the following:
       <th> purpose      </th>
     </tr>
     <tr>
-      <td>  `.bashrc`
+      <td>
+
+            `.bashrc`
+
       </td>
       <td>  interactive
       </td>
@@ -50,7 +54,10 @@ So, my plan is the following:
       </td>
     </tr>
     <tr>
-      <td markdown=1>  `.profile`
+      <td markdown=1>
+
+                       `.profile`
+
       </td>
       <td markdown=1>  login, non-bash
       </td>
@@ -91,7 +98,8 @@ So, my plan is the following:
     </tr>
   </tbody>
 </table>
-</div>?
+
+</div>
 
 
 ## references
