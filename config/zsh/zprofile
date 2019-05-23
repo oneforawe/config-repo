@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# filename: zprofile   (linked as .zprofile)
+# purpose: For setting login-shell configs, both non-interactive & interactive.
+
+# A lot of my experimentation started with this article / tutorial:
+# https://www.davidculley.com/customizing-the-terminal/
+
+# If `~/.profile` exists (which it does) and is readable, source/execute it.
+# (emulate the sh shell, since `.profile` is meant for sh-level configuration)
+if [[ -r ~/.profile ]]; then emulate sh -c 'source ~/.profile'; fi
+

@@ -17,8 +17,8 @@ ln -sf ~/.config-files/config/bash/bashrc_aliases ~/.bashrc_aliases
 ln -sf ~/.config-files/config/bash/bashrc_etc     ~/.bashrc_etc
 
 # ZSH
-#ln -sf .config-files/config/zsh/zprofile .zprofile
-#ln -sf .config-files/config/zsh/zshrc    .zshrc
+ln -sf ~/.config-files/config/zsh/zprofile ~/.zprofile
+ln -sf ~/.config-files/config/zsh/zshrc    ~/.zshrc
 
 # FISH
 ln -sf ~/.config-files/config/fish/config.fish    ~/.config/fish/config.fish
