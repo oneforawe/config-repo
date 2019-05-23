@@ -8,15 +8,18 @@ When bash is invoked as a login shell (interactive or non-interactive with the
 readable file in this list: `~/.bash_profile`, `~/.bash_login`, `~/.profile`.
 
 The file `/etc/profile` is the system-wide initialization file, executed for
-login shells for all users.  The file `~/.profile` is included for backwards
-compatibility, since that's the login script filename originally used by the
-original Bourne shell `/bin/sh`.
+login shells for all users.  The other three initialization files are
+user-specific, located in a user's home directory (<code>~</code>).  The file
+`~/.profile` in particular is included for backwards compatibility, since that's
+the login script filename originally used by the original Bourne shell
+`/bin/sh`.
 
 When bash is invoked as a non-login shell, it executes this file, if it exists:
 `~/.bashrc`.
 
-Each of these files may `source` other files, that is, refer bash to those ohter
+Each of these files may `source` other files, that is, refer bash to those other
 files for execution.
+
 
 ## plan
 
