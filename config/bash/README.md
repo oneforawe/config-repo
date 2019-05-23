@@ -1,7 +1,9 @@
 ## bash config files
 
 For an explanation of bash, one can start with the bash man page.  Below I
-summarize some of my imperfect understanding.
+summarize some of my imperfect understanding.  To get clarity on how bash
+handles its config files, see the table (for bash) and flow-chart in
+reference 2.
 
 When bash is invoked as a login shell (interactive or non-interactive with the
 `--login` option), it executes `/etc/profile` and then the first existing,
@@ -85,9 +87,24 @@ So, my plan is the following:
 
 ## references
 
-* https://superuser.com/questions/789448/choosing-between-bashrc-profile-bash-profile-etc
-* https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc
-* http://tristram.squarespace.com/home/2012/7/20/why-profile-bash_profile-and-bash_login.html
-* https://serverfault.com/questions/261802/what-are-the-functional-differences-between-profile-bash-profile-and-bashrc
-* http://mywiki.wooledge.org/DotFiles
+Regarding config files:
+
+1. https://superuser.com/questions/789448/choosing-between-bashrc-profile-bash-profile-etc
+2. https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc
+3. http://tristram.squarespace.com/home/2012/7/20/why-profile-bash_profile-and-bash_login.html
+4. https://serverfault.com/questions/261802/what-are-the-functional-differences-between-profile-bash-profile-and-bashrc
+5. http://mywiki.wooledge.org/DotFiles
+
+General:
+
+* [bash on Wikipedia](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+* [official bash site](https://www.gnu.org/software/bash/)
+* [reference manual](https://tiswww.case.edu/php/chet/bash/bashref.html)
+* [guide for beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+* [bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+
+System Admin:
+
+* [SysAdmin Basics](https://www.linode.com/docs/tools-reference/linux-system-administration-basics/)
+* [SysAdmin Tutorial](https://www.tutorialspoint.com/linux_admin/)
 
