@@ -4,13 +4,13 @@ For an explanation of bash, one can start with the bash man page.  Below I
 summarize some of my imperfect understanding.
 
 When bash is invoked as a login shell (interactive or non-interactive with the
-`--login option`), it executes `~/etc/profile` and then the first existing,
+`--login option`), it executes `/etc/profile` and then the first existing,
 readable file in this list: `~/.bash_profile`, `~/.bash_login`, `~/.profile`.
 
-The file `profile` is the system-wide initialization file, executed for login
-shells for all users.  The file `.profile` is included for backwards
-compatibility, since that's the login script filename originally used by
-`/bin/sh`.
+The file `/etc/profile` is the system-wide initialization file, executed for
+login shells for all users.  The file `~/.profile` is included for backwards
+compatibility, since that's the login script filename originally used by the
+original Bourne shell `/bin/sh`.
 
 When bash is invoked as a non-login shell, it executes this file, if it exists:
 `~/.bashrc`.
