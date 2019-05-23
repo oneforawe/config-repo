@@ -44,9 +44,7 @@ So, my plan is the following:
     </tr>
     <tr>
       <td>
-            
             `.bashrc`
-            
       </td>
       <td>  interactive
       </td>
@@ -55,9 +53,7 @@ So, my plan is the following:
     </tr>
     <tr>
       <td markdown=1>
-
                        `.profile`
-
       </td>
       <td markdown=1>  login, non-bash
       </td>
