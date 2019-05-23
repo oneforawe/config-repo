@@ -1,14 +1,11 @@
-# filename: fish.config
+#!/usr/bin/env fish
+# filename: config.fish
+# purpose: A config file for the fish shell, "equivalent to .bashrc".
 
-fish_vi_key_bindings
-#source ~/.bashrc
-#source ~/.aliases
-#source ~/.fish_aliases
-source ~/.config/fish/functions/aliases_simplified.fish
-#source ~/.config/fish/aliases_simplified.fish
 
-# thefuck - for suggesting command-line re-writes
-thefuck --alias | source
+# So, apparently, this is a config file for all interactive fish shells.
+# FISH is, afterall, the Friendly *Interactive* SHell,
+# so maybe all shell instances are interactive.
 
 # Known issues:
 # 1. In MacOs, in a shell terminal (eg, Terminal or iTerm2), when using tmux,
@@ -19,4 +16,12 @@ thefuck --alias | source
 #    b) when pasting text
 #    c) maybe other scenarios
 #       (see https://github.com/fish-shell/fish-shell/issues/3481)
+
+# This file doesn't really seem to be totally equivalent to .bashrc, because
+# not all of the other "config" files have to be sourced here.  Some "configs"
+# happen in other files in this folder and in the functions folder.
+
+fish_vi_key_bindings
+#source ~/.config/fish/functions/aliases.fish
+source ~/.config/fish/functions/aliases_simplified.fish
 
