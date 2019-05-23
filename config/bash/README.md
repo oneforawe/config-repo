@@ -33,8 +33,6 @@ So, my plan is the following:
 
 ## (experimenting with source: html instead of markdown)
 
-<div  markdown=1>
-
 <table>
   <tbody>
     <tr>
@@ -43,8 +41,7 @@ So, my plan is the following:
       <th> purpose      </th>
     </tr>
     <tr>
-      <td>
-            `.bashrc`
+      <td> <code>.bashrc</code>
       </td>
       <td>  interactive
       </td>
@@ -52,18 +49,17 @@ So, my plan is the following:
       </td>
     </tr>
     <tr>
-      <td markdown=1>
-                       `.profile`
+      <td>  <code>.profile</code>
       </td>
-      <td markdown=1>  login, non-bash
+      <td>  login, non-bash
       </td>
-      <td markdown=1>  contain non-bash-specific login-shell configs for shells
-                       (eg, `sh` or `bash` invoked as `sh`) and graphical
-                       applications(?)
+      <td>  contain non-bash-specific login-shell configs for shells (eg,
+            <code>sh</code> or <code>bash</code> invoked as <code>sh</code>)
+            and graphical applications(?)
       </td>
     </tr>
     <tr>
-      <td>  `.bash_login`
+      <td>  <code>.bash_login</code>
       </td>
       <td>  login, bash
       </td>
@@ -71,31 +67,29 @@ So, my plan is the following:
       </td>
     </tr>
     <tr>
-      <td markdown=1>  `.bash_profile`
+      <td>  <code>.bash_profile</code>
       </td>
-      <td markdown=1>  login
+      <td>  login
       </td>
-      <td markdown=1>  contain login-shell configs via re-directs to
-                       `.profile` and `.bash_login` and via a conditional
-                       re-direct to `.bashrc` (for interactive login shells)
+      <td>  contain login-shell configs via re-directs to <code>.profile</code>
+            and <code>.bash_login</code> and via a conditional re-direct to
+            <code>.bashrc</code> (for interactive login shells)
       </td>
     </tr>
     <tr>
-      <td markdown=1>  other bash config files
+      <td>  other bash config files
       </td>
-      <td markdown=1>  organization
+      <td>  organization
       </td>
-      <td markdown=1>  For organizational purposes, some blocks of code may be
-                       kept in separate files, sourced by the top three files
-                       in this table.  For example, three files
-                       (`.bashrc_prompt`, `.bashrc_aliases`, `.bashrc_etc`)
-                       are sourced by `.bashrc`.
+      <td>  For organizational purposes, some blocks of code may be kept in
+            separate files, sourced by the top three files in this table.  For
+            example, three files (<code>.bashrc_prompt</code>,
+            <code>.bashrc_aliases</code>, <code>.bashrc_etc</code>) are sourced
+            by <code>.bashrc</code>.
       </td>
     </tr>
   </tbody>
 </table>
-
-</div>
 
 
 ## references
