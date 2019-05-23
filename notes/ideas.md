@@ -2,7 +2,11 @@
 ## more immediate
 
 Consider: package-managers (homebrew, conda, pip, apt); packages (including
-environment managers, etc).
+environment managers, etc); automating more settings and configurations (some
+usually done by GUI); recovery; further automation of backup procedures.
+
+Also consider: Integration of action management system(s); email management and
+archiving; secure and redundant systems/backups.
 
 
 ## long term
