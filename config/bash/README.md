@@ -30,14 +30,6 @@ So, my plan is the following:
       <th> purpose      </th>
     </tr>
     <tr>
-      <td> <code>.bashrc</code>
-      </td>
-      <td>  interactive
-      </td>
-      <td>  contain bash-specific interactive-shell configs
-      </td>
-    </tr>
-    <tr>
       <td>  <code>.profile</code>
       </td>
       <td>  login, non-bash
@@ -45,6 +37,16 @@ So, my plan is the following:
       <td>  contain non-bash-specific login-shell configs for shells (eg,
             <code>sh</code> or <code>bash</code> invoked as <code>sh</code>)
             and graphical applications(?)
+      </td>
+    </tr>
+    <tr>
+      <td>  <code>.bash_profile</code>
+      </td>
+      <td>  login
+      </td>
+      <td>  contain login-shell configs via re-directs to <code>.profile</code>
+            and <code>.bash_login</code> and via a conditional re-direct to
+            <code>.bashrc</code> (for interactive login shells)
       </td>
     </tr>
     <tr>
@@ -56,13 +58,11 @@ So, my plan is the following:
       </td>
     </tr>
     <tr>
-      <td>  <code>.bash_profile</code>
+      <td> <code>.bashrc</code>
       </td>
-      <td>  login
+      <td>  interactive
       </td>
-      <td>  contain login-shell configs via re-directs to <code>.profile</code>
-            and <code>.bash_login</code> and via a conditional re-direct to
-            <code>.bashrc</code> (for interactive login shells)
+      <td>  contain bash-specific interactive-shell configs
       </td>
     </tr>
     <tr>
