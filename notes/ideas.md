@@ -1,6 +1,11 @@
 
 ## more immediate
 
+To search for `TODO` items in the code, execute the following at the root
+directory `~/.config-files`:
+
+`grep -r 'TODO' .`
+
 Consider: package-managers (homebrew, conda, pip, apt); packages (including
 environment managers, etc); automating more settings and configurations (some
 usually done by GUI); recovery; further automation of backup procedures.
