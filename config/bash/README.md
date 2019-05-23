@@ -33,6 +33,7 @@ So, my plan is the following:
 
 ## (experimenting with source: html instead of markdown)
 
+<div  markdown=1>
 <table>
   <tbody>
     <tr>
@@ -41,11 +42,11 @@ So, my plan is the following:
       <th> purpose      </th>
     </tr>
     <tr>
-      <td markdown=1>  `.bashrc`
+      <td>  `.bashrc`
       </td>
-      <td markdown=1>  interactive
+      <td>  interactive
       </td>
-      <td markdown=1>  contain bash-specific interactive-shell configs
+      <td>  contain bash-specific interactive-shell configs
       </td>
     </tr>
     <tr>
@@ -59,11 +60,11 @@ So, my plan is the following:
       </td>
     </tr>
     <tr>
-      <td markdown=1>  `.bash_login`
+      <td>  `.bash_login`
       </td>
-      <td markdown=1>  login, bash
+      <td>  login, bash
       </td>
-      <td markdown=1>  contain bash-specific login-shell-specific configs
+      <td>  contain bash-specific login-shell-specific configs
       </td>
     </tr>
     <tr>
@@ -90,6 +91,7 @@ So, my plan is the following:
     </tr>
   </tbody>
 </table>
+</div>?
 
 
 ## references
