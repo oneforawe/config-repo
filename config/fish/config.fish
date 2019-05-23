@@ -5,6 +5,7 @@ fish_vi_key_bindings
 #source ~/.aliases
 #source ~/.fish_aliases
 source ~/.config/fish/functions/aliases_simplified.fish
+#source ~/.config/fish/aliases_simplified.fish
 
 # thefuck - for suggesting command-line re-writes
 thefuck --alias | source

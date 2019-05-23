@@ -8,46 +8,16 @@
 
 
 # Non-BASH-specific login-shell-specific configs are in ~/.profile
-# If `~/.profile` exists (which it does), source/execute it.
-if [ -f ~/.profile ] ; then
-    source ~/.profile
-fi
+# If `~/.profile` exists (which it does) and is readable, source/execute it.
+if [ -r ~/.profile ] ; then source ~/.profile fi
 
 # BASH-specific login-shell-specific configs are in ~/.bash_login
 # (However, currently I don't have any need for login-shell-specific configs.)
-# If `~/.bash_login` exists (which it doesn't), source/execute it.
-if [ -f ~/.bash_login ] ; then
-    source ~/.bash_login
-fi
+# If `~/.bash_login` exists (which it doesn't) & is readable, source/execute it.
+if [ -r ~/.bash_login ] ; then source ~/.bash_login fi
 
 # BASH-specific interactive-shell configs are in ~/.bashrc
-# If the (login) shell is interactive and `~/.bashrc` exists, source/execute it.
-case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
-#case "$-" in
-#    *i*) # (the shell is interactive)
-#         if [ -r ~/.bashrc ]; then . ~/.bashrc; fi
-#         ;;
-#    *)   # (the shell is not interactive)
-#         ;;
-#esac
+# If the (login) shell is interactive and `~/.bashrc` exists and is readable,
+# source/execute it.
+case "$-" in *i*) if [ -r ~/.bashrc ]; then source ~/.bashrc; fi ;; esac
 
-
-# MAYBE DON'T NEED THIS HERE:
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/zero/Tools/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/zero/Tools/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# This doesn't seem to be necessary. Is conda not initializing in the bash shell?
-#conda-off > /dev/null
