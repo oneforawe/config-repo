@@ -22,17 +22,6 @@ files for execution.
 
 So, my plan is the following:
 
-| file            | abbr purpose    | purpose |
-| --------------- | --------------- | ------- |
-| `.bashrc`       | interactive     | contain bash-specific interactive-shell configs |
-| `.profile`      | login, non-bash | contain non-bash-specific login-shell configs for shells (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?) |
-| `.bash_login`   | login, bash     | contain bash-specific login-shell-specific configs |
-| `.bash_profile` | login           | contain login-shell configs via re-directs to `.profile` and `.bash_login` and via a conditional re-direct to `.bashrc` (for interactive login shells) |
-| other bash config files | organization | For organizational purposes, some blocks of code may be kept in separate files, sourced by the top three files in this table.  For example, three files (`.bashrc_prompt`, `.bashrc_aliases`, `.bashrc_etc`) are sourced by `.bashrc`. |
-
-
-## (experimenting with source: html instead of markdown)
-
 <table>
   <tbody>
     <tr>
