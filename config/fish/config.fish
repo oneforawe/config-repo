@@ -19,7 +19,7 @@
 
 # This file doesn't really seem to be totally equivalent to .bashrc, because
 # not all of the other "config" files have to be sourced here.  Some "configs"
-# happen in other files in this folder and in the functions folder.
+# happen in other files in this folder and in the `functions` folder.
 
 fish_vi_key_bindings
 #source ~/.config/fish/functions/aliases.fish
