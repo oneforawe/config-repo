@@ -11,8 +11,7 @@ The file `/etc/profile` is the system-wide initialization file, executed for
 login shells for all users.  The other three initialization files are
 user-specific, located in a user's home directory (<code>~</code>).  The file
 `~/.profile` in particular is included for backwards compatibility, since that's
-the login script filename originally used by the original Bourne shell
-`/bin/sh`.
+the login script filename used by the original Bourne shell `/bin/sh`.
 
 When bash is invoked as a non-login shell, it executes this file, if it exists:
 `~/.bashrc`.
