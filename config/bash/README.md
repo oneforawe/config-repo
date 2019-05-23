@@ -41,49 +41,51 @@ So, my plan is the following:
       <th> purpose      </th>
     </tr>
     <tr>
-      <td>  `.bashrc`
+      <td markdown="1">  `.bashrc`
       </td>
-      <td>  interactive
+      <td markdown="1">  interactive
       </td>
-      <td>  contain bash-specific interactive-shell configs
-      </td>
-    </tr>
-    <tr>
-      <td>  `.profile`
-      </td>
-      <td>  login, non-bash
-      </td>
-      <td>  contain non-bash-specific login-shell configs for shells
-            (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?)
+      <td markdown="1">  contain bash-specific interactive-shell configs
       </td>
     </tr>
     <tr>
-      <td>  `.bash_login`
+      <td markdown="1">  `.profile`
       </td>
-      <td>  login, bash
+      <td markdown="1">  login, non-bash
       </td>
-      <td>  contain bash-specific login-shell-specific configs
-      </td>
-    </tr>
-    <tr>
-      <td>  `.bash_profile`
-      </td>
-      <td>  login
-      </td>
-      <td>  contain login-shell configs via re-directs to `.profile` and
-            `.bash_login` and via a conditional re-direct to `.bashrc`
-            (for interactive login shells)
+      <td markdown="1">  contain non-bash-specific login-shell configs for
+                         shells (eg, `sh` or `bash` invoked as `sh`) and
+                         graphical applications(?)
       </td>
     </tr>
     <tr>
-      <td>  other bash config files
+      <td markdown="1">  `.bash_login`
       </td>
-      <td>  organization
+      <td markdown="1">  login, bash
       </td>
-      <td>  For organizational purposes, some blocks of code may be kept in
-            separate files, sourced by the top three files in this table.  For
-            example, three files (`.bashrc_prompt`, `.bashrc_aliases`,
-            `.bashrc_etc`) are sourced by `.bashrc`.
+      <td markdown="1">  contain bash-specific login-shell-specific configs
+      </td>
+    </tr>
+    <tr>
+      <td markdown="1">  `.bash_profile`
+      </td>
+      <td markdown="1">  login
+      </td>
+      <td markdown="1">  contain login-shell configs via re-directs to
+                         `.profile` and `.bash_login` and via a conditional
+                         re-direct to `.bashrc` (for interactive login shells)
+      </td>
+    </tr>
+    <tr>
+      <td markdown="1">  other bash config files
+      </td>
+      <td markdown="1">  organization
+      </td>
+      <td markdown="1">  For organizational purposes, some blocks of code may be
+                         kept in separate files, sourced by the top three files
+                         in this table.  For example, three files
+                         (`.bashrc_prompt`, `.bashrc_aliases`, `.bashrc_etc`)
+                         are sourced by `.bashrc`.
       </td>
     </tr>
   </tbody>
