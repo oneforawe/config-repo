@@ -50,6 +50,10 @@ alias d='dirs -v | head -10'
 # Set the `nullglob` option so list pattern-matching is silent for null matches
 shopt -s nullglob
 
+# TODO: Minor Problem: In bash, in an empty directory (that contains just `.` &
+#       `..`) `l` displays `.` and `la` displays `.`.  (They shouldn't display
+#       anything.  However, `ls` correctly displays nothing.)
+
 # handle differences between MacOS/Darwin tools (BSD) and Linux tools (GNU)
 if [[ "$(uname -s)" = "Darwin" ]] ; then
     #
@@ -64,41 +68,41 @@ if [[ "$(uname -s)" = "Darwin" ]] ; then
     alias zfgrep='zfgrep --color=auto'
     #
     # basics                  #  ( progressing from less to more )
-    alias l='ls -d *[^~]'     #  list   - don't show backup~ files
-    alias lj='ls -1d *[^~]'   #  v-less - dn/vert/less-detail
-    alias lk='ls -lhd *[^~]'  #  v-more - up/vert/more-detail (long-format)
+    alias l='ls -Gd *[^~]'     #  list   - don't show backup~ files
+    alias lj='ls -G1d *[^~]'   #  v-less - dn/vert/less-detail
+    alias lk='ls -Glhd *[^~]'  #  v-more - up/vert/more-detail (long-format)
     #
-    alias la='ls -d {.[^.],.[^.]*[^~],*[^~]}'    #  "all" (including hidden) *
-    alias laj='ls -1d {.[^.],.[^.]*[^~],*[^~]}'  #  "all" v-less
-    alias lak='ls -lhd {.[^.],.[^.]*[^~],*[^~]}' #  "all" v-more
+    alias la='ls -Gd {.[^.],.[^.]*[^~],*[^~]}'    #  "all" (including hidden) *
+    alias laj='ls -G1d {.[^.],.[^.]*[^~],*[^~]}'  #  "all" v-less
+    alias lak='ls -Glhd {.[^.],.[^.]*[^~],*[^~]}' #  "all" v-more
     #
     alias ls='ls -G'       #  show  - show backup files (default of ls)
-    alias lsj='ls -1'   #  show v-less
-    alias lsk='ls -lh'  #  show v-more
+    alias lsj='ls -G1'   #  show v-less
+    alias lsk='ls -Glh'  #  show v-more
     #
-    alias las='ls -A'     #  "all"  show
-    alias lasj='ls -1A'   #  "all"  show  v-less
-    alias lask='ls -lhA'  #  "all"  show  v-more
+    alias las='ls -GA'     #  "all"  show
+    alias lasj='ls -G1A'   #  "all"  show  v-less
+    alias lask='ls -GlhA'  #  "all"  show  v-more
     #
-    alias laa='ls -d {.,..,.[^.],.[^.]*[^~],*[^~]}'    #  all (including hidden)
-    alias laaj='ls -1d {.,..,.[^.],.[^.]*[^~],*[^~]}'  #  all v-less
-    alias laak='ls -lhd {.,..,.[^.],.[^.]*[^~],*[^~]}' #  all v-more
+    alias laa='ls -Gd {.,..,.[^.],.[^.]*[^~],*[^~]}'    #  all (including hidden)
+    alias laaj='ls -G1d {.,..,.[^.],.[^.]*[^~],*[^~]}'  #  all v-less
+    alias laak='ls -Glhd {.,..,.[^.],.[^.]*[^~],*[^~]}' #  all v-more
     #
-    alias laas='ls -a'     #   all  show
-    alias laasj='ls -1a'   #   all  show  v-less
-    alias laask='ls -lha'  #   all  show  v-more
+    alias laas='ls -Ga'     #   all  show
+    alias laasj='ls -G1a'   #   all  show  v-less
+    alias laask='ls -Glha'  #   all  show  v-more
     #
     #  * naively combining the option `-A` and the glob `*[^~]` does not work
     #    (ie, `ls -Ad *[^~]` does not work as one might expect)
     #
     # permutations
-    alias lsa='ls -A'     #  "all"  show
-    alias lsaj='ls -1A'   #  "all"  show  v-less
-    alias lsak='ls -lhA'  #  "all"  show  v-more
+    alias lsa='ls -GA'     #  "all"  show
+    alias lsaj='ls -G1A'   #  "all"  show  v-less
+    alias lsak='ls -GlhA'  #  "all"  show  v-more
     #
-    alias lsaa='ls -a'     #   all  show
-    alias lsaaj='ls -1a'   #   all  show  v-less
-    alias lsaak='ls -lha'  #   all  show  v-more
+    alias lsaa='ls -Ga'     #   all  show
+    alias lsaaj='ls -G1a'   #   all  show  v-less
+    alias lsaak='ls -Glha'  #   all  show  v-more
 fi
 if [[ "$(uname -s)" = "Linux" ]] ; then
     #
