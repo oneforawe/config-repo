@@ -23,3 +23,7 @@ function vmlist
     VBoxManage list runningvms
 end
 
+function preexec --on-event fish_preexec
+  echo
+end
+

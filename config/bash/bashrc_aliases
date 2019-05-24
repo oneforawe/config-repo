@@ -8,6 +8,146 @@
 # Aliases
 # ----------------------------------------------------------------------
 
+# directory changing
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# directory records (stack)
+alias d='dirs -v | head -10'
+
+
+# Regarding colored output, investigate the following:
+# files: /usr/bin/dircolors, ~/.dircolors; command: dircolors
+# code:
+# if [ -x /usr/bin/dircolors ]; then
+#   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#   alias ls='ls --color=auto'
+# fi
+
+
+# directory-content listing
+# -------------------------
+# Custom keys overview -- Combine these to form various list commands:
+#  RE CONTENT:
+#   l   list (basic list) - don't show backup or hidden files    [ l =>  list ]
+#   a   show "all" hidden files (dotfiles)                       [ a =>  "all"]
+#   aa  show all hidden files (including . and ..)               [aa =>   all ]
+#   s   show backup files                                        [ s =>  show ]
+#  RE FORMAT:
+#   k   show vertical list with detail/long-format               [ k => v-more]
+#   j   show vertical list (w/o detail)                          [ j => v-less]
+#       [k =>   up (vim key bindings) / vertical / more (detail) ]
+#       [j => down (vim key bindings) / vertical / less (detail) ]
+#
+#  POSSIBLE COMBOS:
+#    list-command =  l[a|aa][s][j|k] | l[s][a|aa][j|k]
+#                      where [] indicates optional and | indicates "or"
+#                      note: content comes first:   l[a|aa][s]  |  l[s][a|aa]
+#                            & format comes last:             [j|k]
+
+# Set the `nullglob` option so list pattern-matching is silent for null matches
+shopt -s nullglob
+
+# handle differences between MacOS/Darwin tools (BSD) and Linux tools (GNU)
+if [[ "$(uname -s)" = "Darwin" ]] ; then
+    #
+    # add color
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+    alias grep='grep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias zgrep='zgrep --color=auto'
+    alias zegrep='zegrep --color=auto'
+    alias zfgrep='zfgrep --color=auto'
+    #
+    # basics                  #  ( progressing from less to more )
+    alias l='ls -d *[^~]'     #  list   - don't show backup~ files
+    alias lj='ls -1d *[^~]'   #  v-less - dn/vert/less-detail
+    alias lk='ls -lhd *[^~]'  #  v-more - up/vert/more-detail (long-format)
+    #
+    alias la='ls -d {.[^.],.[^.]*[^~],*[^~]}'    #  "all" (including hidden) *
+    alias laj='ls -1d {.[^.],.[^.]*[^~],*[^~]}'  #  "all" v-less
+    alias lak='ls -lhd {.[^.],.[^.]*[^~],*[^~]}' #  "all" v-more
+    #
+    alias ls='ls -G'       #  show  - show backup files (default of ls)
+    alias lsj='ls -1'   #  show v-less
+    alias lsk='ls -lh'  #  show v-more
+    #
+    alias las='ls -A'     #  "all"  show
+    alias lasj='ls -1A'   #  "all"  show  v-less
+    alias lask='ls -lhA'  #  "all"  show  v-more
+    #
+    alias laa='ls -d {.,..,.[^.],.[^.]*[^~],*[^~]}'    #  all (including hidden)
+    alias laaj='ls -1d {.,..,.[^.],.[^.]*[^~],*[^~]}'  #  all v-less
+    alias laak='ls -lhd {.,..,.[^.],.[^.]*[^~],*[^~]}' #  all v-more
+    #
+    alias laas='ls -a'     #   all  show
+    alias laasj='ls -1a'   #   all  show  v-less
+    alias laask='ls -lha'  #   all  show  v-more
+    #
+    #  * naively combining the option `-A` and the glob `*[^~]` does not work
+    #    (ie, `ls -Ad *[^~]` does not work as one might expect)
+    #
+    # permutations
+    alias lsa='ls -A'     #  "all"  show
+    alias lsaj='ls -1A'   #  "all"  show  v-less
+    alias lsak='ls -lhA'  #  "all"  show  v-more
+    #
+    alias lsaa='ls -a'     #   all  show
+    alias lsaaj='ls -1a'   #   all  show  v-less
+    alias lsaak='ls -lha'  #   all  show  v-more
+fi
+if [[ "$(uname -s)" = "Linux" ]] ; then
+    #
+    # add color
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+    alias grep='grep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias zgrep='zgrep --color=auto'
+    alias zegrep='zegrep --color=auto'
+    alias zfgrep='zfgrep --color=auto'
+    #
+    # basics            #  ( progressing from less to more )
+    alias l='ls -B --color=auto'     #  list   - don't show backup~ files
+    alias lj='ls -1B --color=auto'   #  v-less - dn/vert/less-detail
+    alias lk='ls -lhB --color=auto'  #  v-more - up/vert/more-detail (long-format)
+    #
+    alias la='ls -AB --color=auto'    #  "all" (including hidden)
+    alias laj='ls -1AB --color=auto'  #  "all" v-less
+    alias lak='ls -lhAB --color=auto' #  "all" v-more
+    #
+    alias ls='ls --color=auto'       #  show  - show backup files (default of ls)
+    alias lsj='ls -1 --color=auto'   #  show v-less
+    alias lsk='ls -lh --color=auto'  #  show v-more
+    #
+    alias las='ls -A --color=auto'     #  "all"  show
+    alias lasj='ls -1A --color=auto'   #  "all"  show  v-less
+    alias lask='ls -lhA --color=auto'  #  "all"  show  v-more
+    #
+    alias laa='ls -aB --color=auto'    #  all (including hidden)
+    alias laaj='ls -1aB --color=auto'  #  all v-less
+    alias laak='ls -lhaB --color=auto' #  all v-more
+    #
+    alias laas='ls -a --color=auto'     #   all  show
+    alias laasj='ls -1a --color=auto'   #   all  show  v-less
+    alias laask='ls -lha --color=auto'  #   all  show  v-more
+    #
+    # permutations
+    alias lsa='ls -A --color=auto'     #  "all"  show
+    alias lsaj='ls -1A --color=auto'   #  "all"  show  v-less
+    alias lsak='ls -lhA --color=auto'  #  "all"  show  v-more
+    #
+    alias lsaa='ls -a --color=auto'     #   all  show
+    alias lsaaj='ls -1a --color=auto'   #   all  show  v-less
+    alias lsaak='ls -lha --color=auto'  #   all  show  v-more
+fi
+
+
 # Git
 alias gs='git status'                        # show all the usual stuff
 alias gss='git status --untracked-files=no'  # don't show untracked files
@@ -15,49 +155,13 @@ alias ga='git add'
 alias gcm='git commit -m'
 alias gpsuo='git push --set-upstream origin'
 
-# cd
-alias ..="cd .."
-alias ...="cd ../.."
-
-# Listing, Grepping
-#
-#alias ls='ls -d *[^~]'                     # mac version of "ls -B"
-# (this didn't work for me; it changed ls)   # (ignore-backups)
-# (behavior is zsh, in particular, so    )
-# (folders weren't highlighted.          )
-#
-# What's going on here?
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-#
-#alias ls='ls --color=auto'
-#alias ll='ls -alF'
-#alias la='ls -A'
-#alias l='ls -CF'
-#alias ..='cd ..'
 #alias dff='df -hT | grep -vE "(tmpfs|Use%)"'
 #alias svi='vi -u NONE +"set syntax=" +"set nowrap"'
 #alias pu="pip3 list --outdated --format=columns"
 
 
-# Functions
+# Functions and Aliases
 # ----------------------------------------------------------------------
-
-function ls_hide_backups {
-    ls -d *[^~]  # mac version of "ls -B" (ignore-backups)
-}
-#alias ls=ls_hide_backups  # not-so-great: `ls foldername` doesn't work
-alias l=ls_hide_backups
-
 
 function which-tmux-session {
     # Print the current terminal tmux session name, if any.

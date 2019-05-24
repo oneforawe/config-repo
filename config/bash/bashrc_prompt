@@ -20,21 +20,26 @@ NC='\e[0m' # no color
 DATE='\D{%a %b %d %k:%M}'  # format: 'Mon Feb 13 23:51'
 
 # Set SSH indicator (on or undefined(?)/blank)
-[ -n "$SSH_CLIENT" ] && IN_SSH=" ${BLUE}[ssh]${NC}"
+# (if variable not empty, so remotely logged in, set indicator)
+if [[ -n $SSH_CLIENT ]] ; then IN_SSH=" ${BLUE}[ssh]${NC}" ; fi
 
 # Get the IP address
 # If in MacOS, use the ifconfig command
 THEIP=$(uname -s | grep -i darwin > /dev/null 2>&1 && echo "$(ifconfig|grep broadcast|awk ' { print $2 }')")
 #THEIP=$(type /sbin/ip > /dev/null 2>&1 && echo $(/sbin/ip route get 8.8.8.8 | awk '{print $NF; exit}'))
-if [ -z "$THEIP" ]; then
+if [[ -z "$THEIP" ]] ; then
   #THEIP=$(uname -o | grep -i linux > /dev/null 2>&1 && echo "echo $(ip route get 8.8.8.8 | awk '{print $NF; exit}')")
   THEIP='IP_MISSING'
 fi
 
 # Set the prompt
-if [ $(id -u) -eq 0 ]; then
+if [[ $(id -u) = 0 ]] ; then
   PS1="\n┌[${RED}\u${NC}] [$THEIP]${IN_SSH} [${DATE}]: ${green}\w${NC} \n└> "
 else
   PS1="\n┌[${green}\u@\H${NC}] [$THEIP]${IN_SSH} [${DATE}]: ${green}\w${NC} \n└> "
 fi
+
+# PS0
+# Bash displays PS0 after it reads a command but before executing it.
+PS0="\n"
 

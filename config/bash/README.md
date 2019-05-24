@@ -99,9 +99,11 @@ General:
 
 * [bash on Wikipedia](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 * [official bash site](https://www.gnu.org/software/bash/)
+* [bash manual](https://www.gnu.org/software/bash/manual)
 * [reference manual](https://tiswww.case.edu/php/chet/bash/bashref.html)
 * [guide for beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
 * [bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+* [really nice scripting reference](https://devhints.io/bash)
 
 System Admin:
 
