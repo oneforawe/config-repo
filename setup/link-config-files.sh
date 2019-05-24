@@ -7,6 +7,16 @@
 #       ~/.config-files-replaced/files-2019-05-22-h20-m34-s21/zshrc
 #       and then creates the link (complaining if not succeeding, both in the
 #       linking process and perhaps testing the link somehow).
+# TODO: Get private info from user to put into private config files.
+#       (How many files will be private? How important is it that they be
+#        private? What's the best way to keep them private? Hm, maybe I could
+#        have a template here to download, add info to, and place in an
+#        encrypted location that other things read with interactive password
+#        access. There could be slightly private, with simple password access,
+#        and then super private, with more rigorous protection.)
+#       EG: email address for .gitconfig (?)
+#       mkdir -pv $HOME/.config-files-private/config/git/gitconfig
+#       ln -sf ~/.config-files-private/config/git/gitconfig ~/.gitconfig
 
 
 # SHELLS / TERMINALS:
