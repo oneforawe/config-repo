@@ -75,9 +75,8 @@ So, my plan is the following:
       </td>
       <td>  For organizational purposes, some blocks of code may be kept in
             separate files, sourced by the middle three files in this table.
-            For example, three files (<code>.bashrc_prompt</code>,
-            <code>.bashrc_aliases</code>, <code>.bashrc_etc</code>) are sourced
-            by <code>.bashrc</code>.
+            For example, multiple files (including <code>.bashrc_opt</code> and
+            <code>.bashrc_aliases</code>) are sourced by <code>.bashrc</code>.
       </td>
     </tr>
   </tbody>

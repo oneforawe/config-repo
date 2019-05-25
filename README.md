@@ -2,7 +2,7 @@
 
 This repository contains:
 
-1. my personal user configuration files, and
+1. my personal customized user configuration files, and
 
 2. a script to setup the config files by creating links from the home folder to
 the respective files in this repo.

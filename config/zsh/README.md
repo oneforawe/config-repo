@@ -5,7 +5,9 @@ I use the z shell and oh-my-zsh.  See the general references below for some
 introduction.
 
 To get clarity on how zsh handles its config files, see the table in reference
-1.
+1.  Note that from `.zshrc` I source multiple files (including `zshrc_omz` and
+`zshrc_opt`).
+
 
 ## references
 
