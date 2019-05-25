@@ -15,6 +15,7 @@ Regarding config files:
 
 General:
 
+* If installed, execute `man zsh` for the manual page.
 * [zsh on Wikipedia](https://en.wikipedia.org/wiki/Z_shell)
 * [official zsh site](https://www.zsh.org)
 * [zsh user's guide](http://zsh.sourceforge.net/Guide/zshguide.html)

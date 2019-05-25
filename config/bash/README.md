@@ -1,9 +1,8 @@
 ## bash config files
 
-For an explanation of bash, one can start with the bash man page.  Below I
-summarize some of my imperfect understanding.  To get clarity on how bash
-handles its config files, see the table (for bash) and flow-chart in
-reference 2 below.
+For an intro to bash, see the general references below.  To get clarity on how
+bash handles its config files, see the table (for bash) and flow-chart in
+reference 2 below.  Here I summarize some of my imperfect understanding.
 
 When bash is invoked as a login shell (interactive or non-interactive with the
 `--login` option), it executes `/etc/profile` and then the first existing,
@@ -97,6 +96,8 @@ Regarding config files:
 
 General:
 
+* If installed, execute `man bash` for the manual page.  
+   This is not the best intro, but it gives details that become important later.
 * [bash on Wikipedia](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 * [official bash site](https://www.gnu.org/software/bash/)
 * [bash manual](https://www.gnu.org/software/bash/manual)
