@@ -6,6 +6,11 @@
 # This file is sourced from ~/.zshrc (which is for interactive shells).
 
 
+# TODO: Have two main prompts (small-prompt and large-prompt).
+# TODO: Make ssh prompt but somehow make sure that tmux prompt isn't identical.
+# TODO: Define a decent root prompt and environment (color schemes).
+
+
 # Just before the prompt(?).
 # Determine the window title (a kind of peripheral prompt):
 DISABLE_AUTO_TITLE="true"
@@ -23,4 +28,28 @@ function precmd () {
 
 # Or work in concert with bash scripts:
 # precmd() { eval "$PROMPT_COMMAND" }
+
+# Prompt
+# current definition (from robbyrussell theme)
+#PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+
+
+# My AWS definition (good for ssh connections, but want to distinguish between
+#                    tmux local and ssh)
+#PROMPT='${ret_status}%{$reset_color%} %{$fg[yellow]%}%B[AWS - %n@%M]%b%{$reset_color%} %{$fg[cyan]%}%B%c%b%{$reset_color%} $(git_prompt_info)'
+
+# From my fish definition:
+#printf '\f\r  \u250C %s%s[%s] %s%s @ %s [%s]%s %s(%s)%s\f\r  \u2502 %s%s%s\f\r%s%s \u2514 ' \
+#                #"$PROMPT_COLOR_BLOCK" " " (set_color normal) \
+#                "$PROMPT_TIME_STAMP_COLOR" (set_color --bold) (date "+%Y %b %d %a %H:%M:%S") \
+#                "$PROMPT_USER_HOST_COLOR" "$USER" (uname -n) "$THE_IP" (set_color normal) \
+#                "$__fish_color_status" "$stat" "$__fish_prompt_normal" \
+#                #"$PROMPT_COLOR_BLOCK" " " (set_color normal) \
+#                "$PROMPT_PWD_COLOR" "$PWD" (set_color normal) \
+#                (fish_alt_mode_prompt)
+#                # not using "$__fish_prompt_cwd" for "$PWD"
+
+# Prompt default from .oh-my-zsh/themes/robbyrussell.zsh
+# found with `grep -r 'PROMPT=' .oh-my-zsh | grep robby`
+# PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 
