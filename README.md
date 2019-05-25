@@ -35,5 +35,7 @@ or hidden folder.
 
 Configuration files are also called config-files, dot-files, initialization
 files, init-files, run-commands files, rc-files, and possibly environment files,
-variable files, and so on.
+variable files, and so on.  A configuration file for some hypothetical utility
+`util` may have a name such as the following: `util`, `util.conf`, `.util`,
+`.util.conf`, `.utilrc`, etc.
 
