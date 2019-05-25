@@ -1,15 +1,15 @@
-[submodule "config/vim/vim/pack/external/opt/vim-scriptease"]
-	path = config/vim/vim/pack/external/opt/vim-scriptease
+[submodule "/Users/zero/.config-files/config/vim/vim.conf/pack/external/opt/vim-scriptease"]
+	path = /Users/zero/.config-files/config/vim/vim.conf/pack/external/opt/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease.git
-[submodule "config/vim/vim/pack/external/start/vim-clevertab"]
-	path = config/vim/vim/pack/external/start/vim-clevertab
+[submodule "/Users/zero/.config-files/config/vim/vim.conf/pack/external/start/vim-clevertab"]
+	path = /Users/zero/.config-files/config/vim/vim.conf/pack/external/start/vim-clevertab
 	url = https://github.com/neitanod/vim-clevertab.git
-[submodule "config/vim/vim/pack/external/start/vim-fold-cycle"]
-	path = config/vim/vim/pack/external/start/vim-fold-cycle
+[submodule "/Users/zero/.config-files/config/vim/vim.conf/pack/external/start/vim-fold-cycle"]
+	path = /Users/zero/.config-files/config/vim/vim.conf/pack/external/start/vim-fold-cycle
 	url = https://github.com/arecarn/vim-fold-cycle.git
-[submodule "config/vim/vim/pack/external/start/vim-surround"]
-	path = config/vim/vim/pack/external/start/vim-surround
+[submodule "/Users/zero/.config-files/config/vim/vim.conf/pack/external/start/vim-surround"]
+	path = /Users/zero/.config-files/config/vim/vim.conf/pack/external/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "config/vim/vim/pack/external/start/vim-unimpaired"]
-	path = config/vim/vim/pack/external/start/vim-unimpaired
+[submodule "/Users/zero/.config-files/config/vim/vim.conf/pack/external/start/vim-unimpaired"]
+	path = /Users/zero/.config-files/config/vim/vim.conf/pack/external/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git

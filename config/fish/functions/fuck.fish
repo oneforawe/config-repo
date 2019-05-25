@@ -1,6 +1,11 @@
+#!/usr/bin/env fish
+# filename: fuck.fish
+# purpose: Define a function (alias) `fuck` for the `thefuck` package.
+
 # As instructed at https://github.com/nvbn/thefuck/wiki/Shell-aliases
 # I've placed the output of `thefuck --alias`
-# here in this file.
+# here in this file.  (It appears, by trial and error, that the name of this
+# file must match the name of the alias/function below.
 
 fuck () {
     TF_PYTHONIOENCODING=$PYTHONIOENCODING;

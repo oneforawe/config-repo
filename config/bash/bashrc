@@ -27,6 +27,7 @@
 if [[ $- != *i* ]] ; then return ; fi
 
 # For all other (interactive) shells, source/execute the following config files:
+source ~/.bashrc_opt
 source ~/.bashrc_prompt
 source ~/.bashrc_aliases
 source ~/.bashrc_etc

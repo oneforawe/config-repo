@@ -16,53 +16,64 @@
 #        and then super private, with more rigorous protection.)
 #       EG: email address for .gitconfig (?)
 #       mkdir -pv $HOME/.config-files-private/config/git/gitconfig
-#       ln -sf ~/.config-files-private/config/git/gitconfig ~/.gitconfig
+#       ln -sFfh ~/.config-files-private/config/git/gitconfig ~/.gitconfig
 
 
 # SHELLS / TERMINALS:
 
+# readline
+ln -sFfh ~/.config-files/config/readline/inputrc ~/.inputrc
+
 # bash
-ln -sf ~/.config-files/config/bash/profile      ~/.profile
-ln -sf ~/.config-files/config/bash/bash_profile ~/.bash_profile
-ln -sf ~/.config-files/config/bash/bashrc       ~/.bashrc
-ln -sf ~/.config-files/config/bash/bashrc_prompt  ~/.bashrc_prompt
-ln -sf ~/.config-files/config/bash/bashrc_aliases ~/.bashrc_aliases
-ln -sf ~/.config-files/config/bash/bashrc_etc     ~/.bashrc_etc
+ln -sFfh ~/.config-files/config/bash/profile      ~/.profile
+ln -sFfh ~/.config-files/config/bash/bash_profile ~/.bash_profile
+ln -sFfh ~/.config-files/config/bash/bashrc       ~/.bashrc
+ln -sFfh ~/.config-files/config/bash/bashrc_opt     ~/.bashrc_opt
+ln -sFfh ~/.config-files/config/bash/bashrc_prompt  ~/.bashrc_prompt
+ln -sFfh ~/.config-files/config/bash/bashrc_aliases ~/.bashrc_aliases
+ln -sFfh ~/.config-files/config/bash/bashrc_etc     ~/.bashrc_etc
 
 # zsh
-ln -sf ~/.config-files/config/zsh/zprofile ~/.zprofile
-ln -sf ~/.config-files/config/zsh/zshrc    ~/.zshrc
+ln -sFfh ~/.config-files/config/zsh/zprofile  ~/.zprofile
+ln -sFfh ~/.config-files/config/zsh/zshrc     ~/.zshrc
+ln -sFfh ~/.config-files/config/zsh/zshrc_omz ~/.zshrc_omz
+ln -sFfh ~/.config-files/config/zsh/zshrc_opt ~/.zshrc_opt
+ln -sFfh ~/.config-files/config/zsh/zshrc_prompt ~/.zshrc_prompt
 
 # fish
-ln -sf ~/.config-files/config/fish/config.fish    ~/.config/fish/config.fish
-ln -sf ~/.config-files/config/fish/fish_variables ~/.config/fish/fish_variables
-ln -sf ~/.config-files/config/fish/fishfile       ~/.config/fish/fishfile
-ln -sf  ~/.config-files/config/fish/functions/fish_mode_prompt.fish \
+ln -sFfh ~/.config-files/config/fish/config.fish    ~/.config/fish/config.fish
+ln -sFfh ~/.config-files/config/fish/fish_variables ~/.config/fish/fish_variables
+ln -sFfh ~/.config-files/config/fish/fishfile       ~/.config/fish/fishfile
+ln -sFfh  ~/.config-files/config/fish/functions/fish_mode_prompt.fish \
     ~/.config/fish/functions/fish_mode_prompt.fish
-ln -sf ~/.config-files/config/fish/functions/fish_prompt.fish \
+ln -sFfh ~/.config-files/config/fish/functions/fish_prompt.fish \
     ~/.config/fish/functions/fish_prompt.fish
-ln -sf ~/.config-files/config/fish/functions/aliases_simplified.fish \
+ln -sFfh ~/.config-files/config/fish/functions/aliases_simplified.fish \
     ~/.config/fish/functions/aliases_simplified.fish
+ln -sFfh ~/.config-files/config/fish/functions/fuck.fish \
+    ~/.config/fish/functions/fuck.fish
+
 
 # tmux
-ln -sf ~/.config-files/config/tmux/tmux.conf ~/.tmux.conf
+ln -sFfh ~/.config-files/config/tmux/tmux.conf ~/.tmux.conf
 
 # ssh (?)
-#ln -sf .config-files/config/ssh/config .ssh/config
+#ln -sFfh .config-files/config/ssh/config .ssh/config
 
 
 # EDITORS / DEV:
 
 # vim
-ln -sf ~/.config-files/config/vim/vimrc ~/.vimrc
-ln -sf ~/.config-files/config/vim/vim ~/.vim
+ln -sFfh ~/.config-files/config/vim/vimrc ~/.vimrc
+ln -sFfh ~/.config-files/config/vim/vim.conf   ~/.vim
+#ln -sFfh ~/.config-files/config/vim/vim.conf   $HOME/.vim
 
 # emacs
-#ln -sf ~/.config-files/config/emacs/emacs.conf ~/.emacs   (?)
+#ln -sFfh ~/.config-files/config/emacs/emacs.conf ~/.emacs   (?)
 
 # git
-#ln -sf .config-files/config/gitconfig .gitconfig
+#ln -sFfh .config-files/config/gitconfig .gitconfig
 
 # hg (mercurial)
-#ln -sf .config-files/config/hgrc .hgrc
+#ln -sFfh .config-files/config/hgrc .hgrc
 

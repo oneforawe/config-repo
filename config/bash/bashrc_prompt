@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 # filename: bashrc_prompt   (linked from ~/.bashrc_prompt)
-# purpose: Define the interactive-shell prompt.
+# purpose: Define the interactive-shell prompts (primary and peripheral).
 
 # This file is sourced from ~/.bashrc (which is for interactive shells).
 
+
+# PREP WORK
+# ----------------------------
 
 # Colors for the prompt
 red='\e[0;31m'
@@ -27,10 +30,16 @@ if [[ -n $SSH_CLIENT ]] ; then IN_SSH=" ${BLUE}[ssh]${NC}" ; fi
 # If in MacOS, use the ifconfig command
 THEIP=$(uname -s | grep -i darwin > /dev/null 2>&1 && echo "$(ifconfig|grep broadcast|awk ' { print $2 }')")
 #THEIP=$(type /sbin/ip > /dev/null 2>&1 && echo $(/sbin/ip route get 8.8.8.8 | awk '{print $NF; exit}'))
-if [[ -z "$THEIP" ]] ; then
+if [[ -z $THEIP ]] ; then
   #THEIP=$(uname -o | grep -i linux > /dev/null 2>&1 && echo "echo $(ip route get 8.8.8.8 | awk '{print $NF; exit}')")
   THEIP='IP_MISSING'
 fi
+
+
+# THE PROMPT VARIABLES
+# ----------------------------
+
+# See `man bash` for more info on these variables (PS0, PS1, PROMPT_COMMAND).
 
 # Set the prompt
 if [[ $(id -u) = 0 ]] ; then
@@ -39,7 +48,20 @@ else
   PS1="\n┌[${green}\u@\H${NC}] [$THEIP]${IN_SSH} [${DATE}]: ${green}\w${NC} \n└> "
 fi
 
-# PS0
-# Bash displays PS0 after it reads a command but before executing it.
+# Just before the prompt.
+# Determine the window title (a kind of peripheral prompt):
+#PROMPT_COMMAND='echo -ne "\033]0;${TERM_PROGRAM} > ${PWD##*/}\007"'
+PROMPT_COMMAND='echo -ne "\e]0;${TERM_PROGRAM} - %m > ${PWD##*/}\a"'
+# Bash executes PROMPT_COMMAND prior to issuing each primary prompt PS1.
+#    (See .zshrc_prompt)
+#    terminal_name="${TERM_PROGRAM%.*}"
+#    # Getting rid of "Apple_" pre-fix from "Apple_Terminal":
+#    terminal_name="${terminal_name#*_}"
+#    window_title="${terminal_name} - %m : ${PWD##*/}"
+#    print -Pn "\e]0;${window_title}\a"
+
+# Just after the prompt.
 PS0="\n"
+# Bash displays/executes PS0 after it reads a command but before executing it.
+
 

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# filename: zshrc_prompt   (linked from ~/.zshrc_prompt)
+# purpose: Define the interactive-shell prompts (primary and peripheral).
+
+
+# This file is sourced from ~/.zshrc (which is for interactive shells).
+
+
+# Just before the prompt(?).
+# Determine the window title (a kind of peripheral prompt):
+DISABLE_AUTO_TITLE="true"
+function precmd () {
+    # Getting rid of ".app" post-fix from "iTerm.app":
+    terminal_name="${TERM_PROGRAM%.*}"
+    # Getting rid of "Apple_" pre-fix from "Apple_Terminal":
+    terminal_name="${terminal_name#*_}"
+    window_title="${terminal_name} - %m : ${PWD##*/}"
+    print -Pn "\e]0;${window_title}\a"
+    # REF
+    # see http://tldp.org/LDP/abs/html/string-manipulation.html
+    # for substring removal
+}
+
+# Or work in concert with bash scripts:
+# precmd() { eval "$PROMPT_COMMAND" }
+

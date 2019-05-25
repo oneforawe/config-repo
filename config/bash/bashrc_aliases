@@ -32,27 +32,35 @@ alias d='dirs -v | head -10'
 # Custom keys overview -- Combine these to form various list commands:
 #  RE CONTENT:
 #   l   list (basic list) - don't show backup or hidden files    [ l =>  list ]
-#   a   show "all" hidden files (dotfiles)                       [ a =>  "all"]
+#   a   show "all" hidden files (dotfiles, but not . or ..)      [ a =>  "all"]
 #   aa  show all hidden files (including . and ..)               [aa =>   all ]
-#   s   show backup files                                        [ s =>  show ]
+#   s   show backup files (ie, files ending with a tilde ~)      [ s =>  show ]
 #  RE FORMAT:
 #   k   show vertical list with detail/long-format               [ k => v-more]
 #   j   show vertical list (w/o detail)                          [ j => v-less]
 #       [k =>   up (vim key bindings) / vertical / more (detail) ]
 #       [j => down (vim key bindings) / vertical / less (detail) ]
+#  RE CONTENT+FORMAT:
+#   f   show full detail                                         [ f =>  full ]
+#       (l+f = lf equivalent to l+aa+s+k = laask)
+#
+# (Note: "content" refers to directory elements -- files; "format" refers to
+#  changing the orientation from horizontal to vertical and inclusion or
+#  exclusion of meta information, which doesn't change the shown directory file-
+#  content, although it is technically another kind of displayed "content".)
 #
 #  POSSIBLE COMBOS:
-#    list-command =  l[a|aa][s][j|k] | l[s][a|aa][j|k]
+#    list-command =  l[a|aa][s][j|k] | l[s][a|aa][j|k] | lf
 #                      where [] indicates optional and | indicates "or"
 #                      note: content comes first:   l[a|aa][s]  |  l[s][a|aa]
 #                            & format comes last:             [j|k]
 
-# Set the `nullglob` option so list pattern-matching is silent for null matches
-shopt -s nullglob
+# Note: The `nullglob` option should have already been set (on) in `.bashrc_opt`
+# so that list pattern-matching is silent for null matches.
 
-# TODO: Minor Problem: In bash, in an empty directory (that contains just `.` &
-#       `..`) `l` displays `.` and `la` displays `.`.  (They shouldn't display
-#       anything.  However, `ls` correctly displays nothing.)
+# TODO: Correct this minor problem: In bash, in an empty directory (that
+#       contains just `.` & `..`) `l` displays `.` and `la` displays `.`.
+#       (They shouldn't display anything. `ls` correctly displays nothing.)
 
 # handle differences between MacOS/Darwin tools (BSD) and Linux tools (GNU)
 if [[ "$(uname -s)" = "Darwin" ]] ; then
@@ -91,6 +99,8 @@ if [[ "$(uname -s)" = "Darwin" ]] ; then
     alias laas='ls -Ga'     #   all  show
     alias laasj='ls -G1a'   #   all  show  v-less
     alias laask='ls -Glha'  #   all  show  v-more
+    #
+    alias lf='ls -Glha'     #   full  =  all  show  v-more
     #
     #  * naively combining the option `-A` and the glob `*[^~]` does not work
     #    (ie, `ls -Ad *[^~]` does not work as one might expect)
@@ -140,6 +150,8 @@ if [[ "$(uname -s)" = "Linux" ]] ; then
     alias laas='ls -a --color=auto'     #   all  show
     alias laasj='ls -1a --color=auto'   #   all  show  v-less
     alias laask='ls -lha --color=auto'  #   all  show  v-more
+    #
+    alias lf='ls -lha --color=auto'     #   full  =  all  show  v-more
     #
     # permutations
     alias lsa='ls -A --color=auto'     #  "all"  show

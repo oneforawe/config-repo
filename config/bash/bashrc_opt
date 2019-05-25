@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# filename: bashrc_opt   (linked from ~/.bashrc_opt)
+# purpose: For setting shell options.
+
+
+# This file is sourced from ~/.bashrc (which is for interactive shells).
+
+
+# Enable options / set (to "on")
+# Note: shopt works with bash but not with zsh (which uses setopt)
+shopt -s nullglob      # so pattern-matching is silent for null matches
+#                        (I use this feature specifically for my ls aliases
+#                        defined in bashrc_aliases.)
+shopt -s histappend    # append to command-line history file, don't overwrite it
+shopt -s checkwinsize  # check window size after each command &, if necessary,
+#                        update the values of LINES and COLUMNS.
+#shopt -s globstar     # If set, the pattern "**" used in a pathname expansion
+#                       context will match all files and zero or more
+#                       directories and subdirectories:
+
+# Enable tab completion with sudo.
+complete -cf sudo
+

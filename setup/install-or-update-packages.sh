@@ -26,13 +26,24 @@
 
 # VIM
 #git submodule add https://github.com/tpope/vim-scriptease.git   \
-#    ~/.config/config/vim/vim/pack/external/opt/vim-scriptease
+#    ~/.config-files/config/vim/vim.conf/pack/external/opt/vim-scriptease
 #git submodule add https://github.com/neitanod/vim-clevertab.git \
-#    ~/.config/config/vim/vim/pack/external/start/vim-clevertab
+#    ~/.config-files/config/vim/vim.conf/pack/external/start/vim-clevertab
 #git submodule add https://github.com/arecarn/vim-fold-cycle.git \
-#    ~/.config/config/vim/vim/pack/external/start/vim-fold-cycle
+#    ~/.config-files/config/vim/vim.conf/pack/external/start/vim-fold-cycle
 #git submodule add https://github.com/tpope/vim-surround.git     \
-#    ~/.config/config/vim/vim/pack/external/start/vim-surround
+#    ~/.config-files/config/vim/vim.conf/pack/external/start/vim-surround
 #git submodule add https://github.com/tpope/vim-unimpaired.git   \
-#    ~/.config/config/vim/vim/pack/external/start/vim-unimpaired
+#    ~/.config-files/config/vim/vim.conf/pack/external/start/vim-unimpaired
+
+#git submodule add https://github.com/tpope/vim-scriptease.git   \
+#    ~/.config-files/config/vim/vim/pack/external/opt/vim-scriptease
+#git submodule add https://github.com/neitanod/vim-clevertab.git \
+#    ~/.config-files/config/vim/vim/pack/external/start/vim-clevertab
+#git submodule add https://github.com/arecarn/vim-fold-cycle.git \
+#    ~/.config-files/config/vim/vim/pack/external/start/vim-fold-cycle
+#git submodule add https://github.com/tpope/vim-surround.git     \
+#    ~/.config-files/config/vim/vim/pack/external/start/vim-surround
+#git submodule add https://github.com/tpope/vim-unimpaired.git   \
+#    ~/.config-files/config/vim/vim/pack/external/start/vim-unimpaired
 

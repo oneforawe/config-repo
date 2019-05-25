@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# filename: zshrc_opt   (linked from ~/.zshrc_opt)
+# purpose: For setting shell options.
+
+# This file is sourced from ~/.zshrc (which is for interactive shells).
+
+
+# Set the `nullglob` option so list pattern-matching is silent for null matches
+setopt nullglob
+
