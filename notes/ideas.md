@@ -6,9 +6,13 @@ directory `~/.config-files`:
 
 `grep -r 'TODO' .`
 
-Consider: package-managers (homebrew, conda, pip, apt); packages (including
-environment managers, etc); automating more settings and configurations (some
-usually done by GUI); recovery; further automation of backup procedures.
+Would be nice to have a command to switch between a compact, efficient prompt
+and an aesthetically pleasing, informative prompt.
+
+Consider: automating setup and maintenance of package-managers (homebrew, conda,
+pip, apt); packages (including environment managers, etc); automating more
+settings and configurations (some usually done by GUI); recovery; further
+automation of backup procedures.
 
 Also consider: Integration of action management system(s); email management and
 archiving; secure and redundant systems/backups.
