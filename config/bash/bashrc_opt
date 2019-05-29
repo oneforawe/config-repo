@@ -21,3 +21,7 @@ shopt -s checkwinsize  # check window size after each command &, if necessary,
 # Enable tab completion with sudo.
 complete -cf sudo
 
+# vi edit-mode
+# Use vi key-bindings (instead of default emacs bindings) -- see also `.inputrc`
+set -o vi
+

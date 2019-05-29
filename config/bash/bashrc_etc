@@ -6,11 +6,6 @@
 # This file is sourced from ~/.bashrc (which is for interactive shells).
 
 
-# Setting placed here for both bash and zsh.
-# Use vi key-bindings (instead of default emacs bindings) -- see also `.inputrc`
-set -o vi
-
-
 # Got the following stuff from Brandon Landry:
 # ============================================
 

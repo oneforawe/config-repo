@@ -12,4 +12,5 @@ config/fish/test.sh
 config/fish/old/
 config/zsh/old/
 config/vim/old/
+config/emacs/alt
 
