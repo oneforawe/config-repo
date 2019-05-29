@@ -31,15 +31,17 @@ function precmd () {
 
 # Prompt
 # current definition (from robbyrussell theme)
-#PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+PROMPT_SHORT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 
+# compact, terse, tight, brief, short, concise, small-prompt
+# detailed, long, pretty, expansive, large-prompt
 
 # My AWS definition (good for ssh connections, but want to distinguish between
 #                    tmux local and ssh)
 #PROMPT='${ret_status}%{$reset_color%} %{$fg[yellow]%}%B[AWS - %n@%M]%b%{$reset_color%} %{$fg[cyan]%}%B%c%b%{$reset_color%} $(git_prompt_info)'
 
 # From my fish definition:
-#printf '\f\r  \u250C %s%s[%s] %s%s @ %s [%s]%s %s(%s)%s\f\r  \u2502 %s%s%s\f\r%s%s \u2514 ' \
+PROMPT_LONG='\f\r  \u250C %s%s[%s] %s%s @ %s [%s]%s %s(%s)%s\f\r  \u2502 %s%s%s\f\r%s%s \u2514 ' \
 #                #"$PROMPT_COLOR_BLOCK" " " (set_color normal) \
 #                "$PROMPT_TIME_STAMP_COLOR" (set_color --bold) (date "+%Y %b %d %a %H:%M:%S") \
 #                "$PROMPT_USER_HOST_COLOR" "$USER" (uname -n) "$THE_IP" (set_color normal) \
@@ -48,6 +50,14 @@ function precmd () {
 #                "$PROMPT_PWD_COLOR" "$PWD" (set_color normal) \
 #                (fish_alt_mode_prompt)
 #                # not using "$__fish_prompt_cwd" for "$PWD"
+
+#            printf '\f\r  \u250C %s%s[%s] %s%s @ %s [%s]%s %s(%s)%s\f\r  \u2502 %s%s%s\f\r%s%s \u2514 ' \
+#                #                1 2  3   4 5    6   7  8  9  10 11            12 13 14  15 16
+#                "$PROMPT_TIME_STAMP_COLOR" (set_color --bold) (date "+%Y %b %d %a %H:%M:%S") \ # 1 2 3
+#                "$PROMPT_USER_HOST_COLOR" "$USER" (uname -n) "$THE_IP" (set_color normal) \    # 4 5 6 7 8
+#                "$__fish_color_status" "$stat" "$__fish_prompt_normal" \                       # 9 10 11
+#                "$PROMPT_PWD_COLOR" "$PWD" (set_color normal) \                                # 12 13 14
+#                (fish_alt_mode_prompt)
 
 # Prompt default from .oh-my-zsh/themes/robbyrussell.zsh
 # found with `grep -r 'PROMPT=' .oh-my-zsh | grep robby`

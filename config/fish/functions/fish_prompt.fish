@@ -82,13 +82,19 @@ function fish_prompt --description 'Write out the prompt'
 
             # note: can't put a dash at the beginning of the display string
             printf '\f\r  \u250C %s%s[%s] %s%s @ %s [%s]%s %s(%s)%s\f\r  \u2502 %s%s%s\f\r%s%s \u2514 ' \
+                #                1 2  3   4 5    6   7  8  9  10 11            12 13 14  15 16
                 #"$PROMPT_COLOR_BLOCK" " " (set_color normal) \
                 "$PROMPT_TIME_STAMP_COLOR" (set_color --bold) (date "+%Y %b %d %a %H:%M:%S") \
+                # 1                        2                  3
                 "$PROMPT_USER_HOST_COLOR" "$USER" (uname -n) "$THE_IP" (set_color normal) \
+                # 4                        5      6          7         8
                 "$__fish_color_status" "$stat" "$__fish_prompt_normal" \
+                # 9                    10      11
                 #"$PROMPT_COLOR_BLOCK" " " (set_color normal) \
                 "$PROMPT_PWD_COLOR" "$PWD" (set_color normal) \
+                # 12                13     14
                 (fish_alt_mode_prompt)
+                # 15  (16?)
                 # not using "$__fish_prompt_cwd" for "$PWD"
     end
 end
