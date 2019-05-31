@@ -6,7 +6,6 @@
 # This file is sourced from ~/.zshrc (which is for interactive shells).
 
 # TODO: Enable notices for all vi edit modes.
-# TODO: Have two main prompts (small-prompt and large-prompt).
 # TODO: Make ssh prompt but somehow make sure that tmux prompt isn't identical.
 # TODO: Define a decent root prompt and environment (color schemes).
 
@@ -115,6 +114,7 @@ function precmd () {
         show_prompt_line_opt
     fi
 }
+
 function prepare-primary-prompt () {
     case $KEYMAP in
       (vicmd)      VI_MODE=$NORMAL_MODE ;;
@@ -129,6 +129,7 @@ function prepare-primary-prompt () {
     fi
 }
 
+# draw / redraw (primary) prompt:
 function zle-line-init zle-keymap-select {
     prepare-primary-prompt
     zle reset-prompt # reset/re-print primary prompt
