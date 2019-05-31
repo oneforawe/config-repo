@@ -8,3 +8,7 @@
 # Set the `nullglob` option so list pattern-matching is silent for null matches
 setopt nullglob
 
+# vi edit mode
+bindkey -v
+
+bindkey -v '^?' backward-delete-char

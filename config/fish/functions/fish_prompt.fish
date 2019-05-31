@@ -24,7 +24,7 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     # Get IP (copying the code used in .fancy_prompt for bash) (for Mac)
-    set THE_IP (echo (ifconfig|grep broadcast|awk ' { print $2 }'))
+    set THE_IP (echo (ifconfig|grep broadcast|awk '{print $2}'))
     if test -z $THE_IP
         set THE_IP "IP_MISSING"
     end
@@ -33,8 +33,8 @@ function fish_prompt --description 'Write out the prompt'
     #set -l PROMPT_COLOR_BLOCK (set_color --background 663300) # color?
     #set -l PROMPT_COLOR_BLOCK (set_color --background E38217) # orange
     set -l PROMPT_TIME_STAMP_COLOR (set_color c4abf5) # light purple ("__fish_color_blue")
-    set -l PROMPT_USER_HOST_COLOR (set_color 89c3ca) # light blue
-    set -l PROMPT_PWD_COLOR (set_color 89F297) # light green
+    set -l PROMPT_USER_HOST_COLOR (set_color 89c3ca)  # light blue
+    set -l PROMPT_PWD_COLOR (set_color 89F297)        # light green
 
     # Define an alternate version of fish_default_mode_prompt
     function fish_alt_mode_prompt --description "Display the mode for the prompt (in an alt style)"
