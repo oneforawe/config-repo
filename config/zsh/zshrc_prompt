@@ -6,6 +6,8 @@
 # This file is sourced from ~/.zshrc (which is for interactive shells).
 
 # TODO: Enable notices for all vi edit modes.
+# TODO: Have large, small (both with vi-mode indicator), and default prompts.
+#       (for all three shells)
 # TODO: Make ssh prompt but somehow make sure that tmux prompt isn't identical.
 # TODO: Define a decent root prompt and environment (color schemes).
 
