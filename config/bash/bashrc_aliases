@@ -179,6 +179,14 @@ alias gpsuo='git push --set-upstream origin'
 # Functions and Aliases
 # ----------------------------------------------------------------------
 
+function small () {
+    PROMPT_STYLE="SMALL"
+}
+
+function large () {
+    PROMPT_STYLE="LARGE"
+}
+
 function which-tmux-session {
     # Print the current terminal tmux session name, if any.
     # ...This function doesn't seem to work.

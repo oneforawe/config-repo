@@ -10,6 +10,7 @@ setopt nullglob
 
 
 # vi edit-mode
+# Use vi key-bindings (instead of default emacs bindings) -- see also `.inputrc`
 bindkey -v
 
 # allow ctrl-p, ctrl-n for navigate history (standard behaviour)
@@ -17,7 +18,7 @@ bindkey -v
 #bindkey '^N' down-history
 
 # allow ctrl-h, ctrl-w, ctrl-? for char and word deletion (standard behaviour)
-#bindkey '^?' backward-delete-char
+bindkey '^?' backward-delete-char
 #bindkey '^h' backward-delete-char
 #bindkey '^w' backward-kill-word
 
