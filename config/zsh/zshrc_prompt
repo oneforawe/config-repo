@@ -17,6 +17,10 @@
 #    the entry may disappear, and when changing vi-edit-mode, the prompt moves
 #    upward, erasing the line that was above it.
 
+# Acknowledgement:
+# This solution for a prompt that displays the vi mode is inspired by the
+# solution given by Sebastian Blask in this Unix & Linux StackExchange thread:
+# https://unix.stackexchange.com/questions/547/make-my-zsh-prompt-show-mode-in-vi-mode
 
 
 # Custom window/tab title (prep)
