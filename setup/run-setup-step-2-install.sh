@@ -18,19 +18,28 @@ if [[ `uname -s` = "Linux" ]] ; then
 
     # First update/upgrade package manager.
     # APT
-    printf "Running \"aptup\" prior to installing any missing desired packages.\n"
+    echo "Running \"aptup\" prior to installing any missing desired packages."
     aptup
 
-    printf "Installing any missing desired packages...\n"
+    echo "Installing any missing desired packages..."
     for package in `cat packages-to-install.txt` ; do
         if [[ -z `which $package` ]] ; then
-            apt-get install $package
+            sudo apt-get install $package
         fi
     done
     # install thefuck
+    arrPackages=( 'python3-dev' 'python3-pip' )
+    for package in arrPackages ; do
+        if [[ -z `which $package` ]] ; then
+            sudo apt-get install $package
+        fi
+    done
+    if [[ -z `which thefuck` ]] ; then
+        sudo pip3 install thefuck
+    fi
 
     # See how update goes now:
-    printf "Running \"aptup\" again after any installs (or none).\n"
+    echo "Running \"aptup\" again after any installs (or none)."
     aptup
 fi
 
@@ -40,7 +49,7 @@ if [[ `uname -s` = "Darwin" ]] ; then
 
     # First update/upgrade package manager.
     # Homebrew (brew)
-    printf "Making sure Homebrew package manager is installed and ready...\n"
+    echo "Making sure Homebrew package manager is installed and ready..."
     # pre-requisite:
     if [[ -z `which xcode-select` ]] ; then xcode-select --install ; fi
     # Install Homebrew (if not already installed):
@@ -51,7 +60,7 @@ if [[ `uname -s` = "Darwin" ]] ; then
     brew doctor
     # Make sure a brew-update works (using alias `bup`):
     source $r/.config/bash/bashrc_aliases_mac # contains definition of `bup`
-    printf "Running \"bup\" prior to installing any missing desired packages...\n"
+    echo "Running \"bup\" prior to installing any missing desired packages..."
     bup
 
     # Find what's already installed (put in array)
@@ -61,7 +70,7 @@ if [[ `uname -s` = "Darwin" ]] ; then
     done
 
     # Install missing packages
-    printf "Installing any missing desired packages...\n"
+    echo "Installing any missing desired packages..."
     for package in $(cat packages-to-install.txt) ; do
         if [[ "  ${arrInstalledPackages[*]}  " != *" $package "* ]] ; then
             brew install $package
@@ -72,7 +81,7 @@ if [[ `uname -s` = "Darwin" ]] ; then
     fi
 
     # See how update goes now:
-    printf "Running \"bup\" again after any installs (or none)...\n"
+    echo "Running \"bup\" again after any installs (or none)..."
     bup
 
     # Note: `rsync --version` doesn't match
