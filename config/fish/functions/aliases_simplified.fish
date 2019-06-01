@@ -24,6 +24,6 @@ function vmlist
 end
 
 function preexec --on-event fish_preexec
-  echo
+  echo ""
 end
 

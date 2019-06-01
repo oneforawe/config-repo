@@ -14,15 +14,13 @@
 
 
 # Source/Execute the following config files:
-source ~/.zshrc_omz
-source ~/.zshrc_opt
-source ~/.zshrc_prompt
+source ~/.config/zsh/zshrc_omz
+source ~/.config/zsh/zshrc_opt
+source ~/.config/zsh/zshrc_prompt
 
-source ~/.bashrc_aliases
-source ~/.bashrc_etc
-
+source ~/.bashrc
 
 # Activate zsh packages:
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/pack/zsh-autosuggestions/zsh-autosuggestions.zsh
 

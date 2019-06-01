@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# filename: bash_logout   (linked from ~/.bash_logout)
+# purpose: Set final actions to take when a login shell terminates.
+
+# Original heading:
+# /etc/skel/.bash_logout
+# This file is sourced when a login shell terminates.
+
+# Clear the screen for security's sake.
+clear

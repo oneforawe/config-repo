@@ -1,0 +1,130 @@
+# filename: CommonCommands   (linked as ~/.CommonCommands)
+
+Here are some common commands I like to use.
+(Turn them into custom functions or aliases in `.bash_aliases` when possible.)
+
+
+Overview
+========
+
+Virtual Machine:
+ - vm
+ - vmoff
+ - vmlist
+
+Action Management System:
+ - amscheck
+ - amsopen
+
+MacOS Updates:
+ - [ check gui: App Store > Updates ]
+ - mup   (MacOS update)
+ - bup   (brew update)
+ - cup   (conda update)
+
+Linux Updates:
+ - aptup   (apt update)
+ - sudo apt update
+ - sudo apt upgrade
+ - sudo apt-get clean
+ - sudo apt-get autoremove
+
+
+
+
+More Detailed Notes
+===================
+
+Linux Updates
+-------------
+[1] apt update  &&  apt upgrade
+    (for all package-managed apps in Linux)
+[2] apt-get clean
+    (removes package files)
+[3] apt-get autoremove
+    (apt-get --dry-run autoremove)
+    (removes packages that are no longer needed
+     by packages that were directly installed by package manager --
+     beware of removing packages that you may have installed without the
+     package manager or that you've become accustomed to using even though
+     you didn't *directly* install with the manager)
+
+
+VirtualBox Virtual Machine -- running headless
+----------------------------------------------
+VBoxManage startvm "VM name" --type headless
+vboxmanage startvm "Kubuntu" --type headless
+
+vboxmanage list vms
+vboxmanage list runningvms
+
+VBoxManage controlvm <vm> acpipowerbutton
+
+(Alternatively, when desperate: VBoxManage controlvm "Kubuntu" poweroff)
+
+
+
+Logging-in to Virtual Machine
+-----------------------------
+ssh -p 5022 zero@localhost
+
+
+
+Entering my Action Management System
+------------------------------------
+tree ~/org | grep \#
+cd ~/org
+emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org
+
+
+
+Updates
+-------
+
+Close all programs, making any necessary notes/recordings/to-do-items.
+
+LINUX:
+ - sudo apt update && sudo apt upgrade   (for all package-managed apps in Linux)
+ - sudo apt-get clean                    (removes package files)
+   sudo apt-get autoremove               (apt-get --dry-run autoremove)
+                                         (removes packages that are no longer needed
+                                          by packages that were directly installed by package manager --
+                                          beware of removing packages that you may have installed without the package manager
+                                          or that you've become accustomed to using even though you didn't *directly* install with the manager)
+MACOS:
+ - Alias commands:
+    mup   "MacOS" update
+    bup   "brew" update
+    cup   conda update
+ - Remaining:
+    check App Store (Updates)
+
+ - In more detail:
+    see .aliases
+    or below
+
+ - softwareupdate -l; softwareupdate -ia   (sometimes has things not listed in the App Store Updates, like some system updates)
+ - App Store (Updates)                     (GUI for most MacOS/iOS updates)
+                                           (sometimes has things not listed in "softwareupdate -l", like iMovie stuff)
+ - Homebrew                                (package manager for Mac shell tools)
+   brew update; brew upgrade -v; brew cleanup; brew doctor
+                                           (additional:   can install and use Homebrew Cask for GUI apps)
+                                           (alternatives: could install and use macports, fink, or pkgin)
+ - Conda                                   (package manager, happens to be associated with Anaconda data science package distribution)
+   conda update --prefix /Users/zero/Tools/anaconda3 anaconda
+   conda clean --all
+                                           (for more info: conda --help)
+ - Pip?
+   (pup  pip update)
+   (pip is part of conda -- no need for a 'pup')
+   (?) pip install --upgrade pip
+   (?) pip3 install --upgrade pip3
+
+ - VirtualBox
+     (open the VirualBox GUI, see if it has an update notification; if so, download and install the update)
+     (after updating, open the GUI again and it may/should inform that the Extension Pack is out-of-date and give option to download and install updated version; delete old version)
+
+ - Flash (Adobe Flash Player)
+     https://get.adobe.com/flashplayer/         (download)
+     https://helpx.adobe.com/flash-player.html  (test)
+

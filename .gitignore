@@ -5,12 +5,13 @@
 .DS_Store
 
 # Specific sub-folders
+setup/old
 config/bash/Notes
 config/bash/old/
 config/bash/alt/
+config/zsh/old/
 config/fish/test.sh
 config/fish/old/
-config/zsh/old/
 config/vim/old/
 config/emacs/alt
 

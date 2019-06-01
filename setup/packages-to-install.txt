@@ -1,0 +1,14 @@
+bash
+zsh
+fish
+tmux
+screen
+vim
+htop
+less
+openssh
+wget
+rsync
+gzip
+unzip
+git

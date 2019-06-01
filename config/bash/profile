@@ -4,11 +4,61 @@
 #   (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?).
 
 
-# (from MacOS system)
+# For later reference:
+# Python programming environments
+#source /home/zero/.local/bin/activate.sh
+#source /usr/local/bin/virtualenvwrapper_lazy.sh
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 
-# Recommended by "brew doctor" [2019-01-08]
-#echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
-export PATH="/usr/local/sbin:$PATH"
 
-# To include kaggle API
-export PATH="/Users/zero/.local/bin:$PATH"
+# Need these?:
+export PATH="/usr/sbin/:$PATH"
+export PATH="/usr/local/sbin:$PATH" # recommended by "brew doctor" [2019-01-08]
+
+# To include, eg, kaggle API (in MacOS)
+export PATH="$HOME/.local/bin:$PATH"
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+
+# WHERE ARE THESE COMING FROM (MacOS):
+#/usr/local/bin
+#/usr/bin
+#/bin
+#/usr/sbin
+#/sbin
+#/opt/X11/bin
+#/Users/zero/.local/bin
+#/usr/local/sbin
+
+
+if [[ "$(uname -s)" = "Darwin" ]] ; then
+    # For MacOS
+fi
+
+
+if [[ "$(uname -s)" = "Linux" ]] ; then
+    # For GNU/Linux
+
+    export PATH="$HOME/Software:$PATH"
+    # Redundant?:
+    #export PATH="$HOME/Software/usr/bin:$PATH"
+
+    export MANPATH="$HOME/Software/usr/share/man:$MANPATH"
+    export CPATH="$HOME/Software/usr/include:$CPATH"
+    export PKG_CONFIG_PATH="$HOME/Software/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
+    export LD_LIBRARY_PATH="$HOME/Software/usr/lib:$LD_LIBRARY_PATH"
+fi
+
+
+# NOTE
+# Find out what this means:
+# (from GNU/Linux)
+# The default umask is set in /etc/profile
+# umask 022
+

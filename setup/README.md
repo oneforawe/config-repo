@@ -5,3 +5,11 @@ set up and install my configuration files.
 All the git-cloning and downloading should be integrated inside the code so I
 don't bother with typing it out.
 
+## generating packages list
+
+Prune the file generated:
+
+`brew leaves > packages-to-install-excessive.txt`
+
+Do something similar in Linux.
+

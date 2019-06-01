@@ -60,8 +60,23 @@ PROMPT_COMMAND='echo -ne "\e]0;${TERM_PROGRAM} - %m > ${PWD##*/}\a"'
 #    window_title="${terminal_name} - %m : ${PWD##*/}"
 #    print -Pn "\e]0;${window_title}\a"
 
+# Change the window title of X terminals
+case $TERM in
+	xterm*|rxvt*|Eterm|aterm|kterm|gnome)
+		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+		source ~/.bash_login
+		;;
+	screen)
+		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+		;;
+esac
+
+
 # Just after the prompt.
 PS0="\n"
 # Bash displays/executes PS0 after it reads a command but before executing it.
+
+
+
 
 

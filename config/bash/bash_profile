@@ -12,7 +12,7 @@ source ~/.profile
 
 # BASH-specific login-shell-specific configs are in ~/.bash_login
 # (However, currently I don't have any need for login-shell-specific configs.)
-# If `~/.bash_login` exists (which it doesn't) & is readable, source/execute it.
+# If `~/.bash_login` exists and is readable, source/execute it.
 if [[ -r ~/.bash_login ]] ; then source ~/.bash_login ; fi
 
 # BASH-specific interactive-shell configs are in ~/.bashrc

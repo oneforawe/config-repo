@@ -6,9 +6,6 @@
 # This file is sourced from ~/.bashrc (which is for interactive shells).
 
 
-# Got the following stuff from Brandon Landry:
-# ============================================
-
 # make less more friendly for non-text input files, see lesspipe(1)
 if [[ -x /usr/bin/lesspipe ]] ; then eval "$(SHELL=/bin/sh lesspipe)" ; fi
 
@@ -17,34 +14,6 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 HISTCONTROL=ignoreboth  # Don't save duplicates or inputs starting with space
 
-# For "z" navigation (see manual: `man z`):
-source `brew --prefix`/etc/profile.d/z.sh
-
-# ============================================
-
-
 # Use `fuck` command - for suggesting command-line mistake re-writes.
 eval $(thefuck --alias)
-
-
-# CONDA
-# ------------------------
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/zero/Tools/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/zero/Tools/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# Start with conda off.
-conda-off > /dev/null
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # filename: bashrc   (linked from ~/.bashrc)
-# purpose: For setting interactive shell configs.
+# purpose: Set interactive shell configs.
 
 
 # Notes:
@@ -22,16 +22,33 @@
 
 # FIRST:
 # For remote shells (associated with rsh, ssh, or rcp, scp, sftp, etc) that are
-# non-interactive, we need to make sure that this file does nothing (returns).
+# non-interactive, this file must do nothing, or at least not output anything.
 # If running non-interactively, then return.
 if [[ $- != *i* ]] ; then return ; fi
 
 # For all other (interactive) shells, source/execute the following config files:
-source ~/.bashrc_opt
-source ~/.bashrc_prompt
-source ~/.bashrc_aliases
-source ~/.bashrc_etc
 
+# For bash (not zsh)
+if [[ -n $BASH_VERSION ]] ; then
+    source ~/.config/bash/bashrc_opt
+    source ~/.config/bash/bashrc_prompt
+fi
+
+source ~/.config/bash/bashrc_aliases
+
+# For GNU/Linux
+if [[ "$(uname -s)" = "Linux" ]] ; then
+    source ~/.config/bash/bashrc_aliases_linux
+    #source ~/.config/bash/bashrc_etc_linux
+fi
+
+# For MacOS
+if [[ "$(uname -s)" = "Darwin" ]] ; then
+    source ~/.config/bash/bashrc_aliases_mac
+    source ~/.config/bash/bashrc_etc_mac
+fi
+
+source ~/.config/bash/bashrc_etc
 
 # References:
 # [1] https://unix.stackexchange.com/questions/257571/why-does-bashrc-check-

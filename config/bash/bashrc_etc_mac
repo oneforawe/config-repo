@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# filename: bashrc_etc   (linked from ~/.bashrc_etc)
+# purpose: Set interactive-shell configs not already set for prompt
+#   and commands (functions and aliases).
+
+# This file is sourced from ~/.bashrc (which is for interactive shells).
+
+
+# For "z" navigation (see manual: `man z`):
+source `brew --prefix`/etc/profile.d/z.sh
+
+
+# CONDA
+# ------------------------
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/zero/Tools/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/zero/Tools/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/zero/Tools/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# Start with conda off.
+conda-off > /dev/null
+

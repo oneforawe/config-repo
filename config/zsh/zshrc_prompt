@@ -16,6 +16,13 @@
 #    PROMPT_STYLE, when typing a long entry/command into the terminal, parts of
 #    the entry may disappear, and when changing vi-edit-mode, the prompt moves
 #    upward, erasing the line that was above it.
+# 2. In MacOs, in a shell terminal (eg, Terminal or iTerm2), using the "LARGE"
+#    PROMPT_STYLE, when using tab-completion of a command, funny stuff happens:
+#    the cursor moves rightward and won't move back, and some text remains in
+#    place behind this new left-most cursor-position.
+# 3. In MacOs, in a shell terminal (eg, Terminal or iTerm2), using the "LARGE"
+#    PROMPT_STYLE, when long auto-suggestions pop up, the can cause funny stuff
+#    to happen too, similar to the above funny stuff in issue 2.
 
 # Acknowledgement:
 # This solution for a prompt that displays the vi mode is inspired by the
