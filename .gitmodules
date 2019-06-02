@@ -10,3 +10,18 @@
 [submodule "config/pack/thefuck"]
 	path = config/pack/thefuck
 	url = https://github.com/nvbn/thefuck
+[submodule "config/vim/vim.d/pack/external/opt/vim-scriptease"]
+	path = config/vim/vim.d/pack/external/opt/vim-scriptease
+	url = https://github.com/tpope/vim-scriptease
+[submodule "config/vim/vim.d/pack/external/start/vim-clevertab"]
+	path = config/vim/vim.d/pack/external/start/vim-clevertab
+	url = https://github.com/neitanod/vim-clevertab
+[submodule "config/vim/vim.d/pack/external/start/vim-fold-cycle"]
+	path = config/vim/vim.d/pack/external/start/vim-fold-cycle
+	url = https://github.com/arecarn/vim-fold-cycle.git
+[submodule "config/vim/vim.d/pack/external/start/vim-surround"]
+	path = config/vim/vim.d/pack/external/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "config/vim/vim.d/pack/external/start/vim-unimpaired"]
+	path = config/vim/vim.d/pack/external/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired

@@ -23,9 +23,9 @@ a submodule by executing the following (in its containing folder):
 For the record, and for troubleshooting when things go wrong, I'll (try to) put
 all of the submodule commands here.  (They normally won't need to be used.)
 
-`git submodule add https://github.com/tpope/vim-scriptease vim-scriptease`
-`git submodule add https://github.com/neitanod/vim-clevertab vim-clevertab`
-`git submodule add https://github.com/arecarn/vim-fold-cycle.git vim-fold-cycle`
-`git submodule add https://github.com/tpope/vim-surround vim-surround`
-`git submodule add https://github.com/tpope/vim-unimpaired vim-unimpaired`
+* `git submodule add https://github.com/tpope/vim-scriptease vim-scriptease`
+* `git submodule add https://github.com/neitanod/vim-clevertab vim-clevertab`
+* `git submodule add https://github.com/arecarn/vim-fold-cycle.git vim-fold-cycle`
+* `git submodule add https://github.com/tpope/vim-surround vim-surround`
+* `git submodule add https://github.com/tpope/vim-unimpaired vim-unimpaired`
 
