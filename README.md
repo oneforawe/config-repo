@@ -23,8 +23,8 @@ for my convenience, not for the safety of your files.  (Safety will come later.)
 
 2. Enter the repo and initialize and update (clone) the submodules contained in
 this repo:  
-   `cd ~/.config-files`
-   `git submodule init`
+   `cd ~/.config-files`  
+   `git submodule init`  
    `git submodule update`
 
 3. Run this command to over-write existing configuration files with links to the
