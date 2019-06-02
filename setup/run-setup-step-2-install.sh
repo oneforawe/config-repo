@@ -30,7 +30,7 @@ if [[ `uname -s` = "Linux" ]] ; then
     done
     # install thefuck
     arrPackages=( 'python3-dev' 'python3-pip' )
-    for package in arrPackages ; do
+    for package in ${arrPackages[@]} ; do
         if [[ -z `which $package` ]] ; then
             sudo apt-get install $package
         fi

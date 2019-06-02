@@ -89,9 +89,9 @@ ln_s $z2/zshrc_prompt $z1a/zshrc_prompt
 rm -r $z1a/oh-my-zsh
 rm -r $z1b/zsh-autosuggestions
 rm -r $z1b/zsh-syntax-highlighting
-ln_s $z2/oh-my-zsh $z1a/oh-my-zsh
-ln_s $z2/pack/zsh-autosuggestions     $z1b/zsh-autosuggestions
-ln_s $z2/pack/zsh-syntax-highlighting $z1b/zsh-syntax-highlighting
+ln_s $z2/oh-my-zsh $z1a/
+ln_s $z2/pack/zsh-autosuggestions     $z1b/
+ln_s $z2/pack/zsh-syntax-highlighting $z1b/
 
 # fish
 f1a="$r/.config/fish"
@@ -123,11 +123,12 @@ ln_s $src/config/tmux/tmux.conf $r/.tmux.conf
 
 # vim
 rm -r $r/.vim
-ln_s $src/config/vim/vimrc    $r/.vimrc
-ln_s $src/config/vim/vim.conf $r/.vim
+ln_s $src/config/vim/vimrc $r/.vimrc
+ln_s $src/config/vim/vim.d $r/.vim
 
 # emacs
-#ln_s $src/config/emacs/emacs.conf ~/.emacs   (?)
+#ln_s $src/config/emacs/emacsrc ~/.emacs   (?)
+#ln_s $src/config/emacs/emacs.d ~/.emacs   (?)
 
 # git
 #ln_s $src/config/gitconfig .gitconfig

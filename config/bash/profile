@@ -39,6 +39,7 @@ fi
 
 if [[ "$(uname -s)" = "Darwin" ]] ; then
     # For MacOS
+    true
 fi
 
 
