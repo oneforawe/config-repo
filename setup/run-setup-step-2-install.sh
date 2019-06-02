@@ -28,10 +28,10 @@ if [[ `uname -s` = "Linux" ]] ; then
             sudo apt-get install $package
         fi
     done
-    # install thefuck
+    # install thefuck (see https://github.com/nvbn/thefuck/wiki/Installation)
     arrPackages=( 'python3-dev' 'python3-pip' )
     for package in ${arrPackages[@]} ; do
-        if [[ -z `which $package` ]] ; then
+        if [[ -z `ls /usr/share/doc | grep $package` ]] ; then
             sudo apt-get install $package
         fi
     done
