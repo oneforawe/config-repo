@@ -19,10 +19,11 @@ if [[ `uname -s` = "Linux" ]] ; then
     # First update/upgrade package manager.
     # APT
     echo "Running \"aptup\" prior to installing any missing desired packages."
+    source $r/.config/bash/bashrc_aliases_linux # contains definition of `aptup`
     aptup
 
     echo "Installing any missing desired packages..."
-    for package in `cat packages-to-install.txt` ; do
+    for package in `cat $src/setup/packages-to-install.txt` ; do
         if [[ -z `which $package` ]] ; then
             sudo apt-get install $package
         fi
@@ -71,7 +72,7 @@ if [[ `uname -s` = "Darwin" ]] ; then
 
     # Install missing packages
     echo "Installing any missing desired packages..."
-    for package in $(cat packages-to-install.txt) ; do
+    for package in `cat $src/setup/packages-to-install.txt` ; do
         if [[ "  ${arrInstalledPackages[*]}  " != *" $package "* ]] ; then
             brew install $package
         fi

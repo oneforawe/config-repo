@@ -30,11 +30,15 @@ src=$CONFIG_LOCATION
 
 # For GNU/Linux tools (GNU)
 if [[ `uname -s` = "Linux" ]] ; then
-    alias ln='ln -sf'
+    function ln_s () {
+	ln -sf $@
+    }
 fi
 # For MacOS Darwin tools
 if [[ `uname -s` = "Darwin" ]] ; then
-    alias ln='ln -sFfh'
+    function ln_s () {
+	ln -sFfh $@
+    }
 fi
 
 
@@ -44,31 +48,31 @@ echo "Linking config (and reference) files."
 
 
 # REFERENCE:
-ln  $src/reference/CommonCommands $r/.CommonCommands
+ln_s $src/reference/CommonCommands $r/.CommonCommands
 
 
 # SHELLS / TERMINALS:
 
 # readline
-ln  $src/config/readline/inputrc $r/.inputrc
+ln_s $src/config/readline/inputrc $r/.inputrc
 
 # bash
 b1="$r/.config/bash"
 b2="$src/config/bash"
 mkdir -pv $b1
-ln  $b2/bash_profile $r/.bash_profile
-ln  $b2/bash_login   $r/.bash_login
-ln  $b2/profile      $r/.profile
-ln  $b2/bashrc       $r/.bashrc
-ln  $b2/bashrc_opt           $b1/bashrc_opt
-ln  $b2/bashrc_prompt        $b1/bashrc_prompt
-ln  $b2/bashrc_aliases       $b1/bashrc_aliases
-ln  $b2/bashrc_aliases_mac   $b1/bashrc_aliases_mac
-ln  $b2/bashrc_aliases_linux $b1/bashrc_aliases_linux
-ln  $b2/bashrc_etc           $b1/bashrc_etc
-ln  $b2/bashrc_etc_mac       $b1/bashrc_etc_mac
-#ln  $b2/bashrc_etc_linux     $b1/.bashrc_etc_linux
-ln  $b2/bash_logout  ~/.bash_logout
+ln_s $b2/bash_profile $r/.bash_profile
+ln_s $b2/bash_login   $r/.bash_login
+ln_s $b2/profile      $r/.profile
+ln_s $b2/bashrc       $r/.bashrc
+ln_s $b2/bashrc_opt           $b1/bashrc_opt
+ln_s $b2/bashrc_prompt        $b1/bashrc_prompt
+ln_s $b2/bashrc_aliases       $b1/bashrc_aliases
+ln_s $b2/bashrc_aliases_mac   $b1/bashrc_aliases_mac
+ln_s $b2/bashrc_aliases_linux $b1/bashrc_aliases_linux
+ln_s $b2/bashrc_etc           $b1/bashrc_etc
+ln_s $b2/bashrc_etc_mac       $b1/bashrc_etc_mac
+#ln_s $b2/bashrc_etc_linux     $b1/.bashrc_etc_linux
+ln_s $b2/bash_logout  ~/.bash_logout
 
 # zsh
 z1a="$r/.config/zsh"
@@ -76,15 +80,18 @@ z1b="$z1a/pack"
 z2="$src/config/zsh"
 mkdir -pv $z1a
 mkdir -pv $z1b
-ln  $z2/zprofile $r/.zprofile
-ln  $z2/zshrc    $r/.zshrc
-ln  $z2/zshrc_omz    $z1a/zshrc_omz
-ln  $z2/zshrc_opt    $z1a/zshrc_opt
-ln  $z2/zshrc_prompt $z1a/zshrc_prompt
+ln_s $z2/zprofile $r/.zprofile
+ln_s $z2/zshrc    $r/.zshrc
+ln_s $z2/zshrc_omz    $z1a/zshrc_omz
+ln_s $z2/zshrc_opt    $z1a/zshrc_opt
+ln_s $z2/zshrc_prompt $z1a/zshrc_prompt
 # zsh packages / plugins
-ln  $z2/oh-my-zsh    $z1a/oh-my-zsh
-ln  $z2/pack/zsh-autosuggestions     $z1b/zsh-autosuggestions
-ln  $z2/pack/zsh-syntax-highlighting $z1b/zsh-syntax-highlighting
+rm -r $z1a/oh-my-zsh
+rm -r $z1b/zsh-autosuggestions
+rm -r $z1b/zsh-syntax-highlighting
+ln_s $z2/oh-my-zsh $z1a/oh-my-zsh
+ln_s $z2/pack/zsh-autosuggestions     $z1b/zsh-autosuggestions
+ln_s $z2/pack/zsh-syntax-highlighting $z1b/zsh-syntax-highlighting
 
 # fish
 f1a="$r/.config/fish"
@@ -93,42 +100,37 @@ f2a="$src/config/fish"
 f2b="$f2a/functions"
 mkdir -pv $f1a
 mkdir -pv $f1b
-ln  $f2a/config.fish    $f1a/config.fish
-ln  $f2a/fish_variables $f1a/fish_variables
-ln  $f2a/fishfile       $f1a/fishfile
+ln_s $f2a/config.fish    $f1a/config.fish
+ln_s $f2a/fish_variables $f1a/fish_variables
+ln_s $f2a/fishfile       $f1a/fishfile
 # fish (additional) functions
-ln  $f2b/fish_mode_prompt.fish    $f1b/fish_mode_prompt.fish
-ln  $f2b/fish_prompt.fish         $f1b/fish_prompt.fish
-ln  $f2b/aliases_simplified.fish  $f1b/aliases_simplified.fish
-ln  $f2b/fuck.fish                $f1b/fuck.fish
+ln_s $f2b/fish_mode_prompt.fish    $f1b/fish_mode_prompt.fish
+ln_s $f2b/fish_prompt.fish         $f1b/fish_prompt.fish
+ln_s $f2b/aliases_simplified.fish  $f1b/aliases_simplified.fish
+ln_s $f2b/fuck.fish                $f1b/fuck.fish
 
 # pack  (packages common to the shells)
-ln  $src/config/pack/thefuck $r/.config/thefuck
+ln_s $src/config/pack/thefuck $r/.config/thefuck
 
 # tmux
-ln  $src/config/tmux/tmux.conf $r/.tmux.conf
+ln_s $src/config/tmux/tmux.conf $r/.tmux.conf
 
 # ssh (?)
-#ln  .config-files/config/ssh/config .ssh/config
+#ln_s .config-files/config/ssh/config .ssh/config
 
 
 # EDITORS / DEV:
 
 # vim
-ln  $src/config/vim/vimrc    $r/.vimrc
-ln  $src/config/vim/vim.conf $r/.vim
+rm -r $r/.vim
+ln_s $src/config/vim/vimrc    $r/.vimrc
+ln_s $src/config/vim/vim.conf $r/.vim
 
 # emacs
-#ln  $src/config/emacs/emacs.conf ~/.emacs   (?)
+#ln_s $src/config/emacs/emacs.conf ~/.emacs   (?)
 
 # git
-#ln  $src/config/gitconfig .gitconfig
+#ln_s $src/config/gitconfig .gitconfig
 
 # hg (mercurial)
-#ln  $src/config/hgrc .hgrc
-
-
-# Wrap-up
-# ======================================================================
-unalias ln
-
+#ln_s $src/config/hgrc .hgrc
