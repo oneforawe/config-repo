@@ -30,15 +30,11 @@ src=$CONFIG_LOCATION
 
 # For GNU/Linux tools (GNU)
 if [[ `uname -s` = "Linux" ]] ; then
-    function ln_s () {
-	ln -sf $@
-    }
+    function ln_s () { ln -sf $@ ; }
 fi
 # For MacOS Darwin tools
 if [[ `uname -s` = "Darwin" ]] ; then
-    function ln_s () {
-	ln -sFfh $@
-    }
+    function ln_s () { ln -sFfh $@ ; }
 fi
 
 

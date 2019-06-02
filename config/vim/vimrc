@@ -17,6 +17,8 @@ colors zenburn              " color scheme
 set colorcolumn=72,80       " highlight for standard code line widths
 syntax on                   " enable syntax highlighting
 
+set backspace=indent,eol,start " allow deletion beyond insertion point
+
 filetype plugin indent on   " enable filetype plugins and indentation rules
 set tabstop=4               " render space characters as 4 spaces
 set softtabstop=4           " backspace erases all spaces to next tab stop
