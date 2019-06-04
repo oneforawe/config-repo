@@ -55,14 +55,14 @@ if [[ -x /usr/bin/dircolors ]] ; then
 fi
 if [[ -x /usr/local/bin/gdircolors ]] ; then
     if [[ -f ~/.dir_colors ]] && [[ -r ~/.dir_colors ]] ; then
-	    #eval `gdircolors -b ~/.dir_colors`
+        eval "$(gdircolors -b ~/.dir_colors)" # need quotes for multi-line eval
         # If this doesn't work (as it was not working originally), then might
         # want to try the following (or a more efficient version of it):
         #gdircolors -b ~/.dir_colors > temp.txt
         #source temp.txt
         #rm temp.txt
         # Trying
-        source <( gdircolors -b ~/.dir_colors )
+        #source <( gdircolors -b ~/.dir_colors )
     fi
 fi
 
