@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+# filename: bashrc_aliases_lsBSD   (linked from ~/.bashrc_aliases)
+# purpose: For defining custom commands (functions and aliases) in the shell.
+
+# This file is sourced from ~/.bashrc (which is for interactive shells).
+
+
+# List Aliases
+# ----------------------------------------------------------------------
+
+# directory-content listing
+# -------------------------
+# Custom keys overview -- Combine these to form various list commands:
+#  RE CONTENT:
+#   l   list (basic list) - don't show backup or hidden files    [ l =>  list ]
+#   a   show "all" hidden files (dotfiles, but not . or ..)      [ a =>  "all"]
+#   aa  show all hidden files (including . and ..)               [aa =>   all ]
+#   s   show backup files (ie, files ending with a tilde ~)      [ s =>  show ]
+#  RE FORMAT:
+#   k   show vertical list with detail/long-format               [ k => v-more]
+#   j   show vertical list (w/o detail)                          [ j => v-less]
+#       [k =>   up (vim key bindings) / vertical / more (detail) ]
+#       [j => down (vim key bindings) / vertical / less (detail) ]
+#  RE CONTENT+FORMAT:
+#   f   show full detail                                         [ f =>  full ]
+#       (l+f = lf equivalent to l+aa+s+k = laask)
+#
+# (Note: "content" refers to directory elements -- files; "format" refers to
+#  changing the orientation from horizontal to vertical and inclusion or
+#  exclusion of meta information, which doesn't change the shown directory file-
+#  content, although it is technically another kind of displayed "content".)
+#
+#  POSSIBLE COMBOS:
+#    list-command =  l[a|aa][s][j|k] | l[s][a|aa][j|k] | lf
+#                      where [] indicates optional and | indicates "or"
+#                      note: content comes first:   l[a|aa][s]  |  l[s][a|aa]
+#                            & format comes last:             [j|k]
+
+# Note: The `nullglob` option should have already been set (on) in `.bashrc_opt`
+# so that list pattern-matching is silent for null matches.
+
+# TODO: Correct this minor problem: In bash, in an empty directory (that
+#       contains just `.` & `..`) `l` displays `.` and `la` displays `.`.
+#       (They shouldn't display anything. `ls` correctly displays nothing.)
+
+# Reworking list utilities (eg `ls`), so unalias them (if they're aliased)
+alias   l='' ls='' la='' lsa=''
+unalias l    ls    la    lsa
+
+alias     l=''   la=''   ls=''   las=''   laa=''   laas=''   lsa=''   lsaa=''
+alias     lj=''  laj=''  lsj=''  lasj=''  laaj=''  laasj=''  lsaj=''  lsaaj=''
+alias     lk=''  lak=''  lsk=''  lask=''  laak=''  laask=''  lsak=''  lsaak=''
+unalias   l      la      ls      las      laa      laas      lsa      lsaa
+unalias   lj     laj     lsj     lasj     laaj     laasj     lsaj     lsaaj
+unalias   lk     lak     lsk     lask     laak     laask     lsak     lsaak
+
+alias     lf=''
+unalias   lf
+
+alias ls='ls -G'
+
+
+# basics  ( progressing from less to more )
+#
+l ()  { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -d *[^~] ) }   #  list   - don't show backup~ files
+lj () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -1d *[^~] ) }  #  v-less - dn/vert/less-detail
+lk () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -lhd *[^~] ) } #  v-more - up/vert/more-detail (long-format)
+#
+la ()  { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -d {.[^.],.[^.]*[^~],*[^~]} ) }   # "all" (including hidden) *
+laj () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -1d {.[^.],.[^.]*[^~],*[^~]} ) }  # "all" v-less
+lak () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -lhd {.[^.],.[^.]*[^~],*[^~]} ) } # "all" v-more
+#
+#ls ()  { ls -G $@; }   #  show  - show backup files (default of ls)
+lsj () { ls -1 $@; }   #  show v-less
+lsk () { ls -lh $@; }  #  show v-more
+#
+las ()  { ls -A $@; }    #  "all"  show
+lasj () { ls -1A $@; }   #  "all"  show  v-less
+lask () { ls -lhA $@; }  #  "all"  show  v-more
+#
+laa ()  { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -d {.,..,.[^.],.[^.]*[^~],*[^~]} ) }   # all (includ. hidden)
+laaj () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -1d {.,..,.[^.],.[^.]*[^~],*[^~]} ) }  # all v-less
+laak () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -lhd {.,..,.[^.],.[^.]*[^~],*[^~]} ) } # all v-more
+#
+laas ()  { ls -a $@; }    #  all  show
+laasj () { ls -1a $@; }   #  all  show  v-less
+laask () { ls -lha $@; }  #  all  show  v-more
+#
+lf () { ls -lha $@; }     #  full  =  all  show  v-more
+#
+#  * naively combining the option `-A` and the glob `*[^~]` does not work
+#    (ie, `ls -Ad *[^~]` does not work as one might expect)
+#
+# permutations
+lsa ()  { ls -A $@; }     #  "all"  show
+lsaj () { ls -1A $@; }    #  "all"  show  v-less
+lsak () { ls -lhA $@; }   #  "all"  show  v-more
+#
+lsaa ()  { ls -a $@; }    #   all  show
+lsaaj () { ls -1a $@; }   #   all  show  v-less
+lsaak () { ls -lha $@; }  #   all  show  v-more
+

@@ -36,6 +36,12 @@ fi
 
 source ~/.config/bash/bashrc_aliases
 
+# Default type of ls command(s)
+LS_TYPE="GNU"
+source ~/.config/bash/bashrc_aliases_lsGNU
+#LS_TYPE="BSD"
+#source ~/.config/bash/bashrc_aliases_lsBSD
+
 # For GNU/Linux
 if [[ "$(uname -s)" = "Linux" ]] ; then
     source ~/.config/bash/bashrc_aliases_linux

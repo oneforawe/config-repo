@@ -63,12 +63,15 @@ ln_s $b2/bashrc       $r/.bashrc
 ln_s $b2/bashrc_opt           $b1/bashrc_opt
 ln_s $b2/bashrc_prompt        $b1/bashrc_prompt
 ln_s $b2/bashrc_aliases       $b1/bashrc_aliases
+ln_s $b2/bashrc_aliases_lsGNU $b1/bashrc_aliases_lsGNU
+ln_s $b2/bashrc_aliases_lsBSD $b1/bashrc_aliases_lsBSD
 ln_s $b2/bashrc_aliases_mac   $b1/bashrc_aliases_mac
 ln_s $b2/bashrc_aliases_linux $b1/bashrc_aliases_linux
 ln_s $b2/bashrc_etc           $b1/bashrc_etc
 ln_s $b2/bashrc_etc_mac       $b1/bashrc_etc_mac
 #ln_s $b2/bashrc_etc_linux     $b1/.bashrc_etc_linux
-ln_s $b2/bash_logout  ~/.bash_logout
+ln_s $b2/bash_logout  $r/.bash_logout
+ln_s $b2/dir_colors   $r/.dir_colors
 
 # zsh
 z1a="$r/.config/zsh"

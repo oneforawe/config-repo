@@ -8,6 +8,17 @@
 # Functions and Aliases
 # ----------------------------------------------------------------------
 
+function ls-switch () {
+    if [[ $LS_TYPE = "GNU" ]] ; then
+        LS_TYPE="BSD"
+        source ~/.config/bash/bashrc_aliases_lsBSD
+    elif [[ $LS_TYPE = "BSD" ]] ; then
+        LS_TYPE="GNU"
+        source ~/.config/bash/bashrc_aliases_lsGNU
+    fi
+}
+
+
 function vmlist {
     VBoxManage list runningvms
 }

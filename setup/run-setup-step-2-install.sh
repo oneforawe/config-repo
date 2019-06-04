@@ -77,6 +77,11 @@ if [[ `uname -s` = "Darwin" ]] ; then
             brew install $package
         fi
     done
+    for package in `cat $src/setup/packages-to-install_mac.txt` ; do
+        if [[ "  ${arrInstalledPackages[*]}  " != *" $package "* ]] ; then
+            brew install $package
+        fi
+    done
     if [[ "  ${arrInstalledPackages[*]}  " != *" thefuck "* ]] ; then
         brew install thefuck
     fi
