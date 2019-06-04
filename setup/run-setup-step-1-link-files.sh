@@ -109,6 +109,7 @@ ln_s $f2b/aliases_simplified.fish  $f1b/aliases_simplified.fish
 ln_s $f2b/fuck.fish                $f1b/fuck.fish
 
 # pack  (packages common to the shells)
+rm -r $r/.config/thefuck
 ln_s $src/config/pack/thefuck $r/.config/thefuck
 
 # tmux
