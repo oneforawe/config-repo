@@ -182,7 +182,7 @@ zle -N zle-keymap-select
 # Just after the prompt.
 # print the "post" part of the prompt / "peripheral post-prompt"
 function preexec() {
-    if [[ $PROMPT_SPACE = "LOOSE" ]] ; then
+    if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_STYLE != "DEFAULT" ]] ; then
         print ""  # newline
     fi
 }
