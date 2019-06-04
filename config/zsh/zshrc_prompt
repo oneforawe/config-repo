@@ -52,13 +52,19 @@ function set_the_window_tab_title () {
 # for n in {000..255}; do print -P "$n: %F{$n}%B(TESTING TEXT COLORS)%b%f"; done
 # colors:
 TIMESTAMP_COLOR="081" # muted light blue
-USER_HOST_COLOR="105" # muted light purple
 STATUS_COLOR="002"    # bright green
 PWD_COLOR="034"       # muted green
 NORMAL_MODE_FG_COLOR="250" # muted white
 NORMAL_MODE_BG_COLOR="088" # deep red
 INSERT_MODE_FG_COLOR="250" # muted white
 INSERT_MODE_BG_COLOR="028" # dark green
+if [[ " `uname -n` " = *soliton* ]] ; then
+    USER_HOST_COLOR="105" # muted light purple
+elif [[ " `uname -n` " = *momentus* ]] ; then
+    USER_HOST_COLOR="208" # muted orange
+else
+    USER_HOST_COLOR="226" # light yellow
+fi
 # vi-mode indicators:
 NORMAL_LETTER="N"
 INSERT_LETTER="I"
@@ -70,7 +76,7 @@ VI_MODE=$INSERT_MODE
 # prompt display functions:
 function show_timestamp ()    { print -P "%F{$TIMESTAMP_COLOR}[$TIMESTAMP]%f" }
 function show_user_host_ip () { print -P "%F{$USER_HOST_COLOR}$USER @ $(uname -n) [$IP_ADDR]%f" }
-function show_status ()       { print -P "%F{$STATUS_COLOR}%B\($STATUS\)%b%f" }
+function show_status ()       { print -P "%F{$STATUS_COLOR}\($STATUS\)%f" }
 function show_path ()         { print -P "%F{$PWD_COLOR}${PWD}%f" }
 function show_env ()          { print -P "env:\(${CONDA_DEFAULT_ENV}\)" }
 function newline ()           { print -P "%{\n%}" }
