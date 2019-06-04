@@ -51,20 +51,21 @@ function set_the_window_tab_title () {
 # To see all colors, execute:
 # for n in {000..255}; do print -P "$n: %F{$n}%B(TESTING TEXT COLORS)%b%f"; done
 # colors:
-TIMESTAMP_COLOR="081" # muted light blue
+if   [[ " `uname -n` " = *soliton* ]] ; then
+    TIMESTAMP_COLOR="081" # muted light blue
+    USER_HOST_COLOR="105" # muted light purple
+elif [[ " `uname -n` " = *momentus* ]] ; then
+    TIMESTAMP_COLOR="230" # light cream
+    USER_HOST_COLOR="208" # muted orange
+else
+    USER_HOST_COLOR="226" # light yellow
+fi
 STATUS_COLOR="002"    # bright green
 PWD_COLOR="034"       # muted green
 NORMAL_MODE_FG_COLOR="250" # muted white
 NORMAL_MODE_BG_COLOR="088" # deep red
 INSERT_MODE_FG_COLOR="252" # muted white
 INSERT_MODE_BG_COLOR="022" # dark green
-if [[ " `uname -n` " = *soliton* ]] ; then
-    USER_HOST_COLOR="105" # muted light purple
-elif [[ " `uname -n` " = *momentus* ]] ; then
-    USER_HOST_COLOR="208" # muted orange
-else
-    USER_HOST_COLOR="226" # light yellow
-fi
 # vi-mode indicators:
 NORMAL_LETTER="N"
 INSERT_LETTER="I"
