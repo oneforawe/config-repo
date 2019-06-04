@@ -45,7 +45,6 @@
 
 
 
-# BASH ONLY?:
 # Enable colors for ls, etc.  Prefer ~/.dir_colors
 if [[ -x /usr/bin/dircolors ]] ; then
     if [[ -f ~/.dir_colors ]] && [[ -r ~/.dir_colors ]] ; then
@@ -80,14 +79,16 @@ unalias   lk     lak     lsk     lask     laak     laask     lsak     lsaak
 alias     lf=''
 unalias   lf
 
+alias   ls_=''
+unalias ls_
 
 # handle differences between GNU/Linux tools (GNU) and MacOS/Darwin tools (BSD)
-if [[ "$(uname -s)" = "Linux" ]] ; then
+if [[ `uname -s` = "Linux" ]] ; then
     alias ls_='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
 fi
-if [[ "$(uname -s)" = "Darwin" ]] ; then
+if [[ `uname -s` = "Darwin" ]] ; then
     alias ls_='gls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'

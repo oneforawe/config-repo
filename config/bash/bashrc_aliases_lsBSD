@@ -62,41 +62,41 @@ alias ls='ls -G'
 
 # basics  ( progressing from less to more )
 #
-l ()  { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -d *[^~] ) }   #  list   - don't show backup~ files
-lj () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -1d *[^~] ) }  #  v-less - dn/vert/less-detail
-lk () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -lhd *[^~] ) } #  v-more - up/vert/more-detail (long-format)
+l ()  { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -d *[^~] ) }   # list   - don't show backup~ files
+lj () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -1d *[^~] ) }  # v-less - dn/vert/less-detail
+lk () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -lhd *[^~] ) } # v-more - up/vert/more-detail (long-format)
 #
 la ()  { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -d {.[^.],.[^.]*[^~],*[^~]} ) }   # "all" (including hidden) *
 laj () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -1d {.[^.],.[^.]*[^~],*[^~]} ) }  # "all" v-less
 lak () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -lhd {.[^.],.[^.]*[^~],*[^~]} ) } # "all" v-more
 #
-#ls ()  { ls -G $@; }   #  show  - show backup files (default of ls)
-lsj () { ls -1 $@; }   #  show v-less
-lsk () { ls -lh $@; }  #  show v-more
+#ls ()  { ls -G $@; }     #  show - show backup files (default of ls)
+lsj () { ls -1 $@; }      #  show   v-less
+lsk () { ls -lh $@; }     #  show   v-more
 #
-las ()  { ls -A $@; }    #  "all"  show
-lasj () { ls -1A $@; }   #  "all"  show  v-less
-lask () { ls -lhA $@; }  #  "all"  show  v-more
+las ()  { ls -A $@; }     #  "all"  show
+lasj () { ls -1A $@; }    #  "all"  show   v-less
+lask () { ls -lhA $@; }   #  "all"  show   v-more
 #
 laa ()  { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -d {.,..,.[^.],.[^.]*[^~],*[^~]} ) }   # all (includ. hidden)
 laaj () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -1d {.,..,.[^.],.[^.]*[^~],*[^~]} ) }  # all v-less
 laak () { ( if [[ -n "$@" ]] ; then cd "$@"; fi ; ls -lhd {.,..,.[^.],.[^.]*[^~],*[^~]} ) } # all v-more
 #
-laas ()  { ls -a $@; }    #  all  show
-laasj () { ls -1a $@; }   #  all  show  v-less
-laask () { ls -lha $@; }  #  all  show  v-more
+laas ()  { ls -a $@; }    #   all   show
+laasj () { ls -1a $@; }   #   all   show   v-less
+laask () { ls -lha $@; }  #   all   show   v-more
 #
-lf () { ls -lha $@; }     #  full  =  all  show  v-more
+lf () { ls -lha $@; }     # full  =  all  show  v-more
 #
 #  * naively combining the option `-A` and the glob `*[^~]` does not work
 #    (ie, `ls -Ad *[^~]` does not work as one might expect)
 #
 # permutations
 lsa ()  { ls -A $@; }     #  "all"  show
-lsaj () { ls -1A $@; }    #  "all"  show  v-less
-lsak () { ls -lhA $@; }   #  "all"  show  v-more
+lsaj () { ls -1A $@; }    #  "all"  show   v-less
+lsak () { ls -lhA $@; }   #  "all"  show   v-more
 #
-lsaa ()  { ls -a $@; }    #   all  show
-lsaaj () { ls -1a $@; }   #   all  show  v-less
-lsaak () { ls -lha $@; }  #   all  show  v-more
+lsaa ()  { ls -a $@; }    #   all   show
+lsaaj () { ls -1a $@; }   #   all   show   v-less
+lsaak () { ls -lha $@; }  #   all   show   v-more
 
