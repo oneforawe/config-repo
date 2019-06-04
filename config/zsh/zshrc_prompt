@@ -93,13 +93,11 @@ function show_prompt_line_1 ()     { print -P "  \u250C $(show_timestamp) $(show
 function show_prompt_line_2 ()     { print -P "  \u2502 $(show_path)" }
 function show_prompt_line_final () { print -P "$VI_MODE \u2514 " }
 function show_prompt_line_opt ()   { print -P "  \u2502 $(show_env)$(git_prompt_info)" }
-#function show_prompt_line_opt ()   {
-#    if [[ -n $(git_prompt_info) ]] ; then
-#        print -P "  \u2502 $(show_env)$(git_prompt_info)"
-#    else
-#        print -P "  \u2502 $(show_env)"
-#    fi
-#}
+function show_prompt_line_opt ()   {
+    if [[ -v CONDA_DEFAULT_ENV ]] | [[ -n $(git_prompt_info) ]] ; then
+        print -P "  \u2502 $(show_env)$(git_prompt_info)"
+    fi
+}
 #function show_prompt_line_opt ()   {
 #    if [[ -v CONDA_DEFAULT_ENV ]] ; then
 #        if [[ -n $(git_prompt_info) ]] ; then
