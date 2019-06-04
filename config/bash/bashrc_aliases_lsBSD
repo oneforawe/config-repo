@@ -57,7 +57,7 @@ unalias   lk     lak     lsk     lask     laak     laask     lsak     lsaak
 alias     lf=''
 unalias   lf
 
-alias ls='ls -G'
+alias ls='/bin/ls -G'
 
 
 # basics  ( progressing from less to more )
