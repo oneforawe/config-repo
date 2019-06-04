@@ -10,24 +10,8 @@ setopt nullglob
 
 
 # vi edit-mode
-# Use vi key-bindings (instead of default emacs bindings) -- see also `.inputrc`
+# Use vi key-bindings (instead of default emacs bindings).
 bindkey -v
 
-# allow ctrl-p, ctrl-n for navigate history
-bindkey '^P' up-history
-bindkey '^N' down-history
-
-# allow backspace (not ctrl-?), ctrl-h, ctrl-w for backward char and word delete
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
-bindkey '^w' backward-kill-word
-# For '^?' and '^h', this "fixes" the "problem" of not being able to delete old
-# letters when inserting text (so no longer really an "insert"-only mode).
-
-# ctrl-r starts searching history backward
-bindkey '^r' history-incremental-search-backward
-
-# allow ctrl-a and ctrl-e to move to beginning/end of line (emacs-style)
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
+# Specific custom keybindings placed in `.inputrc`.
 

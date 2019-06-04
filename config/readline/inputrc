@@ -12,12 +12,50 @@
 # previous commands.
 
 # May want to move history material from bashrc_etc to here.
+#
+# For examples, see:
+# https://github.com/westurner/dotfiles/blob/master/etc/.inputrc
+# https://www.gnu.org/software/bash/manual/html_node/Sample-Init-File.html
 
 
 # Set universal readline editing mode to vi (rather than emacs)
 set editing-mode vi
 
+# Alternatives:
+# set -o vi   # for vi editing mode specifically in bash (put in bashrc_opt)
+# bindkey -v  # for vi editing mode specifically in zsh  (put in zshrc_opt)
+# (apparently, `bindkey -v` is needed for zsh in addition to `set editing-mode`)
+
+
+# Custom Key Bindings
+# see documentation for readline; see `bind --help`, `man bind`, `man bindkey`
+
+# allow ctrl-l to shift current active prompt to top of screen
+"\C-l":  clear-screen
+
+# allow ctrl-p, ctrl-n for navigate history
+#"\C-P": up-history
+#"\C-N": down-history
+"\C-p":  up-history
+"\C-n":  down-history
+
+# ctrl-r starts searching history backward
+"\C-r":  history-incremental-search-backward
+
+# allow backspace (not ctrl-?), ctrl-h, ctrl-w for backward char and word delete
+"\C-?":  backward-delete-char
+"\C-h":  backward-delete-char
+"\C-w":  backward-kill-word
+# For "\C-?" and "\C-h", this "fixes" the "problem" of not being able to delete
+# old letters when inserting text (so no longer really an "insert"-only mode).
+
+# could set for insert mode only
+# set keymap vi-insert
+"\C-a":  beginning-of-line
+"\C-e":  end-of-line
+
 
 # References:
 # [1] The GNU Readline Library
 #     https://tiswww.case.edu/php/chet/readline/rltop.html
+
