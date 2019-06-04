@@ -74,37 +74,56 @@ INSERT_MODE="%F{$INSERT_MODE_FG_COLOR}%K{$INSERT_MODE_BG_COLOR}$INSERT_LETTER%k%
 VI_MODE=$INSERT_MODE
 
 # prompt display functions:
+function newline ()           { print -P "%{\n%}" }
 function show_timestamp ()    { print -P "%F{$TIMESTAMP_COLOR}[$TIMESTAMP]%f" }
 function show_user_host_ip () { print -P "%F{$USER_HOST_COLOR}$USER @ $(uname -n) [$IP_ADDR]%f" }
 function show_status ()       { print -P "%F{$STATUS_COLOR}\($STATUS\)%f" }
 function show_path ()         { print -P "%F{$PWD_COLOR}${PWD}%f" }
-function show_env ()          { print -P "env:\(${CONDA_DEFAULT_ENV}\)" }
-function newline ()           { print -P "%{\n%}" }
+#function show_env ()         { print -P "env:\(${CONDA_DEFAULT_ENV}\)" }
+function show_env () {
+    if [[ -v CONDA_DEFAULT_ENV ]] ; then
+        print -P "env:\(${CONDA_DEFAULT_ENV}\) "
+    else
+        print -P ""
+    fi
+}
 
 function show_prompt_pre_line_1 () { print -P "" }
 function show_prompt_line_1 ()     { print -P "  \u250C $(show_timestamp) $(show_user_host_ip) $(show_status)" }
 function show_prompt_line_2 ()     { print -P "  \u2502 $(show_path)" }
 function show_prompt_line_final () { print -P "$VI_MODE \u2514 " }
-function show_prompt_line_opt ()   {
-    if [[ -v CONDA_DEFAULT_ENV ]] ; then
-        if [[ -n $(git_prompt_info) ]] ; then
-            print -P "  \u2502 $(show_env) $(git_prompt_info)"
-        else
-            print -P "  \u2502 $(show_env)"
-        fi
-    else
-        if [[ -n $(git_prompt_info) ]] ; then
-            print -P "  \u2502 $(git_prompt_info)"
-        fi
-    fi
-}
+function show_prompt_line_opt ()   { print -P "  \u2502 $(show_env)$(git_prompt_info)" }
+#function show_prompt_line_opt ()   {
+#    if [[ -n $(git_prompt_info) ]] ; then
+#        print -P "  \u2502 $(show_env)$(git_prompt_info)"
+#    else
+#        print -P "  \u2502 $(show_env)"
+#    fi
+#}
+#function show_prompt_line_opt ()   {
+#    if [[ -v CONDA_DEFAULT_ENV ]] ; then
+#        if [[ -n $(git_prompt_info) ]] ; then
+#            print -P "  \u2502 $(show_env) $(git_prompt_info)"
+#        else
+#            print -P "  \u2502 $(show_env)"
+#        fi
+#    else
+#        if [[ -n $(git_prompt_info) ]] ; then
+#            print -P "  \u2502 $(git_prompt_info)"
+#        fi
+#    fi
+#}
 
 # Short prompt (from robbyrussell theme)
-PROMPT_SMALL='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+PROMPT_DEFAULT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+PROMPT_SMALL='${ret_status} $VI_MODE %F{cyan}%B%c%b%f $(show_env)$(git_prompt_info)'
 
 # Set default / initialize
 PROMPT_STYLE="LARGE"
 #PROMPT_STYLE="SMALL"
+#PROMPT_STYLE="DEFAULT"
+PROMPT_SPACE="LOOSE"
+#PROMPT_SPACE="TIGHT"
 
 
 
@@ -126,8 +145,10 @@ function precmd () {
     # print title:
     set_the_window_tab_title
     # print first part of prompt / peripheral pre-prompt:
-    if [[ $PROMPT_STYLE = "LARGE" ]] ; then
+    if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_STYLE != "DEFAULT" ]] ; then
         show_prompt_pre_line_1
+    fi
+    if [[ $PROMPT_STYLE = "LARGE" ]] ; then
         show_prompt_line_1
         show_prompt_line_2
         show_prompt_line_opt
@@ -143,8 +164,10 @@ function prepare-primary-prompt () {
     # print last (main) part of prompt / primary prompt:
     if [[ $PROMPT_STYLE = "LARGE" ]] ; then
         PROMPT=$'$(show_prompt_line_final)'
-    else
+    elif [[ $PROMPT_STYLE = "SMALL" ]] ; then
         PROMPT=$PROMPT_SMALL
+    elif [[ $PROMPT_STYLE = "DEFAULT" ]] ; then
+        PROMPT=$PROMPT_DEFAULT
     fi
 }
 
@@ -161,7 +184,7 @@ zle -N zle-keymap-select
 # Just after the prompt.
 # print the "post" part of the prompt / "peripheral post-prompt"
 function preexec() {
-    if [[ $PROMPT_STYLE = "LARGE" ]] ; then
+    if [[ $PROMPT_SPACE = "LOOSE" ]] ; then
         print ""  # newline
     fi
 }
