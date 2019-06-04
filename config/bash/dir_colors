@@ -39,6 +39,7 @@ TERM rxvt-unicode
 TERM rxvt-unicode-256color
 TERM rxvt-unicode256
 TERM screen
+TERM screen-256color
 
 # EIGHTBIT, followed by '1' for on, '0' for off. (8-bit output)
 EIGHTBIT 1
