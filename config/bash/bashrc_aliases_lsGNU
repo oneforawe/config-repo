@@ -48,14 +48,14 @@
 # Enable colors for ls, etc.  Prefer ~/.dir_colors
 if [[ -x /usr/bin/dircolors ]] ; then
     if [[ -f ~/.dir_colors ]] && [[ -r ~/.dir_colors ]] ; then
-	    eval `dircolors -b ~/.dir_colors`
+        eval "$(dircolors -b ~/.dir_colors)"   # need quotes for multi-line eval
     else
-	    eval `dircolors -b /etc/DIR_COLORS`
+        eval "$(dircolors -b /etc/DIR_COLORS)" # need quotes for multi-line eval
     fi
 fi
 if [[ -x /usr/local/bin/gdircolors ]] ; then
     if [[ -f ~/.dir_colors ]] && [[ -r ~/.dir_colors ]] ; then
-        eval "$(gdircolors -b ~/.dir_colors)" # need quotes for multi-line eval
+        eval "$(gdircolors -b ~/.dir_colors)"  # need quotes for multi-line eval
         # If this doesn't work (as it was not working originally), then might
         # want to try the following (or a more efficient version of it):
         #gdircolors -b ~/.dir_colors > temp.txt
