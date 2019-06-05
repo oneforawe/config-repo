@@ -38,7 +38,7 @@ set editing-mode vi
 # see documentation for readline; see `bind --help`, `man bind`, `man bindkey`
 
 # allow ctrl-l to shift current active prompt to top of screen
-"\C-l":  clear-screen
+"\C-k":  clear-screen
 
 # allow ctrl-p, ctrl-n for navigate history
 #"\C-P": up-history
@@ -52,7 +52,7 @@ set editing-mode vi
 # allow backspace (not ctrl-?), ctrl-h, ctrl-w for backward char and word delete
 "\C-?":  backward-delete-char
 "\C-h":  backward-delete-char
-"\C-w":  backward-kill-word
+"\C-b":  backward-kill-word
 # For "\C-?" and "\C-h", this "fixes" the "problem" of not being able to delete
 # old letters when inserting text (so no longer really an "insert"-only mode).
 
@@ -60,6 +60,8 @@ set editing-mode vi
 # set keymap vi-insert
 "\C-a":  beginning-of-line
 "\C-e":  end-of-line
+"\C-l":  vi-forward-char
+# `vi-forward-char` is equivalent to what one might call "right-arrow"
 
 
 # References:

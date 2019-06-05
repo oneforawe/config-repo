@@ -21,7 +21,7 @@ bindkey -v
 # see documentation for readline; see `bind --help`, `man bind`, `man bindkey`
 
 # allow ctrl-l to shift current active prompt to top of screen
-bindkey '^l' clear-screen
+bindkey '^k' clear-screen
 
 # allow ctrl-p, ctrl-n for navigate history
 #"\C-P": up-history
@@ -35,7 +35,7 @@ bindkey '^r' history-incremental-search-backward
 # allow backspace (not ctrl-?), ctrl-h, ctrl-w for backward char and word delete
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
-bindkey '^w' backward-kill-word
+bindkey '^b' backward-kill-word
 # For "\C-?" and "\C-h", this "fixes" the "problem" of not being able to delete
 # old letters when inserting text (so no longer really an "insert"-only mode).
 
@@ -43,4 +43,6 @@ bindkey '^w' backward-kill-word
 # set keymap vi-insert
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
+bindkey '^l' vi-forward-char
+# `vi-forward-char` is equivalent to what one might call "right-arrow"
 

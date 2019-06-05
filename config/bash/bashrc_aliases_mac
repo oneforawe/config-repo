@@ -8,6 +8,14 @@
 # Functions and Aliases
 # ----------------------------------------------------------------------
 
+function which-ls () {
+    if [[ $LS_TYPE = "GNU" ]] ; then
+        echo "GNU"
+    elif [[ $LS_TYPE = "BSD" ]] ; then
+        echo "BSD"
+    fi
+}
+
 function ls-switch () {
     if [[ $LS_TYPE = "GNU" ]] ; then
         LS_TYPE="BSD"
