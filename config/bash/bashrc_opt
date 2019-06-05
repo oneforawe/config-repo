@@ -24,5 +24,8 @@ complete -cf sudo
 
 # Edit mode (vi as opposed to emacs) is set in `.inputrc`.
 # Specific custom keybindings placed in `.inputrc`.
-#set -o vi  # Don't need this here.
+set -o vi  # Don't need this here, except for the following command.
+
+# For some reason, this key binding isn't working from `.inputrc`.
+bind -m vi-command ' "\C-e": end-of-line '
 

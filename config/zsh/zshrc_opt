@@ -20,30 +20,46 @@ bindkey -v
 # Custom Key Bindings
 # See documentation for readline; see `bind --help`, `man bind`, `man bindkey`;
 # eg, see `bind -p` for all vi functions.
+# See `man zshzle` for more info on bindkey.
+# See also, eg, https://hea-www.harvard.edu/~fine/Tech/vi.html
+
+# vi mode has two sub-modes (according to readline documentation):
+# 1. "vi-insert" and 2. "vi", "vi-command", "vi-move" (all equivalent).
+# Re zshzle, there are several modes, but I'll stick with viins, vicmd.
+
+# I don't know how to simultaneously assign key bindings to two keymaps
+# (viins and vicmd), so I'm forced, for now, to write each key binding twice.
 
 # allow ctrl-l to shift current active prompt to top of screen
-bindkey '^k' clear-screen
+bindkey -M viins '^k' clear-screen
+bindkey -M vicmd '^k' clear-screen
 
 # allow ctrl-p, ctrl-n for navigate history
-#"\C-P": up-history
-#"\C-N": down-history
-bindkey '^p' up-history
-bindkey '^n' down-history
+bindkey -M viins '^p' up-history
+bindkey -M vicmd '^p' up-history
+bindkey -M viins '^n' down-history
+bindkey -M vicmd '^n' down-history
 
 # ctrl-r starts searching history backward
-bindkey '^r' history-incremental-search-backward
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
 
 # allow backspace (not ctrl-?), ctrl-h, ctrl-w for backward char and word delete
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
-bindkey '^b' backward-kill-word
+bindkey -M viins '^?' backward-delete-char
+bindkey -M vicmd '^?' backward-delete-char
+bindkey -M viins '^h' backward-delete-char
+bindkey -M vicmd '^h' backward-delete-char
+bindkey -M viins '^b' backward-kill-word
+bindkey -M vicmd '^b' backward-kill-word
 # For "\C-?" and "\C-h", this "fixes" the "problem" of not being able to delete
 # old letters when inserting text (so no longer really an "insert"-only mode).
 
-# could set for insert mode only
-# set keymap vi-insert
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
-bindkey '^l' vi-forward-char
+# for movement and "arrow-completion" (for auto-suggestions)
+bindkey -M viins '^a' beginning-of-line
+bindkey -M vicmd '^a' beginning-of-line
+bindkey -M viins '^e' end-of-line
+bindkey -M vicmd '^e' end-of-line
+bindkey -M viins '^l' vi-forward-char
+bindkey -M vicmd '^l' vi-forward-char
 # `vi-forward-char` is equivalent to what one might call "right-arrow"
 
