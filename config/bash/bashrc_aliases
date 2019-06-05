@@ -88,13 +88,13 @@ function level () {
 
 
 function large () {
-    PROMPT_STYLE="LARGE"
+    PROMPT_SIZE="LARGE"
 }
 function small () {
-    PROMPT_STYLE="SMALL"
+    PROMPT_SIZE="SMALL"
 }
 function default-prompt () {
-    PROMPT_STYLE="DEFAULT"
+    PROMPT_SIZE="DEFAULT"
 }
 
 function loose () {

@@ -27,6 +27,13 @@ set editing-mode vi
 # (apparently, `bindkey -v` is needed for zsh in addition to `set editing-mode`)
 
 
+# Indicators
+# (I've created my own custom indicators in zshrc_prompt.)
+#set show-mode-in-prompt on
+#set vi-ins-mode-string "+"
+#set cmd-mode-string ":"
+
+
 # Custom Key Bindings
 # see documentation for readline; see `bind --help`, `man bind`, `man bindkey`
 

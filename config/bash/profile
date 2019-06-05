@@ -4,6 +4,11 @@
 #   (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?).
 
 
+# For general command-line editing (in shells and elsewhere):
+# Use vi editing mode, rather than emacs mode or potentially something else.
+#set -o vi  # Putting this here doesn't seem to work.
+
+
 # For later reference:
 # Python programming environments
 #source /home/zero/.local/bin/activate.sh
@@ -37,13 +42,13 @@ fi
 #/usr/local/sbin
 
 
-if [[ "$(uname -s)" = "Darwin" ]] ; then
+if [[ `uname -s` = "Darwin" ]] ; then
     # For MacOS
     true
 fi
 
 
-if [[ "$(uname -s)" = "Linux" ]] ; then
+if [[ `uname -s` = "Linux" ]] ; then
     # For GNU/Linux
 
     export PATH="$HOME/Software:$PATH"

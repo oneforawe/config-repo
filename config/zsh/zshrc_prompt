@@ -13,15 +13,15 @@
 
 # Known issues:
 # 1. In MacOs, in a shell terminal (eg, Terminal or iTerm2), using the "LARGE"
-#    PROMPT_STYLE, when typing a long entry/command into the terminal, parts of
+#    PROMPT_SIZE, when typing a long entry/command into the terminal, parts of
 #    the entry may disappear, and when changing vi-edit-mode, the prompt moves
 #    upward, erasing the line that was above it.
 # 2. In MacOs, in a shell terminal (eg, Terminal or iTerm2), using the "LARGE"
-#    PROMPT_STYLE, when using tab-completion of a command, funny stuff happens:
+#    PROMPT_SIZE, when using tab-completion of a command, funny stuff happens:
 #    the cursor moves rightward and won't move back, and some text remains in
 #    place behind this new left-most cursor-position.
 # 3. In MacOs, in a shell terminal (eg, Terminal or iTerm2), using the "LARGE"
-#    PROMPT_STYLE, when long auto-suggestions pop up, the can cause funny stuff
+#    PROMPT_SIZE, when long auto-suggestions pop up, the can cause funny stuff
 #    to happen too, similar to the above funny stuff in issue 2.
 
 # Acknowledgement:
@@ -124,10 +124,10 @@ function show_prompt_line_opt ()   {
 PROMPT_DEFAULT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 PROMPT_SMALL='${ret_status} $VI_MODE $(show_host_letter)%F{034}%B%c%b%f $(show_env)$(git_prompt_info)'
 
-# Set default / initialize
-PROMPT_STYLE="LARGE"
-#PROMPT_STYLE="SMALL"
-#PROMPT_STYLE="DEFAULT"
+# Set initial prompt style
+#PROMPT_SIZE="DEFAULT"
+PROMPT_SIZE="SMALL"
+#PROMPT_SIZE="LARGE"
 PROMPT_SPACE="LOOSE"
 #PROMPT_SPACE="TIGHT"
 
@@ -151,10 +151,10 @@ function precmd () {
     # print title:
     set_the_window_tab_title
     # print first part of prompt / peripheral pre-prompt:
-    if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_STYLE != "DEFAULT" ]] ; then
+    if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_SIZE != "DEFAULT" ]] ; then
         show_prompt_pre_line_1
     fi
-    if [[ $PROMPT_STYLE = "LARGE" ]] ; then
+    if [[ $PROMPT_SIZE = "LARGE" ]] ; then
         show_prompt_line_1
         show_prompt_line_2
         show_prompt_line_opt
@@ -168,11 +168,11 @@ function prepare-primary-prompt () {
       (*)          VI_MODE=$INSERT_MODE ;;
     esac
     # print last (main) part of prompt / primary prompt:
-    if [[ $PROMPT_STYLE = "LARGE" ]] ; then
+    if [[ $PROMPT_SIZE = "LARGE" ]] ; then
         PROMPT=$'$(show_prompt_line_final)'
-    elif [[ $PROMPT_STYLE = "SMALL" ]] ; then
+    elif [[ $PROMPT_SIZE = "SMALL" ]] ; then
         PROMPT=$PROMPT_SMALL
-    elif [[ $PROMPT_STYLE = "DEFAULT" ]] ; then
+    elif [[ $PROMPT_SIZE = "DEFAULT" ]] ; then
         PROMPT=$PROMPT_DEFAULT
     fi
 }
@@ -190,7 +190,7 @@ zle -N zle-keymap-select
 # Just after the prompt.
 # print the "post" part of the prompt / "peripheral post-prompt"
 function preexec() {
-    if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_STYLE != "DEFAULT" ]] ; then
+    if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_SIZE != "DEFAULT" ]] ; then
         print ""  # newline
     fi
 }

@@ -177,10 +177,23 @@ endif
 " (using vim-fold-cycle from
 " https://github.com/arecarn/vim-fold-cycle/blob/master/plugin/fold_cycle.vim )
 "let g:fold_cycle_default_mapping = 0 "disable default mappings
-nmap <Tab> <Plug>(fold-cycle-open) " I want <Tab> to cycle through ALL states..
+nmap <Tab> <Plug>(fold-cycle-open)  " I want <Tab> to cycle through ALL states..
 "nmap <Tab> <Plug>(fold-cycle-toggle-all) " but none of these options..
 "nmap <Tab> <Plug>(fold-cycle-open-all)   " does that
 nmap <S-Tab> <Plug>(fold-cycle-close)
 " The best option is to use <S-Tab> (shift-tab) to cycle through ~ALL states
 " in a backwards fashion.
-"
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Some custom key bindings
+
+" All modes (?)
+noremap <silent> <C-n> :next<CR>            " go to the next file
+noremap <silent> <C-p> :prev<CR>            " go to the previous file
+
+" Normal Mode
+nnoremap <silent> ,<space> :nohlsearch<CR>  " clear the last search highlights
+

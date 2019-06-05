@@ -24,4 +24,5 @@ complete -cf sudo
 
 # Edit mode (vi as opposed to emacs) is set in `.inputrc`.
 # Specific custom keybindings placed in `.inputrc`.
+#set -o vi  # Don't need this here.
 
