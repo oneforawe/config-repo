@@ -43,13 +43,13 @@ source ~/.config/bash/bashrc_aliases_lsGNU
 #source ~/.config/bash/bashrc_aliases_lsBSD
 
 # For GNU/Linux
-if [[ "$(uname -s)" = "Linux" ]] ; then
+if [[ `uname -s` = "Linux" ]] ; then
     source ~/.config/bash/bashrc_aliases_linux
     #source ~/.config/bash/bashrc_etc_linux
 fi
 
 # For MacOS
-if [[ "$(uname -s)" = "Darwin" ]] ; then
+if [[ `uname -s` = "Darwin" ]] ; then
     source ~/.config/bash/bashrc_aliases_mac
     source ~/.config/bash/bashrc_etc_mac
 fi
