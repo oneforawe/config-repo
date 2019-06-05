@@ -37,9 +37,9 @@ set editing-mode vi
 
 
 # Custom Key Bindings
-# See documentation for readline; see `bind --help`, `man bind`, `man bindkey`;
-# eg, see `bind -p` for all vi functions.
+# See documentation for readline; see `bind --help`, `man bind`, `man bindkey`.
 # See `man zshzle` for more info on bindkey.
+# Execute `bind -p` or `bindkey -L` to see vi functions and/or bindings.
 # See also, eg, https://hea-www.harvard.edu/~fine/Tech/vi.html
 
 set keymap vi-insert
