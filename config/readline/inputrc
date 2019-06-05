@@ -35,7 +35,9 @@ set editing-mode vi
 
 
 # Custom Key Bindings
-# see documentation for readline; see `bind --help`, `man bind`, `man bindkey`
+# See documentation for readline; see `bind --help`, `man bind`, `man bindkey`;
+# eg, see `bind -p` for all vi functions.
+# See also, eg, https://hea-www.harvard.edu/~fine/Tech/vi.html
 
 # allow ctrl-l to shift current active prompt to top of screen
 "\C-k":  clear-screen

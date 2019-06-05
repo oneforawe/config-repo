@@ -18,7 +18,8 @@ bindkey -v
 
 
 # Custom Key Bindings
-# see documentation for readline; see `bind --help`, `man bind`, `man bindkey`
+# See documentation for readline; see `bind --help`, `man bind`, `man bindkey`;
+# eg, see `bind -p` for all vi functions.
 
 # allow ctrl-l to shift current active prompt to top of screen
 bindkey '^k' clear-screen
