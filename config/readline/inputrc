@@ -106,6 +106,10 @@ set keymap vi-command
 #set keymap vi-command
 #"\C-e":  end-of-line
 
+# Other key bindings that (probably) won't work:
+# "\C-'" / <C-'>
+# "\C-;" / <C-;>
+# via reference [3].
 
 # References:
 # [1] The GNU Bash Manual: Ch 8: Command Line Editing
@@ -113,4 +117,8 @@ set keymap vi-command
 #       Command-Line-Editing.html#Command-Line-Editing
 # [2] The GNU Readline Library
 #     https://tiswww.case.edu/php/chet/readline/rltop.html
+# [3] StackExchange: Vi and Vim (Beta)
+#     https://vi.stackexchange.com/questions/13832/
+#       key-mapping-c-ctrl-single-quote-not-working
+# [4] See also notes in `.vimrc`.
 

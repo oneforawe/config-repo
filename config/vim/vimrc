@@ -190,10 +190,20 @@ nmap <S-Tab> <Plug>(fold-cycle-close)
 
 " Some custom key bindings
 
-" All modes (?)
-noremap <silent> <C-n> :next<CR>            " go to the next file
-noremap <silent> <C-p> :prev<CR>            " go to the previous file
+" Insert Mode (apparently)
+"noremap <C-;> <Esc> " escape insert mode to normal mode (not working, see [1])
+noremap <silent> <C-n>  :next<CR>           " go to the next file
+noremap <silent> <C-p>  :prev<CR>           " go to the previous file
 
 " Normal Mode
 nnoremap <silent> ,<space> :nohlsearch<CR>  " clear the last search highlights
+
+" Reference
+" [1] Is it possible to map <C-;> to : in vim?
+" https://stackoverflow.com/questions/7652590/is-it-possible-to-map-c-to-in-vim
+" [2] The semicolon itself (without control key) can be mapped, for instance:
+" the behavior of semicolon can be changed to that of colon. Here's an example
+" using tmux (rather than vim itself):
+" https://github.com/chrismccord/dotfiles/blob/master/.tmux.conf
+" ( bind-key \; command-prompt )
 
