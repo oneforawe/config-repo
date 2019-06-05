@@ -40,6 +40,53 @@ alias gpsuo='git push --set-upstream origin'
 # Functions and Aliases
 # ----------------------------------------------------------------------
 
+# will probably want to edit this after finishing work on bash prompts
+function whereami () {
+    red=$'\e[1;31m'
+    grn=$'\e[1;32m'
+    yel=$'\e[1;33m'
+    blu=$'\e[1;34m'
+    mag=$'\e[1;35m'
+    cyn=$'\e[1;36m'
+    end=$'\e[0m'
+    if   [[ `uname -n` = "soliton.local" ]] ; then
+        if [[ -n $ZSH_VERSION ]] ; then
+            print -P "%F{$USER_HOST_COLOR}soliton (MacOS)%f"
+        elif [[ -n $BASH_VERSION ]] ; then
+            printf "%s\n" "${blu}soliton (MacOS)${end}"
+        fi
+    elif [[ `uname -n` = "momentus" ]] ; then
+        if [[ -n $ZSH_VERSION ]] ; then
+            print -P "%F{$USER_HOST_COLOR}momentus (GNU/Linux)"
+        elif [[ -n $BASH_VERSION ]] ; then
+            printf "%s\n" "${mag}momentus (GNU/Linux)${end}"
+        fi
+    else
+        if [[ -n $ZSH_VERSION ]] ; then
+            print -P "%F{$USER_HOST_COLOR}`uname -n`%f"
+        elif [[ -n $BASH_VERSION ]] ; then
+            printf "%s\n" "${yel}`uname -n`${end}"
+        fi
+        echo "..not in the usual soliton or momentus.."
+    fi
+}
+
+# bash only (?)
+function level () {
+    if [[ " $- " = *l* ]] ; then
+        echo "     LOGIN SHELL     "
+        echo "---------------------"
+        echo "echo \$- = $(echo $-)"
+        echo "l ==> login shell"
+    else
+        echo "      SUB SHELL      "
+        echo "---------------------"
+        echo "echo \$- = $(echo $-)"
+        echo "no l ==> sub shell"
+    fi
+}
+
+
 function large () {
     PROMPT_STYLE="LARGE"
 }

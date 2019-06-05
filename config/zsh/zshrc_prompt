@@ -58,6 +58,7 @@ elif [[ " `uname -n` " = *momentus* ]] ; then
     TIMESTAMP_COLOR="230" # light cream
     USER_HOST_COLOR="208" # muted orange
 else
+    TIMESTAMP_COLOR="081" # muted light blue
     USER_HOST_COLOR="226" # light yellow
 fi
 STATUS_COLOR="002"    # bright green
@@ -88,6 +89,12 @@ function show_env () {
         print -P ""
     fi
 }
+function show_host_letter () {
+    host_name="$(uname -n)"
+    host_name_letter="$(echo $host_name | head -c 1)"
+    host_name_letter_cap=$( echo "$host_name_letter" | awk '{ print toupper($0) }' )
+    print -P "%F{$USER_HOST_COLOR}%B$host_name_letter_cap:%b%f"
+}
 
 function show_prompt_pre_line_1 () { print -P "" }
 function show_prompt_line_1 ()     { print -P "  \u250C $(show_timestamp) $(show_user_host_ip) $(show_status)" }
@@ -115,7 +122,7 @@ function show_prompt_line_opt ()   {
 
 # Short prompt (from robbyrussell theme)
 PROMPT_DEFAULT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-PROMPT_SMALL='${ret_status} $VI_MODE %F{cyan}%B%c%b%f $(show_env)$(git_prompt_info)'
+PROMPT_SMALL='${ret_status} $VI_MODE $(show_host_letter)%F{034}%B%c%b%f $(show_env)$(git_prompt_info)'
 
 # Set default / initialize
 PROMPT_STYLE="LARGE"
