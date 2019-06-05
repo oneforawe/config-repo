@@ -42,6 +42,14 @@ set editing-mode vi
 # Execute `bind -p` or `bindkey -L` to see vi functions and/or bindings.
 # See also, eg, https://hea-www.harvard.edu/~fine/Tech/vi.html
 
+# vi mode has two sub-modes (according to readline documentation):
+# 1. "vi-insert" and 2. "vi", "vi-command", "vi-move" (all equivalent).
+# Re zshzle, there are several modes, but I'll stick with viins, vicmd.
+
+# I don't know how to simultaneously assign key bindings to two keymaps
+# (vi-insert and vi-command), so I'm forced to write each key binding twice.
+
+
 set keymap vi-insert
 
 # allow ctrl-l to shift current active prompt to top of screen
@@ -66,6 +74,7 @@ set keymap vi-insert
 "\C-e":  end-of-line
 "\C-l":  vi-forward-char
 # `vi-forward-char` is equivalent to what one might call "right-arrow"
+
 
 set keymap vi-command
 
@@ -92,6 +101,10 @@ set keymap vi-command
 "\C-l":  vi-forward-char
 # `vi-forward-char` is equivalent to what one might call "right-arrow"
 
+
+# This command (from above) doesn't work here, so it's replicated in bashrc_opt.
+#set keymap vi-command
+#"\C-e":  end-of-line
 
 
 # References:

@@ -28,7 +28,7 @@ bindkey -v
 # Re zshzle, there are several modes, but I'll stick with viins, vicmd.
 
 # I don't know how to simultaneously assign key bindings to two keymaps
-# (viins and vicmd), so I'm forced, for now, to write each key binding twice.
+# (viins and vicmd), so I'm forced to write each key binding twice.
 
 # allow ctrl-l to shift current active prompt to top of screen
 bindkey -M viins '^k' clear-screen

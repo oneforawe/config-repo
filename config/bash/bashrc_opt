@@ -26,6 +26,9 @@ complete -cf sudo
 # Specific custom keybindings placed in `.inputrc`.
 set -o vi  # Don't need this here, except for the following command.
 
-# For some reason, this key binding isn't working from `.inputrc`.
+# This key binding doesn't work from `.inputrc`, so it'll have to go here.
 bind -m vi-command ' "\C-e": end-of-line '
+# See for explanation:
+# https://stackoverflow.com/questions/54300220/
+#     why-cant-i-set-c-e-in-inputrc-to-be-end-of-line-for-vi-command-keymap
 
