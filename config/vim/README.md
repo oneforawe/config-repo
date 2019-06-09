@@ -3,9 +3,18 @@
 
 A great way to get started with the vim text editor is to use the vim tutor by
 executing the following in a shell terminal and reading and following along with
-the instructions provided:
+the instructions provided: `vimtutor`
 
-`vimtutor`
+For more in-depth learning, inside a session of vim, type `:help` or `:h` and
+hit enter.
+
+More advanced ideas: look at blog posts and youtube videos, like these posts:
+* VIM AFTER 15 YEARS  
+   https://statico.github.io/vim3.html
+* Buffers, Windows, Tab Pages  
+   https://romainl.github.io/the-patient-vimmer/2.html
+* Why I love Vim: It’s the lesser-known features that make it so amazing  
+   https://www.freecodecamp.org/news/learn-linux-vim-basic-features-19134461ab85/
 
 
 ## submodules
