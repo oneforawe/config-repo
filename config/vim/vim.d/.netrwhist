@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/zero/Dev/Code/.configs'
 let g:netrw_dirhist_2='/Users/zero/.anaconda'
 let g:netrw_dirhist_3='/Users/zero/.anaconda_backup'
 let g:netrw_dirhist_4='/Users/zero/.vim'
 let g:netrw_dirhist_5='/Users/zero/.conda'
 let g:netrw_dirhist_6='/Users/zero/.config-files/config/zsh'
+let g:netrw_dirhist_7='/Users/zero/Dev/Learn/CodePractice/HackerRank/InterviewPrepKit/Arrays/LeftRotation'

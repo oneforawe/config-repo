@@ -93,7 +93,7 @@ function show_host_letter () {
     host_name="$(uname -n)"
     host_name_letter="$(echo $host_name | head -c 1)"
     host_name_letter_cap=$( echo "$host_name_letter" | awk '{ print toupper($0) }' )
-    print -P "%F{$USER_HOST_COLOR}%B$host_name_letter_cap:%b%f"
+    print -P "%F{$USER_HOST_COLOR}%B$host_name_letter_cap%b%f "
 }
 
 function show_prompt_pre_line_1 () { print -P "" }
@@ -111,6 +111,9 @@ function opt_symbol () {
         print -P " >"
     fi
 }
+function prompt_symbol () {
+    print -P ">"
+}
 #function show_prompt_line_opt ()   {
 #    if [[ -v CONDA_DEFAULT_ENV ]] ; then
 #        if [[ -n $(git_prompt_info) ]] ; then
@@ -127,7 +130,8 @@ function opt_symbol () {
 
 # Short prompt (from robbyrussell theme)
 PROMPT_DEFAULT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-PROMPT_SMALL='${ret_status} $VI_MODE $(show_host_letter)%F{034}%B%c%b%f$(opt_symbol) $(show_env)$(git_prompt_info)'
+#PROMPT_SMALL='${ret_status} $VI_MODE $(show_host_letter)%F{034}%B%c%b%f$(opt_symbol) $(show_env)$(git_prompt_info)'
+PROMPT_SMALL='${ret_status} $VI_MODE $(show_host_letter)%F{034}%B%c%b%f $(show_env)$(git_prompt_info)$(prompt_symbol) '
 
 # Set initial prompt style
 #PROMPT_SIZE="DEFAULT"
