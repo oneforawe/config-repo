@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/zero/Dev/Code/.configs'
 let g:netrw_dirhist_2='/Users/zero/.anaconda'
 let g:netrw_dirhist_3='/Users/zero/.anaconda_backup'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/zero/.conda'
 let g:netrw_dirhist_6='/Users/zero/.config-files/config/zsh'
 let g:netrw_dirhist_7='/Users/zero/Dev/Learn/CodePractice/HackerRank/InterviewPrepKit/Arrays/LeftRotation'
 let g:netrw_dirhist_8='/Users/zero/Dev/Learn/CodePractice/LeetCode/015_3Sum'
+let g:netrw_dirhist_9='/Users/zero/Dev/Learn/CodePractice/LeetCode/415_AddStrings'
