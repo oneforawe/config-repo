@@ -54,6 +54,9 @@ function set_the_window_tab_title () {
 if   [[ " `uname -n` " = *soliton* ]] ; then
     TIMESTAMP_COLOR="081" # muted light blue
     USER_HOST_COLOR="105" # muted light purple
+elif [[ " `uname -n` " = *maclap* ]] ; then
+    TIMESTAMP_COLOR="081" # muted light blue
+    USER_HOST_COLOR="105" # muted light purple
 elif [[ " `uname -n` " = *momentus* ]] ; then
     TIMESTAMP_COLOR="230" # light cream
     USER_HOST_COLOR="208" # muted orange
