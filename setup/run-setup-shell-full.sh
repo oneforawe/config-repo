@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: run-setup-full.sh
+# filename: run-setup-shell-full.sh
 # purpose: Automate setting up system with configuration files.
 
 # TODO: Create function that doesn't just link but checks for pre-existing
@@ -28,8 +28,8 @@ r=$CONFIG_ROOT
 src=$CONFIG_LOCATION
 
 
-source $src/setup/run-setup-step-1-link-files.sh
-source $src/setup/run-setup-step-2-install.sh
-#source $src/setup/run-setup-step-3-python.sh
-#source $src/setup/run-setup-step-4-datasci.sh
+source $src/setup/run-setup-shell-step-1-link-files.sh
+source $src/setup/run-setup-shell-step-2-install.sh
+#source $src/setup/run-setup-shell-step-3-python.sh
+#source $src/setup/run-setup-shell-step-4-datasci.sh
 

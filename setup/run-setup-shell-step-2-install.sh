@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: run-setup-step-2-install.sh
+# filename: run-setup-shell-step-2-install.sh
 # purpose: Automate installing/updating shells and utilities.
 
 

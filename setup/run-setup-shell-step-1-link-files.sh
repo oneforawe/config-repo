@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: run-setup-step-1-link-files.sh
+# filename: run-setup-shell-step-1-link-files.sh
 # purpose: Automate placing (linking) the user configuration files.
 
 # TODO: Create function that doesn't just link but checks for pre-existing
