@@ -4,8 +4,8 @@ This repository contains:
 
 1. my personal customized user configuration files, and
 
-2. executable scripts to apply environment settings for (Mac) desktop, GUI apps,
-shell, and shell apps.
+2. executable scripts to apply these configurations for shells, shell apps, the
+Mac desktop, and Mac GUI apps.
 
 The purpose of this repo is mostly for my own convenience, to make my working
 environment consistent across different machines and to make it very easy to set
