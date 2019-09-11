@@ -21,7 +21,7 @@ Be sure to understand the code before running it, and save copies of important
 relevant files that will be over-written if you want to go back to your original
 settings.
 
-1. Clone this repo to obtain a local copy the files:  
+1. In a shell, clone this repo to obtain a local copy the files:  
    `git clone https://github.com/oneforawe/config-files.git ~/.config-files`
 
 2. For Mac systems, you can run the MacOS environment setup script:  
