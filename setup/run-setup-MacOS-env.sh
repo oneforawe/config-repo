@@ -123,6 +123,33 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 
 ###############################################################################
+# Additional/Third-Party Apps                                                 #
+###############################################################################
+
+# NTFS for Mac
+# iTerm (iTerm2)
+# CleanMyMac 3
+# Disk Drill
+# DaisyDisk
+# Disk Inventory X
+# VirtualBox
+
+# Flux
+
+# Emacs
+# Backup and Sync from Google
+# Google Chrome
+# Signal Private Messenger -- download from signal.org
+# VLC
+# zoom.us.app
+# qbittorrent
+# RStudio
+
+# Used to have:
+# Filezilla
+
+
+###############################################################################
 # iTerm2                                                                      #
 ###############################################################################
 
