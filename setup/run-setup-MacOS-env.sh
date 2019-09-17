@@ -129,6 +129,7 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # NTFS for Mac
 # iTerm (iTerm2)
 # CleanMyMac 3
+# CleanMyMac X
 # Disk Drill
 # DaisyDisk
 # Disk Inventory X
@@ -155,14 +156,18 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Find how to automate this:
 
-#iTerm > Preferences > Appearance > "Preserve window size when tab bar shows or hides" (check)
-#iTerm > Preferences > Appearance > "Show tab bar in fullscreen" (uncheck)
-#iTerm > Preferences > Appearance > "Flash tab bar when switching tabs in fullscreen" (check)
+#iTerm > Preferences > Appearance > Tabs > "Preserve window size when tab bar shows or hides" (check)
+#iTerm > Preferences > Appearance > Tabs > "Show tab bar in fullscreen" (uncheck)
+#iTerm > Preferences > Appearance > Tabs > "Flash tab bar when switching tabs in fullscreen" (check)
 
 #iTerm > Preferences > Profiles > "Profile Name" >  [can name profile "CleanProfile", "Other Actions..." > "Set as Default"]
 #iTerm > Preferences > Profiles > Window > Style: Full Screen
 #iTerm > Preferences > Profiles > Window > Screen: No Preference
-#iTerm > Preferences > Profiles > Window > Space: Current Space
+#iTerm > Preferences > Profiles > Window > Space: Current Space  OR  Space 2 (*)
+
+#(*) If using "Space 2", make sure switching spaces using Control-<number> is enabled:
+#System Preferences > Keyboard > Shortcuts > Mission Control > "Switch to Desktop 1"..."^1" (check)
+#System Preferences > Keyboard > Shortcuts > Mission Control > "Switch to Desktop 2"..."^2" (check)
 
 
 ###############################################################################
