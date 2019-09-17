@@ -169,7 +169,7 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Google Chrome                                                               #
 ###############################################################################
 
-echo " Google Chrome: Disable the all too sensitive backswipe on trackpads"
+echo " Google Chrome: Disable the all-too-sensitive backswipe on trackpads"
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
 
