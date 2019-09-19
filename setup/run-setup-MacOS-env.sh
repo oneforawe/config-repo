@@ -180,9 +180,11 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 #iTerm > Preferences > Profiles > "Profile Name" > "CleanProfile" > Window > Space:  Space 2 (*)  OR  Current Space
 #(*) If using "Space 2", make sure to enable switching spaces using Control-<number> (see above).
 
-#iTerm > Preferences > Profiles > "Profile Name" > "CleanProfile" > Left Option Key: Meta (check/select)
-# Note the warning that appears when making this selection:
+# Enable the Left Option key to function as the Meta key in Emacs (by selecting "Esc+" rather than "Meta"):
+#iTerm > Preferences > Profiles > "Profile Name" > "CleanProfile" > Left Option Key: Esc+ (check/select)
+# Note the warning that appears when selecting "Meta":
 # "Warning: You have chosen to have an option key act as Meta. This option is useful for backward compatibility with older systems. The "+Esc" option is recommended for most users."
+# For me, selecting "Meta" did not work as desired, but selecting "Esc+" *did* work.
 
 
 ###############################################################################
