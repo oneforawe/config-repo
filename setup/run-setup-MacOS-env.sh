@@ -91,6 +91,18 @@ killall Dock
 
 
 ###############################################################################
+# Keyboard                                                                    #
+###############################################################################
+
+#Turn the Caps Lock key into another Control key (for easier, more ergonomic multi-key pressing, or "chording"):
+#System Preferences > Keyboard > Keyboard > "Modifier Keys..." > Caps Lock Key: "^Control"
+
+#Enable switching spaces using Control-<number>:
+#System Preferences > Keyboard > Shortcuts > Mission Control > "Switch to Desktop 1"..."^1" (check)
+#System Preferences > Keyboard > Shortcuts > Mission Control > "Switch to Desktop 2"..."^2" (check)
+
+
+###############################################################################
 # Finder                                                                      #
 ###############################################################################
 
@@ -160,14 +172,25 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 #iTerm > Preferences > Appearance > Tabs > "Show tab bar in fullscreen" (uncheck)
 #iTerm > Preferences > Appearance > Tabs > "Flash tab bar when switching tabs in fullscreen" (check)
 
-#iTerm > Preferences > Profiles > "Profile Name" >  [can name profile "CleanProfile", "Other Actions..." > "Set as Default"]
-#iTerm > Preferences > Profiles > Window > Style: Full Screen
-#iTerm > Preferences > Profiles > Window > Screen: No Preference
-#iTerm > Preferences > Profiles > Window > Space: Current Space  OR  Space 2 (*)
+# Make new default profile named "CleanProfile" with certain nice properties:
+#iTerm > Preferences > Profiles > "Profile Name" >  ["+" and can name profile "CleanProfile"]
+#iTerm > Preferences > Profiles > "Profile Name" > "CleanProfile" ["Other Actions..." > "Set as Default"]
+#iTerm > Preferences > Profiles > "Profile Name" > "CleanProfile" > Window > Style: Full Screen
+#iTerm > Preferences > Profiles > "Profile Name" > "CleanProfile" > Window > Screen: No Preference
+#iTerm > Preferences > Profiles > "Profile Name" > "CleanProfile" > Window > Space:  Space 2 (*)  OR  Current Space
+#(*) If using "Space 2", make sure to enable switching spaces using Control-<number> (see above).
 
-#(*) If using "Space 2", make sure switching spaces using Control-<number> is enabled:
-#System Preferences > Keyboard > Shortcuts > Mission Control > "Switch to Desktop 1"..."^1" (check)
-#System Preferences > Keyboard > Shortcuts > Mission Control > "Switch to Desktop 2"..."^2" (check)
+#iTerm > Preferences > Profiles > "Profile Name" > "CleanProfile" > Left Option Key: Meta (check/select)
+# Note the warning that appears when making this selection:
+# "Warning: You have chosen to have an option key act as Meta. This option is useful for backward compatibility with older systems. The "+Esc" option is recommended for most users."
+
+
+###############################################################################
+# Terminal                                                                    #
+###############################################################################
+
+# If using Terminal (instead of the preferred iTerm2),
+#Terminal > Preferences > Profiles > (Default) > Keyboard > "Use Option as Meta key" (check)
 
 
 ###############################################################################
