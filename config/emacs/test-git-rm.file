@@ -1,0 +1,4 @@
+this is just a file to test
+a way (other than simply "git rm")
+to get rid of a file in the repo, but keep it locally.
+
