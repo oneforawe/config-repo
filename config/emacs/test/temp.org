@@ -1,0 +1,20 @@
+
+
+org file:
+  c-k (up)   doesn't work
+  c-j (down) doesn't work
+
+
+a;lsdfkj;als kjfs;dla kfjsda
+
+
+
+multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text multi line text 
+
+
+
+a;dlsfk js;dlkj f;alskjf kl;asj 
+
+
+
+

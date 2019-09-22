@@ -10,6 +10,7 @@
       '(
 	evil-backward-char
 	evil-forward-char
+	evil-next-line
 	evil-set-marker
 	evil-visual-char
 	))

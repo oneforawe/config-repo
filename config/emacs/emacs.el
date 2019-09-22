@@ -59,6 +59,9 @@
 ; See other people's init/config files, for example:
 ; https://github.com/ivoarch/.dot-org-files/blob/master/emacs.org
 
+; TODO: fix line-move-visual key bindings
+;  (el and txt files work, tex file half-works, org file doesn't work)
+
 
 
 
