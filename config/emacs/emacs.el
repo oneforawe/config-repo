@@ -4,6 +4,11 @@
 ;; purpose: Set configurations for the GNU Emacs text editor.
 
 
+;; NOTE: Apologies, dear reader, for this is one of my most disorganized
+;;       and aesthetically displeasing configuration files.  As time goes
+;;       on, I should be able to clean this up more.
+
+
 ; This is the initialization ("init") file, or simply "dot emacs" file
 ; (or Emacs "dotfile") that configures the initial settings of Emacs
 ; upon starting up Emacs.
@@ -131,7 +136,7 @@
        'smex ; M-x enhancement for Emacs. Built on top of IDO.
        ;'web-mode ; web template editing mode for emacs.
        ;'xkcd ; Read xkcd from emacs.
-       'zenburn-theme ; The Zenburn colour theme ported to Emacs.
+       ;'zenburn-theme ; The Zenburn colour theme ported to Emacs.
        ))
 
 ;; Check if all desired packages are installed.
@@ -169,19 +174,15 @@
 (global-set-key (kbd "C-c C-l") 'mc/mark-all-like-this)
 
 ;; Colors
-;; For a nice dark theme and colorized color names.
+;; For theme options and a nice dark theme and colorized color names.
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
-(add-to-list 'load-path "~/.emacs.d/themes") ; where I put my color theme file
-;(load-theme 'zenburn t)
-
-;(require 'color-theme)
-;(color-theme-initialize)
+(require 'color-theme)
+(color-theme-initialize)
 ;(color-theme-robin-hood)
-;(zenburn)
-;(color-theme-zenburn)
-
+(add-to-list 'load-path "~/.emacs.d/themes") ; where I put my color theme file
 (require 'zenburn)
 (zenburn)
+
 
 ;(add-hook 'css-mode-hook 'rainbow-mode)
 
@@ -230,35 +231,6 @@
         lisp-interaction-mode-hook))
 ;; By default move up and down by logical lines, not visual lines
 (setq line-move-visual nil)
-
-
-;; Key-Bindings  --  WARNING  --
-;  Apparently, Emacs in text displays (terminals rather than in GUI displays)
-;  cannot detect shifted control-key-combinations, or, in other words,
-;  cannot distinguish bewteen shifted and unshifted versions of such combinations.
-;  See http://ergoemacs.org/emacs/keyboard_shortcuts.html
-;; (Is the same issue present with vim?)
-
-;; Provide key-bindings for visual line movement
-;;  (up and down in a single logical line that is wrapped or "word wrapped")
-(defun line-move-visual-up ()
-    "Move up one line in line-move-visual mode."
-    (interactive)
-    (setq line-move-visual t)
-    (previous-line)
-    (setq line-move-visual nil)
-)
-(defun line-move-visual-down ()
-    "Move up one line in line-move-visual mode."
-    (interactive)
-    (setq line-move-visual t)
-    (next-line)
-    (setq line-move-visual nil)
-)
-(global-unset-key (kbd "C-k") )
-(global-set-key   (kbd "C-k") 'line-move-visual-up)
-(global-unset-key (kbd "C-j") )
-(global-set-key   (kbd "C-j") 'line-move-visual-down)
 
 
 ;; Ido - "Interactively DO things"
@@ -362,12 +334,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (defvar dir-where-you-store-org-files "~/org/")
 (setq org-default-notes-file (concat org-directory "/Capture/capture.org")) ; set capture file
 ;; Might want to update the agenda-included files.  (Oh, also see custom-set-variables below, which has org-agenda-files.)
-(setq 
- org-agenda-files 
- (mapcar (lambda (x) (concat dir-where-you-store-org-files x))
+(setq org-agenda-files (mapcar (
+   lambda (x) (concat dir-where-you-store-org-files x))
    '(
       "/Projects/Proj_SecurityMotionDetect.org"
-      "/Review/R01_ActionList_Current.org" "/Review/R02_IdeaAction_PendPro.org" "/Review/R03_IdeaAction_PendChr.org" "/Review/R04_IdeaAction_PendFun.org" "/Review/R05_IdeaAction_DatedRv.org"
+      "/Review/R01_ActionList_Current.org" "/Review/R02_IdeaAction_PendPro.org"
+      "/Review/R03_IdeaAction_PendChr.org" "/Review/R04_IdeaAction_PendFun.org"
+      "/Review/R05_IdeaAction_DatedRv.org"
       "/Review/More/R06_IdeaAction_SmdyMyb.org"
     )
  )
@@ -824,6 +797,55 @@ This function makes sure that dates are aligned for easy reading."
 	      ("FAIL" :foreground "#B6222b" :background "#1a1a1a")
               ("DONE" :foreground "#888888" :background "#1a1a1a")
               ("WTNG" :foreground "#c7c700" :background "#313000"))))
+
+
+
+
+;;=================================================
+;; SOME KEY-BINDINGS
+;;-------------------------------------------------
+
+;; Key-Bindings  --  WARNING  --
+;  Apparently, Emacs in text displays (terminals rather than in GUI displays)
+;  cannot detect shifted control-key-combinations, or, in other words,
+;  cannot distinguish bewteen shifted and unshifted versions of such combinations.
+;  See http://ergoemacs.org/emacs/keyboard_shortcuts.html
+;; (Is the same issue present with vim?)
+
+;; Provide key-bindings for visual line movement
+;;  (up and down in a single logical line that is wrapped or "word wrapped")
+(defun line-move-visual-up ()
+    "Move up one line in line-move-visual mode."
+    (interactive)
+    (setq line-move-visual t)
+    (previous-line)
+    (setq line-move-visual nil)
+)
+(defun line-move-visual-down ()
+    "Move up one line in line-move-visual mode."
+    (interactive)
+    (setq line-move-visual t)
+    (next-line)
+    (setq line-move-visual nil)
+)
+(global-unset-key (kbd "C-k") )
+(global-set-key   (kbd "C-k") 'line-move-visual-up)
+(global-unset-key (kbd "C-j") )
+(global-set-key   (kbd "C-j") 'line-move-visual-down)
+
+; Hm, my definition for "C-j" wasn't working in my .tex LaTeX files.
+; How can I fix this?  Here's a failing attempt:
+;(eval-after-load "tex"
+(eval-after-load "latex"
+  '(progn
+     (global-unset-key (kbd "C-j") )
+     (global-set-key (kbd "C-j") 'line-move-visual-down)
+     ;(define-key LaTeX-mode-map (kbd "C-j") 'line-move-visual-down)
+     ;(define-key LaTeX-mode-map (kbd "C-}") "\\endgroup\n")
+   )
+)
+
+; test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text 
 
 
 

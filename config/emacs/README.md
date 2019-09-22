@@ -9,10 +9,18 @@ For more info, see
   https://www.gnu.org/software/emacs
 
 
+## note
+
+This set of configurations is probably the most disorganized and aesthetically
+displeasing of all my configuration files.  Over time it should improve as I
+hone it further.
+
+
 ## configurations
 
-I've configured my emacs editor to use vi key-bindings (using "evil").  I've
-also configured it to use Org Mode (and evil-org-mode).
+I'll note a couple major configurations here.  I've configured my emacs editor
+to use vi key-bindings (using "evil").  I've also configured it to use Org Mode
+(and evil-org-mode).
 
 For more info, see  
   https://orgmode.org  
