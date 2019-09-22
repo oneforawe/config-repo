@@ -30,7 +30,9 @@ a submodule by executing the following (in its containing folder):
 ## reference
 
 For the record, and for troubleshooting when things go wrong, I'll (try to) put
-all of the submodule commands here.  (They normally won't need to be used.)
+all of the submodule commands here.  They normally won't need to be used.  If
+using them, be sure to navigate to the correct folder before executing, or give
+the full path to the submodule at the end of the command.
 
 * `git submodule add https://github.com/tpope/vim-scriptease vim-scriptease`
 * `git submodule add https://github.com/neitanod/vim-clevertab vim-clevertab`
