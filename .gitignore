@@ -18,3 +18,4 @@ config/vim/old/
 config/emacs/old
 config/emacs/alt
 config/emacs.d/.mc-lists.el
+config/emacs/test-git-rm.file
