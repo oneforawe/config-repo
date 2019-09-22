@@ -31,11 +31,7 @@ settings.
 this repo:  
    `cd ~/.config-files`  
    `git submodule init`  
-   `git submodule update`  
-
-   Don't forget to add submodules manually when installing them for the first
-   time:  
-   `git submodule add https://url/submodule.git path/to/submodule`
+   `git submodule update`
 
 4. Run this command to over-write existing shell configuration files with links
 to the config files in this repo and to install the necessary and desired
@@ -45,6 +41,13 @@ packages:
 5. You may want to clean up (delete) extraneous config files, and you may have
 to do some trouble-shooting once everything is set up.  For instance, I had to
 use `brew link --overwrite python` after setting up on an old Mac system.
+
+
+## Development
+
+Don't forget to add submodules manually when installing them for the first
+time:  
+   `git submodule add https://url/submodule.git path/to/submodule`
 
 
 ## Terminology
