@@ -1,6 +1,6 @@
 ;; -*- mode: elisp -*-
 ;; language: emacs lisp (elisp)
-;; filename: emacsrc  (linked as .emacs)
+;; filename: emacs.el  (linked as .emacs)
 ;; purpose: Set configurations for the GNU Emacs text editor.
 
 
