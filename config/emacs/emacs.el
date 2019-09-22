@@ -96,6 +96,7 @@
 ; To see pages, use 'M-x package-list-packages'.
 
 ; Fetch more packages:
+; (I get errors when trying to connect to these sites.)
 ;(ignore-errors
 ;    (add-to-list 'package-archives
 ;                 '("melpa" . "http://melpa.milkbox.net/packages/"))
@@ -157,9 +158,15 @@
 ;; Multiple Cursors
 ;; For simultaneous multi-line editing.
 (require 'multiple-cursors)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;(global-set-key (kbd "C-.") 'mc/mark-next-like-this)
+;(global-set-key (kbd "C-,") 'mc/mark-previous-like-this)
+;(global-set-key (kbd "C-c C-.") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-l") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-h") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-l") 'mc/mark-all-like-this)
 
 ;; Colors
 ;; For a nice dark theme and colorized color names.
