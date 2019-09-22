@@ -127,8 +127,9 @@ ln_s $src/config/vim/vimrc $r/.vimrc
 ln_s $src/config/vim/vim.d $r/.vim
 
 # emacs
-#ln_s $src/config/emacs/emacsrc ~/.emacs   (?)
-#ln_s $src/config/emacs/emacs.d ~/.emacs   (?)
+rm -r $r/.emacs.d
+ln_s $src/config/emacs/emacsrc $r/.emacs
+ln_s $src/config/emacs/emacs.d $r/.emacs.d
 
 # git
 #ln_s $src/config/gitconfig .gitconfig

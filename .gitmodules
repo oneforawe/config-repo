@@ -24,4 +24,14 @@
 	url = https://github.com/tpope/vim-surround
 [submodule "config/vim/vim.d/pack/external/start/vim-unimpaired"]
 	path = config/vim/vim.d/pack/external/start/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired
+    url = https://github.com/tpope/vim-unimpaired
+[submodule "config/emacs/emacs.d/evil"]
+	path = config/emacs/emacs.d/evil
+    url = https://github.com/emacs-evil/evil
+[submodule "config/emacs/emacs.d/org"]
+	path = config/emacs/emacs.d/org
+    url = https://code.orgmode.org/bzg/org-mode
+[submodule "config/emacs/emacs.d/plugins/evil-org"]
+	path = config/emacs/emacs.d/plugins/evil-org
+    url = https://github.com/somelauw/evil-org
+

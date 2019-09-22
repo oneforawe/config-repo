@@ -4,6 +4,7 @@ fish
 tmux
 screen
 vim
+emacs
 htop
 less
 wget
