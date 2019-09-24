@@ -17,4 +17,5 @@ config/fish/old/
 config/vim/old/
 config/emacs/old
 config/emacs/alt
-config/emacs.d/.mc-lists.el
+config/emacs/emacs.d/org-clock-save.el
+config/emacs/emacs.d/.mc-lists.el

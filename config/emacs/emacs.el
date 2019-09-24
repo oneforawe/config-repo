@@ -171,15 +171,15 @@
 ;; Multiple Cursors
 ;; For simultaneous multi-line editing.
 (require 'multiple-cursors)
-;(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;(global-set-key (kbd "C->") 'mc/mark-next-like-this)     ; can't do control-shift
+;(global-set-key (kbd "C-<") 'mc/mark-previous-like-this) ; can't do control-shift
+;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)  ; can't do control-shift
 ;(global-set-key (kbd "C-.") 'mc/mark-next-like-this)
 ;(global-set-key (kbd "C-,") 'mc/mark-previous-like-this)
 ;(global-set-key (kbd "C-c C-.") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-l") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-h") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-l") 'mc/mark-all-like-this)
+;(global-set-key (kbd "C-l") 'mc/mark-next-like-this)
+;(global-set-key (kbd "C-h") 'mc/mark-previous-like-this)
+;(global-set-key (kbd "C-c C-l") 'mc/mark-all-like-this)
 
 ;; Colors
 ;; For theme options and a nice dark theme and colorized color names.
