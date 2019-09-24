@@ -59,8 +59,13 @@
 ; See other people's init/config files, for example:
 ; https://github.com/ivoarch/.dot-org-files/blob/master/emacs.org
 
-; TODO: fix line-move-visual key bindings
-;  (el and txt files work, tex file half-works, org file doesn't work)
+; TODO: Get rid of all the many unnecessary files in this repo.
+; TODO: Get rid of all the many unnecessary lines of code/comments in this file.
+;       (take notes elsewhere if wanted)
+; TODO: Fix line-move-visual key bindings.
+;       (el and txt files work)
+;       (tex file half-works)
+;       (org file doesn't work, although it doesn't need to work here)
 
 
 
@@ -836,10 +841,16 @@ This function makes sure that dates are aligned for easy reading."
 (global-unset-key (kbd "C-j") )
 (global-set-key   (kbd "C-j") 'line-move-visual-down)
 
+
+
+; DOESN'T WORK:
+; ----------------------------------------------------------------------
+
 ; Hm, my definition for "C-j" wasn't working in my .tex LaTeX files.
 ; How can I fix this?  Here's a failing attempt:
 ;(eval-after-load "tex"
-(eval-after-load "latex"
+;(eval-after-load "latex"
+(eval-after-load "LaTeX"
   '(progn
      (global-unset-key (kbd "C-j") )
      (global-set-key (kbd "C-j") 'line-move-visual-down)
@@ -849,6 +860,38 @@ This function makes sure that dates are aligned for easy reading."
 )
 
 ; test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text 
+
+; ----------------------------------------------------------------------
+
+
+
+; DOESN'T WORK:
+; ----------------------------------------------------------------------
+
+(defvar my-keys-minor-mode-map
+  (let ((map (make-sparse-keymap)))
+    (global-unset-key (kbd "C-j") )
+    (global-set-key (kbd "C-j") 'line-move-visual-down)
+    map)
+  "my-keys-minor-mode keymap.")
+
+(define-minor-mode my-keys-minor-mode
+  "A minor mode so that my key settings override annoying major modes."
+  :init-value t
+  :lighter " my-keys")
+
+(my-keys-minor-mode 1)
+
+(defun my-minibuffer-setup-hook ()
+  (my-keys-minor-mode 0))
+
+(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+
+; References:
+;   https://tex.stackexchange.com/questions/44687/emacs-keystroke-remapping-fails-under-tex-mode
+;   https://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs
+
+; ----------------------------------------------------------------------
 
 
 
