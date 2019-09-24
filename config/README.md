@@ -20,5 +20,5 @@ This could be a useful reference:
 | fish     | friendly interactive shell |
 | tmux     | terminal multiplexer |
 | vim      | vi improved ("vee eye": vi ~ visual editor, from the visual mode of the ex editor) |
-| emacs    | Editor MACroS (originally for the TECO editor) |
+| emacs    | from Editor MACroS (originally for the TECO editor) |
 
