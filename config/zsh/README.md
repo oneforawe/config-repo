@@ -1,5 +1,5 @@
 
-## zsh
+# zsh
 
 I use the z shell and oh-my-zsh.  See the general references below for some
 introduction.

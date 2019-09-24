@@ -1,4 +1,5 @@
-## bash config files
+
+# bash
 
 For an intro to bash, see the general references below.  To get clarity on how
 bash handles its config files, see the table (for bash) and flow-chart in

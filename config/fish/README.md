@@ -1,5 +1,5 @@
 
-## fish
+# fish
 
 The fish shell has a lot of great features that are present by default at first
 installation.  And it has a great browser-based GUI configuration interface,
