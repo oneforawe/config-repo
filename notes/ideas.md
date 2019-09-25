@@ -6,9 +6,6 @@ directory `~/.config-files`:
 
 `grep -r 'TODO' .`
 
-Would be nice to have a command to switch between a compact, efficient prompt
-and an aesthetically pleasing, informative prompt.
-
 Consider: automating setup and maintenance of package-managers (homebrew, conda,
 pip, apt); packages (including environment managers, etc); automating more
 settings and configurations (some usually done by GUI); recovery; further
