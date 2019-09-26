@@ -96,7 +96,7 @@ function show_host_letter () {
     host_name="$(uname -n)"
     host_name_letter="$(echo $host_name | head -c 1)"
     host_name_letter_cap=$( echo "$host_name_letter" | awk '{ print toupper($0) }' )
-    print -P "%F{$USER_HOST_COLOR}%B$host_name_letter_cap%b%f "
+    echo "%F{$USER_HOST_COLOR}%B$host_name_letter_cap%b%f "
 }
 
 function show_prompt_pre_line_1 () { print -P "" }
