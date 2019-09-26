@@ -11,19 +11,6 @@
 # TODO: Make ssh prompt but somehow make sure that tmux prompt isn't identical.
 # TODO: Define a decent root prompt and environment (color schemes).
 
-# Known issues:
-# 1. In MacOs, in a shell terminal (eg, Terminal or iTerm2), using the "LARGE"
-#    PROMPT_SIZE, when typing a long entry/command into the terminal, parts of
-#    the entry may disappear, and when changing vi-edit-mode, the prompt moves
-#    upward, erasing the line that was above it.
-# 2. In MacOs, in a shell terminal (eg, Terminal or iTerm2), using the "LARGE"
-#    PROMPT_SIZE, when using tab-completion of a command, funny stuff happens:
-#    the cursor moves rightward and won't move back, and some text remains in
-#    place behind this new left-most cursor-position.
-# 3. In MacOs, in a shell terminal (eg, Terminal or iTerm2), using the "LARGE"
-#    PROMPT_SIZE, when long auto-suggestions pop up, the can cause funny stuff
-#    to happen too, similar to the above funny stuff in issue 2.
-
 # Acknowledgement:
 # This solution for a prompt that displays the vi mode is inspired by the
 # solution given by Sebastian Blask in this Unix & Linux StackExchange thread:
@@ -50,6 +37,7 @@ function set_the_window_tab_title () {
 # for "EXPANSION OF PROMPT SEQUENCES" for `print -P`; also see `man zshbuiltins`
 # To see all colors, execute:
 # for n in {000..255}; do print -P "$n: %F{$n}%B(TESTING TEXT COLORS)%b%f"; done
+
 # colors:
 if   [[ " `uname -n` " = *soliton* ]] ; then
     TIMESTAMP_COLOR="081" # muted light blue
@@ -84,59 +72,38 @@ function show_timestamp ()    { print -P "%F{$TIMESTAMP_COLOR}[$TIMESTAMP]%f" }
 function show_user_host_ip () { print -P "%F{$USER_HOST_COLOR}$USER @ $(uname -n) [$IP_ADDR]%f" }
 function show_status ()       { print -P "%F{$STATUS_COLOR}\($STATUS\)%f" }
 function show_path ()         { print -P "%F{$PWD_COLOR}${PWD}%f" }
-#function show_env ()         { print -P "env:\(${CONDA_DEFAULT_ENV}\)" }
 function show_env () {
     if [[ -v CONDA_DEFAULT_ENV ]] ; then
         print -P "env:\(${CONDA_DEFAULT_ENV}\) "
-    else
-        print -P ""
     fi
 }
 function show_host_letter () {
     host_name="$(uname -n)"
     host_name_letter="$(echo $host_name | head -c 1)"
     host_name_letter_cap=$( echo "$host_name_letter" | awk '{ print toupper($0) }' )
-    echo "%F{$USER_HOST_COLOR}%B$host_name_letter_cap%b%f "
+    echo "%F{$USER_HOST_COLOR}%B$host_name_letter_cap%b%f " # now using "echo" here
+    # b/c using "print -P" causes tab-completion trouble (re-printing of commands)
 }
 
 function show_prompt_pre_line_1 () { print -P "" }
 function show_prompt_line_1 ()     { print -P "  \u250C $(show_timestamp) $(show_user_host_ip) $(show_status)" }
 function show_prompt_line_2 ()     { print -P "  \u2502 $(show_path)" }
-function show_prompt_line_final () { print -P "$VI_MODE \u2514 " }
-function show_prompt_line_opt ()   { print -P "  \u2502 $(show_env)$(git_prompt_info)" }
+function show_prompt_line_final () { echo "$VI_MODE \u2514 " } # now using "echo" here
+# b/c using "print -P" causes tab-completion trouble (re-printing of commands)
 function show_prompt_line_opt ()   {
-    if [[ -v CONDA_DEFAULT_ENV ]] | [[ -n $(git_prompt_info) ]] ; then
+    if [[ -v CONDA_DEFAULT_ENV ]] || [[ -n $(git_prompt_info) ]] ; then
         print -P "  \u2502 $(show_env)$(git_prompt_info)"
-    fi
-}
-function opt_symbol () {
-    if [[ ! -v CONDA_DEFAULT_ENV ]] && [[ -z $(git_prompt_info) ]] ; then
-        print -P " >"
     fi
 }
 function prompt_symbol () {
     print -P ">"
 }
-#function show_prompt_line_opt ()   {
-#    if [[ -v CONDA_DEFAULT_ENV ]] ; then
-#        if [[ -n $(git_prompt_info) ]] ; then
-#            print -P "  \u2502 $(show_env) $(git_prompt_info)"
-#        else
-#            print -P "  \u2502 $(show_env)"
-#        fi
-#    else
-#        if [[ -n $(git_prompt_info) ]] ; then
-#            print -P "  \u2502 $(git_prompt_info)"
-#        fi
-#    fi
-#}
 
-# Short prompt (from robbyrussell theme)
+# Original default: "DEFAULT" short prompt (from robbyrussell theme)
 PROMPT_DEFAULT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-#PROMPT_SMALL='${ret_status} $VI_MODE $(show_host_letter)%F{034}%B%c%b%f$(opt_symbol) $(show_env)$(git_prompt_info)'
 PROMPT_SMALL='${ret_status} $VI_MODE $(show_host_letter)%F{034}%B%c%b%f $(show_env)$(git_prompt_info)$(prompt_symbol) '
 
-# Set initial prompt style
+# New default: set initial prompt style
 #PROMPT_SIZE="DEFAULT"
 PROMPT_SIZE="SMALL"
 #PROMPT_SIZE="LARGE"
