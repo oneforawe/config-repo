@@ -94,6 +94,11 @@
 ;  https://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/
 ;  https://github.com/larstvei/dot-emacs
 
+; How often do I want to use eval-when-compile? Use it with (require 'package)?
+(eval-when-compile
+  (add-to-list 'load-path "~/.emacs.d/use-package")
+  (require 'use-package))
+(require 'bind-key)
 
 ; Package / plugin management can be done with a variety of tools:
 ;   - package (package.el)
@@ -237,9 +242,10 @@
 (mapc '(lambda (hook) (add-hook hook 'turn-on-visual-line-mode))
       '(text-mode-hook
         lisp-interaction-mode-hook))
+;; Column line where text should be wrapped
+(setq-default fill-column 75)
 ;; By default move up and down by logical lines, not visual lines
 (setq line-move-visual nil)
-
 
 ;; Ido - "Interactively DO things"
 ;; How much of ido-mode do I want?
@@ -658,49 +664,6 @@ This function makes sure that dates are aligned for easy reading."
 ;; GENERAL COLORS
 ;;-------------------------------------------------
 
-;(add-to-list 'load-path "~/.emacs.d") ; since I put my color theme file simpal.el there (perhaps plus more files)
-; see .emacs_v1_20170214 for more with "simpal" and other color notes
-
-
-;; text colors
-
-;; colour definitions
-;; colours with +x are lighter, colours with -x are darker
-;(defvar zenburn-fg "#dcdccc")
-;(defvar zenburn-bg-1 "#2b2b2b")
-;(defvar zenburn-bg "#3f3f3f")
-;(defvar zenburn-bg+1 "#4f4f4f")
-;(defvar zenburn-bg+2 "#5f5f5f")
-;(defvar zenburn-red+1 "#dca3a3")
-;(defvar zenburn-red "#cc9393")
-;(defvar zenburn-red-1 "#bc8383")
-;(defvar zenburn-red-2 "#ac7373")
-;(defvar zenburn-red-3 "#9c6363")
-;(defvar zenburn-red-4 "#8c5353")
-;(defvar zenburn-orange "#dfaf8f")
-;(defvar zenburn-yellow "#f0dfaf")
-;(defvar zenburn-yellow-1 "#e0cf9f")
-;(defvar zenburn-yellow-2 "#d0bf8f")
-;(defvar zenburn-green-1 "#5f7f5f")
-;(defvar zenburn-green "#7f9f7f")
-;(defvar zenburn-green+1 "#8fb28f")
-;(defvar zenburn-green+2 "#9fc59f")
-;(defvar zenburn-green+3 "#afd8af")
-;(defvar zenburn-green+4 "#bfebbf")
-;(defvar zenburn-cyan "#93e0e3")
-;(defvar zenburn-blue+1 "#94bff3")
-;(defvar zenburn-blue "#8cd0d3")
-;(defvar zenburn-blue-1 "#7cb8bb")
-;(defvar zenburn-blue-2 "#6ca0a3")
-;(defvar zenburn-blue-3 "#5c888b")
-;(defvar zenburn-blue-4 "#4c7073")
-;(defvar zenburn-blue-5 "#366060")
-;(defvar zenburn-magenta "#dc8cc3")
-
-
-;; Column line where text should be wrapped
-(setq-default fill-column 75)
-
 ;; Cursor color
 ;; (This doesn't seem to be working.)
 (set-cursor-color "white")
@@ -836,80 +799,18 @@ This function makes sure that dates are aligned for easy reading."
     (next-line)
     (setq line-move-visual nil)
 )
-(global-unset-key (kbd "C-k") )
-(global-set-key   (kbd "C-k") 'line-move-visual-up)
-(global-unset-key (kbd "C-j") )
-(global-set-key   (kbd "C-j") 'line-move-visual-down)
+;(global-unset-key (kbd "C-k") )
+;(global-set-key   (kbd "C-k") 'line-move-visual-up)
+;(global-unset-key (kbd "C-j") )
+;(global-set-key   (kbd "C-j") 'line-move-visual-down)
 
-
-
-; DOESN'T WORK:
-; ----------------------------------------------------------------------
-
-; Hm, my definition for "C-j" wasn't working in my .tex LaTeX files.
-; How can I fix this?  Here's a failing attempt:
-;(eval-after-load "tex"
-;(eval-after-load "latex"
-(eval-after-load "LaTeX"
-  '(progn
-     (global-unset-key (kbd "C-j") )
-     (global-set-key (kbd "C-j") 'line-move-visual-down)
-     ;(define-key LaTeX-mode-map (kbd "C-j") 'line-move-visual-down)
-     ;(define-key LaTeX-mode-map (kbd "C-}") "\\endgroup\n")
-   )
-)
+;(require 'bind-key)  ; executed above
+(bind-key* "C-k" 'line-move-visual-up)    ; NOW WORKS, SINCE INSTALLED use-package
+(bind-key* "C-j" 'line-move-visual-down)  ; NOW WORKS, SINCE INSTALLED use-package
+;; or could try defining my own (minor or major) mode keymap,
+;; which could be turned on and off with a custom command
 
 ; test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text 
-
-; ----------------------------------------------------------------------
-
-
-
-; DOESN'T WORK:
-; ----------------------------------------------------------------------
-
-(defvar my-keys-minor-mode-map
-  (let ((map (make-sparse-keymap)))
-    (global-unset-key (kbd "C-j") )
-    (global-set-key (kbd "C-j") 'line-move-visual-down)
-    map)
-  "my-keys-minor-mode keymap.")
-
-(define-minor-mode my-keys-minor-mode
-  "A minor mode so that my key settings override annoying major modes."
-  :init-value t
-  ; :keymap my-keys-minor-mode-map ; doesn't this need to be here?
-  :lighter " my-keys")
-
-(my-keys-minor-mode 1)
-
-
-(defun my-minibuffer-setup-hook ()
-  (my-keys-minor-mode 0))
-(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
-
-
-(add-hook 'after-load-functions 'my-keys-have-priority)
-
-(defun my-keys-have-priority (_file)
-  "Try to ensure that my keybindings retain priority over other minor modes.
-
-Called via the `after-load-functions' special hook."
-  (unless (eq (caar minor-mode-map-alist) 'my-keys-minor-mode)
-    (let ((mykeys (assq 'my-keys-minor-mode minor-mode-map-alist)))
-      (assq-delete-all 'my-keys-minor-mode minor-mode-map-alist)
-      (add-to-list 'minor-mode-map-alist mykeys))))
-
-
-(require 'bind-key)
-(bind-key* "C-j" 'line-move-visual-down)
-
-
-; References:
-;   https://tex.stackexchange.com/questions/44687/emacs-keystroke-remapping-fails-under-tex-mode
-;   https://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs
-
-; ----------------------------------------------------------------------
 
 
 

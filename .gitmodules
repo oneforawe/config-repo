@@ -25,6 +25,9 @@
 [submodule "config/vim/vim.d/pack/external/start/vim-unimpaired"]
 	path = config/vim/vim.d/pack/external/start/vim-unimpaired
     url = https://github.com/tpope/vim-unimpaired
+[submodule "config/emacs/emacs.d/use-package"]
+	path = config/emacs/emacs.d/use-package
+    url = https://github.com/jwiegley/use-package
 [submodule "config/emacs/emacs.d/evil"]
 	path = config/emacs/emacs.d/evil
 	url = https://github.com/emacs-evil/evil
