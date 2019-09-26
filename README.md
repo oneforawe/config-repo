@@ -56,13 +56,15 @@ Configuration files are often hidden files, by default not shown when viewing
 the contents of directories so as to not clutter up one's view or confuse
 regular users who are unaware of their purpose.  In Unix-like operating systems,
 any file or folder starting with a period (a "dot") is treated as a hidden file
-or hidden folder.
+or hidden folder.  These hidden files are sometimes called "dot-files" or
+"dotfiles" or even ".dotfiles", and so configuration files are often also
+"dot-files".
 
-Configuration files go by many names.  Configuration files are also called
-config-files, dot-files, initialization files, init-files, run-commands files,
-rc-files, and possibly environment files, variable files, and so on.  A
-configuration file for some hypothetical utility `util` may have a name such as
-the following: `util`, `util.conf`, `.util`, `.util.conf`, `.utilrc`, etc.  An
-associated config folder might have one of these same names or `util.d` or
-`.util.d`, where the `d` presumably refers to "directory".
+Configuration files go by many names: config-files, dot-files, initialization
+files, init-files, run-commands files, rc-files, and possibly environment files,
+variable files, and so on.  A configuration file for some hypothetical utility
+`util` may have a name such as the following: `util`, `util.conf`, `.util`,
+`.util.conf`, `.utilrc`, etc.  An associated config folder might have one of
+these same names or `util.d` or `.util.d`, where the `d` presumably refers to
+"directory".
 
