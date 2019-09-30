@@ -36,7 +36,7 @@ bindings and access information about them.
       `$ bind -p`
   * Regarding zsh
     * Get info:  
-      `$ man  
+      `$ man zsh`  
       `$ man zshbuiltins`  (search bind or bindkey)  
       `$ man zshzle`  (z line-editor)  
       etc
