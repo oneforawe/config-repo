@@ -51,8 +51,10 @@ bindkey -M viins '^h' backward-delete-char
 bindkey -M vicmd '^h' backward-delete-char
 bindkey -M viins '^b' backward-kill-word
 bindkey -M vicmd '^b' backward-kill-word
-# For "\C-?" and "\C-h", this "fixes" the "problem" of not being able to delete
-# old letters when inserting text (so no longer really an "insert"-only mode).
+# Insert mode, traditionally, allows insertion and not deletion of previously-
+# present text; for "\C-?" and "\C-h", this "fixes" that "problem" of not being
+# able to delete old characters when inserting text (so the mode is no longer
+# really an "insert"-only mode).
 
 # for movement and "arrow-completion" (for auto-suggestions)
 bindkey -M viins '^a' beginning-of-line
@@ -62,4 +64,8 @@ bindkey -M vicmd '^e' end-of-line
 bindkey -M viins '^l' vi-forward-char
 bindkey -M vicmd '^l' vi-forward-char
 # `vi-forward-char` is equivalent to what one might call "right-arrow"
+
+# for switching to a text editor
+bindkey -M viins '^x^e' edit-command-line
+bindkey -M vicmd '^x^e' edit-command-line
 
