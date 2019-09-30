@@ -21,6 +21,8 @@ bindings and access information about them.
   * `readline/inputrc`
   * `bash/bashrc_opt`
   * `zsh/zshrc_opt`
+  * `vim/vimrc`
+  * `emacs/emacs.el`
 * Info
   * Regarding readline
     * Get info:  
@@ -34,7 +36,7 @@ bindings and access information about them.
       `$ bind -p`
   * Regarding zsh
     * Get info:  
-      `$ man 
+      `$ man  
       `$ man zshbuiltins`  (search bind or bindkey)  
       `$ man zshzle`  (z line-editor)  
       etc
@@ -45,7 +47,7 @@ bindings and access information about them.
       `$ bindkey -v`  (switch to vi)
   * Regarding vim
     * Get info:  
-      `:help map`
+      `:help map`  
     * Get current map:  
       `:map`
   * Regarding emacs
@@ -54,7 +56,7 @@ bindings and access information about them.
     * Get info:  
       `$ emacs`  (follow instructions to see help, manual, tutorial)  
       Can also see more info at:  
-      `$ man emacs`
+      `$ man emacs`  
       `$ info emacs`
     * Get current map:  
       `C-h ? b`  (to see help options and select b to see all key bindings)  
