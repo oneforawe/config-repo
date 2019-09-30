@@ -24,17 +24,17 @@ bindings and access information about them.
   * `vim/vimrc`
   * `emacs/emacs.el`
 * Info
-  * Regarding readline
+  * __Regarding readline__
     * Get info:  
       `$ info` (and search for readline) or  
       `$ info rluserman`
-  * Regarding bash
+  * __Regarding bash__
     * Get info:  
       `$ man bash`  (search bind)  
       `$ help bind`
     * Get current map:  
       `$ bind -p`
-  * Regarding zsh
+  * __Regarding zsh__
     * Get info:  
       `$ man zsh`  
       `$ man zshbuiltins`  (search bind or bindkey)  
@@ -45,12 +45,12 @@ bindings and access information about them.
     * Override, switch current map:  
       `$ bindkey -e`  (switch to emacs)  
       `$ bindkey -v`  (switch to vi)
-  * Regarding vim
+  * __Regarding vim__
     * Get info:  
       `:help map`  
     * Get current map:  
       `:map`
-  * Regarding emacs
+  * __Regarding emacs__
     * Default key bindings, good reference:  
        https://caiorss.github.io/Emacs-Elisp-Programming/Keybindings.html
     * Get info:  
