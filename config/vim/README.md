@@ -12,7 +12,7 @@ To learn more about vim, you can enter `vim` on its own in the shell, without
 referring to a file, and vim provides instruction on how to exit vim or get
 help.  Early in the help file, a great recommendation is made: when getting
 started you can use the vim tutor by entering `vimtutor` in the shell and then
-follow the instructions.
+following the instructions.
 
 And for more info from the vim website itself, see  
   https://www.vim.org
