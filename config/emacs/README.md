@@ -1,11 +1,21 @@
 
 # emacs
 
-GNU Emacs, or Emacs, is a text editor that can run on many systems (including
-GNU/Linux, MacOS, and MS Windows), but was designed provide the GNU operating
-system with a powerful editor.
+GNU Emacs, or Emacs, is a very versatile and powerful text editor that can run
+on many systems (including GNU/Linux, MacOS, and MS Windows), but was designed
+provide the GNU operating system with a powerful editor.  Enter `man emacs` in
+the shell for info on usage.  For instance, to edit a file, such as
+`~/file.txt`, enter the program name (emacs) and the path to the file to be
+edited in the shell, `emacs ~/file.txt`, or navigate to the location of the file
+(in this case your home directory `~`) and execute using just the file name:
+`emacs file.txt`.
 
-For more info, see  
+To learn more about emacs, you can enter `emacs` on its own in the shell,
+without referring to a file, and emacs provides a menu showing how to access
+help, the manual, a tutorial, etc.  In the shell you can also enter
+`info emacs` to see its info file.
+
+And for more info from the GNU website itself, see  
   https://www.gnu.org/software/emacs
 
 

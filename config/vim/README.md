@@ -1,12 +1,21 @@
 
 # vim
 
-A great way to get started with the vim text editor is to use the vim tutor by
-executing the following in a shell terminal and reading and following along with
-the instructions provided: `vimtutor`
+The vim text editor is a very versatile and popular editor.  Enter `man vim` in
+the shell for info on usage.  For instance, to edit a file, such as
+`~/file.txt`, enter the program name (vim) and the path to the file to be edited
+in the shell, `vim ~/file.txt`, or navigate to the location of the file (in this
+case your home directory `~`) and execute using just the file name:
+`vim file.txt`.
 
-For more in-depth learning, inside a session of vim, type `:help` or `:h` and
-hit enter.
+To learn more about vim, you can enter `vim` on its own in the shell, without
+referring to a file, and vim provides instruction on how to exit vim or get
+help.  Early in the help file, a great recommendation is made: when getting
+started you can use the vim tutor by entering `vimtutor` in the shell and then
+follow the instructions.
+
+And for more info from the vim website itself, see  
+  https://www.vim.org
 
 More advanced ideas: look at blog posts and youtube videos, like these posts:
 * VIM AFTER 15 YEARS  
