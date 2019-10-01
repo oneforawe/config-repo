@@ -63,8 +63,8 @@ or hidden folder.  These hidden files are sometimes called "dot-files" or
 Configuration files go by many names: config-files, dot-files, initialization
 files, init-files, run-commands files, rc-files, and possibly environment files,
 variable files, and so on.  A configuration file for some hypothetical utility
-`util` may have a name such as the following: `util`, `util.conf`, `.util`,
-`.util.conf`, `.utilrc`, etc.  An associated config folder might have one of
-these same names or `util.d` or `.util.d`, where the `d` presumably refers to
-"directory".
+`util` may have a name such as the following: `util`, `util.config`,
+`util.conf`, `util.cfg`, `.util`, `.util.conf`, `.utilrc`, etc.  An associated
+config folder might have one of these same names or `util.d` or `.util.d`, where
+the `d` presumably refers to "directory".
 
