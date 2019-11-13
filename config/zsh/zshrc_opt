@@ -66,6 +66,7 @@ bindkey -M vicmd '^l' vi-forward-char
 # `vi-forward-char` is equivalent to what one might call "right-arrow"
 
 # for switching to a text editor
+zle -N edit-command-line
 bindkey -M viins '^x^e' edit-command-line
 bindkey -M vicmd '^x^e' edit-command-line
 
