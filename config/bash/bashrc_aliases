@@ -357,7 +357,18 @@ function mup {
     printf '%s\n' "|   MacOS update   |"
     printf '%s\n' "--------------------"
     printf '\n%s\n\n' "(for MacOS and MacOS-managed apps, not including brew-, conda-, and pip-managed packages)"
-    softwareupdate -ia
+    # Checking for updates...
+    softwareupdate -l
+    printf '%s\n' "Download and install (verbosely) all available updates? (yes/no) "
+    read readytocontinue
+    printf "\n"
+    if [ "${readytocontinue}" != "yes" ]; then
+        # Not ready. Stop.
+        printf '%s\n' "That wasn't a yes. Stopping here."
+    else
+        # Ready. Continue.
+        softwareupdate -ia --verbose
+    fi
     printf '\n'
 }
 #alias bup="brew update && brew upgrade && brew cleanup && brew doctor"
