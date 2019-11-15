@@ -52,7 +52,7 @@ bindkey -M vicmd '^h' backward-delete-char
 bindkey -M viins '^b' backward-kill-word
 bindkey -M vicmd '^b' backward-kill-word
 # Insert mode, traditionally, allows insertion and not deletion of previously-
-# present text; for "\C-?" and "\C-h", this "fixes" that "problem" of not being
+# present text; modifying "\C-?" and "\C-h" "fixes" that "problem" of not being
 # able to delete old characters when inserting text (so the mode is no longer
 # really an "insert"-only mode).
 
