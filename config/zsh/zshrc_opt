@@ -44,7 +44,9 @@ bindkey -M vicmd '^n' down-history
 bindkey -M viins '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
 
-# allow backspace (not ctrl-?), ctrl-h, ctrl-w for backward char and word delete
+# allow backspace (not ctrl-?), etc for deletion
+bindkey -M viins '^x' delete-char
+bindkey -M vicmd '^x' delete-char
 bindkey -M viins '^?' backward-delete-char
 bindkey -M vicmd '^?' backward-delete-char
 bindkey -M viins '^h' backward-delete-char
