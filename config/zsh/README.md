@@ -13,8 +13,8 @@ reference 1.  Note that from `.zshrc` I source multiple files (including
 
 When updating the submodule `oh-my-zsh`, after the update is pushed to master
 and then pulled to another machine, it seems that I have to delete it
-(`rm -r oh-my-zsh`) and then update the/all submodules  (`git submodule update`)
-to properly checkout the updated submodule (`oh-my-zsh`).
+(`rm -r oh-my-zsh`) and then update the submodules  (`git submodule update`) to
+properly checkout the updated submodule (`oh-my-zsh`).
 
 
 ## references
