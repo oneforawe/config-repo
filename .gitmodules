@@ -37,3 +37,9 @@
 [submodule "config/emacs/emacs.d/plugins/evil-org"]
 	path = config/emacs/emacs.d/plugins/evil-org
 	url = https://github.com/somelauw/evil-org.git
+[submodule "config/vim/vim.d/pack/external/start/ale"]
+	path = config/vim/vim.d/pack/external/start/ale
+	url = https://github.com/dense-analysis/ale.git
+[submodule "config/vim/vim.d/pack/external/start/vim-polyglot"]
+	path = config/vim/vim.d/pack/external/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git

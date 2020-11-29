@@ -48,4 +48,6 @@ the full path to the submodule at the end of the command.
 * `git submodule add https://github.com/arecarn/vim-fold-cycle.git vim-fold-cycle`
 * `git submodule add https://github.com/tpope/vim-surround vim-surround`
 * `git submodule add https://github.com/tpope/vim-unimpaired vim-unimpaired`
+* `git submodule add https://github.com/sheerun/vim-polyglot.git vim-polyglot`
+* `git submodule add https://github.com/dense-analysis/ale.git ale`
 
