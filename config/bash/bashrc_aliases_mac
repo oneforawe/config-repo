@@ -120,7 +120,7 @@ function vmoff {
         if [ "${readytocontinue}" != "yes" ]; then
             # Not ready. Abort.
             printf "That wasn't a yes. Aborting.\n"
-            printf "Note: you can check for open/active sessions with the \"ps\" commandor the \"who\" command within the VM.\n\n"
+            printf "Note: you can check for open/active sessions with the \"ps\" command or the \"who\" command within the VM.\n\n"
         else
             # Ready. Shut down.
             printf "Shutting down \"gracefully\" with acpipowerbutton.\n"
