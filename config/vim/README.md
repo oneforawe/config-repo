@@ -51,3 +51,10 @@ the full path to the submodule at the end of the command.
 * `git submodule add https://github.com/sheerun/vim-polyglot.git vim-polyglot`
 * `git submodule add https://github.com/dense-analysis/ale.git ale`
 
+Also, I don't think I've used this command, but I might want to keep it in mind:
+
+`git submodule update --init --recursive`
+
+Might want to look at a more up-to-date reference, or see this blog post:  
+  `https://github.blog/2016-02-01-working-with-submodules/`
+
