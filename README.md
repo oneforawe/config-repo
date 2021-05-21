@@ -52,7 +52,7 @@ opposed to my own personal machines).  Those setup instructions are
 
 ## Development
 
-Don't forget to add submodules manually when installing them for the first
+Note to self: Don't forget to add submodules manually when installing them for the first
 time:  
    `git submodule add https://url/submodule.git path/to/submodule`
 
