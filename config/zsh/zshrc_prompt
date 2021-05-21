@@ -104,12 +104,17 @@ PROMPT_DEFAULT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
 PROMPT_SMALL='${ret_status} $VI_MODE $(show_host_letter)%F{034}%B%c%b%f $(show_env)$(git_prompt_info)$(prompt_symbol) '
 
 # New default: set initial prompt style
-#PROMPT_SIZE="DEFAULT"
-PROMPT_SIZE="SMALL"
-#PROMPT_SIZE="LARGE"
-PROMPT_SPACE="LOOSE"
-#PROMPT_SPACE="TIGHT"
-
+if [[ " `uname -n` " = *soliton* ]] || [[ " `uname -n` " = *maclap* ]] || [[ " `uname -n` " = *momentus* ]] ;
+then
+    #PROMPT_SIZE="DEFAULT"
+    PROMPT_SIZE="SMALL"
+    #PROMPT_SIZE="LARGE"
+    PROMPT_SPACE="LOOSE"
+    #PROMPT_SPACE="TIGHT"
+else
+    PROMPT_SIZE="LARGE"
+    PROMPT_SPACE="LOOSE"
+fi
 
 
 # Custom shell prompt (print)
@@ -193,4 +198,3 @@ function preexec() {
 
 # Potentially work in concert with bash scripts:
 # precmd() { eval "$PROMPT_COMMAND" }
-
