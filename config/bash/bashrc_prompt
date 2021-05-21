@@ -11,12 +11,12 @@
 # Colors for the prompt (using ANSI escape sequences)
 RED='\e[1;31m'  # red   bold   (1)
 grn='\e[0;32m'  # green normal (0)
-BLUE='\e[1;34m' # blue  bold   (1)
+BLU='\e[1;34m' # blue  bold   (1)
 RC='\e[0m' # Reset Color (no color)
 DATE=$(date +'%Y %b %d %a %H:%M:%S') # format: '2020 Jan 01 Wed 23:59:59'
 
 # Set SSH indicator (if variable string not empty, then remotely logged in)
-if [[ -n $SSH_CLIENT ]] ; then IN_SSH=" ${BLUE}[ssh]${RC}" ; else IN_SSH='' ; fi
+if [[ -n $SSH_CLIENT ]] ; then IN_SSH=" ${BLU}[ssh]${RC}" ; else IN_SSH='' ; fi
 
 # Get the IP address
 THEIP=$(ifconfig | grep broadcast | awk '{print $2}')
@@ -31,10 +31,10 @@ if [[ -z $THEIP ]] ; then THEIP='IP_MISSING' ; fi
 # Set the prompt
 if [[ $(id -u) = 0 ]] ; then
   # root/super user (red - as warning/notice)
-  PS1="\n┌[${red}\u${RC}@\H] [$THEIP]${IN_SSH} [${DATE}]: ${grn}\w${RC} \n└> "
+  PS1="\n┌[${RED}\u${RC} @ \H] [$THEIP]${IN_SSH} [${DATE}]: ${grn}\w${RC} \n└> "
 else
   # normal user (green)
-  PS1="\n┌[${grn}\u@\H${RC}] [$THEIP]${IN_SSH} [${DATE}]: ${grn}\w${RC} \n└> "
+  PS1="\n┌[${grn}\u${RC} @ \H] [$THEIP]${IN_SSH} [${DATE}]: ${grn}\w${RC} \n└> "
 fi
 
 # Just before the prompt.
