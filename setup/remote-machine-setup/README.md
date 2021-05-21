@@ -1,21 +1,21 @@
 # For Remote Linux Machines
 
-When connecting to a remote linux machine via ssh, it can be nice to apply some
-configurations and install some software to have a more personalized experience,
-both in functionality and aesthetics.
+When connecting to a remote GNU/Linux machine via ssh, it can be nice to apply
+some configurations and install some software to have a more personalized
+experience, both in functionality and aesthetics.
 
 This simplifies the process.
 
 
 ## Installation
 
-WARNING: This code risks deleting (over-writing) important files. It was made
-for my convenience, not for the safety of your files.  (Safety will come later.
-Actually(!), I did add some safety by adding code to move files into a
-`.config-old-replaced` folder so they are backed-up and not simply
-over-written.)  Be sure to understand the code before running it, and save
-copies of important relevant files that will be over-written if you want to go
-back to your original settings.
+WARNING: This code risks deleting (over-writing) important files, although I
+made an attempt to add safety (for the first time) by automating backup of
+pre-existing config files into a `~/.config-old-replaced` folder so they are not
+simply over-written.  This code was made for my convenience, not for the safety
+of your files.  (Perhaps more, better-tested safety will come later.)  Be sure
+to understand the code before running it, and save copies of important relevant
+files that may be over-written if you want to go back to your original settings.
 
 1. In a shell, clone this whole repo to obtain a local copy the files:  
    `git clone https://github.com/oneforawe/config-files.git ~/.config-files`
@@ -26,7 +26,7 @@ this repo:
    `git submodule init`  
    `git submodule update`
 
-3. Run this command to over-write existing shell configuration files with links
-to the config files in this repo and to install the necessary and desired
-packages:  
+3. Run this command to backup (or possibly over-write) existing shell
+configuration files and add new links to the config files in this repo and to
+install the necessary and desired packages:  
    `bash ~/.config-files/setup/remote-machine-setup/run-setup-shell-full.sh`
