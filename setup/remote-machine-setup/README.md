@@ -12,10 +12,10 @@ This simplifies the process.
 WARNING: This code risks deleting (over-writing) important files. It was made
 for my convenience, not for the safety of your files.  (Safety will come later.
 Actually(!), I did add some safety by adding code to move files into a
-`.config-old-replaced` folder so they are not over-written.)  Be sure to
-understand the code before running it, and save copies of important relevant
-files that will be over-written if you want to go back to your original
-settings.
+`.config-old-replaced` folder so they are backed-up and not simply
+over-written.)  Be sure to understand the code before running it, and save
+copies of important relevant files that will be over-written if you want to go
+back to your original settings.
 
 1. In a shell, clone this whole repo to obtain a local copy the files:  
    `git clone https://github.com/oneforawe/config-files.git ~/.config-files`
