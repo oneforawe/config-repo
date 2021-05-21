@@ -39,6 +39,7 @@ function set_the_window_tab_title () {
 # for n in {000..255}; do print -P "$n: %F{$n}%B(TESTING TEXT COLORS)%b%f"; done
 
 # colors:
+ROOT_USER_COLOR="196" # bright red
 if   [[ " `uname -n` " = *soliton* ]] ; then
     TIMESTAMP_COLOR="081" # muted light blue
     USER_HOST_COLOR="105" # muted light purple
@@ -52,8 +53,8 @@ else
     TIMESTAMP_COLOR="081" # muted light blue
     USER_HOST_COLOR="226" # light yellow
 fi
-STATUS_COLOR="002"    # bright green
-PWD_COLOR="034"       # muted green
+STATUS_COLOR="002" # bright green
+PWD_COLOR="034"    # muted green
 NORMAL_MODE_FG_COLOR="250" # muted white
 NORMAL_MODE_BG_COLOR="088" # deep red
 INSERT_MODE_FG_COLOR="252" # muted white
@@ -69,7 +70,15 @@ VI_MODE=$INSERT_MODE
 # prompt display functions:
 function newline ()           { print -P "%{\n%}" }
 function show_timestamp ()    { print -P "%F{$TIMESTAMP_COLOR}[$TIMESTAMP]%f" }
-function show_user_host_ip () { print -P "%F{$USER_HOST_COLOR}$USER @ $(uname -n) [$IP_ADDR]%f" }
+function show_user_host_ip () {
+    if [[ $(id -u) = 0 ]] ; then
+        # root/super user (red - as warning/notice)
+        print -P "%F{$ROOT_USER_COLOR}%B$USER%b%f %F{$USER_HOST_COLOR}@ $(uname -n) [$IP_ADDR]%f"
+    else
+        # normal user (default color)
+        print -P "%F{$USER_HOST_COLOR}$USER @ $(uname -n) [$IP_ADDR]%f"
+    fi
+}
 function show_status ()       { print -P "%F{$STATUS_COLOR}\($STATUS\)%f" }
 function show_path ()         { print -P "%F{$PWD_COLOR}${PWD}%f" }
 function show_env () {
