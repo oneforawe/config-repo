@@ -27,8 +27,9 @@ CONFIG_LOCATION="$HOME/$CONFIG_FOLDER"
 r=$CONFIG_ROOT
 src=$CONFIG_LOCATION
 
+setup="$src/setup/remote-machine-setup"
 
-source $src/setup/run-setup-shell-step-1-link-files.sh
-source $src/setup/run-setup-shell-step-2-install.sh
-#source $src/setup/run-setup-shell-step-3-python.sh
-#source $src/setup/run-setup-shell-step-4-datasci.sh
+source $setup/run-setup-shell-step-1-link-files.sh
+source $setup/run-setup-shell-step-2-install.sh
+#source $setup/run-setup-shell-step-3-python.sh
+#source $setup/run-setup-shell-step-4-datasci.sh

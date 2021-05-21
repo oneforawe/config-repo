@@ -8,6 +8,8 @@ CONFIG_ROOT="$HOME"
 CONFIG_FOLDER=".config-files"
 CONFIG_LOCATION="$HOME/$CONFIG_FOLDER"
 
+setup="$src/setup/remote-machine-setup"
+
 r=$CONFIG_ROOT
 src=$CONFIG_LOCATION
 
@@ -24,7 +26,7 @@ if [[ `uname -s` = "Linux" ]] ; then
     ##aptup
 
     echo "Installing any missing desired packages..."
-    for package in `cat $src/setup/packages-to-install.txt` ; do
+    for package in `cat $setup/packages-to-install.txt` ; do
         if [[ -z `which $package` ]] ; then
             sudo apt-get install $package
         fi

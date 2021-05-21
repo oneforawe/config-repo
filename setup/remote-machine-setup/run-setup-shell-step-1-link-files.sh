@@ -28,6 +28,8 @@ CONFIG_LOCATION="$HOME/$CONFIG_FOLDER"
 r=$CONFIG_ROOT
 src=$CONFIG_LOCATION
 
+setup="$src/setup/remote-machine-setup"
+
 THE_DATE_IN_MS="$(date +%s%3N)"
 THE_DATE="${THE_DATE_IN_MS::-3}"
 MILLISEC="$(echo $THE_DATE_IN_MS | tail -c 4)"
