@@ -124,7 +124,7 @@ function precmd () {
     else STATUS_COLOR="red" ;
     fi
     #STATUS_COLOR="%(?."green"."red")"
-    TIMESTAMP=$(date +'%Y %b %d %a %H:%M:%S')
+    TIMESTAMP=$(date +'%Y %b %d %a %H:%M:%S') #format '2020 Jan 01 Wed 23:59:59'
     IP_ADDR=$(ifconfig | grep broadcast | awk '{print $2}')
     if [[ -z $IP_ADDR ]] ; then IP_ADDR="IP_MISSING" ; fi
     # print title:
