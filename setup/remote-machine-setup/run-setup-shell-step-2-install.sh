@@ -47,4 +47,3 @@ fi
 ##        echo "Note: Open a new shell to start with the new default (zsh)."
 ##    fi
 ##fi
-
