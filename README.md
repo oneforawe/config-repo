@@ -43,6 +43,13 @@ to do some trouble-shooting once everything is set up.  For instance, I had to
 use `brew link --overwrite python` after setting up on an old Mac system.
 
 
+## Alternate
+
+I created an alternate installation process for remote, unowned machines (as
+opposed to my own personal machines).  Those setup instructions are
+[here](https://github.com/oneforawe/config-files/tree/master/setup/remote-machine-setup).
+
+
 ## Development
 
 Don't forget to add submodules manually when installing them for the first
