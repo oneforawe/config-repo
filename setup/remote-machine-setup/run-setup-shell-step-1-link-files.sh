@@ -140,6 +140,7 @@ if [[ -f $r/.vimrc ]] && [[ ! -L $r/.vimrc ]] ; then
   mkdir -pv ${cpy}
   mv $r/.vimrc  ${cpy}/
 fi
+rm $r/.vim $r/.vimrc
 ln_s $src/config/vim/vimrc $r/.vimrc
 ln_s $src/config/vim/vim.d $r/.vim
 
