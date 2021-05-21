@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # filename: zshrc_prompt   (linked from ~/.zshrc_prompt)
 # purpose: Define the interactive-shell prompts (primary and peripheral).
 
@@ -177,7 +177,15 @@ function zle-line-init zle-keymap-select {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
-
+# The above syntax is valid in zsh: multiple (ie, two) function names provided
+# in a single declaration/assignment statement, so that the same function gets
+# two names.  (I think these are pre-existing functions, so I'm not sure why the
+# function keyword is there unless it's for type-unambiguity.  I would instead
+# expect a syntax more like this:
+#   zle-line-init, zle-keymap-select = function { statements; }
+#   with an anonymous function.
+# Could investigate more here and elsewhere:
+#   http://zsh.sourceforge.net/Doc/Release/Functions.html
 
 
 # Just after the prompt.
