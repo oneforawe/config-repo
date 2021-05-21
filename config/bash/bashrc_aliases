@@ -79,10 +79,12 @@ function level () {
         echo "echo \$- = $(echo $-)"
         echo "l ==> You're in a login shell."
         echo "      (rather than a sub shell)"
+        echo "\n LOGIN shell"
     else
         echo "echo \$- = $(echo $-)"
         echo "no l ==> You're in a sub shell."
         echo "      (rather than a login shell)"
+        echo "\n SUB shell"
     fi
 }
 
