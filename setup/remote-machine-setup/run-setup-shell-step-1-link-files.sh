@@ -57,6 +57,7 @@ echo "Linking config (and reference) files."
 # readline
 echo "test with cp rather than mv"
 if [[ -f $r/.inputrc ]] ; then
+  mkdir -pv ${cpy}
   #mv $r/.inputrc ${cpy}/
   cp $r/.inputrc ${cpy}/
   echo "cp $r/.inputrc ${cpy}/"
@@ -71,6 +72,7 @@ filelist_bash=".profile .bashrc .bash_profile .bash_login .bash_logout .dir_colo
 echo "test with cp rather than mv"
 for file in ${filelist_bash} ; do
   if [[ -f $r/$file ]] ; then
+    mkdir -pv ${cpy}
     #mv $r/$file ${cpy}/
     cp $r/$file ${cpy}/
     echo "cp $r/$file ${cpy}/"
@@ -103,6 +105,7 @@ filelist_zsh=".zprofile .zshrc"
 echo "test with cp rather than mv"
 for file in ${filelist_zsh} ; do
   if [[ -f $r/$file ]] ; then
+    mkdir -pv ${cpy}
     #mv $r/$file ${cpy}/
     cp $r/$file ${cpy}/
     echo "cp $r/$file ${cpy}/"
@@ -123,6 +126,7 @@ done
 
 # tmux
 if [[ -f $r/.tmux.conf ]] ; then
+  mkdir -pv ${cpy}
   #mv $r/.tmux.conf ${cpy}/
   cp $r/.tmux.conf ${cpy}/
   echo "cp $r/.tmux.conf ${cpy}/"
@@ -138,11 +142,13 @@ fi
 # vim
 echo "test with cp rather than mv"
 if [[ -d $r/.vim ]] ; then
+  mkdir -pv ${cpy}
   #mv $r/.vim  ${cpy}/
   cp -a $r/.vim  ${cpy}/
   echo "cp -a $r/.vim  ${cpy}/"
 fi
 if [[ -f $r/.vimrc ]] ; then
+  mkdir -pv ${cpy}
   #mv $r/.vimrc  ${cpy}/
   cp $r/.vimrc  ${cpy}/
   echo "cp $r/.vimrc  ${cpy}/"
