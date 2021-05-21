@@ -57,7 +57,8 @@ echo "Linking config (and reference) files."
 # SHELLS / TERMINALS:
 
 # readline
-if [[ -f $r/.inputrc ]] ; then
+if [[ -f $r/.inputrc ]] && [[ ! -L $r/.inputrc ]] ; then
+  # if a file and not a symbolic link
   mkdir -pv ${cpy}
   mv $r/.inputrc ${cpy}/
 fi
@@ -69,7 +70,7 @@ b2="$src/config/bash"
 mkdir -pv $b1
 filelist_bash=".profile .bashrc .bash_profile .bash_login .bash_logout .dir_colors"
 for file in ${filelist_bash} ; do
-  if [[ -f $r/$file ]] ; then
+  if [[ -f $r/$file ]] && [[ ! -L $r/$file ]] ; then
     mkdir -pv ${cpy}
     mv $r/$file ${cpy}/
   fi
@@ -99,7 +100,7 @@ mkdir -pv $z1a
 mkdir -pv $z1b
 filelist_zsh=".zprofile .zshrc"
 for file in ${filelist_zsh} ; do
-  if [[ -f $r/$file ]] ; then
+  if [[ -f $r/$file ]] && [[ ! -L $r/$file ]] ; then
     mkdir -pv ${cpy}
     mv $r/$file ${cpy}/
   fi
@@ -118,7 +119,7 @@ ln_s $z2/pack/zsh-autosuggestions     $z1b/
 ln_s $z2/pack/zsh-syntax-highlighting $z1b/
 
 # tmux
-if [[ -f $r/.tmux.conf ]] ; then
+if [[ -f $r/.tmux.conf ]] && [[ ! -L $r/.tmux.conf ]] ; then
   mkdir -pv ${cpy}
   mv $r/.tmux.conf ${cpy}/
 fi
@@ -131,11 +132,11 @@ ln_s $src/config/tmux/tmux.conf $r/.tmux.conf
 # EDITORS / DEV:
 
 # vim
-if [[ -d $r/.vim ]] ; then
+if [[ -d $r/.vim ]] && [[ ! -L $r/.vim ]] ; then
   mkdir -pv ${cpy}
   mv $r/.vim  ${cpy}/
 fi
-if [[ -f $r/.vimrc ]] ; then
+if [[ -f $r/.vimrc ]] && [[ ! -L $r/.vimrc ]] ; then
   mkdir -pv ${cpy}
   mv $r/.vimrc  ${cpy}/
 fi
