@@ -9,8 +9,8 @@
 # ----------------------------
 
 # Colors for the prompt (using ANSI escape sequences)
-RED='\e[1;31m'  # red   bold   (1)
-grn='\e[0;32m'  # green normal (0)
+RED='\e[1;31m' # red   bold   (1)
+grn='\e[0;32m' # green normal (0)
 BLU='\e[1;34m' # blue  bold   (1)
 RC='\e[0m' # Reset Color (no color)
 DATE=$(date +'%Y %b %d %a %H:%M:%S') # format: '2020 Jan 01 Wed 23:59:59'
