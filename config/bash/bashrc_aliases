@@ -73,16 +73,16 @@ function whereami () {
 
 # bash only (?)
 function level () {
+    echo " What kind/level of shell are you in? "
+    echo "--------------------------------------"
     if [[ " $- " = *l* ]] ; then
-        echo "     LOGIN SHELL     "
-        echo "---------------------"
         echo "echo \$- = $(echo $-)"
-        echo "l ==> login shell"
+        echo "l ==> You're in a login shell."
+        echo "      (rather than a sub shell)"
     else
-        echo "      SUB SHELL      "
-        echo "---------------------"
         echo "echo \$- = $(echo $-)"
-        echo "no l ==> sub shell"
+        echo "no l ==> You're in a sub shell."
+        echo "      (rather than a login shell)"
     fi
 }
 
