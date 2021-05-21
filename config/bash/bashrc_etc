@@ -15,6 +15,6 @@ HISTFILESIZE=2000
 HISTCONTROL=ignoreboth  # Don't save duplicates or inputs starting with space
 
 # Use `fuck` command - for suggesting command-line mistake re-writes.
-if [[ -z `which thefuck` ]] ; then
+if [[ -n `which thefuck` ]] ; then
     eval $(thefuck --alias)
 fi
