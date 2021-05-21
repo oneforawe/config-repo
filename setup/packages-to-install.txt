@@ -6,6 +6,7 @@ screen
 vim
 emacs
 htop
+tree
 less
 wget
 rsync

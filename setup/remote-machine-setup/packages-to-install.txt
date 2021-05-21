@@ -1,4 +1,5 @@
 zsh
 tmux
 htop
+tree
 less
