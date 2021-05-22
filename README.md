@@ -2,7 +2,7 @@
 
 This repository contains:
 
-1. my personal customized user configuration files, and
+1. my personal customized computer user configuration files, and
 
 2. executable scripts to apply these configurations for shells, shell apps, the
 Mac desktop, and Mac GUI apps.
@@ -11,6 +11,16 @@ The purpose of this repo is mostly for my own convenience, to make my working
 environment consistent across different machines and to make it very easy to set
 up a working environment on a new machine.  But for anyone who's curious, it's
 also here to share config ideas and enable you to try out my setup.
+
+
+## Two Versions
+
+I created two versions of the installation process: the first one that's
+designed primarily for my own usage on my own computers, and a second one that's
+designed for remote and unowned machines with a greater emphasis on
+safety/backup and a little more minimalism.  The instructions for the first
+version are below, and the instructions for the second version can be found
+[here](https://github.com/oneforawe/config-files/tree/master/setup/remote-machine-setup).
 
 
 ## Installation
@@ -43,13 +53,6 @@ to do some trouble-shooting once everything is set up.  For instance, I had to
 use `brew link --overwrite python` after setting up on an old Mac system.
 
 
-## Alternate
-
-I created an alternate installation process for remote, unowned machines (as
-opposed to my own personal machines).  Those setup instructions are
-[here](https://github.com/oneforawe/config-files/tree/master/setup/remote-machine-setup).
-
-
 ## Development
 
 Note to self: Don't forget to add submodules manually when installing them for
@@ -60,7 +63,8 @@ Sometimes a submodule package may show up in git-status as "modified" (although
 not showing any git-diff) and as "(untracked content)".  I've been able to fix
 this situation by removing that whole package (with `rm -r package-name`) and
 updating all submodules (with `git submodule update`).  Perhaps there's a better
-way, but that works for me.
+way, but that works for me.  (Also consider `git submodule update --recursive`
+and `git submodule update --init --recursive`.)
 
 
 ## Terminology
@@ -80,4 +84,3 @@ variable files, and so on.  A configuration file for some hypothetical utility
 `util.conf`, `util.cfg`, `.util`, `.util.conf`, `.utilrc`, etc.  An associated
 config folder might have one of these same names or `util.d` or `.util.d`, where
 the `d` presumably refers to "directory".
-
