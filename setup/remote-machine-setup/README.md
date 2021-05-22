@@ -6,7 +6,11 @@ personal user configurations and install some software to have a more
 personalized experience, both in functionality and aesthetics, while not
 disrupting other users' experiences -- even if they're using the same account.
 
-The files in this folder simplify that configuration/personalization process.
+...The effects of this installation could be less obtrusive... since it changes
+the bash prompt, which is noticeable.  And if other users like to use zsh, this
+changes the zsh prompt too.  (The other users might like the changes though.)
+
+The files in this folder simplify the configuration/personalization process.
 
 
 ## Installation
