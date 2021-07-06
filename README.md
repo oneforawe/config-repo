@@ -2,7 +2,8 @@
 
 This repository contains:
 
-1. my personal customized computer user configuration files, and
+1. my personal customized computer user configuration files (for both GNU/Linux
+and MacOS), and
 
 2. executable scripts to apply these configurations for shells, shell apps, the
 Mac desktop, and Mac GUI apps.
