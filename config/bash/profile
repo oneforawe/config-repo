@@ -25,7 +25,7 @@ export PATH="/usr/local/sbin:$PATH" # recommended by "brew doctor" [2019-01-08]
 # To include, eg, kaggle API (in MacOS)
 export PATH="$HOME/.local/bin:$PATH"
 
-# set PATH so it includes user's private bin if it exists
+# Set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
@@ -42,8 +42,8 @@ fi
 #/usr/local/sbin
 
 
+# For MacOS
 if [[ `uname -s` = "Darwin" ]] ; then
-    # For MacOS
 
     # JavaScript tools: nvm (node version manager)
     export NVM_DIR="$HOME/.nvm"
@@ -52,8 +52,8 @@ if [[ `uname -s` = "Darwin" ]] ; then
 fi
 
 
+# For GNU/Linux
 if [[ `uname -s` = "Linux" ]] ; then
-    # For GNU/Linux
 
     export PATH="$HOME/Software:$PATH"
     # Redundant?:
