@@ -30,6 +30,19 @@ function set_the_window_tab_title () {
 }
 
 
+# Helper awk editor functions
+# -----------------------------------------------------------------------------
+function concatLinesWithCommas {
+  # See comments on how this function works in the bashrc_prompt file.
+  awk -v d=" , " '{s=(NR==1?s:s d)$0}END{print s}' $1
+}
+
+function getSecondField {
+  # See comments on how this function works in the bashrc_prompt file.
+  awk '{print $2}' $1
+}
+
+
 # Custom shell prompt (prep)
 # -----------------------------------------------------------------------------
 
@@ -139,7 +152,7 @@ function precmd () {
     fi
     #STATUS_COLOR="%(?."green"."red")"
     TIMESTAMP=$(date +'%Y %b %d %a %H:%M:%S') #format '2020 Jan 01 Wed 23:59:59'
-    IP_ADDR=$(ifconfig | grep broadcast | awk '{print $2}')
+    IP_ADDR=$(ifconfig | grep broadcast | getSecondField | concatLinesWithCommas)
     if [[ -z $IP_ADDR ]] ; then IP_ADDR="IP_MISSING" ; fi
     # print title:
     set_the_window_tab_title

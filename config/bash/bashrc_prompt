@@ -15,12 +15,33 @@ BLU='\e[1;34m' # blue  bold   (1)
 RC='\e[0m' # Reset Color (no color)
 DATE=$(date +'%Y %b %d %a %H:%M:%S') # format: '2020 Jan 01 Wed 23:59:59'
 
-# Set SSH indicator (if variable string not empty, then remotely logged in)
+function concatLinesWithCommas {
+  # The $1 outside of the string below is the first (and only) parameter to this
+  # function, which is passed to the shell command awk as its only argument.
+  # awk (Aho-Weinberger-Kernighan inspired text-editor)
+  # NR = number of records (lines) read in iterative-reading of lines of a file.
+  # $0 = current record (line); $1, $2, ... are the fields separated by spc/tab.
+  # The string s is initially undefined (=> empty string) and is redefined with
+  # each new line to be its previous value pre-pended/concatenated with the new
+  # line, with an interceding delimiter (-v[ariable]) d on lines other than the
+  # first. At the end of the file, the aggregate s is printed out.
+  awk -v d=" , " '{s=(NR==1?s:s d)$0}END{print s}' $1
+}
+
+function getSecondField {
+  # See comments in concatLinesWithCommas for explanation.
+  awk '{print $2}' $1
+}
+
+# Set SSH indicator (if variable string not empty, then remotely logged in).
 if [[ -n $SSH_CLIENT ]] ; then IN_SSH=" ${BLU}[ssh]${RC}" ; else IN_SSH='' ; fi
 
-# Get the IP address
-THEIP=$(ifconfig | grep broadcast | awk '{print $2}')
-if [[ -z $THEIP ]] ; then THEIP='IP_MISSING' ; fi
+# Get the IP address(es) - internet broadcasting IP address(es).
+THEIP=$(ifconfig | grep broadcast | getSecondField | concatLinesWithCommas)
+# Alternative
+#THEIP=$( ip address show | grep 'brd' | grep 'inet' | getSecondField |
+#  awk '{split($0,a,"/"); print a[1]}' | concatLinesWithCommas )
+if [[ -z $THEIP ]] ; then THEIP='IP-MISSING' ; fi
 
 
 # THE PROMPT VARIABLES
@@ -28,7 +49,7 @@ if [[ -z $THEIP ]] ; then THEIP='IP_MISSING' ; fi
 
 # See `man bash` for more info on these variables (PS0, PS1, PROMPT_COMMAND).
 
-# Set the prompt
+# Set the prompt.
 if [[ $(id -u) = 0 ]] ; then
   # root/super user (red - as warning/notice)
   PS1="\n┌[${RED}\u${RC} @ \H] [$THEIP]${IN_SSH} [${DATE}]: ${grn}\w${RC} \n└> "
