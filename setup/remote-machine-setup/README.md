@@ -31,7 +31,7 @@ go back to your original settings.
 this repo:  
    `cd ~/.config-files`  
    `git submodule init`  
-   `git submodule update`
+   `git submodule update --recursive`
 
 3. Run this command to backup (or possibly over-write) existing shell
 configuration files and add new links to the config files in this repo and to
