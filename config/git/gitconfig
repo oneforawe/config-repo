@@ -1,0 +1,12 @@
+[user]
+    name = Andrew Forrester
+    email = <FILL IN>
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[alias]
+    stat = status --porcelain -b
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

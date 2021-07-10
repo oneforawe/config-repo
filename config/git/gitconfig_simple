@@ -1,0 +1,5 @@
+[user]
+    name = Andrew Forrester
+    email = <FILL IN>
+[alias]
+    stat = status --porcelain -b
