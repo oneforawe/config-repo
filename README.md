@@ -42,7 +42,7 @@ settings.
 this repo:  
    `cd ~/.config-files`  
    `git submodule init`  
-   `git submodule update`
+   `git submodule update --recursive`
 
 4. Run this command to over-write existing shell configuration files with links
 to the config files in this repo and to install the necessary and desired
