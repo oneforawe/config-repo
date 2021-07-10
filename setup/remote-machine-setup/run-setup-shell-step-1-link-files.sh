@@ -145,4 +145,6 @@ ln_s $src/config/vim/vimrc $r/.vimrc
 ln_s $src/config/vim/vim.d $r/.vim
 
 # git
-#ln_s $src/config/gitconfig .gitconfig
+mkdir -pv $r/.local/bin/git
+#ln_s $src/config/git/gitconfig $r/.gitconfig
+ln_s $src/config/git/diff-so-fancy $r/.local/bin/git/diff-so-fancy
