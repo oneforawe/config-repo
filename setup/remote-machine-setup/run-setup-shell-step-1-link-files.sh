@@ -145,6 +145,8 @@ ln_s $src/config/vim/vimrc $r/.vimrc
 ln_s $src/config/vim/vim.d $r/.vim
 
 # git
-mkdir -pv $r/.local/bin/git
+g1="$r/.local/bin"
+g2="$src/config/git/diff-so-fancy"
+mkdir -pv $g1
 #ln_s $src/config/git/gitconfig $r/.gitconfig
-ln_s $src/config/git/diff-so-fancy $r/.local/bin/git/diff-so-fancy
+ln_s $g2/diff-so-fancy $g1/diff-so-fancy

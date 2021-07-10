@@ -132,9 +132,11 @@ ln_s $src/config/emacs/emacs.el $r/.emacs
 ln_s $src/config/emacs/emacs.d  $r/.emacs.d
 
 # git
-mkdir -pv $r/.local/bin/git
+g1="$r/.local/bin"
+g2="$src/config/git/diff-so-fancy"
+mkdir -pv $g1
 #ln_s $src/config/git/gitconfig $r/.gitconfig
-ln_s $src/config/git/diff-so-fancy $r/.local/bin/git/diff-so-fancy
+ln_s $g2/diff-so-fancy $g1/diff-so-fancy
 
 # hg (mercurial)
 #ln_s $src/config/hgrc .hgrc
