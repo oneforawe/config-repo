@@ -43,3 +43,6 @@
 [submodule "config/vim/vim.d/pack/external/start/vim-polyglot"]
 	path = config/vim/vim.d/pack/external/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "config/git/diff-so-fancy"]
+	path = config/git/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy
