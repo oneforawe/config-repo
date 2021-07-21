@@ -5,6 +5,12 @@
 # This file is sourced from ~/.zshrc (which is for interactive shells).
 
 
+# Language option, set in case default doesn't already match this, which seems
+# to usually be the case. Without this, the prompt character /u2514 generates an
+# error: `zsh: character not in range`.
+export LANG=en_US.UTF-8
+
+
 # Set the `nullglob` option so list pattern-matching is silent for null matches
 setopt nullglob
 
