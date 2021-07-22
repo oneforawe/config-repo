@@ -38,9 +38,10 @@ if [[ -n $SSH_CLIENT ]] ; then IN_SSH=" ${BLU}[ssh]${RC}" ; else IN_SSH='' ; fi
 
 # Get the IP address(es) - internet broadcasting IP address(es).
 THEIP=$(ifconfig | grep broadcast | getSecondField | concatLinesWithCommas)
-# Alternative
+# Alternatives
 #THEIP=$( ip address show | grep 'brd' | grep 'inet' | getSecondField |
 #  awk '{split($0,a,"/"); print a[1]}' | concatLinesWithCommas )
+#THEIP=$(curl -4 --silent icanhazip.com)
 if [[ -z $THEIP ]] ; then THEIP='IP-MISSING' ; fi
 
 
