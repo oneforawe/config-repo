@@ -80,6 +80,10 @@ INSERT_MODE="%F{$INSERT_MODE_FG_COLOR}%K{$INSERT_MODE_BG_COLOR}$INSERT_LETTER%k%
 # initialize:
 VI_MODE=$INSERT_MODE
 
+# alternative IP_ADDR function (comment out later definition if using this)
+#IP_ADDR=$(curl -4 --silent icanhazip.com)
+#if [[ -z $IP_ADDR ]] ; then IP_ADDR="IP_MISSING" ; fi
+
 # prompt display functions:
 function newline ()           { print -P "%{\n%}" }
 function show_timestamp ()    { print -P "%F{$TIMESTAMP_COLOR}[$TIMESTAMP]%f" }
