@@ -39,13 +39,13 @@ Shell.
 
 ## A shell
 
-To get an idea of what a
+A shell gives a computer user access to and control of the computer at a fairly
+deep level.  To get an idea of what a
 [shell](https://en.wikipedia.org/wiki/Shell_(computing)) is and what role it
 plays in an operating system, especially with respect to the
 [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), here are
 some simplified diagrams, hopefully giving a useful first-iteration
-perspective, even if they're a little over-simplified.  The shell gives a
-computer user access to and control of the computer at a fairly deep level.
+perspective, even if they're a little over-simplified.
 
 <a href="https://jaguhiremath62.medium.com/difference-between-kernel-and-shell-718b3de15be6">
 <img
