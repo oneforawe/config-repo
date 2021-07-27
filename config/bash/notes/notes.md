@@ -122,12 +122,12 @@ Here are some important orienting bash commands:
     </td>
     <td>
       See GNU bash help info, including further suggested help commands and a
-      bash built-in commands list.<br/>
-      <code>help [built-in command]</code><br/>
-      Notice that the <code>help cd</code> output explains the options/flags
-      for the command <code>cd</code>, but <code>help compgen</code> does not
-      explain the options for <code>compgen</code>.  For that explanation we'll
-      have to use <code>info</code>.
+      bash built-in commands list.  Notice that the <code>help cd</code> output
+      explains the options/flags for the command <code>cd</code>, but
+      <code>help compgen</code> does not explain the options for
+      <code>compgen</code>.  For that explanation we'll have to use
+      <code>info</code>.<br/>
+      <code>help [built-in command]</code>
     </td>
   </tr>
   <tr>
