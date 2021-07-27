@@ -112,8 +112,8 @@ bash shell uses.
     <td>
       <code>help</code><br/>
       <code>help help</code><br/>
-      <code>help cd</code>
-      <code>help cd</code>
+      <code>help cd</code><br/>
+      <code>help cd</code><br/>
       <code>help compgen</code>
     </td>
     <td>See GNU bash help info, including further suggested help commands and a
