@@ -23,4 +23,4 @@ This could be a useful reference:
 | tmux     | terminal multiplexer |
 | vim      | vi improved ("vee eye": vi ~ visual editor, from the visual mode of the ex editor) |
 | emacs    | from Editor MACroS (originally for the TECO editor) |
-| git      | stupid content tracker; global info tracker; contemptible bastard, like Linus Torvalds |
+| git      | ~"get"; stupid content tracker; global info tracker; contemptible bastard, like Linus Torvalds |
