@@ -152,8 +152,7 @@ Here are some important orienting bash commands:
     </td>
     <td>
       <code>man [command]</code><br/>
-      Access a manual page for the command <code>[command]</code>.<br/>
-      Note: <code>man -k</code> is equivalent to <code>apropos</code>.
+      Access a manual page for the command <code>[command]</code>.
     </td>
   </tr>
   <tr>
