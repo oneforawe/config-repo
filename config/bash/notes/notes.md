@@ -89,6 +89,7 @@ bash shell uses.
 
 ## Bash Commands
 
+<div class="markdown-table">
 <table>
  <thead>
   <tr>
@@ -128,7 +129,6 @@ bash shell uses.
  </tbody>
 </table>
 
-<div class="markdown-table">
 
 | Command | Note | Examples |
 | ------- | ---- | -------- |
