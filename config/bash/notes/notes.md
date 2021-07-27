@@ -135,9 +135,12 @@ bash shell uses.
     <td></td>
   </tr>
   <tr>
-    <td><code>man [command]</code></td>
+    <td><code>man</code></td>
     <td></td>
-    <td>access a manual page for the command <code>[command]</code></td>
+    <td>
+      <code>man [command]</code>
+      Access a manual page for the command <code>[command]</code>.
+    </td>
   </tr>
   <tr>
     <td></td>
