@@ -143,13 +143,12 @@ Here are some important orienting bash commands:
     </td>
   </tr>
   <tr>
+    <td><code>man</code></td>
     <td>
-      <code>man</code><br/>
       <code>man man</code><br/>
       <code>man bash</code><br/>
       <code>man ls</code>
     </td>
-    <td></td>
     <td>
       <code>man [command]</code><br/>
       Access a manual page for the command <code>[command]</code>.
@@ -162,7 +161,10 @@ Here are some important orienting bash commands:
       <code>bash --help</code><br/>
       <code>bash [filename]</code>
     </td>
-    <td></td>
+    <td>
+      Bash shell execution.  Executing <code>bash</code> by itself starts a new
+
+    </td>
   </tr>
   <tr>
     <td></td>
