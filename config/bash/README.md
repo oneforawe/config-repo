@@ -102,7 +102,7 @@ General:
 * [official bash site](https://www.gnu.org/software/bash/)
 * [bash manual options](https://www.gnu.org/software/bash/manual)
 * [reference manual](https://www.gnu.org/software/bash/manual/bash.html)
-* [my personal orientation notes](./notes.md)
+* [my personal orientation notes](./notes/notes.md)
 * [guide for beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
 * [bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
 * [really nice scripting reference](https://devhints.io/bash)

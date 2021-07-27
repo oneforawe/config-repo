@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" media="all" href="./notes.css" />
 
 # notes on bash
 
@@ -88,11 +89,6 @@ bash shell uses.
 
 ## Bash Commands
 
-<style>
-.markdown-table table tr td:nth-child(2) {
-  width: 40px;
-}
-</style>
 <div class="markdown-table">
 | Command | Note | Examples |
 | ------- | ---- | -------- |

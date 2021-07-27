@@ -1,0 +1,3 @@
+.markdown-table table tr td:nth-child(2) {
+  width: 40px;
+}
