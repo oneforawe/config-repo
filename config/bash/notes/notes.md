@@ -74,7 +74,7 @@ commands together.
 Usually a user accesses a shell through either a physical terminal (keyboard
 and screen), or a "virtual terminal" (a graphical user interface, or GUI,
 application accessible through the GUI portion of an operating system).  One
-can then say that one usually uses a virtual terminal that is "powered by" a
+can thus say that one usually uses a virtual terminal that is "powered by" a
 specific shell.  The shell and terminal are also called a command-line
 interface or CLI.
 
