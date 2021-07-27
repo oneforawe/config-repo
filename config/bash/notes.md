@@ -57,10 +57,48 @@ computer user access to and control of the computer at a fairly deep level.
   width="350"/>
 </a>
 
+A shell is a program that provides commands and a language/syntax to chain the
+commands together.
+
+Bash is a shell, but there are many other shells, such as sh (the Thompson
+shell and then the Bourne Shell), csh (the C shell), tcsh (the he TENEX C
+shell), ksh (the Korn shell), zsh (the Z Shell), fish (the friendly interactive
+shell), rc, ash, es, dash, sash, etc.  Here are some
+[shell comparisons](https://hyperpolyglot.org/unix-shells).
+
+Usually a user accesses a shell through either a physical terminal (keyboard
+and screen), or a "virtual terminal" (a graphical user interface, or GUI,
+application accessible through the GUI portion of an operating system).  One
+can then say that one usually uses a virtual terminal that is "powered by" a
+specific shell.  The shell and terminal are also called a command-line
+interface or CLI.
+
 
 ## A scripting language
 
-## Commands
+A shell program comes along with its own built-in commands and its own
+programming language or scripting language.  This allows a person to construct
+compound commands from the built-in commands, and construct large sequences of
+commands that can be saved in a file (a "script") and executed at once or in
+"batch" form.
+
+So "bash" can refer to the shell program and the scripting language that the
+bash shell uses.
 
 
+## Bash Commands
 
+<style>
+.markdown-table table tr td:nth-child(2) {
+  width: 40px;
+}
+</style>
+<div class="markdown-table">
+| Command | Note | Examples |
+| ------- | ---- | -------- |
+| `help` | See GNU bash help info, including further suggested help commands
+and a bash built-in commands list. | `help` |
+|        |  | `help help` |
+| `info` | | |
+| `man [command]` | access a manual page for the command `[command]` | `man man` |
+</div>
