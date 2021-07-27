@@ -118,7 +118,8 @@ Here are some important orienting bash commands:
       <code>help</code><br/>
       <code>help help</code><br/>
       <code>help cd</code><br/>
-      <code>help compgen</code>
+      <code>help compgen</code><br/>
+      <code>help [built-in command]</code>
     </td>
     <td>
       See GNU bash help info, including further suggested help commands and a
@@ -126,8 +127,7 @@ Here are some important orienting bash commands:
       explains the options/flags for the command <code>cd</code>, but
       <code>help compgen</code> does not explain the options for
       <code>compgen</code>.  For that explanation we'll have to use
-      <code>info</code>.<br/>
-      <code>help [built-in command]</code>
+      <code>info</code>.
     </td>
   </tr>
   <tr>
