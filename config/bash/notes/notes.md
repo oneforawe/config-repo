@@ -71,18 +71,18 @@ perspective, even if they're a little over-simplified.
 A shell is a program that provides commands and a language/syntax to chain the
 commands together.
 
-Bash is a shell, but there are many other shells, such as sh (the Thompson
-shell and then the Bourne Shell), csh (the C shell), tcsh (the he TENEX C
-shell), ksh (the Korn shell), zsh (the Z Shell), fish (the friendly interactive
-shell), rc, ash, es, dash, sash, etc.  Here are some
-[shell comparisons](https://hyperpolyglot.org/unix-shells).
-
 Usually a user accesses a shell through either a physical terminal (keyboard
 and screen), or a "virtual terminal" (a graphical user interface, or GUI,
 application accessible through the GUI portion of an operating system).  One
 can then say that one usually uses a virtual terminal that is "powered by" a
 specific shell.  The shell and terminal are also called a command-line
 interface or CLI.
+
+Bash is a shell, but there are many other shells, such as sh (the Thompson
+shell and then the Bourne Shell), csh (the C shell), tcsh (the he TENEX C
+shell), ksh (the Korn shell), zsh (the Z Shell), fish (the friendly interactive
+shell), rc, ash, es, dash, sash, etc.  Here are some
+[shell comparisons](https://hyperpolyglot.org/unix-shells).
 
 
 ## Scripting language
