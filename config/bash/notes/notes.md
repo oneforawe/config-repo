@@ -2,6 +2,16 @@
 
 # notes on bash
 
+## General Reference
+
+* [bash on Wikipedia](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+* [official bash site](https://www.gnu.org/software/bash/)
+* [bash manual options](https://www.gnu.org/software/bash/manual)
+* [reference manual](https://www.gnu.org/software/bash/manual/bash.html)
+
+
+## Intro
+
 Maybe the best intro to bash would be a practical demonstration showing how to
 execute some task that's important to you right now.  For example, copying files
 or creating an ssh key-pair for securely connection to a remote machine.  With
@@ -139,3 +149,20 @@ and a bash built-in commands list. | `help` |
 | `man [command]` | access a manual page for the command `[command]` | `man man` |
 
 </div>
+
+
+## More Links
+
+Beginners?:
+
+* [guide for beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+
+Scripting:
+
+* [bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+* [really nice scripting reference](https://devhints.io/bash)
+
+System Admin:
+
+* [SysAdmin Basics](https://www.linode.com/docs/tools-reference/linux-system-administration-basics/)
+* [SysAdmin Tutorial](https://www.tutorialspoint.com/linux_admin/)
