@@ -28,18 +28,33 @@ Shell.
 
 ## A shell
 
-To get an idea of what a shell is and what role it plays in an operating system,
-here are some simplified diagrams, hopefully giving a useful first-iteration
+To get an idea of what a
+[shell](https://en.wikipedia.org/wiki/Shell_(computing)) is and what role it
+plays in an operating system, especially with respect to the
+[kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), here are
+some simplified diagrams, hopefully giving a useful first-iteration
 perspective, even if they're a little over-simplified.
 
+<a href="https://jaguhiremath62.medium.com/difference-between-kernel-and-shell-718b3de15be6">
 <img
   src="./images/shell_kernel_app.png"
   alt="shell vs kernel vs apps"
-  width="200"/>
+  width="350"/>
+</a>
 
-![Image 2](./images/shell_context_unix.jpg)
+<a href="https://www.meted.ucar.edu/ucar/unix/navmenu.php?tab=1&page=2-1-0&type=flash">
+<img
+  src="./images/shell_context_unix.jpg"
+  alt="shell context unix"
+  width="350"/>
+</a>
 
-![Image 2](./images/shell_unix_architecture.jpg)
+<a href="https://www.elprocus.com/unix-architecture-and-properties/">
+<img
+  src="./images/shell_unix_architecture.jpg"
+  alt="shell unix architecture"
+  width="350"/>
+</a>
 
 
 ## A scripting language
