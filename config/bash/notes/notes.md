@@ -112,10 +112,15 @@ bash shell uses.
     <td>
       <code>help</code><br/>
       <code>help help</code><br/>
-      <code>help info</code>
+      <code>help cd</code>
+      <code>help cd</code>
+      <code>help compgen</code>
     </td>
     <td>See GNU bash help info, including further suggested help commands and a
-    bash built-in commands list.</td>
+    bash built-in commands list.  Notice that the <code>help cd</code> output
+    explains the options/flags for the command <code>cd</code>, but <code>help
+    compgen</code> does not explain the options for <code>compgen</code>.  For
+    that explanation we'll have to use <code>info</code>.</td>
   </tr>
   <tr>
     <td><code>info</code></td>
