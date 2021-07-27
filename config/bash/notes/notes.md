@@ -106,7 +106,7 @@ Here are some important orienting bash commands:
     <td>Command</td>
     <td>
       Example Usage<br/>
-      <code>&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;</code>
+      <code>&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;&#x2011;</code>
     </td>
     <td>Notes</td>
   </tr>
