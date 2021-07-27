@@ -146,12 +146,28 @@ Here are some important orienting bash commands:
     <td><code>man</code></td>
     <td>
       <code>man man</code><br/>
+      <code>man info</code><br/>
       <code>man bash</code><br/>
       <code>man ls</code>
     </td>
     <td>
       <code>man [command]</code><br/>
-      Access a manual page for the command <code>[command]</code>.
+      Access a manual page for the command <code>[command]</code>.<br/>
+      Note: <code>man -k</code> is equivalent to <code>apropos</code>.
+    </td>
+  </tr>
+  <tr>
+    <td><code>apropos</code></td>
+    <td>
+      <code>apropos networking</code>
+    </td>
+    <td>
+      <code>apropos [string]</code><br/>
+      Search to see what commands have <code>[string]</code> in their
+      descriptions and might be appropriate/apropos for actions related to
+      <code>[string]</code>.<br/>
+      EG: <code>apropos 'configure network'</code><br/>
+      Note: <code>man -k</code> is equivalent to <code>apropos</code>.
     </td>
   </tr>
   <tr>
