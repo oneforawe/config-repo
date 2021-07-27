@@ -159,7 +159,8 @@ Here are some important orienting bash commands:
   <tr>
     <td><code>apropos</code></td>
     <td>
-      <code>apropos networking</code>
+      <code>apropos networking</code><br/>
+      <code>apropos time</code>
     </td>
     <td>
       <code>apropos [string]</code><br/>
