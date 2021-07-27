@@ -142,8 +142,7 @@ bash shell uses.
 
 | Command | Note | Examples |
 | ------- | ---- | -------- |
-| `help` | See GNU bash help info, including further suggested help commands
-and a bash built-in commands list. | `help` |
+| `help` | See GNU bash help info, including further suggested help commands and a bash built-in commands list. | `help` |
 |        |  | `help help` |
 | `info` | | |
 | `man [command]` | access a manual page for the command `[command]` | `man man` |

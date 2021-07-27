@@ -96,4 +96,4 @@ Regarding config files:
 
 General:
 
-* [my personal orientation notes](./notes/notes.md)
+* [my personal bash orientation notes](./notes/notes.md)
