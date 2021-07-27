@@ -102,21 +102,26 @@ bash shell uses.
  <thead>
   <tr>
     <td>Command</td>
-    <td>Example-Usage</td>
+    <td>Example Usage</td>
     <td>Notes</td>
   </tr>
  </thead>
  <tbody>
   <tr>
     <td><code>help</code></td>
-    <td><code>help</code><br/>
-    <code>help help</code></td>
+    <td>
+      <code>help</code><br/>
+      <code>help help</code>
+      <code>help info</code>
+    </td>
     <td>See GNU bash help info, including further suggested help commands and a
     bash built-in commands list.</td>
   </tr>
   <tr>
-    <td><code>info</code></td>
-    <td></td>
+    <td>
+      <code>info</code><br/>
+      <code>info info</code>
+    </td>
     <td></td>
   </tr>
   <tr>
@@ -136,13 +141,6 @@ bash shell uses.
   </tr>
  </tbody>
 </table>
-
-| Command | Note | Examples |
-| ------- | ---- | -------- |
-| `help` | See GNU bash help info, including further suggested help commands and a bash built-in commands list. | `help` |
-|        |  | `help help` |
-| `info` | | |
-| `man [command]` | access a manual page for the command `[command]` | `man man` |
 
 
 ## More Links
