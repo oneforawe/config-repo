@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" media="all" href="./notes.css" />
 
 # notes on bash
 
@@ -103,7 +102,7 @@ bash shell uses.
  <thead>
   <tr>
     <td>Command</td>
-    <td>Examples</td>
+    <td>Example Usage</td>
     <td>Notes</td>
   </tr>
  </thead>
