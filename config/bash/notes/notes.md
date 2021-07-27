@@ -111,7 +111,7 @@ bash shell uses.
     <td><code>help</code></td>
     <td>
       <code>help</code><br/>
-      <code>help help</code>
+      <code>help help</code><br/>
       <code>help info</code>
     </td>
     <td>See GNU bash help info, including further suggested help commands and a
@@ -120,7 +120,8 @@ bash shell uses.
   <tr>
     <td>
       <code>info</code><br/>
-      <code>info info</code>
+      <code>info info</code><br/>
+      <code>info man</code><br/>
     </td>
     <td></td>
   </tr>
