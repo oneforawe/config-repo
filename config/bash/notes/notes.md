@@ -185,11 +185,6 @@ Here are some important orienting bash commands:
       <code>bash file.bash</code> will execute that whole bash script.
     </td>
   </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
  </tbody>
 </table>
 
