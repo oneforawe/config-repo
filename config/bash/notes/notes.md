@@ -98,6 +98,8 @@ bash shell uses.
 
 ## Bash Commands
 
+### orientation
+
 Here are some important orienting bash commands:
 
 <table>
@@ -187,6 +189,19 @@ Here are some important orienting bash commands:
   </tr>
  </tbody>
 </table>
+
+
+### common
+
+Here are some commonly used commands and key-combinations:
+
+`cd`, `ls`, `cp`, `mv`, `rm`, `touch`, `grep`, `find`
+
+(Control-C): to cancel a command/process that is currently running.
+
+`sudo` (super-user do), `exit` (Control-D), `shutdown`, `reboot`
+
+`chown`, `chmod`
 
 
 ## More Links
