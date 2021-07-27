@@ -135,12 +135,20 @@ Here are some important orienting bash commands:
     <td>
       <code>info</code><br/>
       <code>info info</code><br/>
-      <code>info man</code><br/>
+      <code>info bash</code><br/>
     </td>
-    <td></td>
+    <td>
+      "Info reader"<br/>
+      Start with <code>info info</code> to learn how to use it.
+    </td>
   </tr>
   <tr>
-    <td><code>man</code></td>
+    <td>
+      <code>man</code><br/>
+      <code>man man</code><br/>
+      <code>man bash</code><br/>
+      <code>man ls</code>
+    </td>
     <td></td>
     <td>
       <code>man [command]</code><br/>
