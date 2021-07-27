@@ -209,7 +209,7 @@ Here are some commonly used commands and key-combinations:
 It will be important to learn about which package manager your operating system
 uses, if any.  (For example, `apt`.)  (Note to self: I want to mention more
 useful orienting commands, such as `hostnamectl`, which might not be included
-by default but can be installed.  Also, `uname`, `whoami`, etc.)
+by default but can be installed.  Also, `uname`, `whoami`, `tree`, etc.)
 
 
 ## More Links
