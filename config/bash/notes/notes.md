@@ -118,10 +118,10 @@ Here are some important orienting bash commands:
       <code>help</code><br/>
       <code>help help</code><br/>
       <code>help cd</code><br/>
-      <code>help compgen</code><br/>
-      <code>help [built-in command]</code>
+      <code>help compgen</code>
     </td>
     <td>
+      <code>help [built-in command]</code><br/>
       See GNU bash help info, including further suggested help commands and a
       bash built-in commands list.  Notice that the <code>help cd</code> output
       explains the options/flags for the command <code>cd</code>, but
