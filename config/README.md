@@ -18,7 +18,7 @@ This could be a useful reference:
 | app name | name derivation |
 | -------- | --------------- |
 | bash     | Bourne-again shell (replacing the Bourne shell) |
-| zsh      | Z shell (from Zhong Shao's login id: "zsh") |
+| zsh      | Z shell (inspired by Zhong Shao's login id: "zsh") |
 | fish     | friendly interactive shell |
 | tmux     | terminal multiplexer |
 | vim      | vi improved ("vee eye": vi ~ visual editor, from the visual mode of the ex editor) |
