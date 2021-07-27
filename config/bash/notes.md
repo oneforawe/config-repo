@@ -32,7 +32,10 @@ To get an idea of what a shell is and what role it plays in an operating system,
 here are some simplified diagrams, hopefully giving a useful first-iteration
 perspective, even if they're a little over-simplified.
 
-![Image 1](./images/shell_kernel_app.png)
+<img
+  src="./images/shell_kernel_app.png"
+  alt="shell vs kernel vs apps"
+  width="200"/>
 
 ![Image 2](./images/shell_context_unix.jpg)
 
