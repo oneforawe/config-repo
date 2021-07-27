@@ -116,7 +116,6 @@ bash shell uses.
       <code>help</code><br/>
       <code>help help</code><br/>
       <code>help cd</code><br/>
-      <code>help cd</code><br/>
       <code>help compgen</code>
     </td>
     <td>
@@ -147,8 +146,12 @@ bash shell uses.
     </td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td><code>bash</code></td>
+    <td>
+      <code>bash</code><br/>
+      <code>bash --help</code><br/>
+      <code>bash [filename]</code>
+    </td>
     <td></td>
   </tr>
   <tr>
