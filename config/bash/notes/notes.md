@@ -118,6 +118,7 @@ bash shell uses.
     bash built-in commands list.</td>
   </tr>
   <tr>
+    <td><code>info</code></td>
     <td>
       <code>info</code><br/>
       <code>info info</code><br/>
