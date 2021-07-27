@@ -126,8 +126,8 @@ Here are some important orienting bash commands:
       bash built-in commands list.  Notice that the <code>help cd</code> output
       explains the options/flags for the command <code>cd</code>, but
       <code>help compgen</code> does not explain the options for
-      <code>compgen</code>.  For that explanation we'll have to use
-      <code>info</code>.
+      <code>compgen</code>.  For that explanation we'll have to explore
+      <code>info bash</code> or search online (on the internet).
     </td>
   </tr>
   <tr>
