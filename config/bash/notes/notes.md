@@ -102,7 +102,7 @@ bash shell uses.
  <thead>
   <tr>
     <td>Command</td>
-    <td>Example Usage</td>
+    <td>Example-Usage</td>
     <td>Notes</td>
   </tr>
  </thead>
