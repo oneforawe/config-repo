@@ -163,7 +163,10 @@ Here are some important orienting bash commands:
     </td>
     <td>
       Bash shell execution.  Executing <code>bash</code> by itself starts a new
-
+      shell, where you can execute <code>exit</code> to close that new shell,
+      bringing you back to the original shell you started with.  If a file such
+      as <code>file.bash</code> contains a valid bash script, then executing
+      <code>bash file.bash</code> will execute that whole bash script.
     </td>
   </tr>
   <tr>
