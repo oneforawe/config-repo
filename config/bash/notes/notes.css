@@ -1,5 +1,6 @@
 .markdown-table {
   color: red;
+  background-color: black;
 }
 
 .markdown-table table tr td:nth-child(2) {

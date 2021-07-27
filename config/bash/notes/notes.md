@@ -81,7 +81,7 @@ interface or CLI.
 Bash is a shell, but there are many other shells, such as sh (the Thompson
 shell and then the Bourne Shell), csh (the C shell), tcsh (the he TENEX C
 shell), ksh (the Korn shell), zsh (the Z Shell), fish (the friendly interactive
-shell), rc, ash, es, dash, sash, etc.  Here are some
+shell), rc (run commands), ash, es, dash, sash, etc.  Here are some
 [shell comparisons](https://hyperpolyglot.org/unix-shells).
 
 
