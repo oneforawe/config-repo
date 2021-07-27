@@ -89,13 +89,44 @@ bash shell uses.
 
 ## Bash Commands
 
-| Command | Note | Examples |
-| ------- | ---- | -------- |
-| `help` | See GNU bash help info, including further suggested help commands
-and a bash built-in commands list. | `help` |
-|        |  | `help help` |
-| `info` | | |
-| `man [command]` | access a manual page for the command `[command]` | `man man` |
+<table>
+ <thead>
+  <tr>
+    <td>Command</td>
+    <td>Note</td>
+    <td>Examples</td>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+    <td><code>help</code></td>
+    <td>See GNU bash help info, including further suggested help commands and a
+    bash built-in commands list.</td>
+    <td><code>help</code><br/>
+    <code>help help</code></td>
+  </tr>
+  <tr>
+    <td><code>info</code></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><code>man [command]</code></td>
+    <td>access a manual page for the command <code>[command]</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+ </tbody>
+</table>
 
 <div class="markdown-table">
 
