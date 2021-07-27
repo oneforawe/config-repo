@@ -39,8 +39,8 @@ Shell.
 
 ## Shell
 
-Bash is a shell.  A shell gives a computer user access to and control of the
-computer at a fairly deep level.  To get an idea of what a
+Bash is a shell.  A shell is a computer program that gives a user access to and
+control of the computer at a fairly deep level.  To get an idea of what a
 [shell](https://en.wikipedia.org/wiki/Shell_(computing)) is and what role it
 plays in an operating system, especially with respect to the
 [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), here are
