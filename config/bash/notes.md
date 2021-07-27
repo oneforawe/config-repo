@@ -33,7 +33,8 @@ To get an idea of what a
 plays in an operating system, especially with respect to the
 [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), here are
 some simplified diagrams, hopefully giving a useful first-iteration
-perspective, even if they're a little over-simplified.
+perspective, even if they're a little over-simplified.  The shell gives a
+computer user access to and control of the computer at a fairly deep level.
 
 <a href="https://jaguhiremath62.medium.com/difference-between-kernel-and-shell-718b3de15be6">
 <img
