@@ -175,9 +175,9 @@ function vm {
     local port=$(VBoxManage showvminfo "${name}" --machinereadable |
                  grep '^Forwarding(.*,22"' | cut -d , -f 4)
     # Connect to VM.
+    #ssh -p ${port} -o ConnectionAttempts=200 ${username}@localhost
     ssh -t -p ${port} -o ConnectionAttempts=200 ${username}@localhost
     # `-t` added to see if I can get color in my shell
-    #ssh -p ${port} -o ConnectionAttempts=200 ${username}@localhost
 }
 
 function xvm {
