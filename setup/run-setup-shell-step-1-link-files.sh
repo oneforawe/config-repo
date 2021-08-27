@@ -162,7 +162,9 @@ if [[ -f $r/.vimrc ]] && [[ ! -L $r/.vimrc ]] ; then
   mkdir -pv ${cpy}
   mv $r/.vimrc  ${cpy}/
 fi
-#rm $r/.vim $r/.vimrc
+if [[ -L $r/.vim ]] ; then
+  rm $r/.vim
+fi
 ln_s $src/config/vim/vimrc $r/.vimrc
 ln_s $src/config/vim/vim.d $r/.vim
 
@@ -175,7 +177,9 @@ if [[ -f $r/.emacs ]] && [[ ! -L $r/.emacs ]] ; then
   mkdir -pv ${cpy}
   mv $r/.emacs ${cpy}/
 fi
-#rm -r $r/.emacs.d
+if [[ -L $r/.vim ]] ; then
+  rm $r/.emacs.d
+fi
 ln_s $src/config/emacs/emacs.el $r/.emacs
 ln_s $src/config/emacs/emacs.d  $r/.emacs.d
 
@@ -189,6 +193,13 @@ ln_s $g2/diff-so-fancy $g1/diff-so-fancy
 # hg (mercurial)
 #ln_s $src/config/hgrc .hgrc
 
+
+# For GNU/Linux
+if [[ `uname -s` = "Linux" ]] ; then
+  # pack  (packages common to the shells)
+  rm -r $r/.config/thefuck
+  ln_s $src/config/pack/thefuck $r/.config/thefuck
+fi
 
 # For MacOS Darwin
 if [[ `uname -s` = "Darwin" ]] ; then

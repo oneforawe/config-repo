@@ -43,3 +43,6 @@
 [submodule "config/git/diff-so-fancy"]
 	path = config/git/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy
+[submodule "config/pack/thefuck"]
+	path = config/pack/thefuck
+	url = https://github.com/nvbn/thefuck.git
