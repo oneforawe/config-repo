@@ -46,3 +46,4 @@
 [submodule "config/pack/thefuck"]
 	path = config/pack/thefuck
 	url = https://github.com/nvbn/thefuck.git
+	ignore = untracked
