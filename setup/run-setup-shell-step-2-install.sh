@@ -82,9 +82,6 @@ if [[ `uname -s` = "Darwin" ]] ; then
             brew install $package
         fi
     done
-    if [[ "  ${arrInstalledPackages[*]}  " != *" thefuck "* ]] ; then
-        brew install thefuck
-    fi
 
     # See how update goes now:
     echo "Running \"bup\" again after any installs (or none)..."

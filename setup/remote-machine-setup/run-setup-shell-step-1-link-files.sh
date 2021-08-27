@@ -30,19 +30,18 @@ src=$CONFIG_LOCATION
 
 setup="$src/setup/remote-machine-setup"
 
-THE_DATE_IN_MS="$(date +%s%3N)"
-THE_DATE="${THE_DATE_IN_MS::-3}"
-MILLISEC="$(echo $THE_DATE_IN_MS | tail -c 4)"
-TIMESTAMP="${THE_DATE_IN_MS}_$(date -d @$THE_DATE +Date_%Y-%m-%d_Time_%H_%M_%S).$MILLISEC"
+# For GNU/Linux tools (GNU)
+if [[ `uname -s` = "Linux" ]] ; then
+  function ln_s () { ln -sf $@ ; }
+  THE_DATE_IN_MS="$(date +%s%3N)"
+  THE_DATE="${THE_DATE_IN_MS::-3}"
+  MILLISEC="$(echo $THE_DATE_IN_MS | tail -c 4)"
+  TIMESTAMP="${THE_DATE_IN_MS}_$(date -d @$THE_DATE +Date_%Y-%m-%d_Time_%H_%M_%S).$MILLISEC"
+fi
 
 COPY_LOCATION="$CONFIG_ROOT/.config-old-replaced/copy_$TIMESTAMP"
 
 cpy=$COPY_LOCATION
-
-# For GNU/Linux tools (GNU)
-if [[ `uname -s` = "Linux" ]] ; then
-    function ln_s () { ln -sf $@ ; }
-fi
 
 
 # Link config (and reference) files
@@ -140,7 +139,7 @@ if [[ -f $r/.vimrc ]] && [[ ! -L $r/.vimrc ]] ; then
   mkdir -pv ${cpy}
   mv $r/.vimrc  ${cpy}/
 fi
-rm $r/.vim $r/.vimrc
+#rm $r/.vim $r/.vimrc
 ln_s $src/config/vim/vimrc $r/.vimrc
 ln_s $src/config/vim/vim.d $r/.vim
 

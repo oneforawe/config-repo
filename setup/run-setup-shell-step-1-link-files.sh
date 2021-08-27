@@ -28,14 +28,27 @@ CONFIG_LOCATION="$HOME/$CONFIG_FOLDER"
 r=$CONFIG_ROOT
 src=$CONFIG_LOCATION
 
+setup="$src/setup"
+
 # For GNU/Linux tools (GNU)
 if [[ `uname -s` = "Linux" ]] ; then
-    function ln_s () { ln -sf $@ ; }
+  function ln_s () { ln -sf $@ ; }
+  THE_DATE_IN_MS="$(date +%s%3N)"
+  THE_DATE="${THE_DATE_IN_MS::-3}"
+  MILLISEC="$(echo $THE_DATE_IN_MS | tail -c 4)"
+  TIMESTAMP="${THE_DATE_IN_MS}_$(date -d @$THE_DATE +Date_%Y-%m-%d_Time_%H_%M_%S).$MILLISEC"
 fi
-# For MacOS Darwin tools
+
+# For MacOS Darwin tools (~BSD)
 if [[ `uname -s` = "Darwin" ]] ; then
-    function ln_s () { ln -sFfh $@ ; }
+  function ln_s () { ln -sFfh $@ ; }
+  THE_DATE="$(date)"
+  TIMESTAMP="$(date -jf "%a %b %d %T %Z %Y" "`echo $THE_DATE`" "+%s")_$(date -jf "%a %b %d %T %Z %Y" "`echo $THE_DATE`" "+Date_%Y-%m-%d_Time_%H_%M_%S")"
 fi
+
+COPY_LOCATION="$CONFIG_ROOT/.config-old-replaced/copy_$TIMESTAMP"
+
+cpy=$COPY_LOCATION
 
 
 # Link config (and reference) files
@@ -50,12 +63,24 @@ ln_s $src/reference/CommonCommands $r/.CommonCommands
 # SHELLS / TERMINALS:
 
 # readline
+if [[ -f $r/.inputrc ]] && [[ ! -L $r/.inputrc ]] ; then
+  # if a file and not a symbolic link
+  mkdir -pv ${cpy}
+  mv $r/.inputrc ${cpy}/
+fi
 ln_s $src/config/readline/inputrc $r/.inputrc
 
 # bash
 b1="$r/.config/bash"
 b2="$src/config/bash"
 mkdir -pv $b1
+filelist_bash=".profile .bashrc .bash_profile .bash_login .bash_logout .dir_colors"
+for file in ${filelist_bash} ; do
+  if [[ -f $r/$file ]] && [[ ! -L $r/$file ]] ; then
+    mkdir -pv ${cpy}
+    mv $r/$file ${cpy}/
+  fi
+done
 ln_s $b2/bash_profile $r/.bash_profile
 ln_s $b2/bash_login   $r/.bash_login
 ln_s $b2/profile      $r/.profile
@@ -79,6 +104,13 @@ z1b="$z1a/pack"
 z2="$src/config/zsh"
 mkdir -pv $z1a
 mkdir -pv $z1b
+filelist_zsh=".zprofile .zshrc"
+for file in ${filelist_zsh} ; do
+  if [[ -f $r/$file ]] && [[ ! -L $r/$file ]] ; then
+    mkdir -pv ${cpy}
+    mv $r/$file ${cpy}/
+  fi
+done
 ln_s $z2/zprofile $r/.zprofile
 ln_s $z2/zshrc    $r/.zshrc
 ln_s $z2/zshrc_omz    $z1a/zshrc_omz
@@ -113,6 +145,10 @@ rm -r $r/.config/thefuck
 ln_s $src/config/pack/thefuck $r/.config/thefuck
 
 # tmux
+if [[ -f $r/.tmux.conf ]] && [[ ! -L $r/.tmux.conf ]] ; then
+  mkdir -pv ${cpy}
+  mv $r/.tmux.conf ${cpy}/
+fi
 ln_s $src/config/tmux/tmux.conf $r/.tmux.conf
 
 # ssh (?)
@@ -122,12 +158,28 @@ ln_s $src/config/tmux/tmux.conf $r/.tmux.conf
 # EDITORS / DEV:
 
 # vim
-rm -r $r/.vim
+if [[ -d $r/.vim ]] && [[ ! -L $r/.vim ]] ; then
+  mkdir -pv ${cpy}
+  mv $r/.vim  ${cpy}/
+fi
+if [[ -f $r/.vimrc ]] && [[ ! -L $r/.vimrc ]] ; then
+  mkdir -pv ${cpy}
+  mv $r/.vimrc  ${cpy}/
+fi
+#rm $r/.vim $r/.vimrc
 ln_s $src/config/vim/vimrc $r/.vimrc
 ln_s $src/config/vim/vim.d $r/.vim
 
 # emacs
-rm -r $r/.emacs.d
+if [[ -d $r/.emacs.d ]] && [[ ! -L $r/.emacs.d ]] ; then
+  mkdir -pv ${cpy}
+  mv $r/.emacs.d ${cpy}/
+fi
+if [[ -f $r/.emacs ]] && [[ ! -L $r/.emacs ]] ; then
+  mkdir -pv ${cpy}
+  mv $r/.emacs ${cpy}/
+fi
+#rm -r $r/.emacs.d
 ln_s $src/config/emacs/emacs.el $r/.emacs
 ln_s $src/config/emacs/emacs.d  $r/.emacs.d
 
@@ -140,3 +192,18 @@ ln_s $g2/diff-so-fancy $g1/diff-so-fancy
 
 # hg (mercurial)
 #ln_s $src/config/hgrc .hgrc
+
+
+# For MacOS Darwin
+if [[ `uname -s` = "Darwin" ]] ; then
+  iterm2file="$r/Library/Preferences/com.googlecode.iterm2.plist"
+  i2="$src/config/iterm2/preferences"
+  if [[ -f $iterm2file ]] && [[ ! -L $iterm2file ]] ; then
+    mkdir -pv ${cpy}
+    mv $iterm2file ${cpy}/
+  fi
+  # Links don't work for ~/Library/Preferences/ plist files, so need to cp.
+  cp $i2/com.googlecode.iterm2.plist $iterm2file
+  # The downside of this approach: edits to preferences must be manually
+  # copied back into the config files.
+fi
