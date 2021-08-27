@@ -7,9 +7,6 @@
 [submodule "config/zsh/pack/zsh-autosuggestions"]
 	path = config/zsh/pack/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "config/pack/thefuck"]
-	path = config/pack/thefuck
-	url = https://github.com/nvbn/thefuck
 [submodule "config/vim/vim.d/pack/external/opt/vim-scriptease"]
 	path = config/vim/vim.d/pack/external/opt/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease
