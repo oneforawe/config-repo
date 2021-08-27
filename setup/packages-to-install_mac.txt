@@ -2,3 +2,4 @@ iterm2
 coreutils
 openssh
 youtube-dl
+thefuck
