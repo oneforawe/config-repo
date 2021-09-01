@@ -19,6 +19,7 @@ function concatLinesWithCommas {
   # The $1 outside of the string below is the first (and only) parameter to this
   # function, which is passed to the shell command awk as its only argument.
   # awk (Aho-Weinberger-Kernighan inspired text-editor)
+  # Essentially, awk takes a file and returns a file (ie, list of lines).
   # NR = number of records (lines) read in iterative-reading of lines of a file.
   # $0 = current record (line); $1, $2, ... are the fields separated by spc/tab.
   # The string s is initially undefined (=> empty string) and is redefined with
@@ -28,16 +29,36 @@ function concatLinesWithCommas {
   awk -v d=" , " '{s=(NR==1?s:s d)$0}END{print s}' $1
 }
 
-function getSecondField {
-  # See comments in concatLinesWithCommas for explanation.
+function getFieldTwo {
+  # See comments in concatLinesWithCommas for explanation of awk.
   awk '{print $2}' $1
+}
+
+function cleanOutpt {
+  # See comments in concatLinesWithCommas for explanation of awk.
+  if [[ $1 == "addr:"* ]] ; then
+    # Edit each line (in list of results), taking second field, separator ":".
+    echo "$1" | awk 'BEGIN {FS = ":"} ; {print $2}';
+  else
+    # Print out each line (in list of results) unaltered.
+    echo "$1" | awk '{print $0}';
+  fi
+}
+
+function pipeClean {
+  while IFS= read -r line; do
+    cleanOutpt $line;
+  done
 }
 
 # Set SSH indicator (if variable string not empty, then remotely logged in).
 if [[ -n $SSH_CLIENT ]] ; then IN_SSH=" ${BLU}[ssh]${RC}" ; else IN_SSH='' ; fi
 
 # Get the IP address(es) - internet broadcasting IP address(es).
-THEIP=$(ifconfig | grep broadcast | getSecondField | concatLinesWithCommas)
+#THEIP=$(ifconfig | grep broadcast | getFieldTwo | concatLinesWithCommas)
+# Instead of the expression above, let's use the expression below to be
+# compatible with older versions of bash
+THEIP=$(ifconfig | grep cast | getFieldTwo | pipeClean | concatLinesWithCommas)
 # Alternatives
 #THEIP=$( ip address show | grep 'brd' | grep 'inet' | getSecondField |
 #  awk '{split($0,a,"/"); print a[1]}' | concatLinesWithCommas )

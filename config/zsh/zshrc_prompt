@@ -99,7 +99,9 @@ function show_user_host_ip () {
 function show_status ()       { print -P "%F{$STATUS_COLOR}\($STATUS\)%f" }
 function show_path ()         { print -P "%F{$PWD_COLOR}${PWD}%f" }
 function show_env () {
-    if [[ -v CONDA_DEFAULT_ENV ]] ; then
+    # Using `-n $(echo $CONDA_DEFAULT_ENV)` instead of `-v CONDA_DEFAULT_ENV`
+    # to be compatible with older versions of bash / zsh.
+    if [[ -n $(echo $CONDA_DEFAULT_ENV) ]] ; then
         print -P "env:\(${CONDA_DEFAULT_ENV}\) "
     fi
 }
@@ -117,7 +119,7 @@ function show_prompt_line_2 ()     { print -P "  \u2502 $(show_path)" }
 function show_prompt_line_final () { echo "$VI_MODE \u2514 " } # now using "echo" here
 # b/c using "print -P" causes tab-completion trouble (re-printing of commands)
 function show_prompt_line_opt ()   {
-    if [[ -v CONDA_DEFAULT_ENV ]] || [[ -n $(git_prompt_info) ]] ; then
+    if [[ -n $(echo $CONDA_DEFAULT_ENV) ]] || [[ -n $(git_prompt_info) ]] ; then
         print -P "  \u2502 $(show_env)$(git_prompt_info)"
     fi
 }
