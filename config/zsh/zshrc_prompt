@@ -37,11 +37,25 @@ function concatLinesWithCommas {
   awk -v d=" , " '{s=(NR==1?s:s d)$0}END{print s}' $1
 }
 
-function getSecondField {
+function getFieldTwo {
   # See comments on how this function works in the bashrc_prompt file.
   awk '{print $2}' $1
 }
 
+function cleanOutpt {
+  # See comments on how this function works in the bashrc_prompt file.
+  if [[ $1 == "addr:"* ]] ; then
+    echo "$1" | awk 'BEGIN {FS = ":"} ; {print $2}';
+  else
+    echo "$1" | awk '{print $0}';
+  fi
+}
+
+function pipeClean {
+  while IFS= read -r line; do
+    cleanOutpt $line;
+  done
+}
 
 # Custom shell prompt (prep)
 # -----------------------------------------------------------------------------
@@ -158,7 +172,10 @@ function precmd () {
     fi
     #STATUS_COLOR="%(?."green"."red")"
     TIMESTAMP=$(date +'%Y %b %d %a %H:%M:%S') #format '2020 Jan 01 Wed 23:59:59'
-    IP_ADDR=$(ifconfig | grep broadcast | getSecondField | concatLinesWithCommas)
+    #IP_ADDR=$(ifconfig | grep broadcast | getFieldTwo | concatLinesWithCommas)
+    # Instead of the expression above, let's use the expression below to be
+    # compatible with older versions of bash
+    IP_ADDR=$(ifconfig | grep cast | getFieldTwo | pipeClean | concatLinesWithCommas)
     if [[ -z $IP_ADDR ]] ; then IP_ADDR="IP_MISSING" ; fi
     # print title:
     set_the_window_tab_title
