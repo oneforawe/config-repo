@@ -16,7 +16,7 @@ function which-ls () {
     fi
 }
 
-function ls-switch () {
+function switch-ls () {
     if [[ $LS_TYPE = "GNU" ]] ; then
         LS_TYPE="BSD"
         source ~/.config/bash/bashrc_aliases_lsBSD
