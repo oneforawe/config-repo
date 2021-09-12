@@ -184,7 +184,7 @@ function git-list-branches-with-description () {
         # replace symbolic-ref like `HEAD -> master`
         clean_branch_name=`echo $clean_branch_name | sed -E "s/^.+ -> //g"`
 
-        description=`git config branch.${clean_branch_name}.description | cat -v`
+        description=`git config branch.${clean_branch_name}.description`
 
         firstChar=`echo "${branch}" | cut -c 1-1`
 
