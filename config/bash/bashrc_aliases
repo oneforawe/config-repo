@@ -32,10 +32,12 @@ alias ga='git add'
 alias gcm='git commit -m'
 #alias gpsuo='git push --set-upstream origin'
 alias gbl='git branch --list'                     # same as `git branch`
+alias gblr='git branch -r'
+alias gbla='git branch -a'
 alias gbld='git-branch-list-with-descriptions'    # see code below
 alias gbc='git-branch-create' # see code below (create/checkout+link-origin/up)
-alias gbde='git branch --edit-description'        # git branch description edit
 alias gbds='git-branch-description-show'          # see code below
+alias gbde='git branch --edit-description'        # git branch description edit
 
 #alias dff='df -hT | grep -vE "(tmpfs|Use%)"'
 #alias svi='vi -u NONE +"set syntax=" +"set nowrap"'
