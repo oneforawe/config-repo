@@ -135,15 +135,16 @@ function git-branch-create {
         printf "That wasn't a yes. Stopping here.\n"
     else
         # Ready. Continue.
-        # (Not sure which below is best, but last one seems simple and works.)
+        # (Not sure which below is best; middle one seems to do what I want.)
         #git branch --set-upstream-to=origin/<upstream-branch-name> <branch-name>
         #git branch --set-upstream-to=origin/$1 $1
         #git push --set-upstream origin <upstream-branch-name>
-        #git push --set-upstream origin $1
+        git push --set-upstream origin $1
         #git push origin <origin-branch-name>
-        git push origin $1
+        #git push origin $1  # not sufficient for my uses
     fi
-    printf "Don't forget to add a branch description. Alias `gcbd branch-name`.\n"
+    printf "Don't forget to add/edit a branch description. "
+    printf "Alias 'gbde branch-name'.\n"
 }
 
 function git-branch-description-show () {
