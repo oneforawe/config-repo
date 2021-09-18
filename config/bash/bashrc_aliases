@@ -32,10 +32,10 @@ alias ga='git add'
 alias gcm='git commit -m'
 #alias gpsuo='git push --set-upstream origin'
 alias gbl='git branch --list'                     # same as `git branch`
-alias gbld='git-list-branches-with-description'   # see code below
-alias gcb='git-create-branch' # see code below (create/checkout+link-origin/up)
-alias gcbd='git branch --edit-description'        # create branch description
-alias gbd='git-branch-show-description'           # see code below
+alias gbld='git-branch-list-with-descriptions'    # see code below
+alias gbc='git-branch-create' # see code below (create/checkout+link-origin/up)
+alias gbde='git branch --edit-description'        # git branch description edit
+alias gbds='git-branch-description-show'          # see code below
 
 #alias dff='df -hT | grep -vE "(tmpfs|Use%)"'
 #alias svi='vi -u NONE +"set syntax=" +"set nowrap"'
@@ -123,7 +123,7 @@ function which-tmux-session {
 
 
 
-function git-create-branch {
+function git-branch-create {
     git checkout -b $1 # $1 = <branch-name>
     printf "Ready to (automatically) set origin and upstream connections? (yes/no) "
     read readytocontinue
@@ -144,7 +144,7 @@ function git-create-branch {
     printf "Don't forget to add a branch description. Alias `gcbd branch-name`.\n"
 }
 
-function git-branch-show-description () {
+function git-branch-description-show () {
     # from
     # https://gist.github.com/ejmr/a927d32e25488a282bd3
     #
@@ -162,7 +162,7 @@ function git-branch-show-description () {
     git config --get "$DESCRIPTION_PROPERTY"
 }
 
-function git-list-branches-with-description () {
+function git-branch-list-with-descriptions () {
     # initial version (which I've changed slightly) was from
     # https://github.com/bahmutov/git-branches/blob/master/branches.sh
 
