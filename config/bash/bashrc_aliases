@@ -38,6 +38,7 @@ alias gbld='git-branch-list-with-descriptions'    # see code below
 alias gbc='git-branch-create' # see code below (create/checkout+link-origin/up)
 alias gbds='git-branch-description-show'          # see code below
 alias gbde='git branch --edit-description'        # git branch description edit
+unalias gbd # git branch -d (--delete) -- dangerous command; write it out
 
 #alias dff='df -hT | grep -vE "(tmpfs|Use%)"'
 #alias svi='vi -u NONE +"set syntax=" +"set nowrap"'
