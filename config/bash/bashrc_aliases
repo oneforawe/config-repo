@@ -48,6 +48,11 @@ unalias gbd # git branch -d (--delete) -- dangerous command; write it out
 # Functions and Aliases
 # ----------------------------------------------------------------------
 
+# diff
+function difff {
+    diff -u $1 $2 | diff-so-fancy
+}
+
 # will probably want to edit this after finishing work on bash prompts
 function whereami () {
     red=$'\e[1;31m'
