@@ -8,7 +8,7 @@
 # Aliases
 # ----------------------------------------------------------------------
 
-# directory changing
+# change directory
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
