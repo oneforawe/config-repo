@@ -4,7 +4,7 @@
 # Mac Desktop Services Store customization files
 .DS_Store
 
-# Specific sub-folders
+# Specific folders and files
 setup/old
 setup/notes.txt
 notes/ScreenShot_prompt.png
@@ -16,6 +16,7 @@ config/zsh/old/
 config/fish/test.sh
 config/fish/old/
 config/vim/old/
+config/vim/vim.d/.netrwhist
 config/emacs/old
 config/emacs/alt
 config/emacs/emacs.d/org-clock-save.el
