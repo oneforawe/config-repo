@@ -37,3 +37,14 @@ this repo:
 configuration files and add new links to the config files in this repo and to
 install the necessary and desired packages:  
    `bash ~/.config-files/setup/remote-machine-setup/run-setup-shell-full.sh`
+
+
+## Default Shell
+
+Dealing with the default shell:  
+  To see the current user settings (including default login shell):
+  `less /etc/passwd`  
+  To see the current shell: `echo $0`  
+  To see the available shells: `cat /etc/shells`  
+  To see which `zsh` is called when executed: `which zsh`  
+  To change the default login shell to zsh: `chsh --shell /bin/zsh`
