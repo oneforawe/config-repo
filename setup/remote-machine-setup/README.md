@@ -42,8 +42,7 @@ install the necessary and desired packages:
 ## Default Shell
 
 Dealing with the default shell:  
-  To see the current user settings (including default login shell):
-  `less /etc/passwd`  
+  To see users and properties including default login shell: `less /etc/passwd`  
   To see the current shell: `echo $0`  
   To see the available shells: `cat /etc/shells`  
   To see which `zsh` is called when executed: `which zsh`  
