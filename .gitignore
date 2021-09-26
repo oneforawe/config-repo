@@ -5,6 +5,7 @@
 .DS_Store
 
 # Specific folders and files
+.gitmodules-changed
 setup/old
 setup/notes.txt
 notes/ScreenShot_prompt.png
