@@ -67,6 +67,10 @@ updating all submodules (with `git submodule update`).  Perhaps there's a better
 way, but that works for me.  (Also consider `git submodule update --recursive`
 and `git submodule update --init --recursive`.)
 
+If changing something like the submodule url, see instructions such as
+<a href="https://stackoverflow.com/questions/913701/
+how-to-change-the-remote-repository-for-a-git-submodule">these</a>.
+
 
 ## Terminology
 
