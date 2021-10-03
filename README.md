@@ -2,7 +2,7 @@
 
 This repository contains:
 
-An un-necessary edit. (Testing)
+An un-necessary edit. (Testing issue / pull-request infrastructure.)
 
 1. my personal customized computer user configuration files (for both GNU/Linux
 and MacOS), and
