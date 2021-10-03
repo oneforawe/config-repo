@@ -16,28 +16,31 @@ src=$CONFIG_LOCATION
 # For GNU/Linux
 if [[ `uname -s` = "Linux" ]] ; then
 
-    # First update/upgrade package manager.
-    # APT
+    # First update/upgrade package manager, APT (apt).
     echo "Running \"aptup\" prior to installing any missing desired packages."
     source $r/.config/bash/bashrc_aliases_linux # contains definition of `aptup`
     aptup
 
     echo "Installing any missing desired packages..."
+
     for package in `cat $src/setup/packages-to-install.txt` ; do
         if [[ -z `which $package` ]] ; then
-            sudo apt-get install $package
+            sudo apt install $package
         fi
     done
-    # install thefuck (see https://github.com/nvbn/thefuck/wiki/Installation)
-    arrPackages=( 'python3-dev' 'python3-pip' )
-    for package in ${arrPackages[@]} ; do
-        if [[ -z `ls /usr/share/doc | grep $package` ]] ; then
-            sudo apt-get install $package
-        fi
-    done
+
+    # Check/Install thefuck
     if [[ -z `which thefuck` ]] ; then
+        # See https://github.com/nvbn/thefuck/wiki/Installation
+        arrPackages=( 'python3-dev' 'python3-pip' )
+        for package in ${arrPackages[@]} ; do
+            if [[ -z `ls /usr/share/doc | grep $package` ]] ; then
+                sudo apt install $package
+            fi
+        done
         sudo pip3 install thefuck
     fi
+
     # Check/Install gh (the GitHub-CLI)
     if [[ -z `which gh` ]] ; then
         # See https://github.com/cli/cli/blob/trunk/docs/install_linux.md
@@ -56,8 +59,7 @@ fi
 # For MacOS
 if [[ `uname -s` = "Darwin" ]] ; then
 
-    # First update/upgrade package manager.
-    # Homebrew (brew)
+    # First update/upgrade package manager, Homebrew (brew).
     echo "Making sure Homebrew package manager is installed and ready..."
     # pre-requisite:
     if [[ -z `which xcode-select` ]] ; then xcode-select --install ; fi
