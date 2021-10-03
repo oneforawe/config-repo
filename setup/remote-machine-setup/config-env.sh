@@ -10,4 +10,4 @@ CONFIG_LOCATION="$HOME/$CONFIG_FOLDER"
 r=$CONFIG_ROOT
 src=$CONFIG_LOCATION
 
-setup="$src/setup"
+setup="$src/setup/remote-machine-setup"

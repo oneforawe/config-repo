@@ -43,7 +43,7 @@
 ;; CONFIGS ELSEWHERE
 ;;-------------------------------------------------
 
-; See ~/.config-files/setup/run-setup-MacOS-env.sh
+; See ~/.config-repo/setup/run-setup-MacOS-env.sh
 ; ( In MacOS, the Caps Lock key is set to function as another Control key,
 ;   to make control-key combinations more ergonomic. )
 ; ( In Terminal and iTerm2, the Left Option key is set to function as

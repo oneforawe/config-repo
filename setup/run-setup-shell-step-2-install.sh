@@ -3,16 +3,6 @@
 # purpose: Automate installing/updating shells and utilities.
 
 
-# Set variables:
-CONFIG_ROOT="$HOME"
-CONFIG_FOLDER=".config-files"
-CONFIG_LOCATION="$HOME/$CONFIG_FOLDER"
-
-r=$CONFIG_ROOT
-src=$CONFIG_LOCATION
-
-
-
 # For GNU/Linux
 if [[ `uname -s` = "Linux" ]] ; then
 
@@ -123,4 +113,3 @@ if [[ "$SHELL" != "/bin/zsh" ]] ; then
         echo "Note: Open a new shell to start with the new default (zsh)."
     fi
 fi
-

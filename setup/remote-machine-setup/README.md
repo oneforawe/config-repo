@@ -25,18 +25,18 @@ save copies of important relevant files that may be over-written if you want to
 go back to your original settings.
 
 1. In a shell, clone this whole repo to obtain a local copy the files:  
-   `git clone https://github.com/oneforawe/config-files.git ~/.config-files`
+   `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
 
 2. Enter the repo and initialize and update (clone) the submodules contained in
 this repo:  
-   `cd ~/.config-files`  
+   `cd ~/.config-repo`  
    `git submodule init`  
    `git submodule update --recursive`
 
 3. Run this command to backup (or possibly over-write) existing shell
 configuration files and add new links to the config files in this repo and to
 install the necessary and desired packages:  
-   `bash ~/.config-files/setup/remote-machine-setup/run-setup-shell-full.sh`
+   `bash ~/.config-repo/setup/remote-machine-setup/run-setup-shell-full.sh`
 
 
 ## Default Shell

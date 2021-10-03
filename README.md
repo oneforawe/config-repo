@@ -1,4 +1,4 @@
-# Configuration Files
+# Configuration Repo
 
 This repository contains:
 
@@ -21,7 +21,7 @@ designed primarily for my own usage on my own computers, and a second one that's
 designed for remote and unowned machines with a greater emphasis on
 safety/backup and a little more minimalism.  The instructions for the first
 version are below, and the instructions for the second version can be found
-[here](https://github.com/oneforawe/config-files/tree/master/setup/remote-machine-setup).
+[here](https://github.com/oneforawe/config-repo/tree/master/setup/remote-machine-setup).
 
 
 ## Installation
@@ -33,21 +33,21 @@ relevant files that will be over-written if you want to go back to your original
 settings.
 
 1. In a shell, clone this repo to obtain a local copy the files:  
-   `git clone https://github.com/oneforawe/config-files.git ~/.config-files`
+   `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
 
 2. For Mac systems, you can run the MacOS environment setup script:  
-   `bash ~/.config-files/setup/run-setup-MacOS-env.sh`
+   `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`
 
 3. Enter the repo and initialize and update (clone) the submodules contained in
 this repo:  
-   `cd ~/.config-files`  
+   `cd ~/.config-repo`  
    `git submodule init`  
    `git submodule update --recursive`
 
 4. Run this command to over-write existing shell configuration files with links
 to the config files in this repo and to install the necessary and desired
 packages:  
-   `bash ~/.config-files/setup/run-setup-shell-full.sh`
+   `bash ~/.config-repo/setup/run-setup-shell-full.sh`
 
 5. You may want to clean up (delete) extraneous config files, and you may have
 to do some trouble-shooting once everything is set up.  For instance, I had to

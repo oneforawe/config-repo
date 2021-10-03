@@ -18,3 +18,12 @@ And, convert it back with:
 The reference files are copied from `~/Library/Preferences`, and then
 transformed into xml for inspection.  They are kept in case things go wrong and
 there's a need to revert the to original functional files.
+
+
+# top-level file
+
+The top-level file in the `iterm2` folder is an kind of snap-shot/initial
+preference/config file that is copied over into the `~Library/Preferences/`
+folder when installing the config files (NOT symbolically linked like all/most
+of the others, since the Library Preference files cannot be symbolic links) and
+so it needs to be manually updated.

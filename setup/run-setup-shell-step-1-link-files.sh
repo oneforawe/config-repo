@@ -4,7 +4,7 @@
 
 # TODO: Create function that doesn't just link but checks for pre-existing
 #       files, saves them into a backup location such as
-#       ~/.config-files-replaced/files-2019-05-22-h20-m34-s21/zshrc
+#       ~/.config-replaced/files-2019-05-22-h20-m34-s21/zshrc
 #       and then creates the link (complaining if not succeeding, both in the
 #       linking process and perhaps testing the link somehow).
 # TODO: Get private info from user to put into private config files.
@@ -15,20 +15,12 @@
 #        access. There could be slightly private, with simple password access,
 #        and then super private, with more rigorous protection.)
 #       EG: email address for .gitconfig (?)
-#       mkdir -pv $HOME/.config-files-private/config/git/gitconfig
-#       ln -sFfh ~/.config-files-private/config/git/gitconfig ~/.gitconfig
+#       mkdir -pv $HOME/.config-private/config/git/gitconfig
+#       ln -sFfh ~/.config-private/config/git/gitconfig ~/.gitconfig
 
 
-# Set variables and alias
+# Continue setting variables and create function
 # ======================================================================
-CONFIG_ROOT="$HOME"
-CONFIG_FOLDER=".config-files"
-CONFIG_LOCATION="$HOME/$CONFIG_FOLDER"
-
-r=$CONFIG_ROOT
-src=$CONFIG_LOCATION
-
-setup="$src/setup"
 
 # For GNU/Linux tools (GNU)
 if [[ `uname -s` = "Linux" ]] ; then
@@ -148,7 +140,7 @@ fi
 ln_s $src/config/tmux/tmux.conf $r/.tmux.conf
 
 # ssh (?)
-#ln_s .config-files/config/ssh/config .ssh/config
+#ln_s $src/config/ssh/config .ssh/config
 
 
 # EDITORS / DEV:

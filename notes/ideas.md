@@ -2,7 +2,7 @@
 ## more immediate
 
 To search for `TODO` items in the code, execute the following at the root
-directory `~/.config-files`:
+directory `~/.config-repo`:
 
 `grep -r 'TODO' .`
 

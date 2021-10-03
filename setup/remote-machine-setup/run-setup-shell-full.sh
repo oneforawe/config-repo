@@ -4,7 +4,7 @@
 
 # TODO: Create function that doesn't just link but checks for pre-existing
 #       files, saves them into a backup location such as
-#       ~/.config-files-replaced/files-2019-05-22-h20-m34-s21/zshrc
+#       ~/.config-replaced/files-2019-05-22-h20-m34-s21/zshrc
 #       and then creates the link (complaining if not succeeding, both in the
 #       linking process and perhaps testing the link somehow).
 # TODO: Get private info from user to put into private config files.
@@ -15,19 +15,13 @@
 #        access. There could be slightly private, with simple password access,
 #        and then super private, with more rigorous protection.)
 #       EG: email address for .gitconfig (?)
-#       mkdir -pv $HOME/.config-files-private/config/git/gitconfig
-#       ln -sFfh ~/.config-files-private/config/git/gitconfig ~/.gitconfig
+#       mkdir -pv $HOME/.config-private/config/git/gitconfig
+#       ln -sFfh ~/.config-private/config/git/gitconfig ~/.gitconfig
 
 
 # Set variables:
-CONFIG_ROOT="$HOME"
-CONFIG_FOLDER=".config-files"
-CONFIG_LOCATION="$HOME/$CONFIG_FOLDER"
+source ~/.config-repo/setup/remote-machine-setup/config-env.sh
 
-r=$CONFIG_ROOT
-src=$CONFIG_LOCATION
-
-setup="$src/setup/remote-machine-setup"
 
 source $setup/run-setup-shell-step-1-link-files.sh
 source $setup/run-setup-shell-step-2-install.sh
