@@ -17,7 +17,7 @@ The files in this folder simplify the configuration/personalization process.
 
 WARNING: This code in its current state risks deleting (over-writing) important
 files, although I made an attempt to add safety (for the first time) by
-automating backup of pre-existing config files into a `~/.config-old-replaced`
+automating backup of pre-existing config files into a `~/.config-replaced`
 folder so they are not simply over-written.  This code was made for my
 convenience, not for the safety of your files.  (Perhaps more, better-tested
 safety will come later.)  Be sure to understand the code before running it, and

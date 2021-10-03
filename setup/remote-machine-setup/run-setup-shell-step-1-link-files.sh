@@ -31,7 +31,7 @@ if [[ `uname -s` = "Linux" ]] ; then
   TIMESTAMP="${THE_DATE_IN_MS}_$(date -d @$THE_DATE +Date_%Y-%m-%d_Time_%H_%M_%S).$MILLISEC"
 fi
 
-COPY_LOCATION="$CONFIG_ROOT/.config-old-replaced/copy_$TIMESTAMP"
+COPY_LOCATION="$CONFIG_ROOT/.config-replaced/copy_$TIMESTAMP"
 
 cpy=$COPY_LOCATION
 

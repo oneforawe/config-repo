@@ -38,7 +38,7 @@ if [[ `uname -s` = "Darwin" ]] ; then
   TIMESTAMP="$(date -jf "%a %b %d %T %Z %Y" "`echo $THE_DATE`" "+%s")_$(date -jf "%a %b %d %T %Z %Y" "`echo $THE_DATE`" "+Date_%Y-%m-%d_Time_%H_%M_%S")"
 fi
 
-COPY_LOCATION="$CONFIG_ROOT/.config-old-replaced/copy_$TIMESTAMP"
+COPY_LOCATION="$CONFIG_ROOT/.config-replaced/copy_$TIMESTAMP"
 
 cpy=$COPY_LOCATION
 
