@@ -206,4 +206,3 @@ nnoremap <silent> ,<space> :nohlsearch<CR>  " clear the last search highlights
 " using tmux (rather than vim itself):
 " https://github.com/chrismccord/dotfiles/blob/master/.tmux.conf
 " ( bind-key \; command-prompt )
-

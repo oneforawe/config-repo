@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: bashrc_opt   (linked from ~/.bashrc_opt)
+# filename: bashrc_opt   (linked from ~/.config/bash/bashrc_opt)
 # purpose: For setting shell options.
 
 
@@ -31,4 +31,3 @@ bind -m vi-command ' "\C-e": end-of-line '
 # See for explanation:
 # https://stackoverflow.com/questions/54300220/
 #     why-cant-i-set-c-e-in-inputrc-to-be-end-of-line-for-vi-command-keymap
-

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: bashrc_aliases   (linked from ~/.bashrc_aliases)
+# filename: bashrc_aliases   (linked from ~/.config/bash/bashrc_aliases)
 # purpose: For defining custom commands (functions and aliases) in the shell.
 
 # This file is sourced from ~/.bashrc (which is for interactive shells).
@@ -531,4 +531,3 @@ function cup {
     cstep2 && cstep3
     cstep4
 }
-

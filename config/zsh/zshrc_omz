@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: zshrc_omz   (linked from ~/.zshrc_omz)
+# filename: zshrc_omz   (linked from ~/.config/zsh/zshrc_omz)
 # purpose: For setting omz options.
 
 # This file is sourced from ~/.zshrc (which is for interactive shells).
@@ -103,4 +103,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: bashrc_aliases_linux   (linked from ~/.bashrc_aliases_linux)
+# filename: bashrc_aliases_linux   (linked from ~/.config/bash/bashrc_aliases_linux)
 # purpose: For defining custom commands (functions and aliases) in the shell.
 
 # This file is sourced from ~/.bashrc (which is for interactive shells).

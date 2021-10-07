@@ -57,4 +57,3 @@ Also, I don't think I've used this command, but I might want to keep it in mind:
 
 Might want to look at a more up-to-date reference, or see this blog post:  
   https://github.blog/2016-02-01-working-with-submodules/
-

@@ -18,4 +18,3 @@ if [[ -r ~/.bash_login ]] ; then source ~/.bash_login ; fi
 # BASH-specific interactive-shell configs are in ~/.bashrc
 # If the (login) shell is interactive, source/execute `~/.bashrc`.
 if [[ $- == *i* ]] ; then source ~/.bashrc ; fi
-

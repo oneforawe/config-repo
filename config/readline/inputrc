@@ -121,4 +121,3 @@ set keymap vi-command
 #     https://vi.stackexchange.com/questions/13832/
 #       key-mapping-c-ctrl-single-quote-not-working
 # [4] See also notes in `.vimrc`.
-
