@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# filename: zshrc_etc_mac   (linked from ~/.config/zsh/zshrc_etc_mac)
+# purpose: Set interactive-shell configs not already set for opt (options),
+#   prompt, commands (functions and aliases), and omz (oh-my-zsh).
+
+# This file is sourced from ~/.zshrc (which is for interactive shells).
+
+
+# If bash-completion is available, use it.
+# (Trying this with git-flow for git-flow-completion. See refs [2,3,4,5].)
+if [[ -r /usr/local/etc/profile.d/bash_completion.sh ]] ; then
+    source /usr/local/etc/profile.d/bash_completion.sh
+    # As suggested in the git-completion.zsh file:
+    fpath=(~/.config/git/git-completion $fpath)
+    zstyle ':completion:*:*:git:*' script ~/.config/git/git-completion/git-completion.bash
+    # Suggested by git-flow-completion author (but isn't working):
+    source ~/.config/git/git-flow-completion/git-flow-completion.zsh
+    # Let's try this instead (also not working):
+    #fpath=(~/.config/git/git-flow-completion $fpath)
+    #zstyle ':completion:*:*:git:*' script ~/.config/git/git-flow-completion/git-flow-completion.bash
+    #zstyle ':completion:*:*:git:*' script ~/.config/git/git-flow-completion/git-flow-completion.zsh
+fi
