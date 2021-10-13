@@ -196,6 +196,9 @@
 (require 'zenburn)
 (zenburn)
 
+; highlight trailing spaces in (pinkish) red
+(setq-default show-trailing-whitespace t)
+
 
 ;(add-hook 'css-mode-hook 'rainbow-mode)
 
@@ -336,8 +339,32 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; ORG-MODE
 ;;-------------------------------------------------
 
-(add-to-list 'load-path "~/.emacs.d/org-8.2.4/lisp")
+;; See https://orgmode.org/manual/Installation.html
+
+;; Looks like I don't need to provide my own org files; org is included / pre-packaged with GNU Emacs. So I'll try just not referring to the files I've got saved here (eg ~/.emacs.d/org/lisp).
+;; Nope, that didn't work because the problem below [*] is still there using that method.  I'll try referring to ~/.emacs.d/org/lisp again.
+;; Everything here is so disorganized now; it needs a re-haul.
+
+;(add-to-list 'load-path "~/.emacs.d/org-8.2.4/lisp") ; commenting out to see if I can fix this [*]
+; [*] for some unknown reason, on a scheduled todo item with a repeater, I used to be able to press S-t d (DONE) and it would iterate the schedule date to the next state, give a "DONE" stamp and keep the item as scheduled. Now that key binding erases the scheduled repeating date and essentially marks the item as permanently done, leaving a blank schedule ("SCHEDULED: ").
+(add-to-list 'load-path "~/.emacs.d/org/lisp")
+; Not sure if the line above will work since I had to comment it out earlier:
 ;(add-to-list 'load-path "~/.emacs.d/org/lisp")  ; attempted `make' in org directory but had errors
+
+;; [2021-10-12] An error/warning when opening an org file with emacs told me:
+;; "
+;;  WARNING: No org-loaddefs.el file could be found from where org.el is loaded.
+;;  You need to run "make" or "make autoloads" from Org lisp directory
+;; "
+;; So I ran `make` and `make autoloads` from the Org lisp directory, but they
+;; told me to run in the directory above that:
+;; "
+;;  Makefile:4: *** This make needs to be started as a sub-make from the toplevel directory..  Stop.
+;; "
+;; So I ran `make` and `make autoloads` successfully (first unsuccessfully since
+;; "makeinfo: Command not found" -- then successfully after installing texinfo by
+;; `sudo apt install texinfo` in order to use makeinfo).
+
 (require 'org) ;; I was getting an error when trying to add org-habit to org-modules without this line.
 (require 'org-install)
 
@@ -467,10 +494,8 @@ This function makes sure that dates are aligned for easy reading."
 
 
 ;; HABITS
-; will habits work now?
-;(add-to-list 'org-modules "org-habit")
-(add-to-list 'org-modules 'org-habit) ; I tried this earlier, without the (require 'org) line above. Maybe this line will work now, or maybe the line above is better. ?
-(setq org-habit-show-habits t)
+(add-to-list 'org-modules 'org-habit)
+(setq org-habit-show-habits-only-for-today t)
 (setq org-habit-graph-column 80)
 
 ;; Modify the habits consistency graph (the Seinfeld "don't break the chain" device)
@@ -496,6 +521,13 @@ This function makes sure that dates are aligned for easy reading."
 ;; EVIL-ORG-MODE
 ;;-------------------------------------------------
 
+;; See https://github.com/Somelauw/evil-org-mode
+;; for key-bindings.  For example:
+;; <<   promote a heading
+;; >>   demote a heading
+;; M-k  move subtree up
+;; M-j  move subtree down
+
 ;; While using Emacs 24.3.1 (< 24.4), need to avoid using the undefined macro
 ;; `with-eval-after-load'.
 ;; For reference, see
@@ -519,7 +551,6 @@ This function makes sure that dates are aligned for easy reading."
 ;;"minor mode to add evil keymappings to Org-mode."
 ;;:keymap (make-sparse-keymap)
 ;;(evil-local-mode t))
-
 
 
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-org")
@@ -585,8 +616,8 @@ This function makes sure that dates are aligned for easy reading."
 ;(evil-define-key 'normal evil-org-mode-map ",r" 'org-refile)
 ;(evil-define-key 'normal evil-org-mode-map ",c" 'org-capture)
 ;(evil-define-key 'normal evil-org-mode-map ",ag" 'org-agenda)
-(evil-define-key 'normal evil-org-mode-map "<<" 'org-promote-subtree)
-(evil-define-key 'normal evil-org-mode-map ">>" 'org-demote-subtree)
+;(evil-define-key 'normal evil-org-mode-map "<<" 'org-promote-subtree)
+;(evil-define-key 'normal evil-org-mode-map ">>" 'org-demote-subtree)
 ;(evil-define-key 'normal evil-org-mode-map ">." 'org-move-subtree-down)
 ;(evil-define-key 'normal evil-org-mode-map "<," 'org-move-subtree-up)
 ;(evil-define-key 'normal evil-org-mode-map "gj" 'org-forward-same-level)
@@ -665,11 +696,10 @@ This function makes sure that dates are aligned for easy reading."
 ;;-------------------------------------------------
 
 ;; Cursor color
-;; (This doesn't seem to be working.)
 (set-cursor-color "white")
-;(set-cursor-color "#fffff")
+
 ;; Color for selected text
-(set-face-background 'region "gray70")
+(set-face-background 'region "gray60")
 
 
 
@@ -810,7 +840,7 @@ This function makes sure that dates are aligned for easy reading."
 ;; or could try defining my own (minor or major) mode keymap,
 ;; which could be turned on and off with a custom command
 
-; test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text 
+; test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text test multi-line text
 
 
 
