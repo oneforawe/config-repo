@@ -542,7 +542,7 @@ This function makes sure that dates are aligned for easy reading."
 ;; M-k  move subtree up
 ;; M-j  move subtree down
 
-;; While using Emacs 24.3.1 (< 24.4), need to avoid using the undefined macro
+;; While using emacs-24.3.1 (< 24.4), need to avoid using the undefined macro
 ;; `with-eval-after-load'.
 ;; For reference, see
 ;;  - https://www.masteringemacs.org/article/whats-new-in-emacs-24-4
