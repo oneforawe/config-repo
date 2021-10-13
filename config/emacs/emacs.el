@@ -64,6 +64,12 @@
 ;       use-package.  See [A] and [B] below.
 ; TODO: Unify installation strategies and condense.
 ;       (Do I need saved copies of, eg, org in my config folder?)
+; TODO: Reduce usage of older files in  config-repo/config/emacs/emacs.d/:
+;       [ ] color-theme-6.6.0
+;       [ ] elpa
+;       [x] emacs-24.3
+;       [x] org-8.2.4
+;       [ ] smex-items
 ; TODO: Clean up org-agenda-files. Why have two sections?
 ; TODO: Get rid of all the many unnecessary files in this repo.
 ; TODO: Get rid of all the many unnecessary lines of code/comments in this file.
