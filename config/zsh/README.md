@@ -30,4 +30,3 @@ General:
 * [official zsh site](https://www.zsh.org)
 * [zsh user's guide](http://zsh.sourceforge.net/Guide/zshguide.html)
 * [Oh My ZSH!](https://ohmyz.sh)
-

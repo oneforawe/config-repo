@@ -79,7 +79,8 @@ ln_s $b2/bashrc_aliases_mac   $b1/bashrc_aliases_mac
 ln_s $b2/bashrc_aliases_linux $b1/bashrc_aliases_linux
 ln_s $b2/bashrc_etc           $b1/bashrc_etc
 ln_s $b2/bashrc_etc_mac       $b1/bashrc_etc_mac
-#ln_s $b2/bashrc_etc_linux     $b1/.bashrc_etc_linux
+ln_s $b2/bashrc_etc_mac_git   $b1/bashrc_etc_mac_git
+#ln_s $b2/bashrc_etc_linux    $b1/.bashrc_etc_linux
 ln_s $b2/bash_logout  $r/.bash_logout
 ln_s $b2/dir_colors   $r/.dir_colors
 
@@ -98,9 +99,11 @@ for file in ${filelist_zsh} ; do
 done
 ln_s $z2/zprofile $r/.zprofile
 ln_s $z2/zshrc    $r/.zshrc
-ln_s $z2/zshrc_omz    $z1a/zshrc_omz
-ln_s $z2/zshrc_opt    $z1a/zshrc_opt
-ln_s $z2/zshrc_prompt $z1a/zshrc_prompt
+ln_s $z2/zshrc_omz     $z1a/zshrc_omz
+ln_s $z2/zshrc_opt     $z1a/zshrc_opt
+ln_s $z2/zshrc_prompt  $z1a/zshrc_prompt
+ln_s $z2/zshrc_etc     $z1a/zshrc_etc
+ln_s $z2/zshrc_etc_mac $z1a/zshrc_etc_mac
 # zsh packages / plugins
 rm -r $z1a/oh-my-zsh
 rm -r $z1b/zsh-autosuggestions
@@ -131,13 +134,26 @@ if [[ -f $r/.vimrc ]] && [[ ! -L $r/.vimrc ]] ; then
   mkdir -pv ${cpy}
   mv $r/.vimrc  ${cpy}/
 fi
+if [[ -L $r/.vim ]] ; then
+  rm $r/.vim
+fi
 #rm $r/.vim $r/.vimrc
 ln_s $src/config/vim/vimrc $r/.vimrc
 ln_s $src/config/vim/vim.d $r/.vim
 
 # git
-g1="$r/.local/bin"
-g2="$src/config/git/diff-so-fancy"
-mkdir -pv $g1
+g1a="$r/.local/bin"
+g2a="$src/config/git/diff-so-fancy"
+mkdir -pv $g1a
+ln_s $g2a/diff-so-fancy $g1a/diff-so-fancy
+g1b="$r/.config/git/git-completion"
+g1c="$r/.config/git/git-flow-completion"
+g2b="$src/config/git/git-completion"
+g2c="$src/config/git/git-flow-completion"
+mkdir -pv $g1b
+mkdir -pv $g1c
+ln_s $g2b/_git                     $g1b/_git
+ln_s $g2b/git-completion.bash      $g1b/git-completion.bash
+ln_s $g2c/git-flow-completion.bash $g1c/git-flow-completion.bash
+ln_s $g2c/git-flow-completion.zsh  $g1c/git-flow-completion.zsh
 #ln_s $src/config/git/gitconfig $r/.gitconfig
-ln_s $g2/diff-so-fancy $g1/diff-so-fancy

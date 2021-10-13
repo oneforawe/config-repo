@@ -47,3 +47,6 @@
 	path = config/pack/thefuck
 	url = https://github.com/nvbn/thefuck.git
 	ignore = untracked
+[submodule "config/git/git-flow-completion"]
+	path = config/git/git-flow-completion
+	url = https://github.com/bobthecow/git-flow-completion

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# filename: zshrc_etc_mac   (linked from ~/.config/zsh/zshrc_etc_mac)
+# purpose: Set interactive-shell configs not already set for opt (options),
+#   prompt, commands (functions and aliases), and omz (oh-my-zsh).
+
+# This file is sourced from ~/.zshrc (which is for interactive shells).
+
+
+# Use completion system (including git-completion?) ?
+autoload -Uz compinit && compinit

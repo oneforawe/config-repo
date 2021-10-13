@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# filename: bashrc_etc_mac_git   (linked from ~/.config/bash/bashrc_etc_mac_git)
+# purpose: Set interactive-shell configs not already set for opt (options),
+#   prompt, and commands (functions and aliases).
+
+# This file is sourced from ~/.bashrc (which is for interactive shells).
+
+
+# If bash-completion is available, use it.
+# (Trying this with git-flow for git-flow-completion. See refs [1-5].)
+if [[ -r /usr/local/etc/profile.d/bash_completion.sh ]] ; then
+    source /usr/local/etc/profile.d/bash_completion.sh
+    source ~/.config/git/git-flow-completion/git-flow-completion.bash
+fi
+
+
+# References:
+# [1] https://formulae.brew.sh/formula/git-flow
+# [2] https://github.com/bobthecow/git-flow-completion
+# [3] https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-
+#     completion
+# [4] https://formulae.brew.sh/formula/bash-completion
+# [5] https://salsa.debian.org/debian/bash-completion
+
+# Note: When installing bash-completion with Homebrew, this message was given:
+# > brew install bash-completion
+# ==> Caveats
+# Add the following line to your ~/.bash_profile:
+#   [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"

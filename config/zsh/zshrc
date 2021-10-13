@@ -17,10 +17,15 @@
 source ~/.config/zsh/zshrc_omz
 source ~/.config/zsh/zshrc_opt
 source ~/.config/zsh/zshrc_prompt
+source ~/.config/zsh/zshrc_etc
 
 source ~/.bashrc
+
+# For MacOS
+if [[ `uname -s` = "Darwin" ]] ; then
+    source ~/.config/zsh/zshrc_etc_mac
+fi
 
 # Activate zsh packages:
 source ~/.config/zsh/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/pack/zsh-autosuggestions/zsh-autosuggestions.zsh
-

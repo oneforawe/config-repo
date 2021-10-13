@@ -32,6 +32,7 @@ if [[ $- != *i* ]] ; then return ; fi
 if [[ -n $BASH_VERSION ]] ; then
     source ~/.config/bash/bashrc_opt
     source ~/.config/bash/bashrc_prompt
+    source ~/.config/bash/bashrc_etc_mac_git
 fi
 
 source ~/.config/bash/bashrc_aliases
@@ -55,6 +56,7 @@ if [[ `uname -s` = "Darwin" ]] ; then
 fi
 
 source ~/.config/bash/bashrc_etc
+
 
 # References:
 # [1] https://unix.stackexchange.com/questions/257571/why-does-bashrc-check-

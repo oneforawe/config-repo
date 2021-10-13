@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: zshrc_opt   (linked from ~/.zshrc_opt)
+# filename: zshrc_opt   (linked from ~/.config/zsh/zshrc_opt)
 # purpose: For setting shell options.
 
 # This file is sourced from ~/.zshrc (which is for interactive shells).
@@ -77,4 +77,3 @@ bindkey -M vicmd '^l' vi-forward-char
 zle -N edit-command-line
 bindkey -M viins '^x^e' edit-command-line
 bindkey -M vicmd '^x^e' edit-command-line
-

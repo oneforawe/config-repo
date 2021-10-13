@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # filename: bashrc_etc   (linked from ~/.bashrc_etc)
-# purpose: Set interactive-shell configs not already set for prompt
-#   and commands (functions and aliases).
+# purpose: Set interactive-shell configs not already set for opt (options),
+#   prompt, and commands (functions and aliases).
 
 # This file is sourced from ~/.bashrc (which is for interactive shells).
 

@@ -84,9 +84,11 @@ if [[ `uname -s` = "Darwin" ]] ; then
     done
 
     # Utility for image-viewing in iTerm2, even over ssh:
-    wget https://iterm2.com/utilities/imgcat
-    chmod 755 ./imgcat
-    mv ./imgcat ~/.local/bin/
+    if [[ ! -r ~/.local/bin/imgcat ]] ; then
+        wget https://iterm2.com/utilities/imgcat
+        chmod 755 ./imgcat
+        mv ./imgcat ~/.local/bin/
+    fi
 
     # See how update goes now:
     echo "Running \"bup\" again after any installs (or none)..."

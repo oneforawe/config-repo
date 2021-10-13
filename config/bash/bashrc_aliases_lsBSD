@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: bashrc_aliases_lsBSD   (linked from ~/.bashrc_aliases)
+# filename: bashrc_aliases_lsBSD   (linked from ~/.config/bash/bashrc_aliases_lsBSD)
 # purpose: For defining custom commands (functions and aliases) in the shell.
 
 # This file is sourced from ~/.bashrc (which is for interactive shells).
@@ -99,4 +99,3 @@ lsak () { ls -lhA $@; }   #  "all"  show   v-more
 lsaa ()  { ls -a $@; }    #   all   show
 lsaaj () { ls -1a $@; }   #   all   show   v-less
 lsaak () { ls -lha $@; }  #   all   show   v-more
-

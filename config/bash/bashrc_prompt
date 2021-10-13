@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: bashrc_prompt   (linked from ~/.bashrc_prompt)
+# filename: bashrc_prompt   (linked from ~/.config/bash/bashrc_prompt)
 # purpose: Define the interactive-shell prompts (primary and peripheral).
 
 # This file is sourced from ~/.bashrc (which is for interactive shells).

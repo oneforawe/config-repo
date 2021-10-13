@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: bashrc_aliases_lsGNU   (linked from ~/.bashrc_aliases)
+# filename: bashrc_aliases_lsGNU   (linked from ~/.config/bash/bashrc_aliases_lsGNU)
 # purpose: For defining custom commands (functions and aliases) in the shell.
 
 # This file is sourced from ~/.bashrc (which is for interactive shells).
@@ -139,4 +139,3 @@ alias lsaak='ls_ -lha'  #   all   show   v-more
 
 # saved for last
 alias ls='ls_'          #  show  - show backup files (default of ls)
-

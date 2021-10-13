@@ -61,4 +61,3 @@ bindings and access information about them.
     * Get current map:  
       `C-h ? b`  (to see help options and select b to see all key bindings)  
       `C-h b`  (faster)
-

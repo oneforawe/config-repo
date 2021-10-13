@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# filename: zshrc_prompt   (linked from ~/.zshrc_prompt)
+# filename: zshrc_prompt   (linked from ~/.config/zsh/zshrc_prompt)
 # purpose: Define the interactive-shell prompts (primary and peripheral).
 
 
