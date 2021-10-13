@@ -46,7 +46,8 @@ the full path to the submodule at the end of the command.
 
 * `git submodule add https://github.com/emacs-evil/evil evil`
 * `git submodule add https://git.savannah.gnu.org/git/emacs/org-mode.git org`
-* `git submodule add https://github.com/somelauw/evil-org.git evil-org`
+* `git submodule add https://github.com/Somelauw/evil-org-mode.git evil-org`
 
-Note: I was orginally using this url for org-mode:
+Note: I was orginally using these urls for org-mode and evil-org(-mode):
 * `git submodule add https://code.orgmode.org/bzg/org-mode.git org`
+* `git submodule add https://github.com/somelauw/evil-org.git evil-org`
