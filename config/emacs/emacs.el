@@ -1,6 +1,6 @@
 ;; -*- mode: elisp -*-
 ;; language: emacs lisp (elisp)
-;; filename: emacs.el  (linked as .emacs)
+;; filename: emacs.el  (linked as ~/.emacs)
 ;; purpose: Set configurations for the GNU Emacs text editor.
 
 
@@ -19,8 +19,8 @@
 ;  names begin with a period.)
 
 ; In overview, this file activates these major features:
-; 1) Evil mode (to give vi key-bindings in emacs);
-; 2) Org-Mode (and Evil-Org-Mode) for organizational functionality
+; 1) evil-mode (to give vi/vim key-bindings in emacs);
+; 2) org-mode (and evil-org-mode) for organizational functionality
 ;    (including TODO-list action management and scheduling,
 ;     as well as hierarchical outline note-taking);
 ; 3) undo-tree (to have complete control of undo-ing and re-doing actions);
@@ -31,10 +31,11 @@
 
 ; This file references the following external directories and files:
 ; ~/.emacs.d
+; ~/.emacs.d/emacs-24.3/lisp/emacs-lisp [2021-10-13] trying latest version again
 ; ~/.emacs.d/evil
 ; ~/.emacs.d/evil/lib
-; ~/.emacs.d/org-8.2.4/lisp
-; ~/.emacs.d/plugins/evil-org-mode
+; ~/.emacs.d/org/lisp               (used to refer to ~/.emacs.d/org-8.2.4/lisp)
+; ~/.emacs.d/plugins/evil-org
 
 
 
@@ -59,6 +60,11 @@
 ; See other people's init/config files, for example:
 ; https://github.com/ivoarch/.dot-org-files/blob/master/emacs.org
 
+; TODO: Maybe install evil and evil-org(-mode) using package (package.el) or
+;       use-package.  See [A] and [B] below.
+; TODO: Unify installation strategies and condense.
+;       (Do I need saved copies of, eg, org in my config folder?)
+; TODO: Clean up org-agenda-files. Why have two sections?
 ; TODO: Get rid of all the many unnecessary files in this repo.
 ; TODO: Get rid of all the many unnecessary lines of code/comments in this file.
 ;       (take notes elsewhere if wanted)
@@ -66,6 +72,37 @@
 ;       (el and txt files work)
 ;       (tex file half-works)
 ;       (org file doesn't work, although it doesn't need to work here)
+
+
+; [A]
+; See https://github.com/emacs-evil/evil
+;
+; ;; Set up package.el to work with MELPA
+; (require 'package)
+; (add-to-list 'package-archives
+;              '("melpa" . "https://melpa.org/packages/"))
+; (package-initialize)
+; (package-refresh-contents)
+;
+; ;; Download Evil
+; (unless (package-installed-p 'evil)
+;   (package-install 'evil))
+;
+; ;; Enable Evil
+; (require 'evil)
+; (evil-mode 1)
+
+
+; [B]
+; See https://github.com/Somelauw/evil-org-mode
+;
+; (use-package evil-org
+;  :ensure t
+;  :after org
+;  :hook (org-mode . (lambda () evil-org-mode))
+;  :config
+;  (require 'evil-org-agenda)
+;  (evil-org-agenda-set-keys))
 
 
 
@@ -95,6 +132,7 @@
 ;  https://github.com/larstvei/dot-emacs
 
 ; How often do I want to use eval-when-compile? Use it with (require 'package)?
+; See https://www.gnu.org/software/emacs/manual/html_node/elisp/Eval-During-Compile.html
 (eval-when-compile
   (add-to-list 'load-path "~/.emacs.d/use-package")
   (require 'use-package))
@@ -186,22 +224,6 @@
 ;(global-set-key (kbd "C-h") 'mc/mark-previous-like-this)
 ;(global-set-key (kbd "C-c C-l") 'mc/mark-all-like-this)
 
-;; Colors
-;; For theme options and a nice dark theme and colorized color names.
-(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
-(require 'color-theme)
-(color-theme-initialize)
-;(color-theme-robin-hood)
-(add-to-list 'load-path "~/.emacs.d/themes") ; where I put my color theme file
-(require 'zenburn)
-(zenburn)
-
-; highlight trailing spaces in (pinkish) red
-(setq-default show-trailing-whitespace t)
-
-
-;(add-hook 'css-mode-hook 'rainbow-mode)
-
 
 ;; Smart M-x
 ;(require 'smex)
@@ -214,14 +236,6 @@
 
 ;; I don't need the menu bar.
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-
-;; Get the colors right, even when using tmux
-;(defun terminal-init-screen ()
-;  "Terminal initialization function for screen."
-;   ;; Use the xterm color initialization code.
-;   (xterm-register-default-colors)
-;   (tty-set-up-initial-frame-faces)
-;)
 
 ;; Start with this file -- even when no files are specified.(?)
 ;(custom-set-variables
@@ -278,7 +292,7 @@
 ; Activate undo-tree-mode (possibly just when evil is active)
 ; What code will do the trick?
 ; The following two lines causes an initialization error while loading .emacs
-(add-to-list 'load-path "~/.emacs.d/emacs-24.3/lisp/emacs-lisp") ; to access let-alist.el, which undo-tree requires
+;(add-to-list 'load-path "~/.emacs.d/emacs-24.3/lisp/emacs-lisp") ; to access let-alist.el, which undo-tree requires
 (add-to-list 'load-path "~/.emacs.d/evil/lib")
 (require 'undo-tree)
 ;(global-undo-tree-mode)
@@ -557,7 +571,8 @@ This function makes sure that dates are aligned for easy reading."
 (require 'evil-org)
 
 ; add hook to load evil-org mappings in all org documents
-(add-hook 'org-mode-hook 'evil-org-mode)
+;(add-hook 'org-mode-hook 'evil-org-mode)
+(add-hook 'org-mode-hook 'evil-org)
 
 (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
 ; Not sure how these worked before -- I don't see where evil-org-agenda is defined.
@@ -700,6 +715,30 @@ This function makes sure that dates are aligned for easy reading."
 
 ;; Color for selected text
 (set-face-background 'region "gray60")
+
+;; Color themes
+;; For theme options and a nice dark theme and colorized color names.
+(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
+(require 'color-theme)
+(color-theme-initialize)
+;(color-theme-robin-hood)
+(add-to-list 'load-path "~/.emacs.d/themes") ; where I put my color theme file
+(require 'zenburn)
+(zenburn)
+
+; Highlight trailing spaces in (pinkish) red
+(setq-default show-trailing-whitespace t)
+
+
+;(add-hook 'css-mode-hook 'rainbow-mode)
+
+;; Get the colors right, even when using tmux
+;(defun terminal-init-screen ()
+;  "Terminal initialization function for screen."
+;   ;; Use the xterm color initialization code.
+;   (xterm-register-default-colors)
+;   (tty-set-up-initial-frame-faces)
+;)
 
 
 
