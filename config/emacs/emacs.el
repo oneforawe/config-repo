@@ -577,8 +577,7 @@ This function makes sure that dates are aligned for easy reading."
 (require 'evil-org)
 
 ; add hook to load evil-org mappings in all org documents
-;(add-hook 'org-mode-hook 'evil-org-mode)
-(add-hook 'org-mode-hook 'evil-org)
+(add-hook 'org-mode-hook 'evil-org-mode)
 
 (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
 ; Not sure how these worked before -- I don't see where evil-org-agenda is defined.
