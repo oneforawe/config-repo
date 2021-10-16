@@ -1,33 +1,33 @@
 [submodule "config/zsh/oh-my-zsh"]
 	path = config/zsh/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "config/zsh/pack/zsh-syntax-highlighting"]
 	path = config/zsh/pack/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "config/zsh/pack/zsh-autosuggestions"]
 	path = config/zsh/pack/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "config/vim/vim.d/pack/external/opt/vim-scriptease"]
 	path = config/vim/vim.d/pack/external/opt/vim-scriptease
-	url = https://github.com/tpope/vim-scriptease
+	url = https://github.com/tpope/vim-scriptease.git
 [submodule "config/vim/vim.d/pack/external/start/vim-clevertab"]
 	path = config/vim/vim.d/pack/external/start/vim-clevertab
-	url = https://github.com/neitanod/vim-clevertab
+	url = https://github.com/neitanod/vim-clevertab.git
 [submodule "config/vim/vim.d/pack/external/start/vim-fold-cycle"]
 	path = config/vim/vim.d/pack/external/start/vim-fold-cycle
 	url = https://github.com/arecarn/vim-fold-cycle.git
 [submodule "config/vim/vim.d/pack/external/start/vim-surround"]
 	path = config/vim/vim.d/pack/external/start/vim-surround
-	url = https://github.com/tpope/vim-surround
+	url = https://github.com/tpope/vim-surround.git
 [submodule "config/vim/vim.d/pack/external/start/vim-unimpaired"]
 	path = config/vim/vim.d/pack/external/start/vim-unimpaired
-    url = https://github.com/tpope/vim-unimpaired
+    url = https://github.com/tpope/vim-unimpaired.git
 [submodule "config/emacs/emacs.d/use-package"]
 	path = config/emacs/emacs.d/use-package
-    url = https://github.com/jwiegley/use-package
+    url = https://github.com/jwiegley/use-package.git
 [submodule "config/emacs/emacs.d/evil"]
 	path = config/emacs/emacs.d/evil
-	url = https://github.com/emacs-evil/evil
+	url = https://github.com/emacs-evil/evil.git
 [submodule "config/emacs/emacs.d/org"]
 	path = config/emacs/emacs.d/org
     url = https://git.savannah.gnu.org/git/emacs/org-mode.git
@@ -42,11 +42,11 @@
 	url = https://github.com/sheerun/vim-polyglot.git
 [submodule "config/git/diff-so-fancy"]
 	path = config/git/diff-so-fancy
-	url = https://github.com/so-fancy/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy.git
 [submodule "config/pack/thefuck"]
 	path = config/pack/thefuck
 	url = https://github.com/nvbn/thefuck.git
 	ignore = untracked
 [submodule "config/git/git-flow-completion"]
 	path = config/git/git-flow-completion
-	url = https://github.com/bobthecow/git-flow-completion
+	url = https://github.com/bobthecow/git-flow-completion.git
