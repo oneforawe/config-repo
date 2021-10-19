@@ -332,8 +332,8 @@ This function makes sure that dates are aligned for easy reading."
 
 (add-hook 'org-mode-hook 'evil-org-mode)
 (evil-org-set-key-theme '(navigation insert textobjects additional calendar))
-(require 'evil-org-agenda)
-(evil-org-agenda-set-keys)
+;(require 'evil-org-agenda)
+;(evil-org-agenda-set-keys)
 
 
 ; the ',<num>' keys give quick and easy way to hide/reveal outline
