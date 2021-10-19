@@ -3,12 +3,7 @@
 ;; purpose: Set configurations for the GNU Emacs text editor.
 
 
-;; NOTE: Apologies, dear reader, for this is one of my most disorganized
-;;       and aesthetically displeasing configuration files.  As time goes
-;;       on, I should be able to clean this up more.
-
-
-; This is the initialization ("init") file, or simply "dot emacs" file
+; This is the initialization ("init") file, or simply "dotemacs" file
 ; (or Emacs "dotfile") that configures the initial settings of Emacs
 ; upon starting up Emacs.
 ; In GNU/Linux, its location can be in the user home directory (~/.emacs).
@@ -60,9 +55,7 @@
 ; See other people's init/config files, for example:
 ; https://github.com/ivoarch/.dot-org-files/blob/master/emacs.org
 
-; TODO: Maybe install evil and evil-org(-mode) using package (package.el) or
-;       use-package.  See [A] and [B] below.
-; TODO: Unify installation strategies and condense.
+; TODO: Unify installation strategies and condense if possible.
 ;       (Do I need saved copies of, eg, org in my config folder?)
 ; TODO: Reduce usage of older files in  config-repo/config/emacs/emacs.d/:
 ;       [ ] color-theme-6.6.0
@@ -70,9 +63,8 @@
 ;       [x] emacs-24.3
 ;       [x] org-8.2.4
 ;       [ ] smex-items
-; TODO: Clean up org-agenda-files. Why have two sections?
-; TODO: Get rid of all the many unnecessary files in this repo.
-; TODO: Get rid of all the many unnecessary lines of code/comments in this file.
+; TODO: Get rid of any remaining unnecessary files in this repo.
+; TODO: Get rid of unnecessary lines of code/comments in this file.
 ;       (take notes elsewhere if wanted)
 ; TODO: Fix line-move-visual key bindings.
 ;       (el and txt files work)
@@ -85,38 +77,6 @@
 ;       What about helm (also or instead of Ido)?
 ;       Do I want to use icomplete-mode too?
 ;       see http://ergoemacs.org/emacs/emacs_iswitch_vs_ido.html
-
-
-
-; [A]
-; See https://github.com/emacs-evil/evil
-;
-; ;; Set up package.el to work with MELPA
-; (require 'package)
-; (add-to-list 'package-archives
-;              '("melpa" . "https://melpa.org/packages/"))
-; (package-initialize)
-; (package-refresh-contents)
-;
-; ;; Download Evil
-; (unless (package-installed-p 'evil)
-;   (package-install 'evil))
-;
-; ;; Enable Evil
-; (require 'evil)
-; (evil-mode 1)
-
-
-; [B]
-; See https://github.com/Somelauw/evil-org-mode
-;
-; (use-package evil-org
-;  :ensure t
-;  :after org
-;  :hook (org-mode . (lambda () evil-org-mode))
-;  :config
-;  (require 'evil-org-agenda)
-;  (evil-org-agenda-set-keys))
 
 
 
@@ -234,9 +194,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'org) ;; I was getting an error when trying to add org-habit to org-modules without this line.
 (require 'org-install)
 
-;; What's this for?
-;(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
-
 ;; Location of org files.
 (setq org-directory "~/org")
 (setq org-default-notes-file (concat org-directory "/Capture/capture.org")) ; set capture file
@@ -353,6 +310,7 @@ This function makes sure that dates are aligned for easy reading."
   "Number of days after today to appear in consistency graphs."
   :group 'org-habit
   :type 'integer)
+
 
 
 
