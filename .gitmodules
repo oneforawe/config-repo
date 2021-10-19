@@ -28,12 +28,6 @@
 [submodule "config/emacs/emacs.d/evil"]
 	path = config/emacs/emacs.d/evil
 	url = https://github.com/emacs-evil/evil.git
-[submodule "config/emacs/emacs.d/org"]
-	path = config/emacs/emacs.d/org
-    url = https://git.savannah.gnu.org/git/emacs/org-mode.git
-[submodule "config/emacs/emacs.d/plugins/evil-org"]
-	path = config/emacs/emacs.d/plugins/evil-org
-	url = https://github.com/Somelauw/evil-org-mode.git
 [submodule "config/vim/vim.d/pack/external/start/ale"]
 	path = config/vim/vim.d/pack/external/start/ale
 	url = https://github.com/dense-analysis/ale.git
@@ -50,3 +44,12 @@
 [submodule "config/git/git-flow-completion"]
 	path = config/git/git-flow-completion
 	url = https://github.com/bobthecow/git-flow-completion.git
+[submodule "config/emacs/emacs.d/undo-tree"]
+	path = config/emacs/emacs.d/undo-tree
+	url = https://gitlab.com/tsc25/undo-tree.git
+[submodule "config/emacs/emacs.d/org-mode"]
+	path = config/emacs/emacs.d/org-mode
+	url = https://git.savannah.gnu.org/git/emacs/org-mode.git/
+[submodule "config/emacs/emacs.d/evil-org-mode"]
+	path = config/emacs/emacs.d/evil-org-mode
+	url = https://github.com/Somelauw/evil-org-mode

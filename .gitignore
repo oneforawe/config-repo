@@ -24,3 +24,4 @@ config/emacs/emacs.d/org-clock-save.el
 config/emacs/emacs.d/.mc-lists.el
 config/emacs/emacs.d/emacs-24.3
 config/emacs/emacs.d/org-8.2.4
+config/emacs/emacs.d/elpa
