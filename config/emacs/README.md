@@ -45,9 +45,13 @@ using them, be sure to navigate to the correct folder before executing, or give
 the full path to the submodule at the end of the command.
 
 * `git submodule add https://github.com/emacs-evil/evil evil`
-* `git submodule add https://git.savannah.gnu.org/git/emacs/org-mode.git org`
-* `git submodule add https://github.com/Somelauw/evil-org-mode.git evil-org`
+* `git submodule add https://git.savannah.gnu.org/git/emacs/org-mode.git org-mode`
+* `git submodule add https://github.com/Somelauw/evil-org-mode.git evil-org-mode`
+* `git submodule add https://gitlab.com/tsc25/undo-tree.git undo-tree`
+* `git submodule add https://github.com/jwiegley/use-package.git use-package`
 
 Note: I was orginally using these urls for org-mode and evil-org(-mode):
 * `git submodule add https://code.orgmode.org/bzg/org-mode.git org`
+* `git submodule add https://git.savannah.gnu.org/git/emacs/org-mode.git org`
+* `git submodule add https://github.com/Somelauw/evil-org-mode.git evil-org`
 * `git submodule add https://github.com/somelauw/evil-org.git evil-org`
