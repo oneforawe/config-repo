@@ -21,10 +21,10 @@
 	url = https://github.com/tpope/vim-surround.git
 [submodule "config/vim/vim.d/pack/external/start/vim-unimpaired"]
 	path = config/vim/vim.d/pack/external/start/vim-unimpaired
-    url = https://github.com/tpope/vim-unimpaired.git
+	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "config/emacs/emacs.d/use-package"]
 	path = config/emacs/emacs.d/use-package
-    url = https://github.com/jwiegley/use-package.git
+	url = https://github.com/jwiegley/use-package.git
 [submodule "config/emacs/emacs.d/evil"]
 	path = config/emacs/emacs.d/evil
 	url = https://github.com/emacs-evil/evil.git
@@ -52,4 +52,4 @@
 	url = https://git.savannah.gnu.org/git/emacs/org-mode.git/
 [submodule "config/emacs/emacs.d/evil-org-mode"]
 	path = config/emacs/emacs.d/evil-org-mode
-	url = https://github.com/Somelauw/evil-org-mode
+	url = https://github.com/Somelauw/evil-org-mode.git
