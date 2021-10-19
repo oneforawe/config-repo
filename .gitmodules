@@ -22,34 +22,34 @@
 [submodule "config/vim/vim.d/pack/external/start/vim-unimpaired"]
 	path = config/vim/vim.d/pack/external/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "config/emacs/emacs.d/use-package"]
-	path = config/emacs/emacs.d/use-package
-	url = https://github.com/jwiegley/use-package.git
-[submodule "config/emacs/emacs.d/evil"]
-	path = config/emacs/emacs.d/evil
-	url = https://github.com/emacs-evil/evil.git
 [submodule "config/vim/vim.d/pack/external/start/ale"]
 	path = config/vim/vim.d/pack/external/start/ale
 	url = https://github.com/dense-analysis/ale.git
 [submodule "config/vim/vim.d/pack/external/start/vim-polyglot"]
 	path = config/vim/vim.d/pack/external/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
-[submodule "config/git/diff-so-fancy"]
-	path = config/git/diff-so-fancy
-	url = https://github.com/so-fancy/diff-so-fancy.git
-[submodule "config/pack/thefuck"]
-	path = config/pack/thefuck
-	url = https://github.com/nvbn/thefuck.git
-	ignore = untracked
-[submodule "config/git/git-flow-completion"]
-	path = config/git/git-flow-completion
-	url = https://github.com/bobthecow/git-flow-completion.git
-[submodule "config/emacs/emacs.d/undo-tree"]
-	path = config/emacs/emacs.d/undo-tree
-	url = https://gitlab.com/tsc25/undo-tree.git
+[submodule "config/emacs/emacs.d/evil"]
+	path = config/emacs/emacs.d/evil
+	url = https://github.com/emacs-evil/evil.git
 [submodule "config/emacs/emacs.d/org-mode"]
 	path = config/emacs/emacs.d/org-mode
 	url = https://git.savannah.gnu.org/git/emacs/org-mode.git/
 [submodule "config/emacs/emacs.d/evil-org-mode"]
 	path = config/emacs/emacs.d/evil-org-mode
 	url = https://github.com/Somelauw/evil-org-mode.git
+[submodule "config/emacs/emacs.d/undo-tree"]
+	path = config/emacs/emacs.d/undo-tree
+	url = https://gitlab.com/tsc25/undo-tree.git
+[submodule "config/emacs/emacs.d/use-package"]
+	path = config/emacs/emacs.d/use-package
+	url = https://github.com/jwiegley/use-package.git
+[submodule "config/git/diff-so-fancy"]
+	path = config/git/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy.git
+[submodule "config/git/git-flow-completion"]
+	path = config/git/git-flow-completion
+	url = https://github.com/bobthecow/git-flow-completion.git
+[submodule "config/pack/thefuck"]
+	path = config/pack/thefuck
+	url = https://github.com/nvbn/thefuck.git
+	ignore = untracked
