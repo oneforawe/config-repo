@@ -1,5 +1,12 @@
 zsh
 tmux
+vim
 htop
 tree
 less
+wget
+rsync
+gzip
+unzip
+net-tools
+git
