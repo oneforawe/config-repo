@@ -146,6 +146,7 @@
 (add-to-list 'load-path "~/.emacs.d/undo-tree/undo-tree.el")
 (require 'undo-tree)
 (global-undo-tree-mode t)
+(evil-set-undo-system 'undo-tree)
 
 ;; In undo-tree visualizer mode, use vim motion keys to move along branches.
 (when (boundp 'undo-tree-visualizer-mode-map)
