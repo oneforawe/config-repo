@@ -314,6 +314,25 @@ This function makes sure that dates are aligned for easy reading."
 
 
 
+;; Error/warning fix(?) - relating to org-mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Hopefully fix error/warning that occasionally comes up:
+(setq org-element-use-cache nil)
+;; A sub-tree (bullet point) did not show up, but then after collapsing and
+;; opening again, it reappeared. When it disappeared this warning came up
+;; (along with more details about the "element", "parent", and "real parent"):
+;;   Warning (emacs): org-element--cache: Cached element has wrong parent in
+;;    R01_ActionList_Current.org. Resetting.
+;;   The element is: "(headline (:raw-value \"Plan\"
+;;    :begin 35564 :end 35880 ...
+;;   The parent is: "(headline (:raw-value \"Template\"
+;;    :begin 35526 :end 41277 ...
+;;   The real parent is: "(headline (:raw-value \"NOTE: Fortnight Plan.\"
+;;    :begin 35538 :end 35564 ...
+
+
+
 
 ;;=================================================
 ;; EVIL-ORG-MODE
