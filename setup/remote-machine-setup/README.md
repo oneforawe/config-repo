@@ -38,6 +38,11 @@ configuration files and add new links to the config files in this repo and to
 install the necessary and desired packages:  
    `bash ~/.config-repo/setup/remote-machine-setup/run-setup-shell-full.sh`
 
+4. Copy the git config file to the home directory, as a dot-file, and edit to
+fill in the email address (and possibly change the name) to be correct for the
+given context.  
+   `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`
+
 
 ## Default Shell
 

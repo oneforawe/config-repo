@@ -53,6 +53,10 @@ packages:
 to do some trouble-shooting once everything is set up.  For instance, I had to
 use `brew link --overwrite python` after setting up on an old Mac system.
 
+6. Copy the git config file to the home directory, as a dot-file, and edit to
+fill in the email address.  
+   `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`
+
 
 ## Development
 
