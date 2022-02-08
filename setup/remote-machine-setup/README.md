@@ -46,4 +46,5 @@ Dealing with the default shell:
   To see the current shell: `echo $0`  
   To see the available shells: `cat /etc/shells`  
   To see which `zsh` is called when executed: `which zsh`  
-  To change the default login shell to zsh: `chsh --shell /bin/zsh`
+  To change the default login shell to zsh: `chsh --shell /bin/zsh` (or
+  `sudo chsh --shell /bin/zsh "$USER"` if necessary)
