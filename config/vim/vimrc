@@ -12,11 +12,6 @@
 
 set encoding=utf-8          " use utf-8 encoding
 
-set t_Co=256                " enable 256 colors
-colors zenburn              " color scheme
-set colorcolumn=72,80       " highlight for standard code line widths
-syntax on                   " enable syntax highlighting
-
 set backspace=indent,eol,start " allow deletion beyond insertion point
 
 filetype plugin indent on   " enable filetype plugins and indentation rules
@@ -25,7 +20,12 @@ set softtabstop=4           " backspace erases all spaces to next tab stop
 set shiftwidth=4            " use 4 spaces for each step of (auto)indent
 set expandtab               " expand <Tab> keypresses to spaces
 
-set scrolloff=5             " show 10 lines of context around cursor
+set t_Co=256                " enable 256 colors
+colors zenburn              " color scheme
+set colorcolumn=72,80       " highlight for standard code line widths
+syntax on                   " enable syntax highlighting
+
+set scrolloff=2             " show 4 lines of context around cursor
 set viminfo='20,<1000       " remember marks for previous 20 files;
                             " save max of 1000 lines for each region
 set wildmenu
