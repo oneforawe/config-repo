@@ -55,7 +55,11 @@ if [ "$(uname -s)" = "Darwin" ] ; then
  	fi
 
 	# Flutter SDK
-	export PATH="$PATH:$HOME/Tools/flutter/bin"
+	export PATH="$HOME/Tools/flutter/bin:$PATH"
+
+	# Run RubyGems without sudo admin privileges
+	export GEM_HOME="$HOME/.gem"
+	export PATH="$GEM_HOME/bin:$PATH"
 fi
 
 
