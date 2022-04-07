@@ -20,3 +20,5 @@ if [[ -r /usr/local/etc/profile.d/bash_completion.sh ]] ; then
     #zstyle ':completion:*:*:git:*' script ~/.config/git/git-flow-completion/git-flow-completion.bash
     #zstyle ':completion:*:*:git:*' script ~/.config/git/git-flow-completion/git-flow-completion.zsh
 fi
+
+eval "$(rbenv init - zsh)"
