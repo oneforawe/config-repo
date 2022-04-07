@@ -27,7 +27,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+	PATH="$HOME/bin:$PATH"
 fi
 
 
@@ -43,29 +43,33 @@ fi
 
 
 # For MacOS
-if [[ `uname -s` = "Darwin" ]] ; then
-    # Update PATH for the Google Cloud SDK
-    if [ -f '/Users/zero/Tools/google-cloud-sdk/path.zsh.inc' ] ; then
-        source '/Users/zero/Tools/google-cloud-sdk/path.zsh.inc'
-    fi
-    # Enable shell command completion for gcloud
-    if [ -f '/Users/zero/Tools/google-cloud-sdk/completion.zsh.inc' ] ; then
-        source '/Users/zero/Tools/google-cloud-sdk/completion.zsh.inc'
-    fi
+if [ "$(uname -s)" = "Darwin" ] ; then
+
+	# Update PATH for the Google Cloud SDK
+	if [ -f "$HOME/Tools/google-cloud-sdk/path.zsh.inc" ] ; then
+		. "$HOME/Tools/google-cloud-sdk/path.zsh.inc"
+	fi
+	# Enable shell command completion for gcloud
+	if [ -f "$HOME/Tools/google-cloud-sdk/completion.zsh.inc" ] ; then
+		. "$HOME/Tools/google-cloud-sdk/completion.zsh.inc"
+ 	fi
+
+	# Flutter SDK
+	export PATH="$PATH:$HOME/Tools/flutter/bin"
 fi
 
 
 # For GNU/Linux
-if [[ `uname -s` = "Linux" ]] ; then
+if [ "$(uname -s)" = "Linux" ] ; then
 
-    export PATH="$HOME/Software:$PATH"
-    # Redundant?:
-    #export PATH="$HOME/Software/usr/bin:$PATH"
+	export PATH="$HOME/Software:$PATH"
+	# Redundant?:
+	#export PATH="$HOME/Software/usr/bin:$PATH"
 
-    export MANPATH="$HOME/Software/usr/share/man:$MANPATH"
-    export CPATH="$HOME/Software/usr/include:$CPATH"
-    export PKG_CONFIG_PATH="$HOME/Software/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
-    export LD_LIBRARY_PATH="$HOME/Software/usr/lib:$LD_LIBRARY_PATH"
+	export MANPATH="$HOME/Software/usr/share/man:$MANPATH"
+	export CPATH="$HOME/Software/usr/include:$CPATH"
+	export PKG_CONFIG_PATH="$HOME/Software/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
+	export LD_LIBRARY_PATH="$HOME/Software/usr/lib:$LD_LIBRARY_PATH"
 fi
 
 
