@@ -4,10 +4,8 @@
 #   (eg, `sh` or `bash` invoked as `sh`) and graphical applications(?).
 
 
-# For general command-line editing (in shells and elsewhere):
-# Use vi editing mode, rather than emacs mode or potentially something else.
-#set -o vi  # Putting this here doesn't seem to work.
-
+# Set default editor to Vim.
+export EDITOR=vim
 
 # For later reference:
 # Python programming environments
@@ -57,16 +55,16 @@ if [ "$(uname -s)" = "Darwin" ] ; then
 	# Flutter SDK
 	export PATH="$HOME/Tools/flutter/bin:$PATH"
 
-	# Run RubyGems without sudo admin privileges
+	# Run RubyGems without sudo admin privileges.
 	export GEM_HOME="$HOME/.gem"
 	export PATH="$GEM_HOME/bin:$PATH"
 
-	# Enable gem executables for ruby
+	# Enable gem executables for ruby.
 	#export PATH="$GEM_HOME/ruby/2.6.0/bin:$PATH"
 	export PATH="$GEM_HOME/ruby/3.1.0/bin:$PATH"
 	# Attempt to automate this:
 	#RUBY_VERSION_GLOBAL="$(rbenv global)"
-	# Change version string to end with zero (3.1.1 -> 3.1.0)
+	# Change version string to end with zero (3.1.1 -> 3.1.0).
 	#IFS='.' read -r array <<< "$RUBY_VERSION_GLOBAL"
 	#RUBY_BASE_VERSION_GLOBAL="${array[0]}.${array[1]}"
 	#export PATH="$GEM_HOME/ruby/$RUBY_BASE_VERSION_GLOBAL/bin:$PATH"
