@@ -50,3 +50,6 @@
 	path = config/pack/thefuck
 	url = https://github.com/nvbn/thefuck.git
 	ignore = untracked
+[submodule "config/local/diff-so-fancy"]
+	path = config/local/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy.git
