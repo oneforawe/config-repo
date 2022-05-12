@@ -43,9 +43,6 @@
 [submodule "config/emacs/emacs.d/use-package"]
 	path = config/emacs/emacs.d/use-package
 	url = https://github.com/jwiegley/use-package.git
-[submodule "config/git/diff-so-fancy"]
-	path = config/git/diff-so-fancy
-	url = https://github.com/so-fancy/diff-so-fancy.git
 [submodule "config/git/git-flow-completion"]
 	path = config/git/git-flow-completion
 	url = https://github.com/bobthecow/git-flow-completion.git
