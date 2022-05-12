@@ -181,7 +181,7 @@ ln_s $src/config/emacs/emacs.d  $r/.emacs.d
 
 # git
 g1a="$r/.local/bin"
-g2a="$src/config/git/diff-so-fancy"
+g2a="$src/config/local/diff-so-fancy"
 mkdir -pv $g1a
 ln_s $g2a/diff-so-fancy $g1a/diff-so-fancy
 g1b="$r/.config/git/git-completion"
