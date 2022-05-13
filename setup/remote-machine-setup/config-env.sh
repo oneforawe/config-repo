@@ -7,7 +7,7 @@ CONFIG_ROOT="$HOME"
 CONFIG_FOLDER=".config-repo"
 CONFIG_LOCATION="$HOME/$CONFIG_FOLDER"
 
-r=$CONFIG_ROOT
-src=$CONFIG_LOCATION
+export r=$CONFIG_ROOT
+export src=$CONFIG_LOCATION
 
-setup="$src/setup/remote-machine-setup"
+export setup="$src/setup/remote-machine-setup"

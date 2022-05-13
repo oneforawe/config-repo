@@ -12,5 +12,4 @@ wget
 rsync
 gzip
 unzip
-net-tools
 git
