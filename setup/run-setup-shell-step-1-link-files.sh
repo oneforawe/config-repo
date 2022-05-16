@@ -74,22 +74,22 @@ for file in ${filelist_bash} ; do
 	fi
 done
 ln_s $b2/bash_profile $r/.bash_profile
-ln_s $b2/bash_login 	$r/.bash_login
-ln_s $b2/profile			$r/.profile
-ln_s $b2/bashrc 			$r/.bashrc
-ln_s $b2/bashrc_opt 					$b1/bashrc_opt
-ln_s $b2/bashrc_prompt				$b1/bashrc_prompt
-ln_s $b2/bashrc_aliases 			$b1/bashrc_aliases
+ln_s $b2/bash_login   $r/.bash_login
+ln_s $b2/profile      $r/.profile
+ln_s $b2/bashrc       $r/.bashrc
+ln_s $b2/bashrc_opt           $b1/bashrc_opt
+ln_s $b2/bashrc_prompt        $b1/bashrc_prompt
+ln_s $b2/bashrc_aliases       $b1/bashrc_aliases
 ln_s $b2/bashrc_aliases_lsGNU $b1/bashrc_aliases_lsGNU
 ln_s $b2/bashrc_aliases_lsBSD $b1/bashrc_aliases_lsBSD
-ln_s $b2/bashrc_aliases_mac 	$b1/bashrc_aliases_mac
+ln_s $b2/bashrc_aliases_mac   $b1/bashrc_aliases_mac
 ln_s $b2/bashrc_aliases_linux $b1/bashrc_aliases_linux
-ln_s $b2/bashrc_etc 					$b1/bashrc_etc
-ln_s $b2/bashrc_etc_mac 			$b1/bashrc_etc_mac
-ln_s $b2/bashrc_etc_mac_git 	$b1/bashrc_etc_mac_git
-#ln_s $b2/bashrc_etc_linux		$b1/.bashrc_etc_linux
-ln_s $b2/bash_logout	$r/.bash_logout
-ln_s $b2/dir_colors 	$r/.dir_colors
+ln_s $b2/bashrc_etc           $b1/bashrc_etc
+ln_s $b2/bashrc_etc_mac       $b1/bashrc_etc_mac
+ln_s $b2/bashrc_etc_mac_git   $b1/bashrc_etc_mac_git
+#ln_s $b2/bashrc_etc_linux   $b1/.bashrc_etc_linux
+ln_s $b2/bash_logout  $r/.bash_logout
+ln_s $b2/dir_colors   $r/.dir_colors
 
 # zsh
 z1a="$r/.config/zsh"
@@ -105,18 +105,18 @@ for file in ${filelist_zsh} ; do
 	fi
 done
 ln_s $z2/zprofile $r/.zprofile
-ln_s $z2/zshrc		$r/.zshrc
-ln_s $z2/zshrc_omz		 $z1a/zshrc_omz
-ln_s $z2/zshrc_opt		 $z1a/zshrc_opt
+ln_s $z2/zshrc    $r/.zshrc
+ln_s $z2/zshrc_omz     $z1a/zshrc_omz
+ln_s $z2/zshrc_opt     $z1a/zshrc_opt
 ln_s $z2/zshrc_prompt  $z1a/zshrc_prompt
-ln_s $z2/zshrc_etc		 $z1a/zshrc_etc
+ln_s $z2/zshrc_etc     $z1a/zshrc_etc
 ln_s $z2/zshrc_etc_mac $z1a/zshrc_etc_mac
 # zsh packages / plugins
 rm -r $z1a/oh-my-zsh
 rm -r $z1b/zsh-autosuggestions
 rm -r $z1b/zsh-syntax-highlighting
 ln_s $z2/oh-my-zsh $z1a/
-ln_s $z2/pack/zsh-autosuggestions 		$z1b/
+ln_s $z2/pack/zsh-autosuggestions     $z1b/
 ln_s $z2/pack/zsh-syntax-highlighting $z1b/
 
 # fish
@@ -126,14 +126,14 @@ f2a="$src/config/fish"
 f2b="$f2a/functions"
 mkdir -pv $f1a
 mkdir -pv $f1b
-ln_s $f2a/config.fish 	 $f1a/config.fish
+ln_s $f2a/config.fish    $f1a/config.fish
 ln_s $f2a/fish_variables $f1a/fish_variables
-ln_s $f2a/fishfile			 $f1a/fishfile
+ln_s $f2a/fishfile       $f1a/fishfile
 # fish (additional) functions
-ln_s $f2b/fish_mode_prompt.fish 	 $f1b/fish_mode_prompt.fish
-ln_s $f2b/fish_prompt.fish				 $f1b/fish_prompt.fish
+ln_s $f2b/fish_mode_prompt.fish    $f1b/fish_mode_prompt.fish
+ln_s $f2b/fish_prompt.fish         $f1b/fish_prompt.fish
 ln_s $f2b/aliases_simplified.fish  $f1b/aliases_simplified.fish
-ln_s $f2b/fuck.fish 							 $f1b/fuck.fish
+ln_s $f2b/fuck.fish                $f1b/fuck.fish
 
 # tmux
 if [[ -f $r/.tmux.conf ]] && [[ ! -L $r/.tmux.conf ]] ; then
@@ -141,6 +141,33 @@ if [[ -f $r/.tmux.conf ]] && [[ ! -L $r/.tmux.conf ]] ; then
 	mv $r/.tmux.conf ${cpy}/
 fi
 ln_s $src/config/tmux/tmux.conf $r/.tmux.conf
+
+# local / diff
+d1a="$r/.local/bin"
+d2a="$src/config/local/diff-so-fancy"
+mkdir -pv $d1a
+ln_s $d2a/diff-so-fancy $d1a/diff-so-fancy
+
+# git
+g1a="$r/.config/git/template"
+g1b="$r/.config/git/git-completion"
+g1c="$r/.config/git/git-flow-completion"
+g2a="$src/config/git/template"
+g2b="$src/config/git/git-completion"
+g2c="$src/config/git/git-flow-completion"
+mkdir -pv $g1a
+mkdir -pv $g1b
+mkdir -pv $g1c
+ln_s $g2a/HEAD                     $g1a/HEAD
+ln_s $g2b/_git                     $g1b/_git
+ln_s $g2b/git-completion.bash      $g1b/git-completion.bash
+ln_s $g2b/git-completion.zsh       $g1b/git-completion.zsh
+ln_s $g2c/git-flow-completion.bash $g1c/git-flow-completion.bash
+ln_s $g2c/git-flow-completion.zsh  $g1c/git-flow-completion.zsh
+#ln_s $src/config/git/gitconfig $r/.gitconfig
+
+# hg (mercurial)
+#ln_s $src/config/hgrc .hgrc
 
 # ssh (?)
 #ln_s $src/config/ssh/config .ssh/config
@@ -178,26 +205,6 @@ if [[ -L $r/.emacs.d ]] ; then
 fi
 ln_s $src/config/emacs/emacs.el $r/.emacs
 ln_s $src/config/emacs/emacs.d	$r/.emacs.d
-
-# git
-g1a="$r/.local/bin"
-g2a="$src/config/local/diff-so-fancy"
-mkdir -pv $g1a
-ln_s $g2a/diff-so-fancy $g1a/diff-so-fancy
-g1b="$r/.config/git/git-completion"
-g1c="$r/.config/git/git-flow-completion"
-g2b="$src/config/git/git-completion"
-g2c="$src/config/git/git-flow-completion"
-mkdir -pv $g1b
-mkdir -pv $g1c
-ln_s $g2b/_git										 $g1b/_git
-ln_s $g2b/git-completion.bash 		 $g1b/git-completion.bash
-ln_s $g2c/git-flow-completion.bash $g1c/git-flow-completion.bash
-ln_s $g2c/git-flow-completion.zsh  $g1c/git-flow-completion.zsh
-#ln_s $src/config/git/gitconfig $r/.gitconfig
-
-# hg (mercurial)
-#ln_s $src/config/hgrc .hgrc
 
 
 # For GNU/Linux
