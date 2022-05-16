@@ -15,9 +15,9 @@ set encoding=utf-8          " use utf-8 encoding
 set backspace=indent,eol,start " allow deletion beyond insertion point
 
 filetype plugin indent on   " enable filetype plugins and indentation rules
-set tabstop=4               " render tab characters as 4 spaces
-set softtabstop=4           " backspace erases all spaces to next tab stop
-set shiftwidth=4            " use 4 spaces for each step of (auto)indent
+set tabstop=2               " render tab characters as 2 spaces
+set softtabstop=2           " backspace erases all spaces to next tab stop
+set shiftwidth=2            " use 2 spaces for each step of (auto)indent
 set expandtab               " expand <Tab> keypresses as spaces
 
 set t_Co=256                " enable 256 colors
