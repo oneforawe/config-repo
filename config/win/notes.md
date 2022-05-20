@@ -16,6 +16,16 @@ the Linux system using PowerShell with command `wsl --shutdown`.
 
 Note: WSL Ubuntu uses System V, not systemd for process management.
 
+## WSL Interaction
+
+* Start a WSL Ubuntu instance
+  * what's the best way?
+* PowerShell Commands
+  * `wsl -l`
+  * `wsl -l -v`
+  * `wsl --list --running`
+  * `wsl --shutdown`
+  * `wsl --terminate <distro>`
 
 ## PuTTY
 
