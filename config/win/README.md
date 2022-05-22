@@ -1,5 +1,10 @@
 # Notes on Microsoft Windows
 
+## Win 10
+
+For work, I'm using a Windows 10 system without access to the Microsoft/Windows
+Store.
+
 ## PuTTY
 
 Font: You can download and install a font such as this that includes special
