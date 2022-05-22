@@ -7,6 +7,9 @@ Store.
 
 ## PuTTY
 
+Access: After installing PuTTY, you can create a link/shortcut to the app so it
+shows up in Search.
+
 Font: You can download and install a font such as this that includes special
 characters:
 
