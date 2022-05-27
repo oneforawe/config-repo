@@ -7,7 +7,58 @@ Store.
 
 ## Mouse
 
-To change the scroll-wheel direction: <https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10>
+Use the Registry to change the scroll-wheel direction:
+<https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10>
+
+"If you use a mouse to navigate the Windows 10 desktop, the Settings app does
+not include an option to reverse the scrolling direction. However, you can still
+modify the scrolling behavior using the Registry."
+
+"Warning: This is a friendly reminder that editing the Registry is risky, and it
+can cause irreversible damage to your installation if you don't do it correctly.
+Before proceeding, it's recommended to make a full backup of your computer."
+
+```[text]
+Device Manager (app)
+ > PDS-1098037
+ > Mice and other pointing devices (dropdown)
+ > * HID-compliant mouse     (NOTE: HID  => USB port)    (enabled)
+   * PS/2 Compatible Mouse   (NOTE: PS/2 => PS/2 port)   (not enabled)
+   * Synaptics HID ClickPad                              (enabled)
+   (NOTE: Presence of "Disable device" selection => device is enabled/active)
+ > Properties (selection)
+ > Details (tab)
+ > Device instance path (selection)
+
+* HID-compliant mouse:     HID\VID_046D&PID_C534&MI_01&COL01\7&3382A524&0&0000
+* PS/2 Compatible Mouse:   ACPI\SYN307B\4&7AE4F8C&0
+* Synaptics HID ClickPad:  HID\SYNA307B&COL01\5&2658B661&0&0000
+```
+
+So the active mouse is the HID mouse and we can extract the relevant ID.
+
+* Mouse "VID ID": VID_046D&PID_C534&MI_01&COL01
+
+```[text]
+Registry Editor (app)
+ > Computer
+ > HKEY_LOCAL_MACHINE   ( HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HID )
+ > SYSTEM
+ > CurrentControlSet
+ > Enum
+ > HID
+ > VID_046D&PID_C534&MI_01&COL01
+ > * 7&25e9da2e&0&0000
+     Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HID\VID_046D&PID_C534&MI_01&Col01\7&25e9da2e&0&0000
+   * 7&3382a524&0&0000
+     Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HID\VID_046D&PID_C534&MI_01&Col01\7&3382a524&0&0000
+ > Device Parameters
+ > FlipFlopWheel DWORD / REG_DWORD  (double-click and set the value from 0 to 1)
+```
+
+The instructions mentioned there being one key, but I found two keys, so I
+changed the (FlipFlopWheel) settings/registry for both keys, clicked OK, and
+then restarted.
 
 ## PuTTY
 
