@@ -5,6 +5,10 @@
 For work, I'm using a Windows 10 system without access to the Microsoft/Windows
 Store.
 
+## Mouse
+
+To change the scroll-wheel direction: <https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10>
+
 ## PuTTY
 
 Access: After installing PuTTY, you can create a link/shortcut to the app so it

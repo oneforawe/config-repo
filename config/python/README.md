@@ -37,5 +37,6 @@ We're supposed to be able to ensure pip is installed with the command
 I find I need to use `apt-get install python3-pip`.
 
 * (python already installed, but not pip or pipenv)
-* `sudo apt-get update` (had to fix resolving errors...)
+* `sudo apt-get update` (had to fix resolving errors, or wait for them to
+  randomly not be present...)
 * `sudo apt-get install python3-pip`
