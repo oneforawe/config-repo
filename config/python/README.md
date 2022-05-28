@@ -20,6 +20,11 @@
 
 ## installing on work laptop
 
+Python docs/guide:
+
+* [Install Pyton3](https://docs.python-guide.org/starting/install3/linux/)
+* [Pipenv and Virtual Environments](https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref)
+
 Python came pre-installed in the WSL Linux Ubuntu-20.04 system, but it didn't
 have pip or pipenv..
 
@@ -34,9 +39,35 @@ have pip or pipenv..
 We're supposed to be able to ensure pip is installed with the command
 `python -m ensurepip --upgrade` but this doesn't work for me at first.  From
 [this link](https://stackoverflow.com/questions/29871372/i-have-python3-4-but-no-pip-or-ensurepip-is-something-wrong-with-my-python3-4)
-I find I need to use `apt-get install python3-pip`.
+I initially found I needed to use `apt-get install python3-pip`.
 
 * (python already installed, but not pip or pipenv)
 * `sudo apt-get update` (had to fix resolving errors, or wait for them to
   randomly not be present...)
-* `sudo apt-get install python3-pip`
+* Install pip  
+  `sudo apt-get install python3-pip`  
+  which pip => /usr/bin/pip
+  pip --version =>  
+  pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
+* Install pipenv  
+  `pip install --user pipenv`  
+  which pipenv => ~/.local/bin/pipenv  
+  pipenv --version => pipenv, version 2022.5.2  
+  python3 -m site --user-base => ~/.local
+* This seems to be all I need to do, but for further consideration...
+  * virtualenv
+    * a tool to create isolated Python environments
+    * creates a folder containing all necessary executables to use the packages
+    that a Python project needs
+    * can be used standalone, in place of pipenv.
+    * Usage example: `virtualenv venv`  
+      (where venv is a standard name for the folder containing the python
+      executable files)
+  * virtualenvwrapper
+    * provides commands that make working with virtual environments more pleasant
+    * places all virtual environments in one place (GOOD!)
+  * virtualenv-burrito
+    * provides a virtualenv + virtualenvwrapper environment in a single command
+  * direnv
+    * When you cd into a directory containing a .env, direnv automagically
+    activates the environment.
