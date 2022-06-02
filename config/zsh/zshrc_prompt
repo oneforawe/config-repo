@@ -116,7 +116,20 @@ function show_env () {
     # Using `-n $(echo $CONDA_DEFAULT_ENV)` instead of `-v CONDA_DEFAULT_ENV`
     # to be compatible with older versions of bash / zsh.
     if [[ -n $(echo $CONDA_DEFAULT_ENV) ]] ; then
-        print -P "env:\(${CONDA_DEFAULT_ENV}\) "
+        print -P "conda env:\(${CONDA_DEFAULT_ENV}\) "
+    fi
+    if [[ -n $(echo $VIRTUAL_ENV) ]] ; then
+        #ABBREVIATED_PYTHON_ENV=$(echo ${VIRTUAL_ENV%-*})
+        #TEMP_ENV_STRING=$(echo "${VIRTUAL_ENV}" | awk -F "-" '{print length($0)-length($NF)}')
+        #ABBREVIATED_PYTHON_ENV=$(echo $TEMP_ENV_STRING | awk -F "/" '{print $NF}')
+        TEMP_ENV_STRING=$(echo ${VIRTUAL_ENV%-*})
+        ABBREVIATED_PYTHON_ENV=$(echo ${TEMP_ENV_STRING##*/})
+        #print -P "pyenv:\(${VIRTUAL_ENV}\) "
+        #print -P "pyenv:\(${VIRTUAL_ENV%-*}\) "
+        #print -P "pyenv:\(${VIRTUAL_ENV##*-}\) "
+        print -P "pyenv:\(${ABBREVIATED_PYTHON_ENV}\) "
+        #print -P "pyenv:\(${TEMP_ENV_STRING}\) "
+        #print -P "pyenv:\(hello\) "
     fi
 }
 function show_host_letter () {
