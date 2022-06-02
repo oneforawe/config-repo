@@ -167,3 +167,8 @@ W: Some index files failed to download. They have been ignored, or old ones used
 ```
 
 Hopefully, sometime, all three domains will resolve properly.
+
+## Web Dev on Windows
+
+* nvm-windows (node version manager for windows)  
+  use this to install node: EG `nvm install 16` and then `nvm use 16.x.y`
