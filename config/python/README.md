@@ -71,3 +71,15 @@ I initially found I needed to use `apt-get install python3-pip`.
   * direnv
     * When you cd into a directory containing a .env, direnv automagically
     activates the environment.
+
+### Usage Notes
+
+* Install other versions of python.
+  * `sudo apt-get update && sudo apt-get install python3.x`
+* Check environment.
+  * If using `virtualenv venv` (to initialize) and `source venv/bin/activate`
+  and `deactivate`  
+    `echo $VIRTUAL_ENV`
+  * If using `pipenv shell` (to initialize and activate) and `exit`  
+    `pipenv --venv`  
+    `echo $VIRTUAL_ENV`
