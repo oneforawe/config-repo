@@ -119,17 +119,16 @@ function show_env () {
         print -P "conda env:\(${CONDA_DEFAULT_ENV}\) "
     fi
     if [[ -n $(echo $VIRTUAL_ENV) ]] ; then
-        #ABBREVIATED_PYTHON_ENV=$(echo ${VIRTUAL_ENV%-*})
-        #TEMP_ENV_STRING=$(echo "${VIRTUAL_ENV}" | awk -F "-" '{print length($0)-length($NF)}')
-        #ABBREVIATED_PYTHON_ENV=$(echo $TEMP_ENV_STRING | awk -F "/" '{print $NF}')
+        # Get substring before last dash:
         TEMP_ENV_STRING=$(echo ${VIRTUAL_ENV%-*})
+        # Get substring after last slash:
         ABBREVIATED_PYTHON_ENV=$(echo ${TEMP_ENV_STRING##*/})
-        #print -P "pyenv:\(${VIRTUAL_ENV}\) "
-        #print -P "pyenv:\(${VIRTUAL_ENV%-*}\) "
-        #print -P "pyenv:\(${VIRTUAL_ENV##*-}\) "
         print -P "pyenv:\(${ABBREVIATED_PYTHON_ENV}\) "
-        #print -P "pyenv:\(${TEMP_ENV_STRING}\) "
-        #print -P "pyenv:\(hello\) "
+        # Example:
+        # Turn '/home/username/.local/share/virtualenvs/trigger-server-CADR64LI'
+        # (IE environment name 'project-name-HA$H')
+        # Into 'project-name'
+        # (IE abbreviated env name 'project-name')
     fi
 }
 function show_host_letter () {
@@ -146,7 +145,7 @@ function show_prompt_line_2 ()     { print -P "  \u2502 $(show_path)" }
 function show_prompt_line_final () { echo "$VI_MODE \u2514 " } # now using "echo" here
 # b/c using "print -P" causes tab-completion trouble (re-printing of commands)
 function show_prompt_line_opt ()   {
-    if [[ -n $(echo $CONDA_DEFAULT_ENV) ]] || [[ -n $(git_prompt_info) ]] ; then
+    if [[ -n $(echo $CONDA_DEFAULT_ENV) ]] || [[ -n $(echo $VIRTUAL_ENV) ]] || [[ -n $(git_prompt_info) ]] ; then
         print -P "  \u2502 $(show_env)$(git_prompt_info)"
     fi
 }
