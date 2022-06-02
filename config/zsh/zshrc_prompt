@@ -127,7 +127,7 @@ function show_env () {
         # Example:
         # Turn '/home/username/.local/share/virtualenvs/trigger-server-CADR64LI'
         # (IE environment name 'project-name-HA$H')
-        # Into 'project-name'
+        # Into 'trigger-server'
         # (IE abbreviated env name 'project-name')
     fi
 }
