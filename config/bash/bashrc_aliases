@@ -210,6 +210,30 @@ function git-branch-list-with-descriptions () {
     #   one   this is simple branch for testing
 }
 
+function git-local-prune-develop () {
+    current_branch=$(git symbolic-ref --short HEAD)
+    if [ "${current_branch}" != "develop" ]; then
+        printf "Please checkout the develop branch before running this command.\n"
+        return 1
+    fi
+    # Get local branches that were merged into develop (not including develop or main or releases)
+    merged_branches=$(git branch --merged develop --no-color | grep -Ev "^\s*\*?\s*develop$" | grep -Ev "^\s*main$" | grep -Ev "^\s*release")
+    echo "$merged_branches"
+    printf "\nReady to delete these branches? (yes/no) "
+    read readytocontinue
+    printf "\n"
+    if [ "${readytocontinue}" != "yes" ]; then
+        # Not ready. Stop.
+        printf "That wasn't a yes. Stopping here.\n"
+        return 0
+    else
+        # Ready. Continue.
+        echo "$merged_branches" | xargs git branch -d
+    fi
+    printf "\nCurrent branch list:\n"
+    git branch -a
+}
+
 function factorial {
     local ARG="${1}"
     local re='^[0-9]+$'
