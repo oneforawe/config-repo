@@ -7,8 +7,11 @@ Store.
 
 ## Mouse
 
-Use the Registry to change the scroll-wheel direction:
+Use the Registry to change the scroll-wheel direction:  
 <https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10>
+
+See link above or see the copied source text (without images)
+[here](./howto/mouse.md).
 
 "If you use a mouse to navigate the Windows 10 desktop, the Settings app does
 not include an option to reverse the scrolling direction. However, you can still
@@ -59,6 +62,29 @@ Registry Editor (app)
 The instructions mentioned there being one key, but I found two keys, so I
 changed the (FlipFlopWheel) settings/registry for both keys, clicked OK, and
 then restarted.
+
+## Remap Keys
+
+For better keyboard ergonomics, you can use PowerToys to remap the CAPS-LOCK key
+as another Control key.  Or (if on a Windows system without PowerToys) you can
+directly edit the registry to remap.  See, for example, [this superuser forum
+answer](https://superuser.com/questions/949385/map-capslock-to-control-in-windows-10).
+
+I saved a copy of this registry file [here](./remap/caps-to-control.reg).
+
+They say I should be able to see the changes after logging/signing in and out,
+but I'm not seeing it yet.  Maybe I'll have to reboot.  Nope; rebooting didn't
+help, but I found a solution:
+
+I'm using RDC (Remote Desktop Connection) to connect to a Windows Server 2016
+machine, and it seems that the registry settings on the server are not being
+applied across my connection via RDC.  However, changing the RDC options allowed
+me to (presumably) apply my local key remappings to the remote machine.  Before
+connecting to the remote machine, while viewing the RDC main window for making
+the connection, click on "Show Options" to expand the window and change the
+interface, click on the "Local Resources" tab, and in the Keyboard section for
+"Apply Windows key combinations:" select "On this computer".  Then connect.  The
+key mapping should now work.
 
 ## PuTTY
 
@@ -170,5 +196,12 @@ Hopefully, sometime, all three domains will resolve properly.
 
 ## Web Dev on Windows
 
+* vim (EG GVIM -- `C:\Program Files (x86)\Vim\vim82`)  
+  When using the installer, be sure to check the "create .bat files" option so
+  vim/gvim will work in the terminal/console, as explained
+  [here](https://stackoverflow.com/questions/10049316/how-do-you-run-vim-in-windows).
+  (All of these become available: view, vim, vimdiff, vimtutor, evim, gview,
+  gvim, gvimdiff.)
+* git (EG)
 * nvm-windows (node version manager for windows)  
   use this to install node: EG `nvm install 16` and then `nvm use 16.x.y`
