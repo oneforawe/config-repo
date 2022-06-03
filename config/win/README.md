@@ -82,9 +82,12 @@ applied across my connection via RDC.  However, changing the RDC options allowed
 me to (presumably) apply my local key remappings to the remote machine.  Before
 connecting to the remote machine, while viewing the RDC main window for making
 the connection, click on "Show Options" to expand the window and change the
-interface, click on the "Local Resources" tab, and in the Keyboard section for
-"Apply Windows key combinations:" select "On this computer".  Then connect.  The
-key mapping should now work.
+interface:
+
+"Show Options" > "Local Resources" (tab) > "Keyboard" >
+"Apply Windows key combinations:" > "On this computer"
+
+Then connect.  The key mapping should now work.
 
 ## PuTTY
 
