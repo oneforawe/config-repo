@@ -210,7 +210,13 @@ function git-branch-list-with-descriptions () {
     #   one   this is simple branch for testing
 }
 
+# TODO: Rewrite all functions that use "porcelain" commands (such as
+# `git branch`); using them is bad practice, since they are subject to changing
+# output over time and with diffferent settings applied.
+# Ref: https://stackoverflow.com/questions/10610327/delete-all-local-git-branches/26152574#26152574
 function git-local-prune-develop () {
+    # Inspiration: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote
+    # But note the TODO above -- this is a bad hacky solution, but ok for now.
     current_branch=$(git symbolic-ref --short HEAD)
     if [ "${current_branch}" != "develop" ]; then
         printf "Please checkout the develop branch before running this command.\n"
