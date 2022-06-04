@@ -155,6 +155,9 @@ up being much nicer to use than Cmd.exe or the WSL/Ubuntu-20.04 terminal.
 
 ## Random Failure / Success
 
+Potential solution: just reboot Windows. (Let's see how often this fixes it; it
+seems to have worked once already.)
+
 I've been trying to fix a network issue that comes up when executing
 `sudo apt-get update`, but nothing has worked until I set things back to their
 defaults in the WSL Linux system (but still had the effect of having run the
