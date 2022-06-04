@@ -153,7 +153,7 @@ Use the "Windows Terminal". Though it was a pain to install (needing manual
 installation since I don't have access to the Microsoft/Windows Store), it ended
 up being much nicer to use than Cmd.exe or the WSL/Ubuntu-20.04 terminal.
 
-## Random Success
+## Random Failure / Success
 
 I've been trying to fix a network issue that comes up when executing
 `sudo apt-get update`, but nothing has worked until I set things back to their
@@ -196,6 +196,10 @@ W: Some index files failed to download. They have been ignored, or old ones used
 ```
 
 Hopefully, sometime, all three domains will resolve properly.
+
+From this github thread, the user scyto has some sensible things to say, but no
+one seems to have found a real solution that I've tried that works for me:  
+<https://github.com/microsoft/WSL/issues/5256>
 
 ## Web Dev on Windows
 
