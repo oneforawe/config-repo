@@ -25,6 +25,14 @@ Python docs/guide:
 * [Install Pyton3](https://docs.python-guide.org/starting/install3/linux/)
 * [Pipenv and Virtual Environments](https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref)
 
+### Windows
+
+Python 3.10 was already available (as `python` and `py`).  Needed to add the
+user base binary directory to the Path/PATH.  Used Control Panel to add to PATH.
+See the PATH in the terminal with `$env:PATH`.
+
+### WSL
+
 Python came pre-installed in the WSL Linux Ubuntu-20.04 system, but it didn't
 have pip or pipenv..
 
@@ -77,9 +85,10 @@ I initially found I needed to use `apt-get install python3-pip`.
 * Install other versions of python.
   * `sudo apt-get update && sudo apt-get install python3.x`
 * Check environment.
+  * If using `pipenv shell` (to initialize and activate) and `exit` (to
+  deactivate)  
+    `pipenv --venv`  
+    `echo $VIRTUAL_ENV`
   * If using `virtualenv venv` (to initialize) and `source venv/bin/activate`
   and `deactivate`  
-    `echo $VIRTUAL_ENV`
-  * If using `pipenv shell` (to initialize and activate) and `exit`  
-    `pipenv --venv`  
     `echo $VIRTUAL_ENV`
