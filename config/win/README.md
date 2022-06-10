@@ -5,6 +5,15 @@
 For work, I'm using a Windows 10 system without access to the Microsoft/Windows
 Store.
 
+## PowerShell
+
+Fundamental commands:
+
+* Get-Command
+* Get-Help, Update-Help
+* Get-Member
+* Find-Module
+
 ## Mouse
 
 Use the Registry to change the scroll-wheel direction:  
@@ -147,13 +156,7 @@ top bar of its window, and a drop-down menu appears.  Select "Properties" from
 the menu.  You can change the font here.  I presume you'll have to change the
 font in the "Defaults" selection to make the changes permanent/persistent.
 
-## Windows Terminal
-
-Use the "Windows Terminal". Though it was a pain to install (needing manual
-installation since I don't have access to the Microsoft/Windows Store), it ended
-up being much nicer to use than Cmd.exe or the WSL/Ubuntu-20.04 terminal.
-
-## Random Failure / Success
+## WSL2 Random Failure / Success
 
 Potential solution: just reboot Windows. (Let's see how often this fixes it; it
 seems to have worked once already.)
@@ -169,7 +172,7 @@ but <archive.ubuntu.com> and <security.ubuntu.com> did work):
 ```[bash]
 > sudo apt-get update
 
-[sudo] password for dex:
+[sudo] password for LINUX.USERNAME:
 Err:1 https://cli.github.com/packages stable InRelease
   Temporary failure resolving 'cli.github.com'
 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
@@ -204,14 +207,37 @@ From this github thread, the user scyto has some sensible things to say, but no
 one seems to have found a real solution that I've tried that works for me:  
 <https://github.com/microsoft/WSL/issues/5256>
 
+## Windows Terminal
+
+Use the "Windows Terminal". Though it was a pain to install (needing manual
+installation since I don't have access to the Microsoft/Windows Store), it ended
+up being much nicer to use than Cmd.exe or the WSL/Ubuntu-20.04 terminal.
+
+Creating a custom prompt for PowerShell:
+
+* [Custom Prompt](https://docs.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup)
+* [Oh My PoSh](https://ohmyposh.dev/docs/installation/windows)
+* `$PROFILE` at  `~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
+
 ## Web Dev on Windows
 
-* vim (EG GVIM -- `C:\Program Files (x86)\Vim\vim82`)  
+* vim (EG [gvim](https://www.vim.org/download.php)
+-- `C:\Program Files (x86)\Vim\vim82`)  
   When using the installer, be sure to check the "create .bat files" option so
   vim/gvim will work in the terminal/console, as explained
   [here](https://stackoverflow.com/questions/10049316/how-do-you-run-vim-in-windows).
   (All of these become available: view, vim, vimdiff, vimtutor, evim, gview,
   gvim, gvimdiff.)
-* git (EG)
-* nvm-windows (node version manager for windows)  
-  use this to install node: EG `nvm install 16` and then `nvm use 16.x.y`
+* git (EG [git-scm](https://git-scm.com/download/win))
+* [nvm-windows](https://github.com/coreybutler/nvm-windows)
+(node version manager for windows)  
+ Using `nvm-setup.exe`  
+ Use this to install node: EG `nvm install 16` and then `nvm use 16.x.y`
+
+## Miscellaneous
+
+To solve error of not having `mysql_config` (utility):  
+`sudo apt-get install libmysqlclient-dev`
+
+Maybe need to do this too:  
+`sudo apt-get install python3.10-dev`
