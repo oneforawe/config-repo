@@ -3,7 +3,9 @@ oh-my-posh init pwsh --config ~\.config\oh-my-posh\prompt-theme.omp.json | Invok
 
 # Enable vi/vim key-bindings and visual indicator for mode
 Set-PSReadlineOption -EditMode vi
-#Set-PSReadlineOption -EditMode vi -ViModeIndicator Cursor # doesn't seem to work (yet)
+Set-PSReadlineOption -ViModeIndicator Cursor # Doesn't seem to be working...
+# See also:
+# https://github.com/PowerShell/PSReadLine/issues/906
 
 # Enable menu auto-completion: navigable menu of all options when hitting Tab
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
