@@ -241,3 +241,8 @@ To solve error of not having `mysql_config` (utility):
 
 Maybe need to do this too:  
 `sudo apt-get install python3.10-dev`
+
+VSCode (Visual Studio Code) in WSL2 seems to have a problem with the
+markdownlint config file (maybe related to file-update-notification):  
+<https://github.com/DavidAnson/vscode-markdownlint/issues/103>  
+I'll try restarting/rebooting to see if it gets fixed: no, didn't get fixed.
