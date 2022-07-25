@@ -21,7 +21,7 @@ designed primarily for my own usage on my own computers, and a second one that's
 designed for remote and unowned machines with a greater emphasis on
 safety/backup and a little more minimalism.  The instructions for the first
 version are below, and the instructions for the second version can be found
-[here](https://github.com/oneforawe/config-repo/tree/master/setup/remote-machine-setup).
+[here](https://github.com/oneforawe/config-repo/tree/main/setup/remote-machine-setup).
 
 
 ## Installation
