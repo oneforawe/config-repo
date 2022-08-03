@@ -217,7 +217,16 @@ Creating a custom prompt for PowerShell:
 
 * [Custom Prompt](https://docs.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup)
 * [Oh My PoSh](https://ohmyposh.dev/docs/installation/windows)
-* `$PROFILE` at  `~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
+* `$PROFILE` at  `~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`  
+  (see `echo $PROFILE` for current location of PowerShell profile)
+
+My PowerShell files:
+
+* `config-repo/config/win/pwsh/Microsoft.PowerShell_profile.ps1` (placed at the
+  location specified with `$PROFILE`)
+* `config-repo/config/win/pwsh/oh-my-posh/prompt-theme.omp.json` (placed at the
+  location specified in the PowerShell profile)
+* Placement of these files is not yet automated.
 
 ## Web Dev on Windows
 
