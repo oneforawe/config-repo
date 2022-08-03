@@ -192,7 +192,7 @@ one seems to have found a real solution that I've tried that works for me:
 
 ## Windows Terminal
 
-Use the [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal).
+Use the [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701).
 Though it was a pain to install (needing
 [manual installation](https://docs.microsoft.com/en-us/windows/terminal/install)
 via GitHub since I don't have access to the Microsoft/Windows Store), it ended
