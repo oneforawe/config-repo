@@ -207,11 +207,11 @@ Creating a custom prompt for PowerShell:
 
 My PowerShell files:
 
-* `config-repo/config/win/pwsh/Microsoft.PowerShell_profile.ps1` (placed at the
-  location specified with `$PROFILE`)
-* `config-repo/config/win/pwsh/oh-my-posh/prompt-theme.omp.json` (placed at the
-  location specified in the PowerShell profile)
-* Placement of these files is not yet automated.
+* Profile: `config-repo/config/win/pwsh/Microsoft.PowerShell_profile.ps1`
+ (placed at the location specified with `$PROFILE`)
+* Prompt: `config-repo/config/win/pwsh/oh-my-posh/prompt-theme.omp.json` (placed
+at the location specified in the PowerShell profile)
+* Placement of these files is not yet automated with my config setup scripts.
 
 ## Web Dev on Windows
 
