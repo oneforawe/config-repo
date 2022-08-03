@@ -5,14 +5,31 @@
 For work, I'm using a Windows 10 system without access to the Microsoft/Windows
 Store.
 
-## PowerShell
+## Remap Keys
 
-Fundamental commands:
+For better keyboard ergonomics, you can use PowerToys to remap the CAPS-LOCK key
+as another Control key.  Or (if on a Windows system without PowerToys) you can
+directly edit the registry to remap.  See, for example, [this superuser forum
+answer](https://superuser.com/questions/949385/map-capslock-to-control-in-windows-10).
 
-* Get-Command
-* Get-Help, Update-Help
-* Get-Member
-* Find-Module
+I saved a copy of this registry file [here](./remap/caps-to-control.reg).
+
+They say I should be able to see the changes after logging/signing in and out,
+but I'm not seeing it yet.  Maybe I'll have to reboot.  Nope; rebooting didn't
+help, but I found a solution:
+
+I'm using RDC (Remote Desktop Connection) to connect to a Windows Server 2016
+machine, and it seems that the registry settings on the server are not being
+applied across my connection via RDC.  However, changing the RDC options allowed
+me to (presumably) apply my local key remappings to the remote machine.  Before
+connecting to the remote machine, while viewing the RDC main window for making
+the connection, click on "Show Options" to expand the window and change the
+interface:
+
+"Show Options" > "Local Resources" (tab) > "Keyboard" >
+"Apply Windows key combinations:" > "On this computer"
+
+Then connect.  The key mapping should now work.
 
 ## Mouse
 
@@ -72,50 +89,14 @@ The instructions mentioned there being one key, but I found two keys, so I
 changed the (FlipFlopWheel) settings/registry for both keys, clicked OK, and
 then restarted.
 
-## Remap Keys
+## PowerShell
 
-For better keyboard ergonomics, you can use PowerToys to remap the CAPS-LOCK key
-as another Control key.  Or (if on a Windows system without PowerToys) you can
-directly edit the registry to remap.  See, for example, [this superuser forum
-answer](https://superuser.com/questions/949385/map-capslock-to-control-in-windows-10).
+Fundamental commands:
 
-I saved a copy of this registry file [here](./remap/caps-to-control.reg).
-
-They say I should be able to see the changes after logging/signing in and out,
-but I'm not seeing it yet.  Maybe I'll have to reboot.  Nope; rebooting didn't
-help, but I found a solution:
-
-I'm using RDC (Remote Desktop Connection) to connect to a Windows Server 2016
-machine, and it seems that the registry settings on the server are not being
-applied across my connection via RDC.  However, changing the RDC options allowed
-me to (presumably) apply my local key remappings to the remote machine.  Before
-connecting to the remote machine, while viewing the RDC main window for making
-the connection, click on "Show Options" to expand the window and change the
-interface:
-
-"Show Options" > "Local Resources" (tab) > "Keyboard" >
-"Apply Windows key combinations:" > "On this computer"
-
-Then connect.  The key mapping should now work.
-
-## PuTTY
-
-Access: After installing PuTTY, you can create a link/shortcut to the app so it
-shows up in Search.
-
-Font: You can download and install a font such as this that includes special
-characters:
-
-* `git clone https://github.com/taodongl/monaco.ttf`
-* Open the `monaco.ttf` folder that results, open the `monaco` file, and click
-the "Install" button to install into the set of installed fonts for Windows.
-
-Nice Settings:
-
-* Connection > Data > Terminal details > Terminal-type string: xterm-256color
-* Window > Appearance > Font settings > Font used in the terminal window >
-"Change..." button > pop-up (Here you can select the newly-installed "Monaco"
-font or any other installed font that satisfies PuTTY's requirements.)
+* Get-Help, Update-Help
+* Get-Command
+* Get-Member
+* Find-Module
 
 ## WSL: Windows Subsystem for Linux
 
@@ -135,13 +116,14 @@ close all connections to the system).
 
 Note: WSL Ubuntu uses System V, not systemd for process management.
 
-## WSL Interaction
+### WSL Interaction
 
 * Start a WSL Ubuntu instance
-  * [best] With the Terminal (Windows Terminal) app open, click on the down-arrow next
-  to the rightmost tab and select "Ubuntu-20.04" from the drop-down menu that
-  appears in order to simultaneously open a new tab and start the WSL system.
-  * [ok] Open the 'Ubuntu 20.04 LTS' virtual-terminal app.
+  * [best] With the Terminal (Windows Terminal) app open, click on the
+  down-arrow next to the rightmost tab and select "Ubuntu-20.04" from the
+  drop-down menu that appears in order to simultaneously open a new tab and
+  start the WSL system.
+  * [ok] Open the Ubuntu virtual-terminal app (EG: 'Ubuntu 20.04 LTS').
 * PowerShell Commands
   * `wsl -l`
   * `wsl -l -v`
@@ -149,14 +131,15 @@ Note: WSL Ubuntu uses System V, not systemd for process management.
   * `wsl --shutdown`
   * `wsl --terminate <distro>`
 
-## Ubuntu 20.04 LTS
+### Ubuntu Terminal
 
-With the Ubuntu terminal open, right-click/double-finger-on-pad-click on the
-top bar of its window, and a drop-down menu appears.  Select "Properties" from
-the menu.  You can change the font here.  I presume you'll have to change the
-font in the "Defaults" selection to make the changes permanent/persistent.
+With the Ubuntu terminal ('Ubuntu 20.04 LTS') open, right-click /
+double-finger-on-pad-click on the top bar of its window, and a drop-down menu
+appears.  Select "Properties" from the menu.  You can change the font here.  I
+presume you'll have to change the font in the "Defaults" selection to make the
+changes permanent/persistent.
 
-## WSL2 Random Failure / Success
+### WSL2 Random Failure / Success
 
 Potential solution: just reboot Windows. (Let's see how often this fixes it; it
 seems to have worked once already.)
@@ -242,6 +225,25 @@ My PowerShell files:
 (node version manager for windows)  
  Using `nvm-setup.exe`  
  Use this to install node: EG `nvm install 16` and then `nvm use 16.x.y`
+
+## PuTTY
+
+Access: After installing PuTTY, you can create a link/shortcut to the app so it
+shows up in Search.
+
+Font: You can download and install a font such as this that includes special
+characters:
+
+* `git clone https://github.com/taodongl/monaco.ttf`
+* Open the `monaco.ttf` folder that results, open the `monaco` file, and click
+the "Install" button to install into the set of installed fonts for Windows.
+
+Nice Settings:
+
+* Connection > Data > Terminal details > Terminal-type string: xterm-256color
+* Window > Appearance > Font settings > Font used in the terminal window >
+"Change..." button > pop-up (Here you can select the newly-installed "Monaco"
+font or any other installed font that satisfies PuTTY's requirements.)
 
 ## Miscellaneous
 
