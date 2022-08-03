@@ -142,7 +142,7 @@ changes permanent/persistent.
 ### WSL2 Random Failure / Success
 
 Potential solution: just reboot Windows. (Let's see how often this fixes it; it
-seems to have worked once already.)
+seems to have worked at least twice already.)
 
 I've been trying to fix a network issue that comes up when executing
 `sudo apt-get update`, but nothing has worked until I set things back to their
@@ -192,8 +192,10 @@ one seems to have found a real solution that I've tried that works for me:
 
 ## Windows Terminal
 
-Use the "Windows Terminal". Though it was a pain to install (needing manual
-installation since I don't have access to the Microsoft/Windows Store), it ended
+Use the [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal).
+Though it was a pain to install (needing
+[manual installation](https://docs.microsoft.com/en-us/windows/terminal/install)
+via GitHub since I don't have access to the Microsoft/Windows Store), it ended
 up being much nicer to use than Cmd.exe or the WSL/Ubuntu-20.04 terminal.
 
 Creating a custom prompt for PowerShell:
