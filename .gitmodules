@@ -1,55 +1,73 @@
 [submodule "config/zsh/oh-my-zsh"]
 	path = config/zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+	shallow = true
 [submodule "config/zsh/pack/zsh-syntax-highlighting"]
 	path = config/zsh/pack/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	shallow = true
 [submodule "config/zsh/pack/zsh-autosuggestions"]
 	path = config/zsh/pack/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+	shallow = true
 [submodule "config/vim/vim.d/pack/external/opt/vim-scriptease"]
 	path = config/vim/vim.d/pack/external/opt/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease.git
+	shallow = true
 [submodule "config/vim/vim.d/pack/external/start/vim-clevertab"]
 	path = config/vim/vim.d/pack/external/start/vim-clevertab
 	url = https://github.com/neitanod/vim-clevertab.git
+	shallow = true
 [submodule "config/vim/vim.d/pack/external/start/vim-fold-cycle"]
 	path = config/vim/vim.d/pack/external/start/vim-fold-cycle
 	url = https://github.com/arecarn/vim-fold-cycle.git
+	shallow = true
 [submodule "config/vim/vim.d/pack/external/start/vim-surround"]
 	path = config/vim/vim.d/pack/external/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+	shallow = true
 [submodule "config/vim/vim.d/pack/external/start/vim-unimpaired"]
 	path = config/vim/vim.d/pack/external/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+	shallow = true
 [submodule "config/vim/vim.d/pack/external/start/ale"]
 	path = config/vim/vim.d/pack/external/start/ale
 	url = https://github.com/dense-analysis/ale.git
+	shallow = true
 [submodule "config/vim/vim.d/pack/external/start/vim-polyglot"]
 	path = config/vim/vim.d/pack/external/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+	shallow = true
 [submodule "config/emacs/emacs.d/evil"]
 	path = config/emacs/emacs.d/evil
 	url = https://github.com/emacs-evil/evil.git
+	shallow = true
 [submodule "config/emacs/emacs.d/org-mode"]
 	path = config/emacs/emacs.d/org-mode
 	url = https://git.savannah.gnu.org/git/emacs/org-mode.git/
+	shallow = true
 [submodule "config/emacs/emacs.d/evil-org-mode"]
 	path = config/emacs/emacs.d/evil-org-mode
 	url = https://github.com/Somelauw/evil-org-mode.git
+	shallow = true
 [submodule "config/emacs/emacs.d/undo-tree"]
 	path = config/emacs/emacs.d/undo-tree
 	url = https://gitlab.com/tsc25/undo-tree.git
+	shallow = true
 [submodule "config/emacs/emacs.d/use-package"]
 	path = config/emacs/emacs.d/use-package
 	url = https://github.com/jwiegley/use-package.git
+	shallow = true
 [submodule "config/local/diff-so-fancy"]
 	path = config/local/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
+	shallow = true
 [submodule "config/git/git-flow-completion"]
 	path = config/git/git-flow-completion
 	url = https://github.com/bobthecow/git-flow-completion.git
+	shallow = true
 [submodule "config/pack/thefuck"]
 	path = config/pack/thefuck
 	url = https://github.com/nvbn/thefuck.git
+	shallow = true
 	ignore = untracked
