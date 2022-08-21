@@ -16,11 +16,14 @@ function amscheck {
 function amsopen {
     printf "  Going to \"org\" directory.\n"
     cd ~/org
+    printf "  Running \"emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org\"\n"
+    sleep 1
+    emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org
+    # Earlier versions:
     #printf "  Running \"emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org\"\n"
     #emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org
-    printf "  Running \"emacs Trigger/*.org Review/More/*.org Review/*.org\"\n"
-    sleep 1
-    emacs Trigger/*.org Review/More/*.org Review/*.org
+    #printf "  Running \"emacs Trigger/*.org Review/More/*.org Review/*.org\"\n"
+    #emacs Trigger/*.org Review/More/*.org Review/*.org
 }
 
 
@@ -69,3 +72,4 @@ function aptup {
     astep1 && astep2 && astep3 && astep4
     printf '\n'
 }
+
