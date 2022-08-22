@@ -13,14 +13,14 @@
 ;  names begin with a period.)
 
 ; In overview, this file activates these major features:
-; 1) evil-mode (to give vi/vim key-bindings in emacs);
-; 2) org-mode (and evil-org-mode) for organizational functionality
-;    (including TODO-list action management and scheduling,
-;     as well as hierarchical outline note-taking);
-; 3) undo-tree (to have complete control of undo-ing and re-doing actions);
-; 4) ido-mode (smart search for buffers/files);
+; 1) evil-mode      (to give vi/vim key-bindings in emacs);
+; 2) org-mode       (& evil-org-mode; for organizational functionality)
+;                   (including TODO-list action management and scheduling,
+;                    as well as hierarchical outline note-taking);
+; 3) undo-tree      (to have complete control of undo-ing and re-doing actions);
+; 4) ido-mode       (smart search for buffers/files);
 ; 5) icomplete-mode (provides an incremental MiniBuffer Completion preview); and
-; 6) color schemes (in general and for org-mode).
+; 6) color schemes  (in general and for org-mode).
 
 
 ; This file references the following external directories and files:
@@ -143,7 +143,8 @@
 (evil-mode t)
 
 ;; Activate undo-tree-mode.
-(add-to-list 'load-path "~/.emacs.d/undo-tree/undo-tree.el")
+;(add-to-list 'load-path "~/.emacs.d/undo-tree/undo-tree.el")
+(add-to-list 'load-path "~/.emacs.d/undo-tree")
 (require 'undo-tree)
 (global-undo-tree-mode t)
 (evil-set-undo-system 'undo-tree)
