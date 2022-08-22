@@ -45,7 +45,6 @@
 [submodule "config/emacs/emacs.d/org-mode"]
 	path = config/emacs/emacs.d/org-mode
 	url = https://git.savannah.gnu.org/git/emacs/org-mode.git/
-	shallow = true
 [submodule "config/emacs/emacs.d/evil-org-mode"]
 	path = config/emacs/emacs.d/evil-org-mode
 	url = https://github.com/Somelauw/evil-org-mode.git
