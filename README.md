@@ -32,6 +32,34 @@ Be sure to understand the code before running it, and save copies of important
 relevant files that will be over-written if you want to go back to your original
 settings.
 
+### New, Potentially Better Steps (including emacs usage)
+
+0. Ensure that either there is no `~/.gitconfig` file yet or that it at least
+does not refer to non-existent files, to enable successful git-clone'ing.
+
+1. In a shell, clone this repo to obtain a local copy the files (using a
+"recursive" flag in order to get the submodule contents):  
+   `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo --recursive`
+
+2. Copy the git config file to the home directory, as a dot-file, and edit to
+fill in the email address.  
+   `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`
+
+3. If intending on using emacs (with a config file that enables org-mode), prep
+for org-mode usage (to eliminate start-up errors):  
+    `cd ~/.config-repo/config/emacs/emacs.d/org-mode`  
+    `make autoloads`
+
+4. For Mac systems, you can run the MacOS environment setup script:  
+   `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`
+
+5. Run this command to over-write existing shell configuration files with links
+to the config files in this repo and to install the necessary and desired
+packages:  
+   `bash ~/.config-repo/setup/run-setup-shell-full.sh`
+
+### Older Steps
+
 1. In a shell, clone this repo to obtain a local copy the files:  
    `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
 
