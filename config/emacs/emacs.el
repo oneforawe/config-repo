@@ -143,6 +143,9 @@
 (evil-mode t)
 
 ;; Activate undo-tree-mode.
+;; Apparent requirement for undo-tree (why did it work before without this?):
+(add-to-list 'load-path "~/.emacs.d/queue-el")
+(require 'queue)
 ;(add-to-list 'load-path "~/.emacs.d/undo-tree/undo-tree.el")
 (add-to-list 'load-path "~/.emacs.d/undo-tree")
 (require 'undo-tree)
