@@ -45,18 +45,19 @@
 [submodule "config/emacs/emacs.d/org-mode"]
 	path = config/emacs/emacs.d/org-mode
 	url = https://git.savannah.gnu.org/git/emacs/org-mode.git/
+	#shallow = true
 [submodule "config/emacs/emacs.d/evil-org-mode"]
 	path = config/emacs/emacs.d/evil-org-mode
 	url = https://github.com/Somelauw/evil-org-mode.git
-	shallow = true
+	#shallow = true
 [submodule "config/emacs/emacs.d/undo-tree"]
 	path = config/emacs/emacs.d/undo-tree
 	url = https://gitlab.com/tsc25/undo-tree.git
-	shallow = true
+	#shallow = true
 [submodule "config/emacs/emacs.d/use-package"]
 	path = config/emacs/emacs.d/use-package
 	url = https://github.com/jwiegley/use-package.git
-	shallow = true
+	#shallow = true
 [submodule "config/local/diff-so-fancy"]
 	path = config/local/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
