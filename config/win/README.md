@@ -233,6 +233,11 @@ My PowerShell files:
 Access: After installing PuTTY, you can create a link/shortcut to the app so it
 shows up in Search.
 
+* Program  
+  `C:\Users\andrew.forrester\AppData\Local\Programs\PuTTY\putty.exe`
+* Shortcut  
+  `C:\Users\andrew.forrester\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\PuTTY\PuTTY`
+
 Font: You can download and install a font such as this that includes special
 characters:
 
