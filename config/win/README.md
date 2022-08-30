@@ -213,6 +213,16 @@ My PowerShell files:
 (placed at the location specified in the PowerShell profile)
 * Placement of these files is not yet automated with my config setup scripts.
 
+Git Segment:
+
+* See the OhMyPosh website [git section](https://ohmyposh.dev/docs/segments/git)
+for an explanation of the cryptic symbols (`+`, `-`, `~`, `?`) in the prompt's
+git segment.
+* More symbols:
+  * `\uF044` edit-icon (pencil-to-paper) -- Working (editing in progress, correct?)
+  * `\uF046` check-icon (check-in-box) -- Staging (commits made, correct?)
+  * `\uF692` save-icon (floppy-disk) -- Stashed (uncommited edits saved/stashed)
+
 ## Web Dev on Windows
 
 * vim (EG [gvim](https://www.vim.org/download.php)
