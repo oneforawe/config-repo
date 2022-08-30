@@ -93,7 +93,7 @@ then restarted.
 
 Fundamental commands:
 
-* Get-Help, Update-Help
+* Help, Update-Help, Get-Help
 * Get-Command
 * Get-Member
 * Find-Module
