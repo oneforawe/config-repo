@@ -1,0 +1,21 @@
+{
+  "files.exclude": { "**/.git": false },
+  "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
+  "editor.rulers": [72, 80],
+  "editor.tabSize": 2,
+  "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
+  "markdownlint.config": {
+    "default": true,
+    "MD024": { "siblings_only": true }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": false,
+    "source.fixAll.eslint": true
+  },
+  "[css, scss]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": false,
+      "source.fixAll.stylelint": true
+    }
+  }
+}
