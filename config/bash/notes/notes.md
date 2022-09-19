@@ -10,13 +10,16 @@
 
 ## Intro
 
-Bash is a powerful tool to interact with and control a computer.
+Bash is a powerful tool to interact with and control a computer.  For instance,
+it allows deep control of computer configuration and behavior, and it allows one
+to create of small or large programs to automate tasks.
 
 Maybe the best intro to bash would be a practical demonstration showing how to
-execute some task that's important to you right now.  For example, copying files
-or creating an ssh key-pair for securely connection to a remote machine.  With
-that context, learning the general ideas and technologies involved would be
-well-motivated.
+execute some task that's important to you right now.  For example, copying
+files that would be tedious to do by hand (but very fast to do programmatically),
+or creating an ssh key-pair for a secure connection to a remote machine, or
+setting up an environment for doing website development.  With that context,
+learning the general ideas and technologies involved would be well-motivated.
 
 One can become overwhelmed with all of the documentation and resources to get
 familiar with bash, so, as with any complicated topic, it's probably best to
