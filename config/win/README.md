@@ -240,8 +240,13 @@ git segment.
 
 ## PuTTY
 
-Access: After installing PuTTY, you can create a link/shortcut to the app so it
-shows up in Search.
+Access: After installing
+[PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), you can
+create a link/shortcut to the app so it shows up in Search.
+
+It can be installed generally or per user.  I now have it installed generally,
+but when I had installed just in my user space, I placed the file and shortcut
+in these locations:
 
 * Program  
   `C:\Users\andrew.forrester\AppData\Local\Programs\PuTTY\putty.exe`
@@ -261,6 +266,20 @@ Nice Settings:
 * Window > Appearance > Font settings > Font used in the terminal window >
 "Change..." button > pop-up (Here you can select the newly-installed "Monaco"
 font or any other installed font that satisfies PuTTY's requirements.)
+
+Usage Issue:
+
+* The PuTTY program's
+[system menu](https://documentation.help/PuTTY/using-sysmenu.html) should have
+"extra program features" that allow you to, for example, start a new session.
+For some reason, I don't see those features in the system menu, so to add a new
+session, I have to use a non-user-friendly approach:
+  * Type in a new session name in the "Saved Sessions" field.
+  * This may cause a saved session name to become highlighted, maybe the closest
+    name alphabetically to the new name that you've typed.  Ignore that
+    highlighting.
+  * Hit the "Save" button to add that new session option to the saved list.
+  * Now that new session option/config can be edited to suit the new connection.
 
 ## Miscellaneous
 
