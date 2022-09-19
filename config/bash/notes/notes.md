@@ -1,4 +1,3 @@
-
 # notes on bash
 
 ## General Reference
@@ -49,34 +48,23 @@ especially with respect to the
 simplified diagrams, hopefully giving a useful first-iteration perspective, even
 if they're a little over-simplified.
 
-<a href="https://jaguhiremath62.medium.com/difference-between-kernel-and-shell-718b3de15be6">
-<img
-  src="./images/shell_kernel_app.png"
-  alt="shell vs kernel vs apps"
-  width="350"/>
-</a>
-
-Test:
-
 [<img
   src="./images/shell_kernel_app.png"
   alt="shell vs kernel vs apps"
   width="350"
 />](https://jaguhiremath62.medium.com/difference-between-kernel-and-shell-718b3de15be6)
 
-<a href="https://www.meted.ucar.edu/ucar/unix/navmenu.php?tab=1&page=2-1-0&type=flash">
-<img
+[<img
   src="./images/shell_context_unix.jpg"
   alt="shell context unix"
-  width="350"/>
-</a>
+  width="350"
+/>](https://www.meted.ucar.edu/ucar/unix/navmenu.php?tab=1&page=2-1-0&type=flash)
 
-<a href="https://www.elprocus.com/unix-architecture-and-properties/">
-<img
+[<img
   src="./images/shell_unix_architecture.jpg"
   alt="shell unix architecture"
-  width="350"/>
-</a>
+  width="350"
+/>](https://www.elprocus.com/unix-architecture-and-properties/)
 
 A shell is a program that provides commands and a language/syntax to chain the
 commands together, as a means to interacting with a computer.  (Due to that
