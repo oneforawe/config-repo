@@ -53,13 +53,11 @@ if they're a little over-simplified.
   alt="shell vs kernel vs apps"
   width="350"
 />](https://jaguhiremath62.medium.com/difference-between-kernel-and-shell-718b3de15be6)
-
 [<img
   src="./images/shell_context_unix.jpg"
   alt="shell context unix"
   width="350"
 />](https://www.meted.ucar.edu/ucar/unix/navmenu.php?tab=1&page=2-1-0&type=flash)
-
 [<img
   src="./images/shell_unix_architecture.jpg"
   alt="shell unix architecture"
@@ -95,9 +93,12 @@ run interactively (requiring intervention from a user to continue) or in "batch"
 form (executing the commands in a single-shot and requiring no user input while
 it runs).
 
-The language allows use of "utilities" or commands/programs that are called in
-the shell and trigger processes that may be based upon the language's
-fundamental built-in commands or may use other languages to operate.
+Beyond the built-in commands, the language allows use of shell "utilities" or
+commands/programs that are called in the shell and trigger processes that may be
+based upon the language's fundamental built-in commands or may use other
+languages to execute.  General apps/applications that run in the operating system
+(whether in GUI or CLI modes) can also be called and triggered to execute from
+within the interactive shell or a running script.
 
 So "bash", besides referring to the shell program, can also refer specifically
 to the scripting language that the bash shell uses.
