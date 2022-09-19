@@ -53,11 +53,13 @@ if they're a little over-simplified.
   alt="shell vs kernel vs apps"
   width="350"
 />](https://jaguhiremath62.medium.com/difference-between-kernel-and-shell-718b3de15be6)
+
 [<img
   src="./images/shell_context_unix.jpg"
   alt="shell context unix"
   width="350"
 />](https://www.meted.ucar.edu/ucar/unix/navmenu.php?tab=1&page=2-1-0&type=flash)
+
 [<img
   src="./images/shell_unix_architecture.jpg"
   alt="shell unix architecture"
