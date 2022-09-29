@@ -232,11 +232,15 @@ git segment.
   [here](https://stackoverflow.com/questions/10049316/how-do-you-run-vim-in-windows).
   (All of these become available: view, vim, vimdiff, vimtutor, evim, gview,
   gvim, gvimdiff.)
-* git (EG [git-scm](https://git-scm.com/download/win))
+* git (EG [git-scm](https://git-scm.com/download/win), also promoted
+  [here](https://gitforwindows.org/))
 * [nvm-windows](https://github.com/coreybutler/nvm-windows)
 (node version manager for windows)  
  Using `nvm-setup.exe`  
  Use this to install node: EG `nvm install 16` and then `nvm use 16.x.y`
+* ssh (see
+[instructions](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
+)
 
 ## PuTTY
 
