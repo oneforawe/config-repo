@@ -7,6 +7,12 @@
 # PowerShell:
 # code --list-extensions | % { "code --install-extension $_" }
 
+# Executing this code:
+# Bash:
+# bash ~\.config-repo\config\vscode\extensions-manual.sh
+# PowerShell:
+# .$Home\.config-repo\config\vscode\extensions-manual.sh
+
 code --install-extension Compulim.indent4to2
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension dbaeumer.vscode-eslint
