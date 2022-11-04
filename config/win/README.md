@@ -208,9 +208,16 @@ Creating a custom prompt for PowerShell:
 My PowerShell files:
 
 * Profile: [Microsoft.PowerShell_profile.ps1](./pwsh/Microsoft.PowerShell_profile.ps1)
-(placed at the location specified with `$PROFILE`)
+(placed at the location specified with `$PROFILE`)  
+  `New-Item -ItemType Directory C:\Users\USERNAME\Documents\WindowsPowerShell`
+  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\win\pwsh\Microsoft.PowerShell_profile.ps1 -Destination C:\Users\USERNAME\Documents\WindowsPowerShell\ -PassThru`
 * Prompt: [prompt-theme.omp.json](./pwsh/oh-my-posh/prompt-theme.omp.json)
-(placed at the location specified in the PowerShell profile)
+(placed at the location specified in the PowerShell profile)  
+  `New-Item -ItemType Directory C:\Users\USERNAME\.config`  
+  `New-Item -ItemType Directory C:\Users\USERNAME\.config\oh-my-posh`  
+  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\win\pwsh\oh-my-posh\prompt-theme.omp.json -Destination C:\Users\USERNAME\.config\oh-my-posh\ -PassThru`
+* Settings: After installing a Nerd Font, change the Windows Terminal settings
+to use that font.
 * Placement of these files is not yet automated with my config setup scripts.
 
 Git Segment:
@@ -231,26 +238,32 @@ git segment.
   vim/gvim will work in the terminal/console, as explained
   [here](https://stackoverflow.com/questions/10049316/how-do-you-run-vim-in-windows).
   (All of these become available: view, vim, vimdiff, vimtutor, evim, gview,
-  gvim, gvimdiff.)
+  gvim, gvimdiff.)  
+  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vimrc -Destination C:\Users\USERNAME\vimfiles\ -PassThru`  
+  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vim.d\colors\zenburn.vim -Destination C:\Users\USERNAME\vimfiles\colors\ -PassThru`
 * git (EG [git-scm](https://git-scm.com/download/win), also promoted
   [here](https://gitforwindows.org/))
 * [nvm-windows](https://github.com/coreybutler/nvm-windows)
 (node version manager for windows)  
- Using `nvm-setup.exe`  
- Use this to install node: EG `nvm install 16` and then `nvm use 16.x.y`
+  Using `nvm-setup.exe` (via `nvm-setup.zip`)  
+  Use this to install node: EG `nvm install 16` and then `nvm use 16.x.y`
 * ssh (see
 [instructions](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 )
 
 ## PuTTY
 
-Access: After installing
-[PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), you can
-create a link/shortcut to the app so it shows up in Search.
+When installing
+[PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html),
+you can get a whole set of utilities (eg, including puttygen) that are useful
+to have.
 
-It can be installed generally or per user.  I now have it installed generally,
-but when I had installed just in my user space, I placed the file and shortcut
-in these locations:
+* EG, PuTTY for Windows 10 (64 bit, amd) -- putty-64bit-0.77-installer.msi
+
+Access: After installing, if PuTTY is not already showing up in Search you can
+create a link/shortcut to the app.  It can be installed generally or per user.
+I now have it installed generally, but when I had installed just in my user
+space, I placed the file and shortcut in these locations:
 
 * Program  
   `C:\Users\andrew.forrester\AppData\Local\Programs\PuTTY\putty.exe`
@@ -297,3 +310,4 @@ VSCode (Visual Studio Code) in WSL2 seems to have a problem with the
 markdownlint config file (maybe related to file-update-notification):  
 <https://github.com/DavidAnson/vscode-markdownlint/issues/103>  
 I'll try restarting/rebooting to see if it gets fixed: no, didn't get fixed.
+
