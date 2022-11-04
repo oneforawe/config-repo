@@ -1,21 +1,71 @@
 {
-  "files.exclude": { "**/.git": false },
   "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
   "editor.rulers": [72, 80],
+  "editor.detectIndentation": false,
   "editor.tabSize": 2,
-  "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
-  "markdownlint.config": {
-    "default": true,
-    "MD024": { "siblings_only": true }
+  "editor.insertSpaces": true,
+  // Python
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--load-plugins=pylint_django",
+    "--django-settings-module=gemba.settings"
+  ],
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Args": [
+    "--ignore=E501" // E501 - Try to make lines fit within --max-line-length characters.
+  ],
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": false,
-    "source.fixAll.eslint": true
+  "[typescript, typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.pylint": false,
+      "source.fixAll.stylelint": false,
+      "source.fixAll.markdownlint": false,
+      "source.fixAll.shellcheck": false,
+      "source.fixAll.eslint": true,
+    },
   },
   "[css, scss]": {
     "editor.codeActionsOnSave": {
+      "source.fixAll.pylint": false,
       "source.fixAll.eslint": false,
-      "source.fixAll.stylelint": true
-    }
+      "source.fixAll.markdownlint": false,
+      "source.fixAll.shellcheck": false,
+      "source.fixAll.stylelint": true,
+    },
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true,
+  },
+  "markdownlint.config": {
+    "default": true,
+    "MD024": { "siblings_only": true },
+  },
+  "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.pylint": false,
+      "source.fixAll.eslint": false,
+      "source.fixAll.stylelint": false,
+      "source.fixAll.shellcheck": false,
+      "source.fixAll.markdownlint": true,
+    },
+  },
+  "[sh, bash]": {
+    "files.eol": "\n",
+    "editor.insertSpaces": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.pylint": false,
+      "source.fixAll.eslint": false,
+      "source.fixAll.stylelint": false,
+      "source.fixAll.markdownlint": false,
+      "source.fixAll.shellcheck": true,
+    },
+  },
+    "[powershell]": {
+    "files.eol": "\n"
   }
 }
