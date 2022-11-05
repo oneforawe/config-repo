@@ -13,7 +13,6 @@ environment consistent across different machines and to make it very easy to set
 up a working environment on a new machine.  But for anyone who's curious, it's
 also here to share config ideas and enable you to try out my setup.
 
-
 ## Two Versions
 
 I created two versions of the installation process: the first one that's
@@ -22,7 +21,6 @@ designed for remote and unowned machines with a greater emphasis on
 safety/backup and a little more minimalism.  The instructions for the first
 version are below, and the instructions for the second version can be found
 [here](https://github.com/oneforawe/config-repo/tree/main/setup/remote-machine-setup).
-
 
 ## Installation
 
@@ -40,6 +38,12 @@ does not refer to non-existent files, to enable successful git-clone'ing.
 1. In a shell, clone this repo to obtain a local copy the files (using a
 "recursive" flag in order to get the submodule contents):  
    `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo --recursive`
+
+   * If cloning fails for, say, the emacs/org-mode submodule with, say, a
+   fatal access error
+   (`server certificate verification failed. CAfile: none CRLfile: none`),
+   then you may need to use the cert installation solution here:  
+   <https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed>
 
 2. Copy the git config file to the home directory, as a dot-file, and edit to
 fill in the email address.  
@@ -85,7 +89,6 @@ use `brew link --overwrite python` after setting up on an old Mac system.
 fill in the email address.  
    `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`
 
-
 ## Development
 
 Note to self: Don't forget to add submodules manually when installing them for
@@ -102,7 +105,6 @@ and `git submodule update --init --recursive`.)
 If changing something like the submodule url, see instructions such as
 <a href="https://stackoverflow.com/questions/913701/
 how-to-change-the-remote-repository-for-a-git-submodule">these</a>.
-
 
 ## Terminology
 

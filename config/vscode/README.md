@@ -4,9 +4,10 @@ VSCode (Visual Studio Code) -- soon to try out VSCodium.
 
 ## GNU/Linux (via WSL within Windows)
 
-* Executed with Bash  
+* Executed with PowerShell in host Windows machine
+  `New-Item -ItemType HardLink -Path "C:\Users\andrew.forrester\AppData\Roaming\Code\User\settings.json" -Target "C:\Users\andrew.forrester\.config-repo\config\vscode\settings.json"`
+* Executed with Bash in guest Linux machine
   `bash ~/.config-repo/config/vscode/extensions-manual.sh`  
-  `ln -s ~/.config-repo/config/vscode/settings.json ~/.vscode-server`
 
 ## Windows
 
