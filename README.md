@@ -37,49 +37,52 @@ does not refer to non-existent files, to enable successful git-clone'ing.
 
 1. In a shell, clone this repo to obtain a local copy the files (using a
 "recursive" flag in order to get the submodule contents):  
-   `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo --recursive`
+  `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo --recursive`
 
-   * If cloning fails for, say, the emacs/org-mode submodule with, say, a
-   fatal access error
-   (`server certificate verification failed. CAfile: none CRLfile: none`),
+   * If cloning fails for, say, the emacs/org-mode submodule with, say, a fatal
+   access error (`server certificate verification failed. CAfile: none CRLfile: none`),
    then you may need to use the cert installation solution here:  
    <https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed>
 
-2. Copy the git config file to the home directory, as a dot-file, and edit to
-fill in the email address.  
-   `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`
+2. Copy the git config file, as a dot-file, to the home directory and the local
+.config-repo, and edit to remove the user info (for the home directory) and to
+fill in the email address (for .config-repo).  If needed, add the git config to
+the local includes for .config-repo.  
+  `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`  
+  `cp ~/.config-repo/config/git/gitconfig ~/.config-repo/.gitconfig`  
+  `git config --local include.path ../.gitconfig`
 
 3. If intending on using emacs (with a config file that enables org-mode), prep
 for org-mode usage (to eliminate start-up errors):  
-    `cd ~/.config-repo/config/emacs/emacs.d/org-mode`  
-    `make autoloads`
+  `cd ~/.config-repo/config/emacs/emacs.d/org-mode`  
+  `make autoloads`
 
 4. For Mac systems, you can run the MacOS environment setup script:  
-   `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`
+  `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`
 
 5. Run this command to over-write existing shell configuration files with links
 to the config files in this repo and to install the necessary and desired
 packages:  
-   `bash ~/.config-repo/setup/run-setup-shell-full.sh`
+  `bash ~/.config-repo/setup/run-setup-shell-full.sh`
 
 ### Older Steps
 
 1. In a shell, clone this repo to obtain a local copy the files:  
-   `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
+  `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
 
 2. For Mac systems, you can run the MacOS environment setup script:  
-   `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`
+  `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`
 
 3. Enter the repo and initialize and update (clone) the submodules contained in
 this repo:  
-   `cd ~/.config-repo`  
-   `git submodule init`  
-   `git submodule update --recursive`
+  `cd ~/.config-repo`  
+  `git submodule init`  
+  `git submodule update --recursive`
 
 4. Run this command to over-write existing shell configuration files with links
 to the config files in this repo and to install the necessary and desired
 packages:  
-   `bash ~/.config-repo/setup/run-setup-shell-full.sh`
+  `bash ~/.config-repo/setup/run-setup-shell-full.sh`
 
 5. You may want to clean up (delete) extraneous config files, and you may have
 to do some trouble-shooting once everything is set up.  For instance, I had to
@@ -87,13 +90,13 @@ use `brew link --overwrite python` after setting up on an old Mac system.
 
 6. Copy the git config file to the home directory, as a dot-file, and edit to
 fill in the email address.  
-   `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`
+  `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`
 
 ## Development
 
 Note to self: Don't forget to add submodules manually when installing them for
 the first time:  
-   `git submodule add https://url/submodule.git path/to/submodule`
+  `git submodule add https://url/submodule.git path/to/submodule`
 
 Sometimes a submodule package may show up in git-status as "modified" (although
 not showing any git-diff) and as "(untracked content)".  I've been able to fix

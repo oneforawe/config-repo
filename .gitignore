@@ -5,6 +5,7 @@
 .DS_Store
 
 # Specific folders and files
+.gitconfig
 .gitmodules-changed
 setup/old
 setup/notes.txt
