@@ -44,7 +44,7 @@ does not refer to non-existent files, to enable successful git-clone'ing.
    then you may need to use the cert installation solution here:  
    <https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed>
 
-2. Copy the git config file, as a dot-file, to the home directory and the local
+2. Copy the git config file as a dot-file to the home directory and the local
 .config-repo, and edit to remove the user info (for the home directory) and to
 fill in the email address (for .config-repo).  If needed, add the git config to
 the local includes for .config-repo.  
