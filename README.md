@@ -30,24 +30,26 @@ Be sure to understand the code before running it, and save copies of important
 relevant files that will be over-written if you want to go back to your original
 settings.
 
-### New, Potentially Better Steps (including emacs usage)
+### New Steps
 
 0. Ensure that either there is no `~/.gitconfig` file yet or that it at least
 does not refer to non-existent files, to enable successful git-clone'ing.
 
-1. In a shell, clone this repo to obtain a local copy the files (using a
-"recursive" flag in order to get the submodule contents):  
-  `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo --recursive`
+1. In a shell, clone this repo to obtain a local copy the files. Either use
+https or ssh (written below in an abbreviated form that uses an ssh config):
 
+   * https: `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
+   * ssh: `git clone github:oneforawe/config-repo.git ~/.config-repo`
    * If cloning fails for, say, the emacs/org-mode submodule with, say, a fatal
    access error (`server certificate verification failed. CAfile: none CRLfile: none`),
-   then you may need to use the cert installation solution here:  
+   then you may need to use the cert installation solution here (along with the
+   git configs of step 2 below):  
    <https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed>
 
 2. Copy the git config file as a dot-file to the home directory and the local
 .config-repo, and edit to remove the user info (for the home directory) and to
-fill in the email address (for .config-repo).  If needed, add the git config to
-the local includes for .config-repo.  
+fill in the email address (for .config-repo).  Add the git config to the local
+includes for .config-repo.  
   `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`  
   `cp ~/.config-repo/config/git/gitconfig ~/.config-repo/.gitconfig`  
   `git config --local include.path ../.gitconfig`
@@ -66,6 +68,9 @@ packages:
   `bash ~/.config-repo/setup/run-setup-shell-full.sh`
 
 ### Older Steps
+
+(Previously, submodules were used; now, subtrees are used and no recursion is
+necessary.)
 
 1. In a shell, clone this repo to obtain a local copy the files:  
   `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
