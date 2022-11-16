@@ -65,7 +65,11 @@
       "source.fixAll.shellcheck": true,
     },
   },
-    "[powershell]": {
+  "[powershell]": {
     "files.eol": "\n"
-  }
+  },
+  "[csharp]": {
+    "editor.tabSize": 4
+  },
+  "window.zoomLevel": -2
 }
