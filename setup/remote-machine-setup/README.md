@@ -47,13 +47,18 @@ https or ssh (written below in an abbreviated form that uses an ssh config):
    git configs of step 2 below):  
    <https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed>
 
-2. Copy the git config file as a dot-file to the home directory and the local
-.config-repo, and edit to remove the user info (for the home directory) and to
-fill in the email address (for .config-repo).  Add the git config to the local
-includes for .config-repo.  
+2. Copy the git config file as a dot-file to the home directory, and edit to
+remove the user info. This is the global gitconfig file. Then execute the
+additional commands below (editing to give your appropriate identity) to modify
+the repo's local config file in `~/.config-repo/.git/config`:  
   `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`  
+  `git config user.name "Your Name"`  
+  `git config user.email you@example.com`  
+  (Alternatively, you can add a `.gitconfig` in the top level of the
+  repo and add that file to the local `include.path`:  
   `cp ~/.config-repo/config/git/gitconfig ~/.config-repo/.gitconfig`  
-  `git config --local include.path ../.gitconfig`
+  `git config --local include.path ../.gitconfig`  
+  )
 
 3. Run this command to over-write existing shell configuration files with links
 to the config files in this repo and to install the necessary and desired
