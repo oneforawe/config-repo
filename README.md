@@ -34,12 +34,20 @@ settings.
 
 0. Ensure that either there is no `~/.gitconfig` file yet or that it at least
 does not refer to non-existent files, to enable successful git-clone'ing.
+Otherwise, you may see errors such as  
+`fatal: remote-curl: fetch attempted without a local repo`  
+or  
+`fatal: --stdin requires a git repository`  
+`fatal: fetch-pack: invalid index-pack output`
 
 1. In a shell, clone this repo to obtain a local copy the files. Either use
 https or ssh (written below in an abbreviated form that uses an ssh config):
 
    * https: `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
    * ssh: `git clone github:oneforawe/config-repo.git ~/.config-repo`
+   * If cloning fails due to a permission error where the ssh key is not being
+   used, you may need to add the keys to the ssh-agent.  For example:  
+   `eval "$(ssh-agent -s)" && ssh-add ~/.ssh/keys/github`
    * If cloning fails for, say, the emacs/org-mode submodule with, say, a fatal
    access error (`server certificate verification failed. CAfile: none CRLfile: none`),
    then you may need to use the cert installation solution here (along with the
@@ -59,13 +67,13 @@ for org-mode usage (to eliminate start-up errors):
   `cd ~/.config-repo/config/emacs/emacs.d/org-mode`  
   `make autoloads`
 
-4. For Mac systems, you can run the MacOS environment setup script:  
-  `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`
-
-5. Run this command to over-write existing shell configuration files with links
+4. Run this command to over-write existing shell configuration files with links
 to the config files in this repo and to install the necessary and desired
 packages:  
   `bash ~/.config-repo/setup/run-setup-shell-full.sh`
+
+5. For Mac systems, you can run the MacOS environment setup script:  
+  `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`
 
 ### Older Steps
 
