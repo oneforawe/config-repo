@@ -18,13 +18,14 @@ development environment for work.
   * RingCentral
   * Box (Box Drive)
   * Visual Studio (Professional 2022 LTSC)
-  * Microsoft SQL Server 2019 64-bit
+  * Microsoft SQL Server 2019 64-bit (with Management Studio)
   * Windows Terminal
   * Vim for Windows
   * Git for Windows
   * NVM for Windows (for Node 18, etc)
   * WSL2 (Windows Subsystem for Linux)
   * PuTTY (release 0.77 64-bit)
+  * Remote Desktop Connection (already installed by default?)
 
 ## Remap Keys
 
@@ -35,9 +36,9 @@ answer](https://superuser.com/questions/949385/map-capslock-to-control-in-window
 
 I saved a copy of this registry file [here](./remap/caps-to-control.reg).
 
-They say I should be able to see the changes after logging/signing in and out,
-but I'm not seeing it yet.  Maybe I'll have to reboot.  Nope; rebooting didn't
-help, but I found a solution:
+They say I should be able to see the changes after logging/signing out and back
+in, but I'm not seeing it yet (on a remote machine).  Maybe I'll have to reboot.
+Nope; rebooting didn't help, but I found a solution:
 
 I'm using RDC (Remote Desktop Connection) to connect to a Windows Server 2016
 machine, and it seems that the registry settings on the server are not being
@@ -51,6 +52,17 @@ interface:
 "Apply Windows key combinations:" > "On this computer"
 
 Then connect.  The key mapping should now work.
+
+## RDC
+
+In Remote Desktop Connection, besides the settings mentioned for Remap Keys, one
+can also conveniently make the origin filesystem available to the remote system,
+with the following setting.
+
+* `Options` > `Local Resources` > `Local devices and resources` > `More...` >
+`[X] Drives`
+
+One can also export and import (save and open) the settings as/from `.rdp` files.
 
 ## Mouse
 
@@ -304,6 +316,13 @@ Nice Settings:
 * Window > Appearance > Font settings > Font used in the terminal window >
 "Change..." button > pop-up (Here you can select the newly-installed "Monaco"
 font or any other installed font that satisfies PuTTY's requirements.)
+
+Export/Import Settings:
+
+* Exporting PuTTY settings:  
+  `reg export HKCU\Software\SimonTatham\PuTTY\Sessions ([Environment]::GetFolderPath("Desktop") + "\putty-sessions.reg")`
+* Importing PuTTY settings:  
+  `reg import putty-sessions.reg`
 
 Usage Issue:
 
