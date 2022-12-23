@@ -17,9 +17,11 @@ development environment for work.
   * Outlook
   * RingCentral
   * Box (Box Drive)
+  * Visual Studio Code
   * Visual Studio (Professional 2022 LTSC)
   * Microsoft SQL Server 2019 64-bit (with Management Studio)
   * Windows Terminal
+  * Oh My Posh
   * Vim for Windows
   * Git for Windows
   * NVM for Windows (for Node 18, etc)
