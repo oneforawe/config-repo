@@ -5,6 +5,27 @@
 For work, I'm using a Windows 10 system without access to the Microsoft/Windows
 Store.
 
+## Secondary Machine
+
+In addition to the physical laptop with Windows, I have access to a remote
+virtual machine as another development environment, which has become my primary
+development environment for work.
+
+* Access via Citrix Workspace 2210 ("IT" app)
+* Installed Software (more detail further below)
+  * OS: Windows 10
+  * Outlook
+  * RingCentral
+  * Box (Box Drive)
+  * Visual Studio (Professional 2022 LTSC)
+  * Microsoft SQL Server 2019 64-bit
+  * Windows Terminal
+  * Vim for Windows
+  * Git for Windows
+  * NVM for Windows (for Node 18, etc)
+  * WSL2 (Windows Subsystem for Linux)
+  * PuTTY (release 0.77 64-bit)
+
 ## Remap Keys
 
 For better keyboard ergonomics, you can use PowerToys to remap the CAPS-LOCK key
@@ -310,4 +331,3 @@ VSCode (Visual Studio Code) in WSL2 seems to have a problem with the
 markdownlint config file (maybe related to file-update-notification):  
 <https://github.com/DavidAnson/vscode-markdownlint/issues/103>  
 I'll try restarting/rebooting to see if it gets fixed: no, didn't get fixed.
-
