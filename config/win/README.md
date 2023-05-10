@@ -274,8 +274,13 @@ git segment.
   [here](https://stackoverflow.com/questions/10049316/how-do-you-run-vim-in-windows).
   (All of these become available: view, vim, vimdiff, vimtutor, evim, gview,
   gvim, gvimdiff.)  
-  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vimrc -Destination C:\Users\USERNAME\vimfiles\ -PassThru`  
-  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vim.d\colors\zenburn.vim -Destination C:\Users\USERNAME\vimfiles\colors\ -PassThru`
+  Settings: either
+  * create copies
+    * `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vimrc -Destination C:\Users\USERNAME\vimfiles\ -PassThru`
+    * `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vim.d\colors\zenburn.vim -Destination C:\Users\USERNAME\vimfiles\colors\ -PassThru`
+  * or create links
+    * `New-Item -ItemType SymbolicLink -Path C:\Users\USERNAME\vimfiles\vimrc -Target C:\Users\USERNAME\.config-repo\config\vim\vimrc`
+    * `New-Item -ItemType SymbolicLink -Path C:\Users\USERNAME\vimfiles\colors\zenburn.vim -Target C:\Users\USERNAME\.config-repo\config\vim\vim.d\colors\zenburn.vim`
 * git (EG [git-scm](https://git-scm.com/download/win), also promoted
   [here](https://gitforwindows.org/))
 * [nvm-windows](https://github.com/coreybutler/nvm-windows)
