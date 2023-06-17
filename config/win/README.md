@@ -284,9 +284,12 @@ git segment.
 * git (EG [git-scm](https://git-scm.com/download/win), also promoted
   [here](https://gitforwindows.org/))
 * [nvm-windows](https://github.com/coreybutler/nvm-windows)
-(node version manager for windows)  
-  Using `nvm-setup.exe` (via `nvm-setup.zip`)  
-  Use this to install node: EG `nvm install 16` and then `nvm use 16.x.y`
+(node version manager for windows)
+  * Installing/Upgrading NVM for Windows  
+    Install: `nvm-setup.exe` (via `nvm-setup.zip`)  
+    Upgrade: `nvm-update.exe` (via `nvm-update.zip`)
+  * Installing versions of Node  
+    EG: `nvm install 16` and then `nvm use 16.x.y`
 * ssh (see
 [instructions](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 )
