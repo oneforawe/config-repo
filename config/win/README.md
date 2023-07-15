@@ -9,9 +9,9 @@ Store.
 
 In addition to the physical laptop with Windows, I have access to a remote
 virtual machine as another development environment, which has become my primary
-development environment for work.
+development environment for work.  I call it DevVM.
 
-* Access via Citrix Workspace 2210 ("IT" app)
+* Access via Citrix Workspace 2210 (and shortcut "IT" app to DevVM desktop)
 * Installed Software (more detail further below)
   * OS: Windows 10
   * Outlook
@@ -64,7 +64,38 @@ with the following setting.
 * `Options` > `Local Resources` > `Local devices and resources` > `More...` >
 `[X] Drives`
 
-One can also export and import (save and open) the settings as/from `.rdp` files.
+One can also export and import (save and open) the settings as/from `.rdp`
+(Remote Desktop Protocol) files.
+
+## Citrix
+
+Citrix Workspace gives a list of available desktops, and with my current set-up
+the DevVM (development virtual machine) is called "IT" in that list.  (It's
+currently the only desktop in the list).  There's also a shortcut called "IT"
+(App) that directly opens the DevVM.  (I'm not sure how to rename it to be
+called "DevVM" instead.)
+
+Using the Citrix connection to the DevVM, the resolution is sometimes not very
+good.  To fix the resolution:
+
+* Open the Windows task bar (lower-right) notification area and make sure that
+the "Citrix Workspace" (reciever) icon is present.  If not, start the
+"Citrix Workspace" (receiver) app from the Windows search.
+* Open the Windows task bar notification area and right-click the
+"Citrix Workspace" receiver icon.
+* Select Advanced Preferences and click the "High DPI" settings.  The DPI
+settings dialog appears, with the question "Scale the session for high
+resolution?".
+* Change the settings as required. By default, the option "Let the operating
+system scale the resolution" is selected.  Instead, select "No, use the native
+resolution".
+* Select Save.
+* Restart the "Citrix Workspace" receiver for the Windows session for the
+changes to take effect.  (Right-click on the receiver icon again and select
+"Exit", then start the "Citrix Workspace" app from the Windows search.)
+
+Reference:
+[source](https://cloud9hosting.com/hosting/knowledgebase/10241/How-do-I-change-display-settings-in-Citrix-Receiver.html)
 
 ## Mouse
 
