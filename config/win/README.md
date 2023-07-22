@@ -325,6 +325,22 @@ git segment.
 [instructions](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 )
 
+## Data Science on Windows
+
+* Anaconda - [download](https://docs.anaconda.com/free/anaconda/install/windows/)
+
+Once installed, both "Anaconda Prompt" and "Anaconda Powershell Prompt" can be
+added to Windows Terminal.
+
+* Anaconda Prompt
+  * Command:  
+    `%WinDir%\System32\cmd.exe "/K" %USERPROFILE%\AppData\Local\anaconda3\Scripts\activate.bat`
+* Anaconda Powershell Prompt
+  * Command:  
+    `powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& '%USERPROFILE%\AppData\Local\anaconda3\shell\condabin\conda-hook.ps1' ; conda activate '%USERPROFILE%\AppData\Local\anaconda3' "`
+  * Icon:  
+    `%USERPROFILE%\AppData\Local\anaconda3\Menu\anaconda-navigator.ico`
+
 ## PuTTY
 
 When installing
