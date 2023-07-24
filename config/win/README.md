@@ -332,9 +332,20 @@ git segment.
 Once installed, both "Anaconda Prompt" and "Anaconda Powershell Prompt" can be
 added to Windows Terminal.
 
+See instructions here below. A reference with slightly different instructions is
+[here](https://dev.to/azure/easily-add-anaconda-prompt-in-windows-terminal-to-make-life-better-3p6j).
+
+In the Windows Terminal Settings, you can "Add a new profile" for each Anaconda
+shell / "Prompt", starting by duplicating another profile (such as "Command
+Prompt" and "Windows PowerShell").  You can get the appropriate command
+("Command line") by searching for the app (EG, "Anaconda Prompt") in the Windows
+search, right-clicking on the app, selecting "Open file location",
+right-clicking on the app, selecting "Properties", and copying the Shortcut
+Target.  That "target" can be simplified for the Terminal profile.
+
 * Anaconda Prompt
   * Command:  
-    `%WinDir%\System32\cmd.exe "/K" %USERPROFILE%\AppData\Local\anaconda3\Scripts\activate.bat`
+    `cmd.exe /K %USERPROFILE%\AppData\Local\anaconda3\Scripts\activate.bat`
 * Anaconda Powershell Prompt
   * Command:  
     `powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& '%USERPROFILE%\AppData\Local\anaconda3\shell\condabin\conda-hook.ps1' ; conda activate '%USERPROFILE%\AppData\Local\anaconda3' "`
