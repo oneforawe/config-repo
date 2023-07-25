@@ -1,0 +1,27 @@
+# The code below was originally placed in ~/.config-repo/config/zsh/zshrc
+# by the Anaconda installation process, when executing `conda init`.
+# The code was then manually removed and placed here, with a new reference to
+# this file being placed in the zsh configs (zshrc).
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# conda init code here
+# conda init code here
+# conda init code here
+# conda init code here
+# conda init code here
+# conda init code here
+# conda init code here
+# conda init code here
+# conda init code here
+# conda init code here
+# conda init code here
+# <<< conda initialize <<<
+
+
+# Ran this command to keep conda deactivated by default:
+# > conda config --set auto_activate_base false
+# To activate and deactivate the "base" environment:
+# > conda activate
+# > conda deactivate
