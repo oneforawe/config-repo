@@ -2,11 +2,14 @@
 
 This repository contains:
 
-1. my personal customized computer user configuration files (for both GNU/Linux
-and MacOS), and
+1. config: my personal customized computer user configuration files (mainly for
+GNU/Linux and MacOS but also some configs and setup commands for Windows);
 
-2. executable scripts to apply these configurations for shells, shell apps, the
-Mac desktop, and Mac GUI apps.
+2. setup: executable scripts to apply these configurations for shells, shell
+apps, the Mac desktop, and Mac GUI apps; and
+
+3. notes/reference: notes on the repo (in the `notes` folder), notes on the
+configs (in the `config` folder), and a reference for common commands.
 
 The purpose of this repo is mostly for my own convenience, to make my working
 environment consistent across different machines and to make it very easy to set
