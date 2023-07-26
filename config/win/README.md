@@ -196,6 +196,8 @@ Note: WSL Ubuntu uses System V, not systemd for process management.
   * `wsl --list --running`
   * `wsl --shutdown`
   * `wsl --terminate <distro>`
+* More Commands
+  * [WSL basic commands](https://learn.microsoft.com/en-us/windows/wsl/basic-commands)
 
 ### Ubuntu Terminal
 
