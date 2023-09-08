@@ -14,7 +14,7 @@ there.
 
 ## GNU/Linux (via WSL within Windows)
 
-* See if the `settings.json` file location here is obsolete..
+* [TODO: See if the `settings.json` file location below is obsolete.]
 * Executed with PowerShell in host Windows machine
   `New-Item -ItemType HardLink -Path "C:\Users\andrew.forrester\AppData\Roaming\Code\User\settings.json" -Target "C:\Users\andrew.forrester\.config-repo\config\vscode\settings.json"`
 * Executed with Bash in guest Linux machine
@@ -22,7 +22,7 @@ there.
 
 ## Windows
 
-* See if the `settings.json` file location here is obsolete..
+* [TODO: See if the `settings.json` file location below is obsolete.]
 * Executed with PowerShell  
   `.$Home\.config-repo\config\vscode\extensions-manual.sh` (won't work if in
   restricted mode, with ExecutionPolicy set to Restricted)  
