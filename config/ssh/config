@@ -13,10 +13,12 @@
 # Troublshooting (examples):
 # > ssh -T git@github.com
 # > ssh -Tvvv git@github.com
-# Ensure proper permissions on ssh files and directories.
+#  Ensure proper permissions on ssh files and directories.
 # https://superuser.com/questions/215504/permissions-on-private-key-in-ssh-folder
 
 # Git
+# Example git-based website documentation for SSH:
+#  https://docs.gitlab.com/ee/user/ssh.html
 # Given a git repository, with a remote origin and a local copy:
 # Add the public key at the origin, to the remote online repository.
 # Ensure the local git repository is set up for SSH (rather than HTTPS):
