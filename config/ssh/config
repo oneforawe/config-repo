@@ -1,0 +1,34 @@
+# Reference
+# =========
+
+# SSH
+# Generate key pair:
+# > ssh-keygen -f id_key_file -t ed25519 -C "user@example.com"
+# Start the ssh-agent in the background:
+# > eval "$(ssh-agent -s)"
+# Add the private key to the agent:
+# > ssh-add ~/.ssh/keys/id_key_file
+# Verify (list keys):
+# > ssh-add -l
+# Troublshooting (examples):
+# > ssh -T git@github.com
+# > ssh -Tvvv git@github.com
+# Ensure proper permissions on ssh files and directories.
+# https://superuser.com/questions/215504/permissions-on-private-key-in-ssh-folder
+
+# Git
+# Given a git repository, with a remote origin and a local copy:
+# Add the public key at the origin, to the remote online repository.
+# Ensure the local git repository is set up for SSH (rather than HTTPS):
+# > git remote -v
+# HTTPS => origin  https://...
+# SSH   => origin  git@...
+# Change the remote origin to SSH (example):
+# > git remote set-url origin git@github.com:OWNER/REPOSITORY.git
+
+Host github
+  Hostname github.com
+  User git
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/keys/github
+
