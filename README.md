@@ -14,7 +14,8 @@ configs (in the `config` folder), and a reference for common commands.
 The purpose of this repo is mostly for my own convenience, to make my working
 environment consistent across different machines and to make it very easy to set
 up a working environment on a new machine.  But for anyone who's curious, it's
-also here to share config ideas and enable you to try out my setup.
+also here to share config ideas and enable you to try out my setup.  See the
+[Terminology](./#terminology) section below for explanation of terms.
 
 ## Two Versions
 
