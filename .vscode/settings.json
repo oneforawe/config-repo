@@ -1,0 +1,35 @@
+{
+  "window.zoomLevel": -1,
+  "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
+  "editor.rulers": [72, 80],
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "markdownlint.config": {
+    "default": true,
+    "MD024": { "siblings_only": true },
+  },
+  "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.pylint": false,
+      "source.fixAll.eslint": false,
+      "source.fixAll.stylelint": false,
+      "source.fixAll.shellcheck": false,
+      "source.fixAll.markdownlint": true,
+    },
+  },
+  "[sh, bash]": {
+    "files.eol": "\n",
+    "editor.insertSpaces": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.pylint": false,
+      "source.fixAll.eslint": false,
+      "source.fixAll.stylelint": false,
+      "source.fixAll.markdownlint": false,
+      "source.fixAll.shellcheck": true,
+    },
+  },
+  "[powershell]": {
+    "files.eol": "\n",
+  },
+}
