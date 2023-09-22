@@ -1,0 +1,8 @@
+{
+  "window.zoomLevel": -1,
+  "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
+  "editor.rulers": [72, 80],
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+}

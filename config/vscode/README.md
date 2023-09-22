@@ -11,6 +11,8 @@ there.
 
 * [TODO: Decide how to handle `settings.json` and extensions.]
 * See `~/Library/Application Support/Code/User`
+* How about this as a start...  
+  `ln -sFfh $HOME/.config-repo/config/vscode/settings-global.json ~/Library/Application\ Support/Code/User/settings.json`
 
 ## GNU/Linux (via WSL within Windows)
 
