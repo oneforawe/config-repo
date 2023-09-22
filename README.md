@@ -83,12 +83,17 @@ packages:
 
 5. For Mac systems, you can run the MacOS environment setup script:  
   `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`  
-  You might also have to alter the `.gitconfig` file,  
+  You might also have to change the location of the git template, using a more
+  appropriate global location for Mac than your user `.config` folder, and using
+  a hard copy rather than a link into the config files:  
+  `cp ~/.config-repo/config/git/template/HEAD /opt/homebrew/share/git-core/templates/HEAD`  
+  And, accordingly, you'll have to alter the `.gitconfig` file,  
   from `templateDir = ~/.config/git/template/`  
-  to `templateDir = /opt/homebrew/share/git-core/templates/`,  
-  and change the location of the git template (using a hard copy rather than a
-  link into the config files):  
-  `cp ~/.config-repo/config/git/template/HEAD /opt/homebrew/share/git-core/templates/HEAD`
+  to `templateDir = /opt/homebrew/share/git-core/templates/`.  
+  Without that change, I got an error when attempting to git-clone:  
+  `Cloning into 'repository'...`  
+  `fatal: --stdin requires a git repository`  
+  `fatal: fetch-pack: invalid index-pack output`
 
 ### Older Steps
 
