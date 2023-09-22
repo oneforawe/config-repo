@@ -82,7 +82,13 @@ packages:
   `bash ~/.config-repo/setup/run-setup-shell-full.sh`
 
 5. For Mac systems, you can run the MacOS environment setup script:  
-  `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`
+  `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`  
+  You might also have to alter the `.gitconfig` file,  
+  from `templateDir = ~/.config/git/template/`  
+  to `templateDir = /opt/homebrew/share/git-core/templates/`,  
+  and change the location of the git template (using a hard copy rather than a
+  link into the config files):  
+  `cp ~/.config-repo/config/git/template/HEAD /opt/homebrew/share/git-core/templates/HEAD`
 
 ### Older Steps
 
