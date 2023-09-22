@@ -59,17 +59,31 @@ https or ssh (written below in an abbreviated form that uses an ssh config):
    <https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed>
 
 2. Copy the git config file as a dot-file to the home directory, and edit to
-remove the user info. This is the global gitconfig file. Then execute the
-additional commands below (editing to give your appropriate identity) to modify
-the repo's local config file in `~/.config-repo/.git/config`:  
-  `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`  
-  `git config user.name "Your Name"`  
-  `git config user.email you@example.com`  
-  (Alternatively, you can add a `.gitconfig` in the top level of the
-  repo and add that file to the local `include.path`:  
-  `cp ~/.config-repo/config/git/gitconfig ~/.config-repo/.gitconfig`  
+remove the user info (or put appropriate default user info). This is the global
+gitconfig file. For me, the owner of this repo, I can execute the additional
+commands below to modify the repo's local config file in
+`~/.config-repo/.git/config` (editing to give my appropriate identity):  
+  `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`  (and edit as desired)  
+  In `~/.config-repo`:
+  `git config user.name "My Name"`  
+  `git config user.email me@example.com`  
+  (Alternatively, I could add a `.gitconfig` in the top level of the repo and
+  add that file to the local `include.path`:  
+  `cp ~/.config-repo/config/git/gitconfig ~/.config-repo/.gitconfig`  (and edit)  
   `git config --local include.path ../.gitconfig`  
-  )
+  )  
+  For Mac systems, you might have to change the location of the git template,
+  using a more appropriate global location for Mac than your user `.config`
+  folder, and using a hard copy rather than a link into the config files.  For
+  instance:  
+  `cp ~/.config-repo/config/git/template/HEAD /opt/homebrew/share/git-core/templates/HEAD`  
+  And, accordingly, you'll have to alter the `~/.gitconfig` file,  
+  changing `templateDir = ~/.config/git/template/`  
+  to `templateDir = /opt/homebrew/share/git-core/templates/`.  
+  Without that change, I got an error when attempting to git-clone:  
+  `Cloning into 'repository'...`  
+  `fatal: --stdin requires a git repository`  
+  `fatal: fetch-pack: invalid index-pack output`
 
 3. If intending on using emacs (with a config file that enables org-mode), prep
 for org-mode usage (to eliminate start-up errors):  
@@ -83,17 +97,6 @@ packages:
 
 5. For Mac systems, you can run the MacOS environment setup script:  
   `bash ~/.config-repo/setup/run-setup-MacOS-env.sh`  
-  You might also have to change the location of the git template, using a more
-  appropriate global location for Mac than your user `.config` folder, and using
-  a hard copy rather than a link into the config files:  
-  `cp ~/.config-repo/config/git/template/HEAD /opt/homebrew/share/git-core/templates/HEAD`  
-  And, accordingly, you'll have to alter the `.gitconfig` file,  
-  from `templateDir = ~/.config/git/template/`  
-  to `templateDir = /opt/homebrew/share/git-core/templates/`.  
-  Without that change, I got an error when attempting to git-clone:  
-  `Cloning into 'repository'...`  
-  `fatal: --stdin requires a git repository`  
-  `fatal: fetch-pack: invalid index-pack output`
 
 ### Older Steps
 
