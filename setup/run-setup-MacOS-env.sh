@@ -102,6 +102,20 @@ killall Dock
 #System Preferences > Keyboard > Shortcuts > Mission Control > "Switch to Desktop 2"..."^2" (check)
 
 
+# This may only be necessary in MacOS Ventura:
+# To get the alphanumeric keys to repeat when pressed and held
+# (rather than showing a popup with special character suggestions),
+# do the following:
+# * Enter this command in the terminal:
+#   defaults write -g ApplePressAndHoldEnabled -bool false
+# * Log out and log back in.
+# * To return to the original behavior, enter this command (and log out and in):
+#   defaults write -g ApplePressAndHoldEnabled -bool true
+# References:
+# https://discussions.apple.com/thread/252555877
+# https://apple.stackexchange.com/questions/332769/macos-disable-popup-showing-accented-characters-when-holding-down-a-key
+
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
