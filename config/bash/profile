@@ -43,6 +43,11 @@ fi
 # For MacOS
 if [ "$(uname -s)" = "Darwin" ] ; then
 
+	# Update PATH for Homebrew (for Apple Silicon computer)
+	if [ -d "/opt/homebrew/bin" ] ; then
+		export PATH="/opt/homebrew/bin:$PATH"
+	fi
+
 	# Update PATH for the Google Cloud SDK
 	if [ -f "$HOME/Tools/google-cloud-sdk/path.zsh.inc" ] ; then
 		. "$HOME/Tools/google-cloud-sdk/path.zsh.inc"
@@ -55,7 +60,7 @@ if [ "$(uname -s)" = "Darwin" ] ; then
 	# Flutter SDK
 	export PATH="$HOME/Tools/flutter/bin:$PATH"
 
-	# Run RubyGems without sudo admin privileges.
+	# Run RubyGems without sudo admin privileges. (Used with Flutter.)
 	export GEM_HOME="$HOME/.gem"
 	export PATH="$GEM_HOME/bin:$PATH"
 
