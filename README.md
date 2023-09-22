@@ -64,7 +64,7 @@ gitconfig file. For me, the owner of this repo, I can execute the additional
 commands below to modify the repo's local config file in
 `~/.config-repo/.git/config` (editing to give my appropriate identity):  
   `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`  (and edit as desired)  
-  In `~/.config-repo`:
+  In `~/.config-repo`:  
   `git config user.name "My Name"`  
   `git config user.email me@example.com`  
   (Alternatively, I could add a `.gitconfig` in the top level of the repo and
