@@ -9,7 +9,7 @@
 
 # Executing this code:
 # Bash:
-# bash ~\.config-repo\config\vscode\extensions-manual.sh
+# bash ~/.config-repo/config/vscode/extensions-manual.sh
 # PowerShell:
 # .$Home\.config-repo\config\vscode\extensions-manual.sh
 
