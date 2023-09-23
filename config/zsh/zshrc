@@ -23,7 +23,7 @@ source ~/.bashrc
 
 # For MacOS
 if [[ `uname -s` = "Darwin" ]] ; then
-    source ~/.config/zsh/zshrc_etc_mac
+  source ~/.config/zsh/zshrc_etc_mac
 fi
 
 # For conda / anaconda (on work Dev VM)
