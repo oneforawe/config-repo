@@ -1,4 +1,3 @@
-
 # emacs
 
 GNU Emacs, or Emacs, is a very versatile and powerful text editor that can run
@@ -16,15 +15,13 @@ help, the manual, a tutorial, etc.  In the shell you can also enter
 `info emacs` to see its info file.
 
 And for more info from the GNU website itself, see  
-  https://www.gnu.org/software/emacs
-
+  <https://www.gnu.org/software/emacs>
 
 ## note
 
 This set of configurations is probably the most disorganized and aesthetically
 displeasing of all my configuration files.  Over time it should improve as I
 hone it further.
-
 
 ## configurations
 
@@ -33,9 +30,8 @@ to use vi key-bindings (using "evil").  I've also configured it to use Org Mode
 (and evil-org-mode).
 
 For more info, see  
-  https://orgmode.org  
-  https://github.com/Somelauw/evil-org-mode
-
+  <https://orgmode.org>  
+  <https://github.com/Somelauw/evil-org-mode>
 
 ## reference
 
@@ -51,6 +47,7 @@ the full path to the submodule at the end of the command.
 * `git submodule add https://github.com/jwiegley/use-package.git use-package`
 
 Note: I was orginally using these urls for org-mode and evil-org(-mode):
+
 * `git submodule add https://code.orgmode.org/bzg/org-mode.git org`
 * `git submodule add https://git.savannah.gnu.org/git/emacs/org-mode.git org`
 * `git submodule add https://github.com/Somelauw/evil-org-mode.git evil-org`

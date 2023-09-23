@@ -1,4 +1,3 @@
-
 # bash
 
 For an intro to bash, see the general references below.  To get clarity on how
@@ -11,9 +10,9 @@ readable file in this list: `~/.bash_profile`, `~/.bash_login`, `~/.profile`.
 
 The file `/etc/profile` is the system-wide initialization file, executed for
 login shells for all users.  The other three initialization files are
-user-specific, located in a user's home directory (<code>~</code>).  The file
-`~/.profile` in particular is included for backwards compatibility, since that's
-the login script filename used by the original Bourne shell `/bin/sh`.
+user-specific, located in a user's home directory (`~`).  The file `~/.profile`
+in particular is included for backwards compatibility, since that's the login
+script filename used by the original Bourne shell `/bin/sh`.
 
 When bash is invoked as a non-login shell, it executes this file, if it exists:
 `~/.bashrc`.
@@ -21,11 +20,11 @@ When bash is invoked as a non-login shell, it executes this file, if it exists:
 Each of these files may `source` other files, that is, refer bash to those other
 files for execution.
 
-
 ## plan
 
 So, my plan is the following:
 
+<!-- markdownlint-disable MD033 -->
 <table>
   <tbody>
     <tr>
@@ -82,17 +81,17 @@ So, my plan is the following:
     </tr>
   </tbody>
 </table>
-
+<!-- markdownlint-enable MD033 -->
 
 ## references
 
 Regarding config files:
 
-1. https://superuser.com/questions/789448/choosing-between-bashrc-profile-bash-profile-etc
-2. https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc
-3. http://tristram.squarespace.com/home/2012/7/20/why-profile-bash_profile-and-bash_login.html
-4. https://serverfault.com/questions/261802/what-are-the-functional-differences-between-profile-bash-profile-and-bashrc
-5. http://mywiki.wooledge.org/DotFiles
+1. <https://superuser.com/questions/789448/choosing-between-bashrc-profile-bash-profile-etc>
+2. <https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc>
+3. <http://tristram.squarespace.com/home/2012/7/20/why-profile-bash_profile-and-bash_login.html>
+4. <https://serverfault.com/questions/261802/what-are-the-functional-differences-between-profile-bash-profile-and-bashrc>
+5. <http://mywiki.wooledge.org/DotFiles>
 
 General:
 

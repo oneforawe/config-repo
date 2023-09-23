@@ -1,4 +1,3 @@
-
 # configs by application
 
 | domain               | folders |
@@ -13,7 +12,6 @@ This could be a useful reference:
 
 * [Shell Comparisons](http://hyperpolyglot.org/unix-shells) (Bash, Fish, Ksh,
   Tcsh, Zsh)
-
 
 | app name | name derivation |
 | -------- | --------------- |

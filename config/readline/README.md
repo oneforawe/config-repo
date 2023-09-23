@@ -1,4 +1,3 @@
-
 # readline
 
 GNU Readline is a general utility for command-line interaction that can be used
@@ -7,7 +6,6 @@ different programs.  In the file `inputrc` you can select a pre-defined key
 mapping (emacs style by default, or vi style) or define your own custom key
 mapping with individually defined key bindings (or "hot keys" or keyboard
 "short-cuts", etc).
-
 
 ## un-ideal
 
@@ -52,7 +50,7 @@ bindings and access information about them.
       `:map`
   * __Regarding emacs__
     * Default key bindings, good reference:  
-       https://caiorss.github.io/Emacs-Elisp-Programming/Keybindings.html
+       <https://caiorss.github.io/Emacs-Elisp-Programming/Keybindings.html>
     * Get info:  
       `$ emacs`  (follow instructions to see help, manual, tutorial)  
       Can also see more info at:  

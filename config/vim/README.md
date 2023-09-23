@@ -1,4 +1,3 @@
-
 # vim
 
 The vim text editor is a very versatile and popular editor.  Enter `man vim` in
@@ -15,16 +14,16 @@ started you can use the vim tutor by entering `vimtutor` in the shell and then
 following the instructions.
 
 And for more info from the vim website itself, see  
-  https://www.vim.org
+  <https://www.vim.org>
 
 More advanced ideas: look at blog posts and youtube videos, like these posts:
-* VIM AFTER 15 YEARS  
-   https://statico.github.io/vim3.html
-* Buffers, Windows, Tab Pages  
-   https://romainl.github.io/the-patient-vimmer/2.html
-* Why I love Vim: It’s the lesser-known features that make it so amazing  
-   https://www.freecodecamp.org/news/learn-linux-vim-basic-features-19134461ab85/
 
+* VIM AFTER 15 YEARS  
+   <https://statico.github.io/vim3.html>
+* Buffers, Windows, Tab Pages  
+   <https://romainl.github.io/the-patient-vimmer/2.html>
+* Why I love Vim: It’s the lesser-known features that make it so amazing  
+   <https://www.freecodecamp.org/news/learn-linux-vim-basic-features-19134461ab85/>
 
 ## submodules
 
@@ -34,7 +33,6 @@ github repos. For example, the folder `vim.d/pack/external/start/vim-fold-cycle`
 a submodule by executing the following (in its containing folder):
 
 `git submodule add https://github.com/arecarn/vim-fold-cycle.git vim-fold-cycle`
-
 
 ## reference
 
@@ -56,4 +54,4 @@ Also, I don't think I've used this command, but I might want to keep it in mind:
 `git submodule update --init --recursive`
 
 Might want to look at a more up-to-date reference, or see this blog post:  
-  https://github.blog/2016-02-01-working-with-submodules/
+  <https://github.blog/2016-02-01-working-with-submodules/>
