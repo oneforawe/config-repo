@@ -20,35 +20,18 @@ export EDITOR=vim
 export PATH="/usr/sbin/:$PATH"
 export PATH="/usr/local/sbin:$PATH" # recommended by "brew doctor" [2019-01-08]
 
-# To include, eg, kaggle API (in MacOS)
-export PATH="$HOME/.local/bin:$PATH"
-
-# Set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-	PATH="$HOME/bin:$PATH"
-fi
-
-
-# WHERE ARE THESE COMING FROM (MacOS):
-#/usr/local/bin
-#/usr/bin
-#/bin
-#/usr/sbin
-#/sbin
-#/opt/X11/bin
-#/Users/zero/.local/bin
-#/usr/local/sbin
-
 
 # For MacOS
 if [ "$(uname -s)" = "Darwin" ] ; then
 
-	# Update PATH for Homebrew (for Apple Silicon computer)
+	# Update PATH:
+
+	# Homebrew (for Apple Silicon computer)
 	if [ -d "/opt/homebrew/bin" ] ; then
 		export PATH="/opt/homebrew/bin:$PATH"
 	fi
 
-	# Update PATH for the Google Cloud SDK
+	# Google Cloud SDK
 	if [ -f "$HOME/Tools/google-cloud-sdk/path.zsh.inc" ] ; then
 		. "$HOME/Tools/google-cloud-sdk/path.zsh.inc"
 	fi
@@ -56,6 +39,11 @@ if [ "$(uname -s)" = "Darwin" ] ; then
 	if [ -f "$HOME/Tools/google-cloud-sdk/completion.zsh.inc" ] ; then
 		. "$HOME/Tools/google-cloud-sdk/completion.zsh.inc"
  	fi
+
+	# Dart and Flutter (pub.dev)
+	if [ -d "$HOME/.pub-cache/bin" ] ; then
+		export PATH="$PATH:$HOME/.pub-cache/bin"
+	fi
 
 	# Flutter SDK
 	if [ -d "$HOME/Tools/flutter/bin" ] ; then
@@ -101,6 +89,17 @@ if [ "$(uname -s)" = "Linux" ] ; then
 	export CPATH="$HOME/Software/usr/include:$CPATH"
 	export PKG_CONFIG_PATH="$HOME/Software/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
 	export LD_LIBRARY_PATH="$HOME/Software/usr/lib:$LD_LIBRARY_PATH"
+fi
+
+
+# To include, for example, kaggle API (in MacOS)
+if [ -d "$HOME/.local/bin" ] ; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Include user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+	export PATH="$HOME/bin:$PATH"
 fi
 
 

@@ -8,3 +8,8 @@
 
 # Use completion system (including git-completion?) ?
 autoload -Uz compinit && compinit
+
+# Activate Dart CLI Completion
+if [ -f "$HOME/.dart-cli-completion/zsh-config.zsh" ]; then
+  source "$HOME/.dart-cli-completion/zsh-config.zsh"
+fi
