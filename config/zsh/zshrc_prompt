@@ -21,12 +21,12 @@
 # -----------------------------------------------------------------------------
 DISABLE_AUTO_TITLE="true"
 function set_the_window_tab_title () {
-    # Getting rid of ".app" post-fix from "iTerm.app" (via substring removal):
-    terminal_name="${TERM_PROGRAM%.*}"
-    # Getting rid of "Apple_" pre-fix from "Apple_Terminal" (substring removal):
-    terminal_name="${terminal_name#*_}"
-    window_title="${terminal_name} - %m : ${PWD##*/}"
-    print -Pn "\e]0;${window_title}\a"
+  # Getting rid of ".app" post-fix from "iTerm.app" (via substring removal):
+  terminal_name="${TERM_PROGRAM%.*}"
+  # Getting rid of "Apple_" pre-fix from "Apple_Terminal" (substring removal):
+  terminal_name="${terminal_name#*_}"
+  window_title="${terminal_name} - %m : ${PWD##*/}"
+  print -Pn "\e]0;${window_title}\a"
 }
 
 
@@ -68,17 +68,17 @@ function pipeClean {
 # colors:
 ROOT_USER_COLOR="196" # bright red
 if   [[ " `uname -n` " = *soliton* ]] ; then
-    TIMESTAMP_COLOR="081" # muted light blue
-    USER_HOST_COLOR="105" # muted light purple
+  TIMESTAMP_COLOR="081" # muted light blue
+  USER_HOST_COLOR="105" # muted light purple
 elif [[ " `uname -n` " = *maclap* ]] ; then
-    TIMESTAMP_COLOR="081" # muted light blue
-    USER_HOST_COLOR="105" # muted light purple
+  TIMESTAMP_COLOR="081" # muted light blue
+  USER_HOST_COLOR="105" # muted light purple
 elif [[ " `uname -n` " = *momentus* ]] ; then
-    TIMESTAMP_COLOR="230" # light cream
-    USER_HOST_COLOR="208" # muted orange
+  TIMESTAMP_COLOR="230" # light cream
+  USER_HOST_COLOR="208" # muted orange
 else
-    TIMESTAMP_COLOR="081" # muted light blue
-    USER_HOST_COLOR="226" # light yellow
+  TIMESTAMP_COLOR="081" # muted light blue
+  USER_HOST_COLOR="226" # light yellow
 fi
 STATUS_COLOR="002" # bright green
 PWD_COLOR="034"    # muted green
@@ -102,41 +102,41 @@ VI_MODE=$INSERT_MODE
 function newline ()           { print -P "%{\n%}" }
 function show_timestamp ()    { print -P "%F{$TIMESTAMP_COLOR}[$TIMESTAMP]%f" }
 function show_user_host_ip () {
-    if [[ $(id -u) = 0 ]] ; then
-        # root/super user (red - as warning/notice)
-        print -P "%F{$ROOT_USER_COLOR}%B$USER%b%f %F{$USER_HOST_COLOR}@ $(uname -n) [$IP_ADDR]%f"
-    else
-        # normal user (default color)
-        print -P "%F{$USER_HOST_COLOR}$USER @ $(uname -n) [$IP_ADDR]%f"
-    fi
+  if [[ $(id -u) = 0 ]] ; then
+    # root/super user (red - as warning/notice)
+    print -P "%F{$ROOT_USER_COLOR}%B$USER%b%f %F{$USER_HOST_COLOR}@ $(uname -n) [$IP_ADDR]%f"
+  else
+    # normal user (default color)
+    print -P "%F{$USER_HOST_COLOR}$USER @ $(uname -n) [$IP_ADDR]%f"
+  fi
 }
 function show_status ()       { print -P "%F{$STATUS_COLOR}\($STATUS\)%f" }
 function show_path ()         { print -P "%F{$PWD_COLOR}${PWD}%f" }
 function show_env () {
-    # Using `-n $(echo $CONDA_DEFAULT_ENV)` instead of `-v CONDA_DEFAULT_ENV`
-    # to be compatible with older versions of bash / zsh.
-    if [[ -n $(echo $CONDA_DEFAULT_ENV) ]] ; then
-        print -P "conda env:\(${CONDA_DEFAULT_ENV}\) "
-    fi
-    if [[ -n $(echo $VIRTUAL_ENV) ]] ; then
-        # Get substring before last dash:
-        TEMP_ENV_STRING=$(echo ${VIRTUAL_ENV%-*})
-        # Get substring after last slash:
-        ABBREVIATED_PYTHON_ENV=$(echo ${TEMP_ENV_STRING##*/})
-        print -P "pyenv:\(${ABBREVIATED_PYTHON_ENV}\) "
-        # Example:
-        # Turn '/home/username/.local/share/virtualenvs/trigger-server-CADR64LI'
-        # (IE environment name 'project-name-HA$H')
-        # Into 'trigger-server'
-        # (IE abbreviated env name 'project-name')
-    fi
+  # Using `-n $(echo $CONDA_DEFAULT_ENV)` instead of `-v CONDA_DEFAULT_ENV`
+  # to be compatible with older versions of bash / zsh.
+  if [[ -n $(echo $CONDA_DEFAULT_ENV) ]] ; then
+    print -P "conda env:\(${CONDA_DEFAULT_ENV}\) "
+  fi
+  if [[ -n $(echo $VIRTUAL_ENV) ]] ; then
+    # Get substring before last dash:
+    TEMP_ENV_STRING=$(echo ${VIRTUAL_ENV%-*})
+    # Get substring after last slash:
+    ABBREVIATED_PYTHON_ENV=$(echo ${TEMP_ENV_STRING##*/})
+    print -P "pyenv:\(${ABBREVIATED_PYTHON_ENV}\) "
+    # Example:
+    # Turn '/home/username/.local/share/virtualenvs/trigger-server-CADR64LI'
+    # (IE environment name 'project-name-HA$H')
+    # Into 'trigger-server'
+    # (IE abbreviated env name 'project-name')
+  fi
 }
 function show_host_letter () {
-    host_name="$(uname -n)"
-    host_name_letter="$(echo $host_name | head -c 1)"
-    host_name_letter_cap=$( echo "$host_name_letter" | awk '{ print toupper($0) }' )
-    echo "%F{$USER_HOST_COLOR}%B$host_name_letter_cap%b%f " # now using "echo" here
-    # b/c using "print -P" causes tab-completion trouble (re-printing of commands)
+  host_name="$(uname -n)"
+  host_name_letter="$(echo $host_name | head -c 1)"
+  host_name_letter_cap=$( echo "$host_name_letter" | awk '{ print toupper($0) }' )
+  echo "%F{$USER_HOST_COLOR}%B$host_name_letter_cap%b%f " # now using "echo" here
+  # b/c using "print -P" causes tab-completion trouble (re-printing of commands)
 }
 
 function show_prompt_pre_line_1 () { print -P "" }
@@ -145,12 +145,12 @@ function show_prompt_line_2 ()     { print -P "  \u2502 $(show_path)" }
 function show_prompt_line_final () { echo "$VI_MODE \u2514 " } # now using "echo" here
 # b/c using "print -P" causes tab-completion trouble (re-printing of commands)
 function show_prompt_line_opt ()   {
-    if [[ -n $(echo $CONDA_DEFAULT_ENV) ]] || [[ -n $(echo $VIRTUAL_ENV) ]] || [[ -n $(git_prompt_info) ]] ; then
-        print -P "  \u2502 $(show_env)$(git_prompt_info)"
-    fi
+  if [[ -n $(echo $CONDA_DEFAULT_ENV) ]] || [[ -n $(echo $VIRTUAL_ENV) ]] || [[ -n $(git_prompt_info) ]] ; then
+    print -P "  \u2502 $(show_env)$(git_prompt_info)"
+  fi
 }
 function prompt_symbol () {
-    print -P ">"
+  print -P ">"
 }
 
 # Original default: "DEFAULT" short prompt (from robbyrussell theme)
@@ -160,14 +160,14 @@ PROMPT_SMALL='${ret_status} $VI_MODE $(show_host_letter)%F{034}%B%c%b%f $(show_e
 # New default: set initial prompt style
 if [[ " `uname -n` " = *soliton* ]] || [[ " `uname -n` " = *maclap* ]] || [[ " `uname -n` " = *momentus* ]] ;
 then
-    #PROMPT_SIZE="DEFAULT"
-    PROMPT_SIZE="SMALL"
-    #PROMPT_SIZE="LARGE"
-    PROMPT_SPACE="LOOSE"
-    #PROMPT_SPACE="TIGHT"
+  #PROMPT_SIZE="DEFAULT"
+  PROMPT_SIZE="SMALL"
+  #PROMPT_SIZE="LARGE"
+  PROMPT_SPACE="LOOSE"
+  #PROMPT_SPACE="TIGHT"
 else
-    PROMPT_SIZE="LARGE"
-    PROMPT_SPACE="LOOSE"
+  PROMPT_SIZE="LARGE"
+  PROMPT_SPACE="LOOSE"
 fi
 
 
@@ -176,52 +176,52 @@ fi
 
 # precmd: executed before the (primary) prompt (but not when prompt is redrawn).
 function precmd () {
-    # refresh prompt variables:
-    STATUS=$status  # exit code / exit status of previously executed command
-    if [[ $STATUS = 0 ]] ;
-    then STATUS_COLOR="green" ;
-    else STATUS_COLOR="red" ;
-    fi
-    #STATUS_COLOR="%(?."green"."red")"
-    TIMESTAMP=$(date +'%Y %b %d %a %H:%M:%S') #format '2020 Jan 01 Wed 23:59:59'
-    #IP_ADDR=$(ifconfig | grep broadcast | getFieldTwo | concatLinesWithCommas)
-    # Instead of the expression above, let's use the expression below to be
-    # compatible with older versions of bash
-    IP_ADDR=$(ifconfig | grep cast | getFieldTwo | pipeClean | concatLinesWithCommas)
-    if [[ -z $IP_ADDR ]] ; then IP_ADDR="IP_MISSING" ; fi
-    # print title:
-    set_the_window_tab_title
-    # print first part of prompt / peripheral pre-prompt:
-    if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_SIZE != "DEFAULT" ]] ; then
-        show_prompt_pre_line_1
-    fi
-    if [[ $PROMPT_SIZE = "LARGE" ]] ; then
-        show_prompt_line_1
-        show_prompt_line_2
-        show_prompt_line_opt
-    fi
+  # refresh prompt variables:
+  STATUS=$status  # exit code / exit status of previously executed command
+  if [[ $STATUS = 0 ]] ;
+  then STATUS_COLOR="green" ;
+  else STATUS_COLOR="red" ;
+  fi
+  #STATUS_COLOR="%(?."green"."red")"
+  TIMESTAMP=$(date +'%Y %b %d %a %H:%M:%S') #format '2020 Jan 01 Wed 23:59:59'
+  #IP_ADDR=$(ifconfig | grep broadcast | getFieldTwo | concatLinesWithCommas)
+  # Instead of the expression above, let's use the expression below to be
+  # compatible with older versions of bash
+  IP_ADDR=$(ifconfig | grep cast | getFieldTwo | pipeClean | concatLinesWithCommas)
+  if [[ -z $IP_ADDR ]] ; then IP_ADDR="IP_MISSING" ; fi
+  # print title:
+  set_the_window_tab_title
+  # print first part of prompt / peripheral pre-prompt:
+  if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_SIZE != "DEFAULT" ]] ; then
+    show_prompt_pre_line_1
+  fi
+  if [[ $PROMPT_SIZE = "LARGE" ]] ; then
+    show_prompt_line_1
+    show_prompt_line_2
+    show_prompt_line_opt
+  fi
 }
 
 function prepare-primary-prompt () {
-    case $KEYMAP in
-      (vicmd)      VI_MODE=$NORMAL_MODE ;;
-      (main|viins) VI_MODE=$INSERT_MODE ;;
-      (*)          VI_MODE=$INSERT_MODE ;;
-    esac
-    # print last (main) part of prompt / primary prompt:
-    if [[ $PROMPT_SIZE = "LARGE" ]] ; then
-        PROMPT=$'$(show_prompt_line_final)'
-    elif [[ $PROMPT_SIZE = "SMALL" ]] ; then
-        PROMPT=$PROMPT_SMALL
-    elif [[ $PROMPT_SIZE = "DEFAULT" ]] ; then
-        PROMPT=$PROMPT_DEFAULT
-    fi
+  case $KEYMAP in
+    (vicmd)      VI_MODE=$NORMAL_MODE ;;
+    (main|viins) VI_MODE=$INSERT_MODE ;;
+    (*)          VI_MODE=$INSERT_MODE ;;
+  esac
+  # print last (main) part of prompt / primary prompt:
+  if [[ $PROMPT_SIZE = "LARGE" ]] ; then
+    PROMPT=$'$(show_prompt_line_final)'
+  elif [[ $PROMPT_SIZE = "SMALL" ]] ; then
+    PROMPT=$PROMPT_SMALL
+  elif [[ $PROMPT_SIZE = "DEFAULT" ]] ; then
+    PROMPT=$PROMPT_DEFAULT
+  fi
 }
 
 # draw / redraw (primary) prompt:
 function zle-line-init zle-keymap-select {
-    prepare-primary-prompt
-    zle reset-prompt # reset/re-print primary prompt
+  prepare-primary-prompt
+  zle reset-prompt # reset/re-print primary prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -239,9 +239,9 @@ zle -N zle-keymap-select
 # Just after the prompt.
 # print the "post" part of the prompt / "peripheral post-prompt"
 function preexec() {
-    if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_SIZE != "DEFAULT" ]] ; then
-        print ""  # newline
-    fi
+  if [[ $PROMPT_SPACE = "LOOSE" ]] && [[ $PROMPT_SIZE != "DEFAULT" ]] ; then
+    print ""  # newline
+  fi
 }
 # zsh executes preexec after it reads a command but before executing it.
 
