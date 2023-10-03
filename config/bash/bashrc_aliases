@@ -50,7 +50,7 @@ unalias gbd 2>/dev/null # git branch -d (delete) - dangerous; just write it out
 
 # diff
 function difff {
-	diff -u $1 $2 | diff-so-fancy
+	diff -u "$1" "$2" | diff-so-fancy
 }
 
 # will probably want to edit this after finishing work on bash prompts
@@ -62,13 +62,13 @@ function whereami () {
 	mag=$'\e[1;35m'
 	cyn=$'\e[1;36m'
 	end=$'\e[0m'
-	if   [[ `uname -n` = "soliton.local" ]] ; then
+	if   [[ $(uname -n) = "soliton.local" ]] ; then
 		if [[ -n $ZSH_VERSION ]] ; then
 			print -P "%F{$USER_HOST_COLOR}soliton (MacOS)%f"
 		elif [[ -n $BASH_VERSION ]] ; then
 			printf "%s\n" "${blu}soliton (MacOS)${end}"
 		fi
-	elif [[ `uname -n` = "momentus" ]] ; then
+	elif [[ $(uname -n) = "momentus" ]] ; then
 		if [[ -n $ZSH_VERSION ]] ; then
 			print -P "%F{$USER_HOST_COLOR}momentus (GNU/Linux)"
 		elif [[ -n $BASH_VERSION ]] ; then
@@ -76,9 +76,9 @@ function whereami () {
 		fi
 	else
 		if [[ -n $ZSH_VERSION ]] ; then
-			print -P "%F{$USER_HOST_COLOR}`uname -n`%f"
+			print -P "%F{$USER_HOST_COLOR}$(uname -n)%f"
 		elif [[ -n $BASH_VERSION ]] ; then
-			printf "%s\n" "${yel}`uname -n`${end}"
+			printf "%s\n" "${yel}$(uname -n)${end}"
 		fi
 		echo "..not in the usual soliton or momentus.."
 	fi
@@ -89,15 +89,15 @@ function level () {
 	echo " What kind/level of shell are you in? "
 	echo "--------------------------------------"
 	if [[ " $- " = *l* ]] ; then
-		echo "echo \$- = $(echo $-)"
-		echo "l ==> You're in a login shell."
-		echo "      (rather than a sub shell)"
-		echo "\n LOGIN shell"
+		printf ' echo $- = %s' "$-"
+		printf '\n %s'     "l ==> You're in a login shell."
+		printf '\n %s'     "      (rather than a sub shell)"
+		printf '\n\n %s\n' "LOGIN shell"
 	else
-		echo "echo \$- = $(echo $-)"
-		echo "no l ==> You're in a sub shell."
-		echo "      (rather than a login shell)"
-		echo "\n SUB shell"
+		printf ' echo $- = %s' "$-"
+		printf '\n %s'     "no l ==> You're in a sub shell."
+		printf '\n %s'     "      (rather than a login shell)"
+		printf '\n\n %s\n' "SUB shell"
 	fi
 }
 
@@ -131,10 +131,13 @@ function which-tmux-session {
 
 
 
+# On and before commit 8b3de6f, the git functions below worked while using old
+# syntax that gave errors from ShellCheck.
+
 function git-branch-create {
-	git checkout -b $1 # $1 = <branch-name>
+	git checkout -b "$1" # $1 = <branch-name>
 	printf "Ready to (automatically) set origin and upstream connections? (yes/no) "
-	read readytocontinue
+	read -r readytocontinue
 	printf "\n"
 	if [ "${readytocontinue}" != "yes" ]; then
 		# Not ready. Stop.
@@ -145,7 +148,7 @@ function git-branch-create {
 		#git branch --set-upstream-to=origin/<upstream-branch-name> <branch-name>
 		#git branch --set-upstream-to=origin/$1 $1
 		#git push --set-upstream origin <upstream-branch-name>
-		git push --set-upstream origin $1
+		git push --set-upstream origin "$1"
 		#git push origin <origin-branch-name>
 		#git push origin $1  # not sufficient for my uses
 	fi
@@ -175,7 +178,7 @@ function git-branch-list-with-descriptions () {
 	# initial version (which I've changed slightly) was from
 	# https://github.com/bahmutov/git-branches/blob/master/branches.sh
 
-	branches=`git branch --list $1`
+	branches=$(git branch --list "$1")
 
 	# requires git > v.1.7.9
 
@@ -190,18 +193,18 @@ function git-branch-list-with-descriptions () {
 		# git marks current branch with "* ", remove it
 		clean_branch_name=${branch//\*\ /}
 		# replace all escape sequences (including colors, etc)
-		clean_branch_name=`echo $clean_branch_name | tr -d '[:cntrl:]' | sed -E "s/\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"`
+		clean_branch_name=$(echo "$clean_branch_name" | tr -d '[:cntrl:]' | sed -E "s/\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g")
 		# replace symbolic-ref like `HEAD -> master`
-		clean_branch_name=`echo $clean_branch_name | sed -E "s/^.+ -> //g"`
+		clean_branch_name=$(echo "$clean_branch_name" | sed -E "s/^.+ -> //g")
 
-		description=`git config branch.${clean_branch_name}.description`
+		description=$(git config branch."${clean_branch_name}".description)
 
-		firstChar=`echo "${branch}" | cut -c 1-1`
+		firstChar=$(echo "${branch}" | cut -c 1-1)
 
 		if [[ "${firstChar}" == "*" ]] ; then
-			printf "$branch   $description\n"
+			printf '%s   %s\n' "$branch" "$description"
 		else
-			printf "  $branch   $description\n"
+			printf '  %s   %s\n' "$branch" "$description"
 		fi
 	done <<< "$branches"
 
@@ -226,7 +229,7 @@ function git-local-prune-develop () {
 	merged_branches=$(git branch --merged develop --no-color | grep -Ev "^\s*\*?\s*develop$" | grep -Ev "^\s*main$" | grep -Ev "^\s*release")
 	echo "$merged_branches"
 	printf "\nReady to delete these branches? (yes/no) "
-	read readytocontinue
+	read -r readytocontinue
 	printf "\n"
 	if [ "${readytocontinue}" != "yes" ]; then
 		# Not ready. Stop.
@@ -240,6 +243,7 @@ function git-local-prune-develop () {
 	git branch -a
 }
 
+
 function factorial {
 	local ARG="${1}"
 	local re='^[0-9]+$'
@@ -250,8 +254,8 @@ function factorial {
 	if [[ $ARG -eq 0 ]] ; then
 		echo 1
 	else
-		prev=$(factorial $[$ARG-1])
-		printf "%s\n" $(( $ARG * prev ))
+		prev=$(factorial $((ARG-1)) )
+		printf "%s\n" $(( ARG * prev ))
 	fi
 }
 
