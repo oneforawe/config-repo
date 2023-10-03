@@ -9,67 +9,66 @@
 # ----------------------------------------------------------------------
 
 function amscheck {
-    printf "  Running \"tree ~/org | grep \\\#\"\n"
-    tree ~/org | grep \#
+	printf "  Running \"tree ~/org | grep \\\#\"\n"
+	tree ~/org | grep \#
 }
 
 function amsopen {
-    printf "  Going to \"org\" directory.\n"
-    cd ~/org
-    printf "  Running \"emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org\"\n"
-    sleep 1
-    emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org
-    # Earlier versions:
-    #printf "  Running \"emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org\"\n"
-    #emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org
-    #printf "  Running \"emacs Trigger/*.org Review/More/*.org Review/*.org\"\n"
-    #emacs Trigger/*.org Review/More/*.org Review/*.org
+	printf "  Going to \"org\" directory.\n"
+	cd ~/org
+	printf "  Running \"emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org\"\n"
+	sleep 1
+	emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org
+	# Earlier versions:
+	#printf "  Running \"emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org\"\n"
+	#emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org
+	#printf "  Running \"emacs Trigger/*.org Review/More/*.org Review/*.org\"\n"
+	#emacs Trigger/*.org Review/More/*.org Review/*.org
 }
 
 
 function vmshare-mount {
-    sudo mount -t vboxsf vmshare /mnt/vmshare
+	sudo mount -t vboxsf vmshare /mnt/vmshare
 }
 
 function vmshare-umount {
-    sudo umount /mnt/vmshare
+	sudo umount /mnt/vmshare
 }
 
 
 function aptup {
-    function astep1 {
-        printf '\n'
-        printf '%s\n' "-------------------"
-        printf '%s\n' "| sudo apt update |"
-        printf '%s\n' "-------------------"
-        printf ''
-        sudo apt update
-    }
-    function astep2 {
-        printf '\n'
-        printf '%s\n' "--------------------"
-        printf '%s\n' "| sudo apt upgrade |"
-        printf '%s\n' "--------------------"
-        printf ''
-        sudo apt upgrade
-    }
-    function astep3 {
-        printf '\n'
-        printf '%s\n' "----------------------"
-        printf '%s\n' "| sudo apt-get clean |"
-        printf '%s\n' "----------------------"
-        printf ''
-        sudo apt-get clean
-    }
-    function astep4 {
-        printf '\n'
-        printf '%s\n' "---------------------------"
-        printf '%s\n' "| sudo apt-get autoremove |"
-        printf '%s\n' "---------------------------"
-        printf ''
-        sudo apt-get autoremove
-    }
-    astep1 && astep2 && astep3 && astep4
-    printf '\n'
+	function astep1 {
+		printf '\n'
+		printf '%s\n' "-------------------"
+		printf '%s\n' "| sudo apt update |"
+		printf '%s\n' "-------------------"
+		printf ''
+		sudo apt update
+	}
+	function astep2 {
+		printf '\n'
+		printf '%s\n' "--------------------"
+		printf '%s\n' "| sudo apt upgrade |"
+		printf '%s\n' "--------------------"
+		printf ''
+		sudo apt upgrade
+	}
+	function astep3 {
+		printf '\n'
+		printf '%s\n' "----------------------"
+		printf '%s\n' "| sudo apt-get clean |"
+		printf '%s\n' "----------------------"
+		printf ''
+		sudo apt-get clean
+	}
+	function astep4 {
+		printf '\n'
+		printf '%s\n' "---------------------------"
+		printf '%s\n' "| sudo apt-get autoremove |"
+		printf '%s\n' "---------------------------"
+		printf ''
+		sudo apt-get autoremove
+	}
+	astep1 && astep2 && astep3 && astep4
+	printf '\n'
 }
-

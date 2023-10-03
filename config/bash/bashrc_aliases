@@ -50,164 +50,164 @@ unalias gbd 2>/dev/null # git branch -d (delete) - dangerous; just write it out
 
 # diff
 function difff {
-    diff -u $1 $2 | diff-so-fancy
+	diff -u $1 $2 | diff-so-fancy
 }
 
 # will probably want to edit this after finishing work on bash prompts
 function whereami () {
-    red=$'\e[1;31m'
-    grn=$'\e[1;32m'
-    yel=$'\e[1;33m'
-    blu=$'\e[1;34m'
-    mag=$'\e[1;35m'
-    cyn=$'\e[1;36m'
-    end=$'\e[0m'
-    if   [[ `uname -n` = "soliton.local" ]] ; then
-        if [[ -n $ZSH_VERSION ]] ; then
-            print -P "%F{$USER_HOST_COLOR}soliton (MacOS)%f"
-        elif [[ -n $BASH_VERSION ]] ; then
-            printf "%s\n" "${blu}soliton (MacOS)${end}"
-        fi
-    elif [[ `uname -n` = "momentus" ]] ; then
-        if [[ -n $ZSH_VERSION ]] ; then
-            print -P "%F{$USER_HOST_COLOR}momentus (GNU/Linux)"
-        elif [[ -n $BASH_VERSION ]] ; then
-            printf "%s\n" "${mag}momentus (GNU/Linux)${end}"
-        fi
-    else
-        if [[ -n $ZSH_VERSION ]] ; then
-            print -P "%F{$USER_HOST_COLOR}`uname -n`%f"
-        elif [[ -n $BASH_VERSION ]] ; then
-            printf "%s\n" "${yel}`uname -n`${end}"
-        fi
-        echo "..not in the usual soliton or momentus.."
-    fi
+	red=$'\e[1;31m'
+	grn=$'\e[1;32m'
+	yel=$'\e[1;33m'
+	blu=$'\e[1;34m'
+	mag=$'\e[1;35m'
+	cyn=$'\e[1;36m'
+	end=$'\e[0m'
+	if   [[ `uname -n` = "soliton.local" ]] ; then
+		if [[ -n $ZSH_VERSION ]] ; then
+			print -P "%F{$USER_HOST_COLOR}soliton (MacOS)%f"
+		elif [[ -n $BASH_VERSION ]] ; then
+			printf "%s\n" "${blu}soliton (MacOS)${end}"
+		fi
+	elif [[ `uname -n` = "momentus" ]] ; then
+		if [[ -n $ZSH_VERSION ]] ; then
+			print -P "%F{$USER_HOST_COLOR}momentus (GNU/Linux)"
+		elif [[ -n $BASH_VERSION ]] ; then
+			printf "%s\n" "${mag}momentus (GNU/Linux)${end}"
+		fi
+	else
+		if [[ -n $ZSH_VERSION ]] ; then
+			print -P "%F{$USER_HOST_COLOR}`uname -n`%f"
+		elif [[ -n $BASH_VERSION ]] ; then
+			printf "%s\n" "${yel}`uname -n`${end}"
+		fi
+		echo "..not in the usual soliton or momentus.."
+	fi
 }
 
 # bash only (?)
 function level () {
-    echo " What kind/level of shell are you in? "
-    echo "--------------------------------------"
-    if [[ " $- " = *l* ]] ; then
-        echo "echo \$- = $(echo $-)"
-        echo "l ==> You're in a login shell."
-        echo "      (rather than a sub shell)"
-        echo "\n LOGIN shell"
-    else
-        echo "echo \$- = $(echo $-)"
-        echo "no l ==> You're in a sub shell."
-        echo "      (rather than a login shell)"
-        echo "\n SUB shell"
-    fi
+	echo " What kind/level of shell are you in? "
+	echo "--------------------------------------"
+	if [[ " $- " = *l* ]] ; then
+		echo "echo \$- = $(echo $-)"
+		echo "l ==> You're in a login shell."
+		echo "      (rather than a sub shell)"
+		echo "\n LOGIN shell"
+	else
+		echo "echo \$- = $(echo $-)"
+		echo "no l ==> You're in a sub shell."
+		echo "      (rather than a login shell)"
+		echo "\n SUB shell"
+	fi
 }
 
 
 function large () {
-    PROMPT_SIZE="LARGE"
+	PROMPT_SIZE="LARGE"
 }
 function small () {
-    PROMPT_SIZE="SMALL"
+	PROMPT_SIZE="SMALL"
 }
 function default-prompt () {
-    PROMPT_SIZE="DEFAULT"
+	PROMPT_SIZE="DEFAULT"
 }
 
 function loose () {
-    PROMPT_SPACE="LOOSE"
+	PROMPT_SPACE="LOOSE"
 }
 
 function tight () {
-    PROMPT_SPACE="TIGHT"
+	PROMPT_SPACE="TIGHT"
 }
 
 
 function which-tmux-session {
-    # Print the current terminal tmux session name, if any.
-    # ...This function doesn't seem to work.
-    for s in $(tmux list-sessions -F '#{session_name}'); do
-        tmux list-panes -F '#{pane_tty} #{session_name}' -t "$s"
-    done | grep "$(tty)" | awk '{print $2}'
+	# Print the current terminal tmux session name, if any.
+	# ...This function doesn't seem to work.
+	for s in $(tmux list-sessions -F '#{session_name}'); do
+		tmux list-panes -F '#{pane_tty} #{session_name}' -t "$s"
+	done | grep "$(tty)" | awk '{print $2}'
 }
 
 
 
 function git-branch-create {
-    git checkout -b $1 # $1 = <branch-name>
-    printf "Ready to (automatically) set origin and upstream connections? (yes/no) "
-    read readytocontinue
-    printf "\n"
-    if [ "${readytocontinue}" != "yes" ]; then
-        # Not ready. Stop.
-        printf "That wasn't a yes. Stopping here.\n"
-    else
-        # Ready. Continue.
-        # (Not sure which below is best; middle one seems to do what I want.)
-        #git branch --set-upstream-to=origin/<upstream-branch-name> <branch-name>
-        #git branch --set-upstream-to=origin/$1 $1
-        #git push --set-upstream origin <upstream-branch-name>
-        git push --set-upstream origin $1
-        #git push origin <origin-branch-name>
-        #git push origin $1  # not sufficient for my uses
-    fi
-    printf "Don't forget to add/edit a branch description. "
-    printf "Alias 'gbde branch-name'.\n"
+	git checkout -b $1 # $1 = <branch-name>
+	printf "Ready to (automatically) set origin and upstream connections? (yes/no) "
+	read readytocontinue
+	printf "\n"
+	if [ "${readytocontinue}" != "yes" ]; then
+		# Not ready. Stop.
+		printf "That wasn't a yes. Stopping here.\n"
+	else
+		# Ready. Continue.
+		# (Not sure which below is best; middle one seems to do what I want.)
+		#git branch --set-upstream-to=origin/<upstream-branch-name> <branch-name>
+		#git branch --set-upstream-to=origin/$1 $1
+		#git push --set-upstream origin <upstream-branch-name>
+		git push --set-upstream origin $1
+		#git push origin <origin-branch-name>
+		#git push origin $1  # not sufficient for my uses
+	fi
+	printf "Don't forget to add/edit a branch description. "
+	printf "Alias 'gbde branch-name'.\n"
 }
 
 function git-branch-description-show () {
-    # from
-    # https://gist.github.com/ejmr/a927d32e25488a282bd3
-    #
-    # You can use `git branch --edit-description` to write a description
-    # for a branch, but Git provides no simple command to display that
-    # description.  The "easiest" way to see it is via `git config --get
-    # branch.BRANCH_NAME.description`.
-    #
-    # This script automates that process and is meant to be used as
-    # a Git alias to provide a shorter command for showing the
-    # description of the current branch.
+	# from
+	# https://gist.github.com/ejmr/a927d32e25488a282bd3
+	#
+	# You can use `git branch --edit-description` to write a description
+	# for a branch, but Git provides no simple command to display that
+	# description.  The "easiest" way to see it is via `git config --get
+	# branch.BRANCH_NAME.description`.
+	#
+	# This script automates that process and is meant to be used as
+	# a Git alias to provide a shorter command for showing the
+	# description of the current branch.
 
-    BRANCH="$(git symbolic-ref --short HEAD)"
-    DESCRIPTION_PROPERTY="branch.${BRANCH}.description"
-    git config --get "$DESCRIPTION_PROPERTY"
+	BRANCH="$(git symbolic-ref --short HEAD)"
+	DESCRIPTION_PROPERTY="branch.${BRANCH}.description"
+	git config --get "$DESCRIPTION_PROPERTY"
 }
 
 function git-branch-list-with-descriptions () {
-    # initial version (which I've changed slightly) was from
-    # https://github.com/bahmutov/git-branches/blob/master/branches.sh
+	# initial version (which I've changed slightly) was from
+	# https://github.com/bahmutov/git-branches/blob/master/branches.sh
 
-    branches=`git branch --list $1`
+	branches=`git branch --list $1`
 
-    # requires git > v.1.7.9
+	# requires git > v.1.7.9
 
-    # You can set a branch's description using command
-    # git branch --edit-description
-    # This opens the configured text editor; enter message, save, and exit.
+	# You can set a branch's description using command
+	# git branch --edit-description
+	# This opens the configured text editor; enter message, save, and exit.
 
-    # You can see branch's description using
-    # git config branch.<branch name>.description
+	# You can see branch's description using
+	# git config branch.<branch name>.description
 
-    while read -r branch ; do
-        # git marks current branch with "* ", remove it
-        clean_branch_name=${branch//\*\ /}
-        # replace all escape sequences (including colors, etc)
-        clean_branch_name=`echo $clean_branch_name | tr -d '[:cntrl:]' | sed -E "s/\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"`
-        # replace symbolic-ref like `HEAD -> master`
-        clean_branch_name=`echo $clean_branch_name | sed -E "s/^.+ -> //g"`
+	while read -r branch ; do
+		# git marks current branch with "* ", remove it
+		clean_branch_name=${branch//\*\ /}
+		# replace all escape sequences (including colors, etc)
+		clean_branch_name=`echo $clean_branch_name | tr -d '[:cntrl:]' | sed -E "s/\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"`
+		# replace symbolic-ref like `HEAD -> master`
+		clean_branch_name=`echo $clean_branch_name | sed -E "s/^.+ -> //g"`
 
-        description=`git config branch.${clean_branch_name}.description`
+		description=`git config branch.${clean_branch_name}.description`
 
-        firstChar=`echo "${branch}" | cut -c 1-1`
+		firstChar=`echo "${branch}" | cut -c 1-1`
 
-        if [[ "${firstChar}" == "*" ]] ; then
-          printf "$branch   $description\n"
-        else
-          printf "  $branch   $description\n"
-        fi
-    done <<< "$branches"
+		if [[ "${firstChar}" == "*" ]] ; then
+			printf "$branch   $description\n"
+		else
+			printf "  $branch   $description\n"
+		fi
+	done <<< "$branches"
 
-    # example output
-    # * master   this is master branch
-    #   one   this is simple branch for testing
+	# example output
+	# * master   this is master branch
+	#   one   this is simple branch for testing
 }
 
 # TODO: Rewrite all functions that use "porcelain" commands (such as
@@ -215,54 +215,54 @@ function git-branch-list-with-descriptions () {
 # output over time and with diffferent settings applied.
 # Ref: https://stackoverflow.com/questions/10610327/delete-all-local-git-branches/26152574#26152574
 function git-local-prune-develop () {
-    # Inspiration: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote
-    # But note the TODO above -- this is a bad hacky solution, but ok for now.
-    current_branch=$(git symbolic-ref --short HEAD)
-    if [ "${current_branch}" != "develop" ]; then
-        printf "Please checkout the develop branch before running this command.\n"
-        return 1
-    fi
-    # Get local branches that were merged into develop (not including develop or main or releases)
-    merged_branches=$(git branch --merged develop --no-color | grep -Ev "^\s*\*?\s*develop$" | grep -Ev "^\s*main$" | grep -Ev "^\s*release")
-    echo "$merged_branches"
-    printf "\nReady to delete these branches? (yes/no) "
-    read readytocontinue
-    printf "\n"
-    if [ "${readytocontinue}" != "yes" ]; then
-        # Not ready. Stop.
-        printf "That wasn't a yes. Stopping here.\n"
-        return 0
-    else
-        # Ready. Continue.
-        echo "$merged_branches" | xargs git branch -d
-    fi
-    printf "\nCurrent branch list:\n"
-    git branch -a
+	# Inspiration: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote
+	# But note the TODO above -- this is a bad hacky solution, but ok for now.
+	current_branch=$(git symbolic-ref --short HEAD)
+	if [ "${current_branch}" != "develop" ]; then
+		printf "Please checkout the develop branch before running this command.\n"
+		return 1
+	fi
+	# Get local branches that were merged into develop (not including develop or main or releases)
+	merged_branches=$(git branch --merged develop --no-color | grep -Ev "^\s*\*?\s*develop$" | grep -Ev "^\s*main$" | grep -Ev "^\s*release")
+	echo "$merged_branches"
+	printf "\nReady to delete these branches? (yes/no) "
+	read readytocontinue
+	printf "\n"
+	if [ "${readytocontinue}" != "yes" ]; then
+		# Not ready. Stop.
+		printf "That wasn't a yes. Stopping here.\n"
+		return 0
+	else
+		# Ready. Continue.
+		echo "$merged_branches" | xargs git branch -d
+	fi
+	printf "\nCurrent branch list:\n"
+	git branch -a
 }
 
 function factorial {
-    local ARG="${1}"
-    local re='^[0-9]+$'
-    if ! [[ $ARG =~ $re ]] ; then
-        printf "Error: need a positive integer\n"
-        return 1
-    fi
-    if [[ $ARG -eq 0 ]] ; then
-        echo 1
-    else
-        prev=$(factorial $[$ARG-1])
-        printf "%s\n" $(( $ARG * prev ))
-    fi
+	local ARG="${1}"
+	local re='^[0-9]+$'
+	if ! [[ $ARG =~ $re ]] ; then
+		printf "Error: need a positive integer\n"
+		return 1
+	fi
+	if [[ $ARG -eq 0 ]] ; then
+		echo 1
+	else
+		prev=$(factorial $[$ARG-1])
+		printf "%s\n" $(( $ARG * prev ))
+	fi
 }
 
 function title {
-    echo -ne "\033]0;$1\007"
-    #echo -ne "\033]$1\007"
+	echo -ne "\033]0;$1\007"
+	#echo -ne "\033]$1\007"
 }
 
 function notify {
-    message="${1:-Process complete}"
-    options='title "Terminal" sound name "Ping"'
-    script="display notification \"$message\" with $options"
-    /usr/bin/osascript -e "$script"
+	message="${1:-Process complete}"
+	options='title "Terminal" sound name "Ping"'
+	script="display notification \"$message\" with $options"
+	/usr/bin/osascript -e "$script"
 }

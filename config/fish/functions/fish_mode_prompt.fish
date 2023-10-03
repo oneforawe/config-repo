@@ -8,4 +8,3 @@ function fish_mode_prompt --description "Displays (no longer) the current mode"
     # To re-use the mode indicator, use this function instead:
     # fish_default_mode_prompt
 end
-

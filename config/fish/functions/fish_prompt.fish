@@ -92,4 +92,3 @@ function fish_prompt --description 'Write out the prompt'
                 # not using "$__fish_prompt_cwd" for "$PWD"
     end
 end
-

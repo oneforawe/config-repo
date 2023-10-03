@@ -5,6 +5,7 @@
   "editor.detectIndentation": false,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
+  "files.insertFinalNewline": true,
   "markdownlint.config": {
     "default": true,
     "MD024": { "siblings_only": true },

@@ -223,5 +223,3 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 ###############################################################################
 
 echo "Done. Note that some of these changes may require a logout/restart to take effect."
-
-

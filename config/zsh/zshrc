@@ -23,12 +23,12 @@ source ~/.bashrc
 
 # For MacOS
 if [[ `uname -s` = "Darwin" ]] ; then
-  source ~/.config/zsh/zshrc_etc_mac
+	source ~/.config/zsh/zshrc_etc_mac
 fi
 
 # For conda / anaconda (on work Dev VM)
 if [ -f ~/.config/zsh/zshrc_conda ]; then
-  source ~/.config/zsh/zshrc_conda
+	source ~/.config/zsh/zshrc_conda
 fi
 
 # Activate zsh packages:

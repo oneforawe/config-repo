@@ -9,8 +9,8 @@
 # If bash-completion is available, use it.
 # (Trying this with git-flow for git-flow-completion. See refs [1-5].)
 if [[ -r /usr/local/etc/profile.d/bash_completion.sh ]] ; then
-    source /usr/local/etc/profile.d/bash_completion.sh
-    source ~/.config/git/git-flow-completion/git-flow-completion.bash
+	source /usr/local/etc/profile.d/bash_completion.sh
+	source ~/.config/git/git-flow-completion/git-flow-completion.bash
 fi
 
 

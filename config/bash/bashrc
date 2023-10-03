@@ -30,9 +30,9 @@ if [[ $- != *i* ]] ; then return ; fi
 
 # For bash (not zsh)
 if [[ -n $BASH_VERSION ]] ; then
-    source ~/.config/bash/bashrc_opt
-    source ~/.config/bash/bashrc_prompt
-    source ~/.config/bash/bashrc_etc_mac_git
+	source ~/.config/bash/bashrc_opt
+	source ~/.config/bash/bashrc_prompt
+	source ~/.config/bash/bashrc_etc_mac_git
 fi
 
 source ~/.config/bash/bashrc_aliases
@@ -45,14 +45,14 @@ source ~/.config/bash/bashrc_aliases_lsGNU
 
 # For GNU/Linux
 if [[ `uname -s` = "Linux" ]] ; then
-    source ~/.config/bash/bashrc_aliases_linux
-    #source ~/.config/bash/bashrc_etc_linux
+	source ~/.config/bash/bashrc_aliases_linux
+	#source ~/.config/bash/bashrc_etc_linux
 fi
 
 # For MacOS
 if [[ `uname -s` = "Darwin" ]] ; then
-    source ~/.config/bash/bashrc_aliases_mac
-    source ~/.config/bash/bashrc_etc_mac
+	source ~/.config/bash/bashrc_aliases_mac
+	source ~/.config/bash/bashrc_etc_mac
 fi
 
 source ~/.config/bash/bashrc_etc

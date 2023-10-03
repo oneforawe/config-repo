@@ -27,4 +27,3 @@ source ~/.config/fish/functions/aliases_simplified.fish
 
 # Use `fuck` command - for suggesting command-line mistake re-writes.
 thefuck --alias | source
-
