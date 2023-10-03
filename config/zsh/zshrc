@@ -22,7 +22,7 @@ source ~/.config/zsh/zshrc_etc
 source ~/.bashrc
 
 # For MacOS
-if [[ `uname -s` = "Darwin" ]] ; then
+if [[ "$(uname -s)" = "Darwin" ]] ; then
 	source ~/.config/zsh/zshrc_etc_mac
 fi
 

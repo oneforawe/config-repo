@@ -85,15 +85,15 @@ alias   ls_=''
 unalias ls_
 
 # handle differences between GNU/Linux tools (GNU) and MacOS/Darwin tools (BSD)
-if [[ `uname -s` = "Linux" ]] ; then
-		alias ls_='/bin/ls --color=auto'
-		alias dir='dir --color=auto'
-		alias vdir='vdir --color=auto'
+if [[ "$(uname -s)" = "Linux" ]] ; then
+	alias ls_='/bin/ls --color=auto'
+	alias dir='dir --color=auto'
+	alias vdir='vdir --color=auto'
 fi
-if [[ `uname -s` = "Darwin" ]] ; then
-		alias ls_='/usr/local/bin/gls --color=auto'
-		#alias dir='dir --color=auto'
-		#alias vdir='vdir --color=auto'
+if [[ "$(uname -s)" = "Darwin" ]] ; then
+	alias ls_='/usr/local/bin/gls --color=auto'
+	#alias dir='dir --color=auto'
+	#alias vdir='vdir --color=auto'
 fi
 
 

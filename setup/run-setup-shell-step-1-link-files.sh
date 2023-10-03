@@ -23,7 +23,7 @@
 # ======================================================================
 
 # For GNU/Linux tools (GNU)
-if [[ $(uname -s) = "Linux" ]] ; then
+if [[ "$(uname -s)" = "Linux" ]] ; then
 	function ln_s () { ln -sf "$@" ; }
 	THE_DATE_IN_MS="$(date +%s%3N)"
 	THE_DATE="${THE_DATE_IN_MS::-3}"
@@ -32,7 +32,7 @@ if [[ $(uname -s) = "Linux" ]] ; then
 fi
 
 # For MacOS Darwin tools (~BSD)
-if [[ $(uname -s) = "Darwin" ]] ; then
+if [[ "$(uname -s)" = "Darwin" ]] ; then
 	function ln_s () { ln -sFfh "$@" ; }
 	THE_DATE="$(date)"
 	TIMESTAMP="$(date -jf "%a %b %d %T %Z %Y" "$THE_DATE" "+%s")_$(date -jf "%a %b %d %T %Z %Y" "$THE_DATE" "+Date_%Y-%m-%d_Time_%H_%M_%S")"
@@ -208,14 +208,14 @@ ln_s $src/config/emacs/emacs.d	$r/.emacs.d
 
 
 # For GNU/Linux
-if [[ $(uname -s) = "Linux" ]] ; then
+if [[ "$(uname -s)" = "Linux" ]] ; then
 	# pack	(packages common to the shells)
 	rm -r $r/.config/thefuck
 	ln_s $src/config/pack/thefuck $r/.config/thefuck
 fi
 
 # For MacOS Darwin
-if [[ $(uname -s) = "Darwin" ]] ; then
+if [[ "$(uname -s)" = "Darwin" ]] ; then
 	iterm2file="$r/Library/Preferences/com.googlecode.iterm2.plist"
 	i2="$src/config/iterm2/preferences"
 	if [[ -f $iterm2file ]] && [[ ! -L $iterm2file ]] ; then

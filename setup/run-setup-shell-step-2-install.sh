@@ -4,7 +4,7 @@
 
 
 # For GNU/Linux
-if [[ $(uname -s) = "Linux" ]] ; then
+if [[ "$(uname -s)" = "Linux" ]] ; then
 
 	# First update/upgrade package manager, APT (apt).
 	echo "Running \"aptup\" prior to installing any missing desired packages."
@@ -53,7 +53,7 @@ fi
 
 
 # For MacOS
-if [[ $(uname -s) = "Darwin" ]] ; then
+if [[ "$(uname -s)" = "Darwin" ]] ; then
 
 	# First update/upgrade package manager, Homebrew (brew).
 	echo "Making sure Homebrew package manager is installed and ready..."

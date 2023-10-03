@@ -23,7 +23,7 @@
 # ======================================================================
 
 # For GNU/Linux tools (GNU)
-if [[ $(uname -s) = "Linux" ]] ; then
+if [[ "$(uname -s)" = "Linux" ]] ; then
 	function ln_s () { ln -sf "$@" ; }
 	THE_DATE_IN_MS="$(date +%s%3N)"
 	THE_DATE="${THE_DATE_IN_MS::-3}"

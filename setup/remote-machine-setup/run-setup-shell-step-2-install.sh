@@ -4,7 +4,7 @@
 
 
 # For GNU/Linux
-if [[ $(uname -s) = "Linux" ]] ; then
+if [[ "$(uname -s)" = "Linux" ]] ; then
 
 	# By default DO NOT do this. Some systems are flaky & delicate. Do no harm!
 	# First update/upgrade package manager, APT (apt).
@@ -41,9 +41,9 @@ fi
 # For both GNU/Linux and MacOS, set zsh as default shell
 # (if it's not already the default (SHELL) and if it's present)
 ##if [[ "$SHELL" != "/bin/zsh" ]] ; then
-##		RESULT_STRING="$(cat /etc/shells | grep "^/bin/zsh$")"
-##		if [[ -n "$RESULT_STRING" ]] ; then
-##				chsh -s /bin/zsh
-##				echo "Note: Open a new shell to start with the new default (zsh)."
-##		fi
+##	RESULT_STRING="$(cat /etc/shells | grep "^/bin/zsh$")"
+##	if [[ -n "$RESULT_STRING" ]] ; then
+##		chsh -s /bin/zsh
+##		echo "Note: Open a new shell to start with the new default (zsh)."
+##	fi
 ##fi
