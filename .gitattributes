@@ -1,0 +1,33 @@
+# Reference:
+# https://git-scm.com/docs/gitattributes/
+# https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
+
+# Useful Commands:
+# View the line-endings for files (index version, working tree version, & attributes):
+# git ls-files --eol
+# Force the files to match the .gitattributes specifications:
+# git rm --cached -r .  # Remove every file from git's index. (executed in project's root directory)
+# git reset --hard      # Rewrite git's index to pick up all the new line endings.
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+# "Git will handle the files in whatever way it thinks is best. This is a good default option."
+
+# Explicitly declare text files to always be normalized and converted to native
+# line endings on checkout.
+# *.c text
+
+# Declare files that will always have CRLF (Microsoft) line endings on checkout.
+# *.js text eol=crlf
+# *.ts text eol=crlf
+# *.jsx text eol=crlf
+# *.tsx text eol=crlf
+
+# Declare files that will always have LF (UNIX/GNU/Linux) line endings on checkout.
+*.conf text eol=lf
+*.bash text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=lf
+#Dockerfile text eol=lf
+# Pipfile text eol=lf
+# Pipfile.lock text eol=lf
