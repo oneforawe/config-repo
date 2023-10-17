@@ -24,10 +24,12 @@
 # *.tsx text eol=crlf
 
 # Declare files that will always have LF (UNIX/GNU/Linux) line endings on checkout.
+*.config text eol=lf
 *.conf text eol=lf
 *.bash text eol=lf
 *.sh text eol=lf
 *.ps1 text eol=lf
-#Dockerfile text eol=lf
+*.json text eol=lf
+# Dockerfile text eol=lf
 # Pipfile text eol=lf
 # Pipfile.lock text eol=lf
