@@ -12,22 +12,22 @@
   },
   "[markdown]": {
     "editor.codeActionsOnSave": {
-      "source.fixAll.pylint": false,
-      "source.fixAll.eslint": false,
-      "source.fixAll.stylelint": false,
-      "source.fixAll.shellcheck": false,
-      "source.fixAll.markdownlint": true,
+      "source.fixAll.pylint": "never",
+      "source.fixAll.eslint": "never",
+      "source.fixAll.stylelint": "never",
+      "source.fixAll.shellcheck": "never",
+      "source.fixAll.markdownlint": "explicit"
     },
   },
   "[sh, bash]": {
     "files.eol": "\n",
     "editor.insertSpaces": false,
     "editor.codeActionsOnSave": {
-      "source.fixAll.pylint": false,
-      "source.fixAll.eslint": false,
-      "source.fixAll.stylelint": false,
-      "source.fixAll.markdownlint": false,
-      "source.fixAll.shellcheck": true,
+      "source.fixAll.pylint": "never",
+      "source.fixAll.eslint": "never",
+      "source.fixAll.stylelint": "never",
+      "source.fixAll.markdownlint": "never",
+      "source.fixAll.shellcheck": "explicit"
     },
   },
   "[powershell]": {
