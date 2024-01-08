@@ -44,6 +44,15 @@ or
 `fatal: --stdin requires a git repository`  
 `fatal: fetch-pack: invalid index-pack output`
 
+   * Note: I also see these sorts of errors when the HEAD template file is a
+     link (symlink, symbolic link) rather than a real file, where this file is
+     specified in the `.gitconfig` by location with
+
+    ```(text)
+    [init]
+      templateDir = ~/.config/git/template/
+    ```
+
 1. In a shell, clone this repo to obtain a local copy the files. Either use
 https or ssh (written below in an abbreviated form that uses an ssh config):
 
@@ -161,3 +170,8 @@ variable files, and so on.  A configuration file for some hypothetical utility
 `util.conf`, `util.cfg`, `.util`, `.util.conf`, `.utilrc`, etc.  An associated
 config folder might have one of these same names or `util.d` or `.util.d`, where
 the `d` presumably refers to "directory".
+
+## To Do
+
+* Change handling of the git template HEAD file so it isn't a symbolic link but
+  rather is a real file (or maybe a hard link).
