@@ -37,7 +37,7 @@ settings.
 ### New Steps
 
 0. Ensure that either there is no `~/.gitconfig` file yet or that it at least
-does not refer to non-existent files, to enable successful git-clone'ing.
+does not refer to non-existent files, to enable successful `git-clone`ing.
 Otherwise, you may see errors such as  
 `fatal: remote-curl: fetch attempted without a local repo`  
 or  
@@ -174,8 +174,3 @@ variable files, and so on.  A configuration file for some hypothetical utility
 `util.conf`, `util.cfg`, `.util`, `.util.conf`, `.utilrc`, etc.  An associated
 config folder might have one of these same names or `util.d` or `.util.d`, where
 the `d` presumably refers to "directory".
-
-## To Do
-
-* Change handling of the git template HEAD file so it isn't a symbolic link but
-  rather is a real file (or maybe a hard link).

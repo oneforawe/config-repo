@@ -26,7 +26,7 @@ go back to your original settings.
 ### New Steps
 
 0. Ensure that either there is no `~/.gitconfig` file yet or that it at least
-does not refer to non-existent files, to enable successful git-clone'ing.
+does not refer to non-existent files, to enable successful `git-clone`ing.
 Otherwise, you may see errors such as  
 `fatal: remote-curl: fetch attempted without a local repo`  
 or  
