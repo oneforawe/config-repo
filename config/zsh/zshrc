@@ -31,6 +31,6 @@ if [ -f ~/.config/zsh/zshrc_conda ]; then
 	source ~/.config/zsh/zshrc_conda
 fi
 
-# Activate zsh packages:
-source ~/.config/zsh/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/pack/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Activate zsh packages: (but shouldn't have to now by using oh-my-zsh plugins)
+#source ~/.config/zsh/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/.config/zsh/pack/zsh-autosuggestions/zsh-autosuggestions.zsh

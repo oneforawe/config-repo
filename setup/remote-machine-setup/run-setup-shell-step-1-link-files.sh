@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # filename: run-setup-shell-step-1-link-files.sh
-# purpose: Automate placing (linking) the user configuration files.
+# purpose: Automate placing (linking) the user configuration files; copy a file
+#          in the case(s) where linking isn't appropriate.
 
 # TODO: Create function that doesn't just link but checks for pre-existing
 #       files, saves them into a backup location such as
@@ -135,13 +136,14 @@ g2c="$src/config/git/git-flow-completion"
 mkdir -pv $g1a
 mkdir -pv $g1b
 mkdir -pv $g1c
-ln_s $g2a/HEAD                     $g1a/HEAD
+#ln_s $g2a/HEAD                    $g1a/HEAD # soft link doesn't work (try hard?)
+cp   $g2a/HEAD                     $g1a/HEAD # so copy instead
 ln_s $g2b/_git                     $g1b/_git
 ln_s $g2b/git-completion.bash      $g1b/git-completion.bash
 ln_s $g2b/git-completion.zsh       $g1b/git-completion.zsh
 ln_s $g2c/git-flow-completion.bash $g1c/git-flow-completion.bash
 ln_s $g2c/git-flow-completion.zsh  $g1c/git-flow-completion.zsh
-#ln_s $src/config/git/gitconfig $r/.gitconfig
+#ln_s $src/config/git/gitconfig $r/.gitconfig # special instructions in README
 
 # hg (mercurial)
 #ln_s $src/config/hgrc .hgrc

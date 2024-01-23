@@ -1,5 +1,4 @@
 {
-  "window.zoomLevel": -1,
   "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
   "editor.rulers": [72, 80],
   "editor.detectIndentation": false,
@@ -33,4 +32,7 @@
   "[powershell]": {
     "files.eol": "\n",
   },
+  "files.associations": {
+    "config": "plaintext"
+  }
 }

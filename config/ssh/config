@@ -33,4 +33,3 @@ Host github
   User git
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/keys/github
-

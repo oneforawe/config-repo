@@ -112,6 +112,17 @@ if [[ "$(uname -s)" = "Darwin" ]] ; then
 fi
 
 
+# Make sure OMZ plugins are present.
+if [[ -d ~/.config/zsh/oh-my-zsh/custom/plugins/ ]] ; then
+	if [[ ! -r ~/.config/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions ]] ; then
+		git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/oh-my-zsh/custom/plugins/
+	fi
+	if [[ ! -r ~/.config/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] ; then
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.config/zsh/oh-my-zsh/custom/plugins/
+	fi
+fi
+
+
 # For both GNU/Linux and MacOS, set zsh as default shell
 # (if it's not already the default (SHELL) and if it's present)
 if [[ "$SHELL" != "/bin/zsh" ]] ; then

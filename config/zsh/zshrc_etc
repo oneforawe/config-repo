@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# filename: zshrc_etc_mac   (linked from ~/.config/zsh/zshrc_etc_mac)
+# filename: zshrc_etc   (linked from ~/.config/zsh/zshrc_etc)
 # purpose: Set interactive-shell configs not already set for opt (options),
 #   prompt, commands (functions and aliases), and omz (oh-my-zsh).
 

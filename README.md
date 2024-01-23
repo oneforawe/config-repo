@@ -54,10 +54,14 @@ or
     ```
 
 1. In a shell, clone this repo to obtain a local copy the files. Either use
-https or ssh (written below in an abbreviated form that uses an ssh config):
+https or ssh:
 
-   * https: `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
-   * ssh: `git clone github:oneforawe/config-repo.git ~/.config-repo`
+   * https:  
+     `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
+   * ssh:  
+     `git clone git@github.com:oneforawe/config-repo.git ~/.config-repo`  
+     or (using abbreviations you can set up in your `.ssh/config` file)  
+      `git clone github:oneforawe/config-repo.git ~/.config-repo`
    * If cloning fails due to a permission error where the ssh key is not being
    used, you may need to add the keys to the ssh-agent.  For example:  
    `eval "$(ssh-agent -s)" && ssh-add ~/.ssh/keys/github`
@@ -68,10 +72,10 @@ https or ssh (written below in an abbreviated form that uses an ssh config):
    <https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed>
 
 2. Copy the git config file as a dot-file to the home directory, and edit to
-remove the user info (or put appropriate default user info). This is the global
-gitconfig file. For me, the owner of this repo, I can execute the additional
-commands below to modify the repo's local config file in
-`~/.config-repo/.git/config` (editing to give my appropriate identity):  
+remove the user info (or put appropriate default user info). This file
+(`~/.gitconfig`) is the global gitconfig file. For me, the owner of this repo,
+I can execute the additional commands below to modify the repo's local config
+file in `~/.config-repo/.git/config` (editing to give my appropriate identity):  
   `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`  (and edit as desired)  
   In `~/.config-repo`:  
   `git config user.name "My Name"`  

@@ -33,11 +33,24 @@ or
 `fatal: --stdin requires a git repository`  
 `fatal: fetch-pack: invalid index-pack output`
 
-1. In a shell, clone this repo to obtain a local copy the files. Either use
-https or ssh (written below in an abbreviated form that uses an ssh config):
+   * Note: I also see these sorts of errors when the HEAD template file is a
+     link (symlink, symbolic link) rather than a real file, where this file is
+     specified in the `.gitconfig` by location with
 
-   * https: `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
-   * ssh: `git clone github:oneforawe/config-repo.git ~/.config-repo`
+    ```(text)
+    [init]
+      templateDir = ~/.config/git/template/
+    ```
+
+1. In a shell, clone this repo to obtain a local copy the files. Either use
+https or ssh:
+
+   * https:  
+     `git clone https://github.com/oneforawe/config-repo.git ~/.config-repo`
+   * ssh:  
+     `git clone git@github.com:oneforawe/config-repo.git ~/.config-repo`  
+     or (using abbreviations you can set up in your `.ssh/config` file)  
+      `git clone github:oneforawe/config-repo.git ~/.config-repo`
    * If cloning fails due to a permission error where the ssh key is not being
    used, you may need to add the keys to the ssh-agent.  For example:  
    `eval "$(ssh-agent -s)" && ssh-add ~/.ssh/keys/github`
@@ -48,15 +61,17 @@ https or ssh (written below in an abbreviated form that uses an ssh config):
    <https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed>
 
 2. Copy the git config file as a dot-file to the home directory, and edit to
-remove the user info. This is the global gitconfig file. Then execute the
-additional commands below (editing to give your appropriate identity) to modify
-the repo's local config file in `~/.config-repo/.git/config`:  
-  `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`  
-  `git config user.name "Your Name"`  
-  `git config user.email you@example.com`  
-  (Alternatively, you can add a `.gitconfig` in the top level of the
-  repo and add that file to the local `include.path`:  
-  `cp ~/.config-repo/config/git/gitconfig ~/.config-repo/.gitconfig`  
+remove the user info (or put appropriate default user info). This file
+(`~/.gitconfig`) is the global gitconfig file. For me, the owner of this repo,
+I can execute the additional commands below to modify the repo's local config
+file in `~/.config-repo/.git/config` (editing to give my appropriate identity):  
+  `cp ~/.config-repo/config/git/gitconfig ~/.gitconfig`  (and edit as desired)  
+  In `~/.config-repo`:  
+  `git config user.name "My Name"`  
+  `git config user.email me@example.com`  
+  (Alternatively, I could add a `.gitconfig` in the top level of the repo and
+  add that file to the local `include.path`:  
+  `cp ~/.config-repo/config/git/gitconfig ~/.config-repo/.gitconfig`  (and edit)  
   `git config --local include.path ../.gitconfig`  
   )
 
@@ -65,7 +80,7 @@ to the config files in this repo and to install the necessary and desired
 packages:  
   `bash ~/.config-repo/setup/remote-machine-setup/run-setup-shell-full.sh`
 
-### Old Steps
+### Older Steps
 
 (Previously, submodules were used; now, subtrees are used and no recursion is
 necessary.)

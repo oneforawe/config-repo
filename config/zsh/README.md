@@ -7,7 +7,20 @@ To get clarity on how zsh handles its config files, see the table in
 reference 1.  Note that from `.zshrc` I source multiple files (including
 `zshrc_omz` and `zshrc_opt`).
 
-## reminder to self
+## installation
+
+### MacOS
+
+* oh-my-zsh
+  * use the curl command provided at the github page
+  * delete the auto-generated zshrc file and edit the moved original file to
+    keep it (it should have the two plugins below listed along with git)
+* plugin: zsh-autosuggestions
+  `git clone https://github.com/zsh-users/zsh-autosuggestions /Users/<username>/.config/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions`
+* plugin: zsh-syntax-highlighting
+  `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /Users/<username>/.config/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting`
+
+## submodules (obsolete)
 
 When updating the submodule `oh-my-zsh`, after the update is pushed to master
 and then pulled to another machine, it seems that I have to delete it
