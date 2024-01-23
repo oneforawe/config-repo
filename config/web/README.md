@@ -4,8 +4,8 @@ For web development in JavaScript / TypeScript, will want:
 
 * General Development
   * Version Control  
-    For example, [git](https://git-scm.com/downloads) --  
-    git is the "stupid content tracker", for file/project version control and
+    For example, [git](https://git-scm.com/downloads) -- git is the
+    "stupid content tracker", for file/project version control and
     downloading/uploading. It's possible you already have this installed by
     default. If using MacOS with Homebrew, you can use brew to install git.
 
