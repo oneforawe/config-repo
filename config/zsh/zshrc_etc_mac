@@ -6,35 +6,6 @@
 # This file is sourced from ~/.zshrc (which is for interactive shells).
 
 
-# DELETE THE FOLLOWING TEMPORARY/COMMENTED CODE IF POSSIBLE:
-
-# The following code may only be needed temporarily; test to see if removable.
-# Add to fpath so function `url-quote-magic` is available and doesn't cause an
-# error (-zsh:1: url-quote-magic: function definition file not found) with every
-# key press at the shell prompt.
-#if [[ -r /usr/local/opt/share/zsh/functions/url-quote-magic ]] ; then
-#	fpath=(/usr/local/opt/share/zsh/functions/ "$fpath")
-#	source /usr/local/opt/share/zsh/functions/url-quote-magic
-	# This causes its own error:
-	# url-quote-magic:zle:36: widgets can only be called when ZLE is active
-	# But this error only occurs when the shell starts, instead of making the
-	# shell completely un-usable like the original behavior/error described above.
-	# Need to investigate to truly solve the underlying issue.
-#fi
-
-# What about this?
-#if [[ -r /usr/local/share/zsh/functions/url-quote-magic ]] ; then
-#	fpath=(/usr/local/share/zsh/functions "$fpath")
-#	source /usr/local/share/zsh/functions/url-quote-magic
-#fi
-
-# Or this?
-# if [[ -r /usr/local/opt/share/zsh/functions/url-quote-magic ]] ; then
-# 	fpath=(/usr/local/opt/share/zsh/functions $fpath) # needed?
-# 	source /usr/local/opt/share/zsh/functions/url-quote-magic # this seems to help
-# fi
-
-
 # If bash-completion is available, use it.
 # (Trying this with git-flow for git-flow-completion. See refs [2,3,4,5] in
 #  bashrc_etc_mac_git.)
