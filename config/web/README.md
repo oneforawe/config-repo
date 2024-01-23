@@ -23,6 +23,8 @@ For web development in JavaScript / TypeScript, will want:
 
 ### Node
 
+See also [Web Dev on Windows](../win/README.md#web-dev-on-windows) notes.
+
 Node.js (aka NodeJS, node, etc) is a back-end (non-browser) runtime environment
 for JavaScript, with an associated shell command `node`.  Note that with node
 installed, you will also have the [npm](https://www.npmjs.com/) (node package
