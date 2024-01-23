@@ -9,11 +9,11 @@ For web development in JavaScript / TypeScript, will want:
     downloading/uploading. It's possible you already have this installed by
     default. If using MacOS with Homebrew, you can use brew to install git.
 
-* [Node](https://nodejs.org/en/)
+* Back-end / Runtime: [Node](https://nodejs.org/en/)
   ([nvm](https://github.com/nvm-sh/nvm), node, npm, npx)  
   See the Further Notes below for more details.
 
-* [Chrome](https://www.google.com/chrome/), using its
+* Front-end / Browser: [Chrome](https://www.google.com/chrome/), using its
   [DevTools](https://developer.chrome.com/docs/devtools) and
   [Redux DevTools](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 
