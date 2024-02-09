@@ -32,6 +32,24 @@
 ##   This will handle all files NOT defined below.
 *                 text=auto
 
+# Un-hidden configs and source code
+*config           text eol=lf
+*config_*         text eol=lf
+*attributes       text eol=lf
+inputrc           text eol=lf
+profile           text eol=lf
+dir_colors        text eol=lf
+bash_*            text eol=lf
+bashrc            text eol=lf
+bashrc_*          text eol=lf
+zprofile          text eol=lf
+zshrc             text eol=lf
+zshrc_*           text eol=lf
+fishfile          text eol=lf
+fish_*            text eol=lf
+vimrc             text eol=lf
+diff-so-fancy     text eol=lf
+
 # Source code
 *.bash            text eol=lf
 *.bat             text eol=crlf
@@ -40,10 +58,12 @@
 *.cs              text eol=crlf
 *.css             text eol=lf diff=css
 *.el              text eol=lf diff=elisp
+*.fish            text eol=lf
 *.htm             text eol=lf diff=html
 *.html            text eol=lf diff=html
 *.inc             text eol=lf
 *.ini             text eol=lf
+*.in              text eol=lf
 *.js              text eol=lf
 *.mjs             text eol=lf
 *.cjs             text eol=lf
@@ -122,12 +142,20 @@ config            text eol=lf
 config_*          text eol=lf
 conf              text eol=lf
 conf_*            text eol=lf
+cnfg              text eol=lf
+cnfg_*            text eol=lf
+cfg               text eol=lf
+cfg_*             text eol=lf
 cnf               text eol=lf
 cnf_*             text eol=lf
 *.config          text eol=lf
 *.config_*        text eol=lf
 *.conf            text eol=lf
 *.conf_*          text eol=lf
+*.cnfg            text eol=lf
+*.cnfg_*          text eol=lf
+*.cfg             text eol=lf
+*.cfg_*           text eol=lf
 *.cnf             text eol=lf
 *.cnf_*           text eol=lf
 # EG: .editorconfig, .gitconfig
@@ -139,6 +167,8 @@ cnf_*             text eol=lf
 # EG: .gitattributes
 *.*attributes     text eol=lf
 *.*attributes_*   text eol=lf
+# EG: .gitmodules
+*.*modules        text eol=lf
 # EG: .eslintrc or .babelrc
 *.*rc             text eol=lf
 *.*rc_*           text eol=lf
