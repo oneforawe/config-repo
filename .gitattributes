@@ -32,21 +32,14 @@
 ##   This will handle all files NOT defined below.
 *                 text=auto
 
-# Attributes files (like .gitattributes)
-*.*attributes     text eol=lf
-
-# Ignore files (like .gitignore or .npmignore)
-*.*ignore         text eol=lf
-
-# RC files (like .babelrc or .eslintrc)
-*.*rc             text eol=lf
-
 # Source code
 *.bash            text eol=lf
 *.bat             text eol=crlf
 *.cmd             text eol=crlf
 *.coffee          text eol=lf
+*.cs              text eol=crlf
 *.css             text eol=lf diff=css
+*.el              text eol=lf diff=elisp
 *.htm             text eol=lf diff=html
 *.html            text eol=lf diff=html
 *.inc             text eol=lf
@@ -54,8 +47,8 @@
 *.js              text eol=lf
 *.mjs             text eol=lf
 *.cjs             text eol=lf
-*.json            text eol=lf
 *.jsx             text eol=lf
+*.json            text eol=lf
 *.less            text eol=lf
 *.ls              text eol=lf
 *.map             text eol=lf -diff
@@ -70,7 +63,6 @@
 *.scm             text eol=lf
 *.scss            text eol=lf diff=css
 *.sh              text eol=lf
-.husky/*          text eol=lf
 *.sql             text eol=lf
 *.styl            text eol=lf
 *.tag             text eol=lf
@@ -78,7 +70,7 @@
 *.tsx             text eol=lf
 *.xml             text eol=lf
 *.xhtml           text eol=lf diff=html
-*.el              text eol=lf diff=elisp
+.husky/*          text eol=lf
 
 # Documentation
 *.ipynb           text eol=lf
@@ -127,13 +119,30 @@ TODO              text eol=lf
 
 # Configs
 config            text eol=lf
-*.cnf             text eol=lf
-*.conf            text eol=lf
+config_*          text eol=lf
+conf              text eol=lf
+conf_*            text eol=lf
+cnf               text eol=lf
+cnf_*             text eol=lf
 *.config          text eol=lf
-.editorconfig     text eol=lf
+*.config_*        text eol=lf
+*.conf            text eol=lf
+*.conf_*          text eol=lf
+*.cnf             text eol=lf
+*.cnf_*           text eol=lf
+# EG: .editorconfig, .gitconfig
+.*config          text eol=lf
+.*config_*        text eol=lf
+# EG: .gitignore or .npmignore
+*.*ignore         text eol=lf
+*.*ignore_*       text eol=lf
+# EG: .gitattributes
+*.*attributes     text eol=lf
+*.*attributes_*   text eol=lf
+# EG: .eslintrc or .babelrc
+*.*rc             text eol=lf
+*.*rc_*           text eol=lf
 .env              text eol=lf
-.gitattributes    text eol=lf
-.gitconfig        text eol=lf
 .htaccess         text eol=lf
 *.lock            text eol=lf -diff
 package.json      text eol=lf
@@ -177,7 +186,7 @@ Procfile          text eol=lf
 *.psb             binary
 *.psd             binary
 # SVG treated as an asset (binary) by default.
-*.svg             text
+*.svg             text eol=lf
 # If you want to treat it as binary,
 # use the following line instead.
 # *.svg           binary
