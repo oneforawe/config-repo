@@ -162,8 +162,8 @@ cnf_*             text eol=lf
 *.cnf             text eol=lf
 *.cnf_*           text eol=lf
 # EG: .editorconfig, .gitconfig
-.*config          text eol=lf
-.*config_*        text eol=lf
+*.*config         text eol=lf
+*.*config_*       text eol=lf
 # EG: .gitignore or .npmignore
 *.*ignore         text eol=lf
 *.*ignore_*       text eol=lf
