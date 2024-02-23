@@ -3,11 +3,15 @@
 # https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
 
 # Useful Commands:
-# View the line-endings for files (index version, working tree version, & attributes):
-# git ls-files --eol
-# Force the files to match the .gitattributes specifications:
-# git rm --cached -r .  # Remove every file from git's index. (executed in project's root directory)
-# git reset --hard      # Rewrite git's index to pick up all the new line endings.
+# * View the line-endings for files (index version, working tree version, & attributes specifications):
+#      git ls-files --eol
+# * Force the files to match the .gitattributes specifications file:
+#    For example:
+#      git ls-files -z | xargs -0 rm -f    (for Bash)
+#      git ls-files | % {Remove-Item $_}   (for PowerShell)
+#      git checkout .                      (for both shells)
+#    Alternate (but not working):
+#      git add --renormalize .             (for both shells)
 
 
 # Source:
@@ -176,6 +180,7 @@ cnf_*             text eol=lf
 *.*rc             text eol=lf
 *.*rc_*           text eol=lf
 .env              text eol=lf
+.env.*            text eol=lf
 .htaccess         text eol=lf
 *.lock            text eol=lf -diff
 package.json      text eol=lf
