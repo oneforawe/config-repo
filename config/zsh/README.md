@@ -16,9 +16,9 @@ reference 1.  Note that from `.zshrc` I source multiple files (including
   * delete the auto-generated zshrc file and edit the moved original file to
     keep it (it should have the two plugins below listed along with git)
 * plugin: zsh-autosuggestions
-  `git clone https://github.com/zsh-users/zsh-autosuggestions /Users/<username>/.config/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions`
+  `git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions`
 * plugin: zsh-syntax-highlighting
-  `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /Users/<username>/.config/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting`
+  `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting`
 
 ## submodules (obsolete)
 
