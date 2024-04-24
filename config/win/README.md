@@ -172,6 +172,33 @@ Though it was a pain to install (needing
 via GitHub since I don't have access to the Microsoft/Windows Store), it ended
 up being much nicer to use than Cmd.exe or the WSL/Ubuntu-20.04 terminal.
 
+Some install notes (from my second install on a new replacement work laptop):
+
+* On the GitHub page, followed instructions to find an installer, downloaded it,
+  and attempted to install (but it fails, needing a supporting framework):  
+  `Add--AppxPackage .\Microsoft.WindowsTerminal_1.19.10821.0_8wekyb3d8bbwe.msixbundle`
+  * Error message (ellipsed):
+
+    Windows cannot install package
+    Microsoft.WindowsTerminal_1.19.10821.0_x64__8wekyb3d8bbwe
+    because this package depends on a framework that could not be found. Provide
+    the framework "Microsoft.UI.Xaml.2.8" published by...
+
+* Downloaded `Microsoft.VSLibs.x64.14.00.Desktop.appx` and ran in PowerShell  
+  `Add-AppxPackage .\Microsoft.VSLibs.x64.14.00.Desktop.appx`  
+  (not sure if this was necessary)
+* Found necessary steps [here](https://github.com/microsoft/winget-cli/issues/1861)
+  to get `Microsoft.UI.Xaml.2.8.appx` without using the Microsoft Store:
+  * Download this NuGetPackage: <https://www.nuget.org/packages/Microsoft.UI.Xaml/>
+  * Unzip it (change file extension to `.zip` if needed).
+  * Enter the resulting folder.
+  * Go to `.\tools\AppX\{arch}\Release\` and install it with PowerShell:  
+    `Add-AppxPackage .\Microsoft.UI.Xaml.2.8.appx`
+* Then I could successfully install Windows Terminal:  
+  `Add--AppxPackage .\Microsoft.WindowsTerminal_1.19.10821.0_8wekyb3d8bbwe.msixbundle`
+* From there, the app should be available as "Terminal". Might need to restart.
+  (I did restart but not sure if I had to.)
+
 Creating a custom prompt for PowerShell:
 
 * [Custom Prompt](https://docs.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup)
