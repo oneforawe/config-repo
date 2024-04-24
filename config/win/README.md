@@ -164,6 +164,46 @@ Fundamental commands:
 * Get-Member
 * Find-Module
 
+## Windows Terminal
+
+Use the [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701).
+Though it was a pain to install (needing
+[manual installation](https://docs.microsoft.com/en-us/windows/terminal/install)
+via GitHub since I don't have access to the Microsoft/Windows Store), it ended
+up being much nicer to use than Cmd.exe or the WSL/Ubuntu-20.04 terminal.
+
+Creating a custom prompt for PowerShell:
+
+* [Custom Prompt](https://docs.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup)
+* [Oh My PoSh](https://ohmyposh.dev/docs/installation/windows)
+* `$PROFILE` at  `~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`  
+  (see `echo $PROFILE` for current location of PowerShell profile)
+
+My PowerShell files:
+
+* Profile: [Microsoft.PowerShell_profile.ps1](./pwsh/Microsoft.PowerShell_profile.ps1)
+(placed at the location specified with `$PROFILE`)  
+  `New-Item -ItemType Directory C:\Users\USERNAME\Documents\WindowsPowerShell`
+  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\win\pwsh\Microsoft.PowerShell_profile.ps1 -Destination C:\Users\USERNAME\Documents\WindowsPowerShell\ -PassThru`
+* Prompt: [prompt-theme.omp.json](./pwsh/oh-my-posh/prompt-theme.omp.json)
+(placed at the location specified in the PowerShell profile)  
+  `New-Item -ItemType Directory C:\Users\USERNAME\.config`  
+  `New-Item -ItemType Directory C:\Users\USERNAME\.config\oh-my-posh`  
+  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\win\pwsh\oh-my-posh\prompt-theme.omp.json -Destination C:\Users\USERNAME\.config\oh-my-posh\ -PassThru`
+* Settings: After installing a Nerd Font, change the Windows Terminal settings
+to use that font.
+* Placement of these files is not yet automated with my config setup scripts.
+
+Git Segment:
+
+* See the OhMyPosh website [git section](https://ohmyposh.dev/docs/segments/git)
+for an explanation of the cryptic symbols (`+`, `-`, `~`, `?`) in the prompt's
+git segment.
+* More symbols:
+  * `\uF044` edit-icon (pencil-to-paper) -- Working (editing in progress, correct?)
+  * `\uF046` check-icon (check-in-box) -- Staging (commits made, correct?)
+  * `\uF692` save-icon (floppy-disk) -- Stashed (uncommited edits saved/stashed)
+
 ## WSL: Windows Subsystem for Linux
 
 There are multiple ways to use Linux with Windows, but if using Windows 10
@@ -257,46 +297,6 @@ Hopefully, sometime, all three domains will resolve properly.
 From this github thread, the user scyto has some sensible things to say, but no
 one seems to have found a real solution that I've tried that works for me:  
 <https://github.com/microsoft/WSL/issues/5256>
-
-## Windows Terminal
-
-Use the [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701).
-Though it was a pain to install (needing
-[manual installation](https://docs.microsoft.com/en-us/windows/terminal/install)
-via GitHub since I don't have access to the Microsoft/Windows Store), it ended
-up being much nicer to use than Cmd.exe or the WSL/Ubuntu-20.04 terminal.
-
-Creating a custom prompt for PowerShell:
-
-* [Custom Prompt](https://docs.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup)
-* [Oh My PoSh](https://ohmyposh.dev/docs/installation/windows)
-* `$PROFILE` at  `~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`  
-  (see `echo $PROFILE` for current location of PowerShell profile)
-
-My PowerShell files:
-
-* Profile: [Microsoft.PowerShell_profile.ps1](./pwsh/Microsoft.PowerShell_profile.ps1)
-(placed at the location specified with `$PROFILE`)  
-  `New-Item -ItemType Directory C:\Users\USERNAME\Documents\WindowsPowerShell`
-  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\win\pwsh\Microsoft.PowerShell_profile.ps1 -Destination C:\Users\USERNAME\Documents\WindowsPowerShell\ -PassThru`
-* Prompt: [prompt-theme.omp.json](./pwsh/oh-my-posh/prompt-theme.omp.json)
-(placed at the location specified in the PowerShell profile)  
-  `New-Item -ItemType Directory C:\Users\USERNAME\.config`  
-  `New-Item -ItemType Directory C:\Users\USERNAME\.config\oh-my-posh`  
-  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\win\pwsh\oh-my-posh\prompt-theme.omp.json -Destination C:\Users\USERNAME\.config\oh-my-posh\ -PassThru`
-* Settings: After installing a Nerd Font, change the Windows Terminal settings
-to use that font.
-* Placement of these files is not yet automated with my config setup scripts.
-
-Git Segment:
-
-* See the OhMyPosh website [git section](https://ohmyposh.dev/docs/segments/git)
-for an explanation of the cryptic symbols (`+`, `-`, `~`, `?`) in the prompt's
-git segment.
-* More symbols:
-  * `\uF044` edit-icon (pencil-to-paper) -- Working (editing in progress, correct?)
-  * `\uF046` check-icon (check-in-box) -- Staging (commits made, correct?)
-  * `\uF692` save-icon (floppy-disk) -- Stashed (uncommited edits saved/stashed)
 
 ## Web Dev on Windows
 
