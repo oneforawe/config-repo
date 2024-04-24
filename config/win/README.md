@@ -210,7 +210,7 @@ My PowerShell files:
 
 * Profile: [Microsoft.PowerShell_profile.ps1](./pwsh/Microsoft.PowerShell_profile.ps1)
 (placed at the location specified with `$PROFILE`)  
-  `New-Item -ItemType Directory C:\Users\USERNAME\Documents\WindowsPowerShell`
+  `New-Item -ItemType Directory C:\Users\USERNAME\Documents\WindowsPowerShell`  
   `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\win\pwsh\Microsoft.PowerShell_profile.ps1 -Destination C:\Users\USERNAME\Documents\WindowsPowerShell\ -PassThru`
 * Prompt: [prompt-theme.omp.json](./pwsh/oh-my-posh/prompt-theme.omp.json)
 (placed at the location specified in the PowerShell profile)  
