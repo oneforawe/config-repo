@@ -346,7 +346,8 @@ one seems to have found a real solution that I've tried that works for me:
   (All of these become available: view, vim, vimdiff, vimtutor, evim, gview,
   gvim, gvimdiff.)  
   Can "Remap a few keys for Windows" (eg, Ctrl-V, Ctrl-C, etc)
-  Settings: either
+  Settings: open PowerShell as an admin user (create folders as needed) and
+  either
   * create copies
     * `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vimrc -Destination C:\Users\USERNAME\vimfiles\ -PassThru`
     * `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vim.d\colors\zenburn.vim -Destination C:\Users\USERNAME\vimfiles\colors\ -PassThru`
