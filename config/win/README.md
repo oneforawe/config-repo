@@ -214,13 +214,13 @@ My PowerShell files:
 
 * Profile: [Microsoft.PowerShell_profile.ps1](./pwsh/Microsoft.PowerShell_profile.ps1)
 (placed at the location specified with `$PROFILE`)  
-  `New-Item -ItemType Directory C:\Users\USERNAME\Documents\WindowsPowerShell`  
-  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\win\pwsh\Microsoft.PowerShell_profile.ps1 -Destination C:\Users\USERNAME\Documents\WindowsPowerShell\ -PassThru`
+  `New-Item -ItemType Directory ~\Documents\WindowsPowerShell`  
+  `Copy-Item -Path ~\.config-repo\config\win\pwsh\Microsoft.PowerShell_profile.ps1 -Destination ~\Documents\WindowsPowerShell\ -PassThru`
 * Prompt: [prompt-theme.omp.json](./pwsh/oh-my-posh/prompt-theme.omp.json)
 (placed at the location specified in the PowerShell profile)  
-  `New-Item -ItemType Directory C:\Users\USERNAME\.config`  
-  `New-Item -ItemType Directory C:\Users\USERNAME\.config\oh-my-posh`  
-  `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\win\pwsh\oh-my-posh\prompt-theme.omp.json -Destination C:\Users\USERNAME\.config\oh-my-posh\ -PassThru`
+  `New-Item -ItemType Directory ~\.config`  
+  `New-Item -ItemType Directory ~\.config\oh-my-posh`  
+  `Copy-Item -Path ~\.config-repo\config\win\pwsh\oh-my-posh\prompt-theme.omp.json -Destination ~\.config\oh-my-posh\ -PassThru`
 * Settings: After installing a Nerd Font, change the Windows Terminal settings
 to use that font.
 * Placement of these files is not yet automated with my config setup scripts.
