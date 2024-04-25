@@ -348,15 +348,72 @@ one seems to have found a real solution that I've tried that works for me:
   Can "Remap a few keys for Windows" (eg, Ctrl-V, Ctrl-C, etc)
   Settings: either
   * create copies
-    * `Copy-Item -Path ~\.config-repo\config\vim\vimrc -Destination ~\vimfiles\ -PassThru`
-    * `Copy-Item -Path ~\.config-repo\config\vim\vim.d\colors\zenburn.vim -Destination ~\vimfiles\colors\ -PassThru`
+    * `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vimrc -Destination C:\Users\USERNAME\vimfiles\ -PassThru`
+    * `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vim.d\colors\zenburn.vim -Destination C:\Users\USERNAME\vimfiles\colors\ -PassThru`
   * or create links
-    * `New-Item -ItemType SymbolicLink -Path ~\vimfiles\vimrc -Target ~\.config-repo\config\vim\vimrc`
-    * `New-Item -ItemType SymbolicLink -Path ~\vimfiles\colors\zenburn.vim -Target ~\.config-repo\config\vim\vim.d\colors\zenburn.vim`
+    * `New-Item -ItemType SymbolicLink -Path C:\Users\USERNAME\vimfiles\vimrc -Target C:\Users\USERNAME\.config-repo\config\vim\vimrc`
+    * `New-Item -ItemType SymbolicLink -Path C:\Users\USERNAME\vimfiles\colors\zenburn.vim -Target C:\Users\USERNAME\.config-repo\config\vim\vim.d\colors\zenburn.vim`
 * git (EG [git-scm](https://git-scm.com/download/win), also promoted
-  [here](https://gitforwindows.org/))
+  [here](https://gitforwindows.org/)), and most recent installation settings:
+  * use default folders/locations
+  * (can de-select the "Windows Explorer integration" options for "Open Git Bash
+    here" and "Open Git GUI here" since I don't use those)
+  * use Vim as Git's default editor  
+    (and I think this should use the vim/gvim app already installed)
+  * can let Git decide on default branch name  
+    (and I use other config files for my preference)
+  * select "Git from the command line and also from 3rd-party software"  
+    (no need for optional Unix tools)
+  * use external OpenSSH
+  * use the OpenSSL library  
+    (for this option, "Server certificates will be validated using the
+    `ca-bundle.crt` file.")  
+    (not sure if I should be using the native Windows Secure Channel library --
+    "Server certificates will be validated using Windows Certificate Stores.
+    This option also allows you to use your company's internal Root CA
+    certificates distributed e.g. via Active Directory Domain Services.)
+  * use the second "input" option:
+    * Checkout Windows-style, commit Unix-style line endings  
+      Git will convert LF to CRLF when checking out text files. When committing
+      text files, CRLF will be converted to LF. For cross-platform projects,
+      this is the recommended setting on Windows ("core.autocrlf" is set to
+      "true").
+    * Checkout as-is, commit Unix-style line endings  
+      Git will not perform any conversion when checking out text files. When
+      committing text files, CRLF will be converted to LF. For cross-platform
+      projects, this is the recommended setting on Unix ("core.autocrlf" is set
+      to "input").
+    * Checkout as-is, commit as-is  
+      Git will not perform any conversion when checking out or committing text
+      files. Choosing this option is not recommended for cross-platform projects
+      ("core.autocrlf" is set to "false").
+  * can use the first option for Git Bash (but I don't use Git Bash)
+    * Use MinTTY (the default terminal of MSYS2)
+    * Use Windows' default console window
+  * default for `git pull` (pick first? it's selected by default, even though
+    the third option is "standard")
+    * Fast-forward or merge  
+      Fast-forward the current branch to the fetched branch when possible,
+      otherwise create a merge commit.
+    * Rebase  
+      Rebase the current branch onto the fetched branch. If there are no local
+      commits to rebase, this is equivalent to a fast-forward.
+    * Only ever fast-forward  
+      Fast-forward to the fetched branch. Fail if that is not possible. This is
+      the standard behavior of `git pull`.
+  * Don't use a credential helper. Choose second option.
+    * Git Credential Manager
+    * None
+  * Can enable both extra (non-experimental) optional features
+    * Enable file system caching  
+      File system data will be read in bulk and cached in memory for certain
+      operations ("core.fscache" is set to "true"). This provides a significant
+      performance boost.
+    * Enable symbolic links
+      Enable symbolic links (requires the SeCreateSymbolicLink permission).
+      Please note that existing repositories are unaffected by this setting.
 * [nvm-windows](https://github.com/coreybutler/nvm-windows)
-(node version manager for windows)
+  (node version manager for windows)
   * Installing/Upgrading NVM for Windows  
     Install: `nvm-setup.exe` (via `nvm-setup.zip`)  
     Upgrade: `nvm-update.exe` (via `nvm-update.zip`)
