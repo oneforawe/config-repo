@@ -172,6 +172,8 @@ Though it was a pain to install (needing
 via GitHub since I don't have access to the Microsoft/Windows Store), it ended
 up being much nicer to use than Cmd.exe or the WSL/Ubuntu-20.04 terminal.
 
+### Install Notes
+
 Some install notes (from my second install on a new replacement work laptop):
 
 * On the GitHub page, followed instructions to find an installer, downloaded it,
@@ -198,6 +200,8 @@ Some install notes (from my second install on a new replacement work laptop):
   `Add--AppxPackage .\Microsoft.WindowsTerminal_1.19.10821.0_8wekyb3d8bbwe.msixbundle`
 * From there, the app should be available as "Terminal". Might need to restart.
   (I did restart but not sure if I had to.)
+
+### Profile and Prompt
 
 Creating a custom prompt for PowerShell:
 
