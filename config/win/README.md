@@ -29,6 +29,12 @@ development environment for work.  I call it DevVM.
   * PuTTY (release 0.77 64-bit)
   * Remote Desktop Connection (already installed by default?)
 
+## Admin Account
+
+With my replacement laptop, I'll need to press shift and right-click on an
+executable to "Run as different user" and then sign in with my `_admin` account
+to run as a local administrator.
+
 ## Remap Keys
 
 For better keyboard ergonomics, you can use PowerToys to remap the CAPS-LOCK key
@@ -332,19 +338,21 @@ one seems to have found a real solution that I've tried that works for me:
 ## Web Dev on Windows
 
 * vim (EG [gvim](https://www.vim.org/download.php)
--- `C:\Program Files (x86)\Vim\vim82`)  
+-- `C:\Program Files\Vim`)  
+  (Previously `C:\Program Files (x86)\Vim\vim82`)
   When using the installer, be sure to check the "create .bat files" option so
   vim/gvim will work in the terminal/console, as explained
-  [here](https://stackoverflow.com/questions/10049316/how-do-you-run-vim-in-windows).
+  [here](https://stackoverflow.com/questions/10049316/how-do-you-run-vim-in-windows).  
   (All of these become available: view, vim, vimdiff, vimtutor, evim, gview,
   gvim, gvimdiff.)  
+  Can "Remap a few keys for Windows" (eg, Ctrl-V, Ctrl-C, etc)
   Settings: either
   * create copies
-    * `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vimrc -Destination C:\Users\USERNAME\vimfiles\ -PassThru`
-    * `Copy-Item -Path C:\Users\USERNAME\.config-repo\config\vim\vim.d\colors\zenburn.vim -Destination C:\Users\USERNAME\vimfiles\colors\ -PassThru`
+    * `Copy-Item -Path ~\.config-repo\config\vim\vimrc -Destination ~\vimfiles\ -PassThru`
+    * `Copy-Item -Path ~\.config-repo\config\vim\vim.d\colors\zenburn.vim -Destination ~\vimfiles\colors\ -PassThru`
   * or create links
-    * `New-Item -ItemType SymbolicLink -Path C:\Users\USERNAME\vimfiles\vimrc -Target C:\Users\USERNAME\.config-repo\config\vim\vimrc`
-    * `New-Item -ItemType SymbolicLink -Path C:\Users\USERNAME\vimfiles\colors\zenburn.vim -Target C:\Users\USERNAME\.config-repo\config\vim\vim.d\colors\zenburn.vim`
+    * `New-Item -ItemType SymbolicLink -Path ~\vimfiles\vimrc -Target ~\.config-repo\config\vim\vimrc`
+    * `New-Item -ItemType SymbolicLink -Path ~\vimfiles\colors\zenburn.vim -Target ~\.config-repo\config\vim\vim.d\colors\zenburn.vim`
 * git (EG [git-scm](https://git-scm.com/download/win), also promoted
   [here](https://gitforwindows.org/))
 * [nvm-windows](https://github.com/coreybutler/nvm-windows)
