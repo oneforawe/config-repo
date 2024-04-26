@@ -215,11 +215,11 @@ Creating a custom prompt for PowerShell:
 * [Oh My PoSh](https://ohmyposh.dev/docs/installation/windows)
 * `$PROFILE` at  `~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`  
   (see `echo $PROFILE` for current location of PowerShell profile)
+* For the profile file, make `oh-my-posh` executable following the
+  [manual install](https://ohmyposh.dev/docs/installation/windows) instructions.
 
 My PowerShell files:
 
-* Make `oh-my-posh` executable following the
-  [manual install](https://ohmyposh.dev/docs/installation/windows) instructions.
 * Profile: [Microsoft.PowerShell_profile.ps1](./pwsh/Microsoft.PowerShell_profile.ps1)
 (placed at the location specified with `$PROFILE`)  
   `New-Item -ItemType Directory ~\Documents\WindowsPowerShell`  
@@ -231,9 +231,9 @@ My PowerShell files:
   `Copy-Item -Path ~\.config-repo\config\win\pwsh\oh-my-posh\prompt-theme.omp.json -Destination ~\.config\oh-my-posh\ -PassThru`
 * Settings: After installing a
   [Nerd Font](https://www.nerdfonts.com/font-downloads)
-  (e.g., "Cascadia Mono" / CaskaydiaMono Nerd Font --
+  (e.g., CaskaydiaMono Nerd Font / "Cascadia Mono" --
   `CaskaydiaMonoNerdFont-Regular.ttf`), change the Windows Terminal settings to
-  use that font.
+  use that font (e.g., Profiles > Defaults > Appearance > Text > Font face).
 * Placement of these files is not yet automated with my config setup scripts.
 
 Git Segment:
@@ -418,7 +418,14 @@ one seems to have found a real solution that I've tried that works for me:
     * Enable symbolic links
       Enable symbolic links (requires the SeCreateSymbolicLink permission).
       Please note that existing repositories are unaffected by this setting.
-* [nvm-windows](https://github.com/coreybutler/nvm-windows)
+* [pnpm](https://pnpm.io/installation) install for Windows
+  * I was able to install as a regular user. (At first there was a permission
+    error when the install-script attempted to delete a temporary file. I
+    uninstalled and re-installed as a local admin user, but it had the same
+    error, so I uninstalled and re-installed again as a regular user, and then
+    the permission error didn't come up. No idea why.)
+  * Use pnpm as a version manager for Node, etc.
+* OLD: [nvm-windows](https://github.com/coreybutler/nvm-windows)
   (node version manager for windows)
   * Installing/Upgrading NVM for Windows  
     Install: `nvm-setup.exe` (via `nvm-setup.zip`)  
