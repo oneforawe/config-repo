@@ -35,6 +35,12 @@ With my replacement laptop, I'll need to press shift and right-click on an
 executable to "Run as different user" and then sign in with my `_admin` account
 to run as a local administrator.
 
+Removing desktop icons / shortcuts:
+
+* In the admin account, go to `C:\Users\Public\Desktop`  
+  (if `Desktop` does not show, type `Desktop` after `...\Public`)
+* Delete the shortcuts
+
 ## Remap Keys
 
 For better keyboard ergonomics, you can use PowerToys to remap the CAPS-LOCK key
@@ -254,7 +260,8 @@ to run a GNU/Linux environment -- including most command-line tools, utilities,
 and applications -- directly on Windows, unmodified, without the overhead of a
 traditional virtual machine or dual-boot setup.
 
-<https://docs.microsoft.com/en-us/windows/wsl/>
+* [WSL docs](https://docs.microsoft.com/en-us/windows/wsl/)
+* Follow the installation instructions and the highlighted best practices.
 
 EG: Install Ubuntu-20.04 and access it in several ways, most pleasantly through
 the Windows Terminal app, but initially most conveniently through another
@@ -343,7 +350,7 @@ one seems to have found a real solution that I've tried that works for me:
 ## Web Dev on Windows
 
 * vim (EG [gvim](https://www.vim.org/download.php)
--- `C:\Program Files\Vim`)  
+-- `C:\Program Files\Vim`, `gvim_9.1.0000_x64.exe`)  
   (Previously `C:\Program Files (x86)\Vim\vim82`)
   When using the installer, be sure to check the "create .bat files" option so
   vim/gvim will work in the terminal/console, as explained
