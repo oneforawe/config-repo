@@ -271,6 +271,27 @@ close all connections to the system).
 
 Note: WSL Ubuntu uses System V, not systemd for process management.
 
+### WSL/Ubuntu Install
+
+Notes for my installation in my second work laptop.
+
+* Without Microsoft Store access, I followed instructions for a
+  [manual install](https://learn.microsoft.com/en-us/windows/wsl/install-manual).
+* It seemed that opening PowerShell as admin was not enough; I had to log in to
+  my local admin (`_admin`) account itself and then open PowerShell in that
+  environment to do the installation.  I also set the Developer Mode on
+  (Windows Settings > Update & Security > For developers > Developer Mode > On)
+  so that I could "Install apps from any source, including loose files", but I'm
+  not sure if that was necessary.
+* I had to manually enable WSL, enable the virtual machine feature, restart the
+  machine, run the Linux kernel update package (`wsl_update_x64.msi`), set WSL 2
+  as my default version, download an Ubuntu distribution Appx/AppxBundle
+  package, add it with the Add-AppxPackage utility, and at that point I could
+  start Ubuntu with an `Ubuntu` app from the Start menu or search feature and
+  create my user account.  (The instructions said I should be able to
+  double-click on the appx file to start running the distribution, but that
+  didn't work for me and caused me much lost time in troubleshooting.)
+
 ### WSL Interaction
 
 * Start a WSL Ubuntu instance
