@@ -260,21 +260,21 @@ to run a GNU/Linux environment -- including most command-line tools, utilities,
 and applications -- directly on Windows, unmodified, without the overhead of a
 traditional virtual machine or dual-boot setup.
 
-* [WSL docs](https://docs.microsoft.com/en-us/windows/wsl/)
-* Follow the installation instructions and the highlighted best practices.
-
 EG: Install Ubuntu-20.04 and access it in several ways, most pleasantly through
 the Windows Terminal app, but initially most conveniently through another
-virtual-terminal app called 'Ubuntu 20.04 LTS'.  You can shut down the Linux
-system using PowerShell with command `wsl --shutdown` (I think as long as you
-close all connections to the system).
+virtual-terminal app called 'Ubuntu 20.04 LTS' or just 'Ubuntu'.  You can shut
+down the Linux system using PowerShell with command `wsl --shutdown` (I think as
+long as you close all connections to the system).
 
 Note: WSL Ubuntu uses System V, not systemd for process management.
 
 ### WSL/Ubuntu Install
 
-Notes for my installation in my second work laptop.
+Notes for my (manual) installation in my second work laptop.
 
+* [WSL docs](https://docs.microsoft.com/en-us/windows/wsl/)  
+  See the installation instructions, the highlighted best practices, and if
+  needed (and it was needed for me), the manual installation instructions.
 * Without Microsoft Store access, I followed instructions for a
   [manual install](https://learn.microsoft.com/en-us/windows/wsl/install-manual).
 * It seemed that opening PowerShell as admin was not enough; I had to log in to
