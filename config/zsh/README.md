@@ -9,10 +9,8 @@ reference 1.  Note that from `.zshrc` I source multiple files (including
 
 ## installation
 
-### MacOS
-
-* oh-my-zsh
-  * use the curl command provided at the github page
+* [oh-my-zsh](https://ohmyz.sh/)
+  * use the curl command provided at the main page or github page
   * delete the auto-generated zshrc file and edit the moved original file to
     keep it (it should have the two plugins below listed along with git)
 * plugin: zsh-autosuggestions
