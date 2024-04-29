@@ -295,6 +295,8 @@ Notes for my (manual) installation in my second work laptop.
   distribution, but that didn't work for me and caused me much lost time in
   troubleshooting, at least when I was erroneously trying to install Ubuntu as
   admin, and that was more lost time.)
+* At this point, I found that an `Ubuntu` profile appears automatically in
+  Windows Terminal (`Terminal`) and can start a new shell session in a new tab.
 
 ### WSL Interaction
 

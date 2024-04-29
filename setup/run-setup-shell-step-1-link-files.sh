@@ -113,10 +113,10 @@ ln_s $z2/zshrc_prompt  $z1a/zshrc_prompt
 ln_s $z2/zshrc_etc     $z1a/zshrc_etc
 ln_s $z2/zshrc_etc_mac $z1a/zshrc_etc_mac
 # zsh packages / plugins
-rm -r $z1a/oh-my-zsh
+#rm -r $z1a/oh-my-zsh
 rm -r $z1b/zsh-autosuggestions
 rm -r $z1b/zsh-syntax-highlighting
-ln_s $z2/oh-my-zsh $z1a/
+#ln_s $z2/oh-my-zsh $z1a/
 ln_s $z2/pack/zsh-autosuggestions     $z1b/
 ln_s $z2/pack/zsh-syntax-highlighting $z1b/
 
