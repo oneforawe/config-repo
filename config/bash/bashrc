@@ -46,7 +46,7 @@ source ~/.config/bash/bashrc_aliases_lsGNU
 # For GNU/Linux
 if [[ "$(uname -s)" = "Linux" ]] ; then
 	source ~/.config/bash/bashrc_aliases_linux
-	#source ~/.config/bash/bashrc_etc_linux
+	source ~/.config/bash/bashrc_etc_linux
 fi
 
 # For MacOS

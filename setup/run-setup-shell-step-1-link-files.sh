@@ -88,7 +88,7 @@ ln_s $b2/bashrc_aliases_linux $b1/bashrc_aliases_linux
 ln_s $b2/bashrc_etc           $b1/bashrc_etc
 ln_s $b2/bashrc_etc_mac       $b1/bashrc_etc_mac
 ln_s $b2/bashrc_etc_mac_git   $b1/bashrc_etc_mac_git
-#ln_s $b2/bashrc_etc_linux    $b1/.bashrc_etc_linux
+ln_s $b2/bashrc_etc_linux     $b1/.bashrc_etc_linux
 ln_s $b2/bash_logout  $r/.bash_logout
 ln_s $b2/dir_colors   $r/.dir_colors
 
