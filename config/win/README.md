@@ -90,6 +90,23 @@ called "DevVM" instead.)
 Using the Citrix connection to the DevVM, the resolution is sometimes not very
 good.  To fix the resolution:
 
+### New Solution
+
+* Open the Explorer and navigate to `C:\Program Files (x86)\Citrix\ICA Client`
+* Do the following for two files in this folder: `CDViewer.exe` and `wfica32.exe`
+  * Right click the file and choose Properties.
+  * Go to the Compatibility tab and disable or override (depending on your
+    Windows 10 build) the DPI scaling.  (EG, press the button with text reading
+    `Change high DPI settings`, and for the `High DPI scaling override` section
+    check the box for
+    `Override high DPI scaling behavior. Scaling performed by:`
+    and select `System` from the available options.)
+
+Reference:
+[source](https://lazyadmin.nl/it/citrix-receiver-blurry-in-windows-10/)
+
+### Old Solution
+
 * Open the Windows task bar (lower-right) notification area and make sure that
 the "Citrix Workspace" (reciever) icon is present.  If not, start the
 "Citrix Workspace" (receiver) app from the Windows search.
