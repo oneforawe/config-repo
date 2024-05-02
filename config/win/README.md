@@ -25,7 +25,7 @@ development environment for work.  I call it DevVM.
   * Vim for Windows
   * Git for Windows
   * NVM for Windows (for Node 18, etc)
-  * WSL2 (Windows Subsystem for Linux)
+  * WSL (Windows Subsystem for Linux)
   * PuTTY (release 0.77 64-bit)
   * Remote Desktop Connection (already installed by default?)
 
@@ -303,7 +303,7 @@ Notes for my (manual) installation in my second work laptop.
   not sure if that was necessary.
 * As admin, I had to manually enable WSL, enable the virtual machine feature,
   restart the machine, run the Linux kernel update package
-  (`wsl_update_x64.msi`), and set WSL 2 as my default version.
+  (`wsl_update_x64.msi`), and set WSL 2 as my default version (WSL2).
 * As a normal user back in my normal account environment, I had to download an
   Ubuntu distribution Appx/AppxBundle package, add it with the Add-AppxPackage
   utility, and at that point I could start Ubuntu with an `Ubuntu` app from the
