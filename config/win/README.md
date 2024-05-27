@@ -24,7 +24,8 @@ development environment for work.  I call it DevVM.
   * Oh My Posh
   * Vim for Windows
   * Git for Windows
-  * NVM for Windows (for Node 18, etc)
+  * NVM for Windows (for Node, etc)  
+    or PNPM (as version manager for Node, etc)
   * WSL (Windows Subsystem for Linux)
   * PuTTY (release 0.77 64-bit)
   * Remote Desktop Connection (already installed by default?)
@@ -390,6 +391,40 @@ Hopefully, sometime, all three domains will resolve properly.
 From this github thread, the user scyto has some sensible things to say, but no
 one seems to have found a real solution that I've tried that works for me:  
 <https://github.com/microsoft/WSL/issues/5256>
+
+## Dev in Ubuntu
+
+In my new Windows system (in my second work laptop), I had some problems in WSL.
+
+* In WSL, check that `code .` works.
+  * Got this error:
+
+  ```(text)
+  Installing VS Code Server for Linux x64 (e170252f762678dec6ca2cc69aba1570769a5d39)
+  Downloading: 100%
+  Failed
+  --2024-04-29 09:24:02--  https://update.code.visualstudio.com/commit:e170252f762678dec6ca2cc69aba1570769a5d39/server-linux-x64/stable
+  Resolving update.code.visualstudio.com (update.code.visualstudio.com)... 13.107.246.69, 13.107.213.69, 2620:1ec:bdf::69, ...
+  Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|13.107.246.69|:443... connected.
+  ERROR: cannot verify update.code.visualstudio.com's certificate, issued by ‘emailAddress=certadmin@netskope.com,CN=ca.pacificdental.goskope.com,OU=e3d0cf1222e430abc0335ec532b67633,O=Pacific Dental Services,L=Irvine,ST=CA,C=US’:
+    Self-signed certificate encountered.
+  To connect to update.code.visualstudio.com insecurely, use `--no-check-certificate'.
+  ERROR: Failed to download https://update.code.visualstudio.com/commit:e170252f762678dec6ca2cc69aba1570769a5d39/server-linux-x64/stable to /home/pan/.vscode-server/bin/e170252f762678dec6ca2cc69aba1570769a5d39-1714407842.tar.gz
+  Please install missing certificates.
+  Debian/Ubuntu:  sudo apt-get install ca-certificates
+  ```
+
+  * As suggested in the text above, and as suggested
+  [here](https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed),
+  I tried these commands:
+    * `sudo apt-get install ca-certificates`
+    * `sudo apt-get install --reinstall ca-certificates`
+    * `sudo mkdir /usr/local/share/ca-certificates/cacert.org`
+      `sudo wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt`
+      `sudo update-ca-certificates`
+    * `sudo apt-get install --reinstall ca-certificates`
+
+See more [here](./wsl2-netskope/README.md).
 
 ## Web Dev on Windows
 
