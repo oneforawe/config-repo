@@ -35,7 +35,7 @@ Execute(Carriage returns should be included for ale#util#Writefile):
 
 Given(A file with extra carriage returns):
   first
-  second
+  second
   third
   fourth
 
