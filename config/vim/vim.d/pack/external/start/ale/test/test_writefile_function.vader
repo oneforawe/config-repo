@@ -34,8 +34,8 @@ Execute(Carriage returns should be included for ale#util#Writefile):
   \ readfile(g:new_line_test_file, 'b')
 
 Given(A file with extra carriage returns):
-  first
-  second
+  first
+  second
   third
   fourth
 
