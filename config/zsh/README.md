@@ -10,14 +10,15 @@ reference 1.  Note that from `.zshrc` I source multiple files (including
 ## installation
 
 * [oh-my-zsh](https://ohmyz.sh/)
-  * if needed, delete `~/.config/zsh/oh-my-zsh/` and `~/.config/zsh/pack/`  
+  * If needed, delete old obsolete folders/links `~/.config/zsh/oh-my-zsh/` and
+    `~/.config/zsh/pack/`.  
     `rm -r ~/.config/zsh/oh-my-zsh`  
     `rm -r ~/.config/zsh/pack`
-  * use the curl command provided at the main page or github page, EG:
+  * Use the curl command provided at the main page or github page, EG:
     `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-  * delete the auto-generated zshrc file and edit the moved original file to
+  * Delete the auto-generated zshrc file and edit the moved original file to
     keep it (where the original file should have contents that list the two
-    plugins below along with git)  
+    plugins below along with git).  
     `rm ~/.zshrc`  
     `mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc`
 * plugin: zsh-autosuggestions  
