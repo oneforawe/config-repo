@@ -3,6 +3,5 @@ coreutils
 openssh
 gh
 youtube-dl
-thefuck
 rbenv
 ruby-build

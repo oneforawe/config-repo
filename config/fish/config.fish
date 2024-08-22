@@ -24,6 +24,3 @@
 fish_vi_key_bindings
 #source ~/.config/fish/functions/aliases.fish
 source ~/.config/fish/functions/aliases_simplified.fish
-
-# Use `fuck` command - for suggesting command-line mistake re-writes.
-thefuck --alias | source

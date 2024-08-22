@@ -134,7 +134,6 @@ ln_s $f2a/fishfile       $f1a/fishfile
 ln_s $f2b/fish_mode_prompt.fish    $f1b/fish_mode_prompt.fish
 ln_s $f2b/fish_prompt.fish         $f1b/fish_prompt.fish
 ln_s $f2b/aliases_simplified.fish  $f1b/aliases_simplified.fish
-ln_s $f2b/fuck.fish                $f1b/fuck.fish
 
 # tmux
 if [[ -f $r/.tmux.conf ]] && [[ ! -L $r/.tmux.conf ]] ; then
@@ -210,11 +209,10 @@ ln_s $src/config/emacs/emacs.d	$r/.emacs.d
 
 
 # For GNU/Linux
-if [[ "$(uname -s)" = "Linux" ]] ; then
-	# pack	(packages common to the shells)
-	rm -r $r/.config/thefuck
-	ln_s $src/config/pack/thefuck $r/.config/thefuck
-fi
+#if [[ "$(uname -s)" = "Linux" ]] ; then
+#	# pack	(packages common to the shells)
+#	# (Got rid of these packages. Keeping this placeholder.)
+#fi
 
 # For MacOS Darwin
 if [[ "$(uname -s)" = "Darwin" ]] ; then

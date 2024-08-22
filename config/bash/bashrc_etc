@@ -14,11 +14,6 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 HISTCONTROL=ignoreboth  # Don't save duplicates or inputs starting with space
 
-# Use `fuck` command alias - for suggesting command-line mistake re-writes.
-if [[ -n $(command -v thefuck) ]] ; then
-	eval "$(thefuck --alias)"
-fi
-
 # JavaScript tools: nvm (node version manager)
 if [[ -d $HOME/.nvm ]] ; then
 	export NVM_DIR="$HOME/.nvm"

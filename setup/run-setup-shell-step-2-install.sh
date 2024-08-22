@@ -25,18 +25,6 @@ if [[ "$(uname -s)" = "Linux" ]] ; then
 		fi
 	done
 
-	# Check/Install thefuck
-	if [[ -z $(which thefuck) ]] ; then
-		# See https://github.com/nvbn/thefuck/wiki/Installation
-		arrPackages=( 'python3-dev' 'python3-pip' )
-		for package in "${arrPackages[@]}" ; do
-			if [[ -z $(ls /usr/share/doc | grep $package) ]] ; then
-				sudo apt install $package
-			fi
-		done
-		sudo pip3 install thefuck
-	fi
-
 	# Check/Install gh (the GitHub-CLI)
 	if [[ -z $(which gh) ]] ; then
 		# See https://github.com/cli/cli/blob/trunk/docs/install_linux.md
