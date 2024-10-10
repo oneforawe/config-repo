@@ -9,21 +9,23 @@
 # ----------------------------------------------------------------------
 
 function amscheck {
-	printf "  Running \"tree ~/org | grep \\\#\"\n"
+	printf "  Executing: tree ~/org | grep \\\#\n"
 	tree ~/org | grep \#
 }
 
 function amsopen {
-	printf "  Going to \"org\" directory.\n"
-	cd ~/org
-	printf "  Running \"emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org\"\n"
-	sleep 1
-	emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org
-	# Earlier versions:
-	#printf "  Running \"emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org\"\n"
-	#emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org
-	#printf "  Running \"emacs Trigger/*.org Review/More/*.org Review/*.org\"\n"
-	#emacs Trigger/*.org Review/More/*.org Review/*.org
+	(
+		printf "  Going to ~/org directory.\n"
+		cd ~/org
+		printf "  Executing: emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org\n"
+		sleep 1
+		emacs Reference/*_Rf_*.org Trigger/*.org Review/More/*.org Review/*.org
+		# Earlier versions:
+		#printf "  Running \"emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org\"\n"
+		#emacs Projects/*.org Trigger/*.org Review/More/*.org Review/*.org
+		#printf "  Running \"emacs Trigger/*.org Review/More/*.org Review/*.org\"\n"
+		#emacs Trigger/*.org Review/More/*.org Review/*.org
+	)
 }
 
 
