@@ -94,7 +94,7 @@
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
           "background": "#ff4d4d",
-          "type": "text",
+          "type": "exit",
           "style": "powerline"
         }
       ]
