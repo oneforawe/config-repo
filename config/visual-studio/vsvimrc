@@ -1,0 +1,159 @@
+" ================================
+" VsVim Configuration for Visual Studio
+" Purpose: Ease into Vim's Ctrl key mappings while preserving VS defaults
+" ================================
+
+
+" === PREREQUISITES ===
+" =====================
+
+" Several default Visual Studio key-binding commands need to be removed before some of these Vim key-bindings can be exposed and used.
+" See menu: Tools > Options > Environment > Keyboard
+
+
+" === GENERAL VIM SETTINGS ===
+" ============================
+
+set clipboard=unnamed          " Share clipboard with Windows system clipboard
+set incsearch                  " Show matches as you type during search
+set ignorecase                 " Case-insensitive search unless uppercase used
+set smartcase                  " Makes search case-sensitive if uppercase letters are present
+set number                     " Show line numbers in editor gutter
+
+
+" === LEADER KEY SETTINGS ===
+" ===========================
+
+" We'll use comma (`,`) as the <Leader> key — common Vim convention
+let mapleader = ","
+
+" ,f = Find/Search (enter search mode)
+" noremap <leader>f :/<CR>
+noremap <leader>f :vsc Edit.Find<CR>
+
+" ,r = Replace (start substitute command)
+"noremap <leader>r :%s/
+noremap <leader>r :vsc Edit.Replace<CR>
+
+" ,s = Save file
+noremap <leader>s :w<CR>
+
+" ,q = Quit current buffer
+noremap <leader>q :q<CR>
+
+" ,n / ,p = Go to next/previous buffer
+" noremap <leader>n :bnext<CR>  (doesn't work)
+" noremap <leader>p :bprev<CR>  (doesn't work)
+
+" ,e = Open new empty file
+noremap <leader>e :enew<CR>
+
+" ,d = Toggle directory view / file browser (requires plugin like NERDTree)
+" noremap <leader>d :NERDTreeToggle<CR>
+
+" jj = Escape from insert mode
+" inoremap jj <Esc>
+
+" ================================
+" Standard Vim Ctrl-key behavior - commented by default
+" Uncomment to override VS default keybindings
+" VS equivalents shown for reference
+" ================================
+
+" Map Ctrl-[ to Escape
+noremap <C-[> <Esc>
+
+" --- Visual Studio default: Ctrl+S = Save ---
+" --- Standard Vim: Ctrl+S may be terminal suspend (not useful in VS) ---
+" noremap <C-s> <Nop>
+
+" --- Visual Studio default: Ctrl+Z = Undo ---
+" --- Standard Vim: Ctrl+Z suspends Vim (not relevant in VS) ---
+" noremap <C-z> <Nop>
+
+" --- Visual Studio default: Ctrl+Y = Redo ---
+" --- Standard Vim: Ctrl+Y scrolls screen up one line (without moving cursor) ---
+noremap <C-y> <C-y>
+
+" --- Visual Studio default: Ctrl+E = (commands removed, didn't note) ---
+" --- Standard Vim: Ctrl+E scrolls screen down one line (without moving cursor) ---
+noremap <C-e> <C-e>
+
+" --- Visual Studio default: Ctrl+X = Cut ---
+" --- Standard Vim: Ctrl+X starts completion in insert mode ---
+" inoremap <C-x> <C-x>
+
+" --- Visual Studio default: Ctrl+C = Copy ---
+" --- Standard Vim: Ctrl+C cancels insert mode (like Esc) ---
+" inoremap <C-c> <Esc>
+
+" --- Visual Studio default: Ctrl+V = Paste ---
+" --- Standard Vim: Ctrl+V starts block visual mode ---
+" noremap <C-v> <C-v>
+
+" --- Visual Studio default: Ctrl+F = Find ---
+" --- Standard Vim: Ctrl+F scrolls forward one page ---
+noremap <C-f> <C-f>
+
+" --- Visual Studio default: Ctrl+U = (commands removed, didn't note) ---
+" --- Standard Vim: Ctrl+U scrolls up half of a page ---
+noremap <C-u> <C-u>
+
+" --- Visual Studio default: Ctrl+D = (commands removed, didn't note) ---
+" --- Standard Vim: Ctrl+D scrolls down half of a page ---
+noremap <C-d> <C-d>
+
+" --- Visual Studio default: Ctrl+H = Replace ---
+" --- Standard Vim: Ctrl+H acts like Backspace in insert mode ---
+" inoremap <C-h> <BS>
+
+" --- Visual Studio default: Ctrl+Tab = Next buffer ---
+" --- No direct Vim equivalent — use `:bnext` (doesn't work) or `gt` or <C-n> (non-standard) ---
+" noremap <C-Tab> :bnext<CR>
+
+" --- Visual Studio default: Ctrl+Shift+Tab = Previous buffer ---
+" --- No direct Vim equivalent — use `:bprev` (doesn't work) or `gT` or <C-p> (non-standard) ---
+" noremap <C-S-Tab> :bprev<CR>
+
+" --- Visual Studio default: Ctrl+N = New file ---
+" --- Standard Vim: Ctrl+N is [count] lines downward in normal mode, keyword completion in insert mode ---
+" inoremap <C-n> <C-n>
+" --- Nonstandard Vim: Ctrl+N - go to next buffer/tab ---
+noremap <C-n> :vsc Window.NextDocumentWindow<CR>
+
+" --- Visual Studio default: Ctrl+P = Quick Open (requires integration/plugin) ---
+" --- Standard Vim: Ctrl+P used for plugin file search (like FZF or CtrlP) ---
+" noremap <C-p> <C-p>
+" --- Nonstandard Vim: Ctrl+P - go to previous buffer/tab ---
+noremap <C-p> :vsc Window.PreviousDocumentWindow<CR>
+
+" --- Visual Studio default: Ctrl+O = Open file ---
+" --- Standard Vim: Ctrl+O allows one normal command from insert mode ---
+" inoremap <C-o> <C-o>
+
+" --- Visual Studio default: Ctrl+K, Ctrl+C = Comment code ---
+" --- Standard Vim: You can comment using :'<,'>s/^/\/\/ / manually ---
+" noremap <C-k><C-c> :'<,'>s/^/\/\/ /<CR>
+
+" --- Visual Studio default: Ctrl+K, Ctrl+U = Uncomment code ---
+" --- Standard Vim: :'<,'>s/^\/\/ //<CR> removes leading comment slashes ---
+" noremap <C-k><C-u> :'<,'>s/^\/\/ //<CR>
+
+" --- Visual Studio default: Ctrl+G = Go to line ---
+" --- Standard Vim: :<line number> goes to line; Ctrl+G shows file status ---
+" noremap <C-g> <C-g>
+
+" --- Visual Studio default: Ctrl+K, Ctrl+D = Format document ---
+" --- Standard Vim: No default, but external formatters can be used ---
+" noremap <C-k><C-d> :%!clang-format<CR>
+
+" --- Visual Studio default: Ctrl+R = Debug.ReverseContinue, Debug.StepBackInto, and many more ---
+" --- Standard Vim: Redo ---
+" noremap <C-r> <C-r>
+
+" Column / multi-cursor – delegate to VS
+nnoremap <M-S-Down> :vsc Edit.LineDownExtendColumn<CR>
+inoremap <M-S-Down> <Esc>:vsc Edit.LineDownExtendColumn<CR>gi
+nnoremap <M-S-Up>   :vsc Edit.LineUpExtendColumn<CR>
+inoremap <M-S-Up>   <Esc>:vsc Edit.LineUpExtendColumn<CR>gi
+

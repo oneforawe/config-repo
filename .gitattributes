@@ -53,6 +53,7 @@ zshrc_*           text eol=lf
 fishfile          text eol=lf
 fish_*            text eol=lf
 vimrc             text eol=lf
+vsvimrc           text eol=lf
 diff-so-fancy     text eol=lf
 
 # Source code
