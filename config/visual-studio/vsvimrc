@@ -156,4 +156,8 @@ nnoremap <M-S-Down> :vsc Edit.LineDownExtendColumn<CR>
 inoremap <M-S-Down> <Esc>:vsc Edit.LineDownExtendColumn<CR>gi
 nnoremap <M-S-Up>   :vsc Edit.LineUpExtendColumn<CR>
 inoremap <M-S-Up>   <Esc>:vsc Edit.LineUpExtendColumn<CR>gi
+" Instructions on use:
+" 1. Press Alt+Shift and use Up/Down arrow once to initiate creating multiple cursors, then use Up/Down to add/remove more cursors.
+" 2. Press Shift+I to insert (at the first cursor), and type the desired text.
+" 3. Escape insert mode as usual (e.g., press Esc, or Ctrl+[) to apply the change to all cursors.
 
