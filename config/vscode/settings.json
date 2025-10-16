@@ -1,10 +1,13 @@
 {
   "window.zoomLevel": -1,
-  "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
-  "editor.rulers": [72, 80],
-  "editor.detectIndentation": false,
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
+  "editor": {
+    "rulers": [72, 80],
+    "fontFamily": "Monaco, Consolas, 'Courier New', monospace",
+    "renderWhitespace": "all",
+    "detectIndentation": false,
+    "tabSize": 2,
+    "insertSpaces": true,
+  },
   // Python
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
