@@ -80,8 +80,9 @@ to the config files in this repo and to install the necessary and desired
 packages:  
   `bash ~/.config-repo/setup/remote-machine-setup/run-setup-shell-full.sh`
 
-4. See [here](../../config/zsh/README.md)
-for installation of oh-my-zsh and plugins.
+5. For GNU/Linux systems using zsh, see [here](../../config/zsh/README.md) for
+installation of oh-my-zsh and plugins.
+
 
 ### Older Steps
 
