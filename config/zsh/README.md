@@ -16,15 +16,17 @@ reference 1.  Note that from `.zshrc` I source multiple files (including
     `rm -r ~/.config/zsh/pack`
   * Use the curl command provided at the main page or github page, EG:
     `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-  * Delete the auto-generated zshrc file and edit the moved original file to
-    keep it (where the original file should have contents that list the two
-    plugins below along with git).  
+  * If needed, delete the auto-generated zshrc file and edit the moved original
+    file to keep it (where the original file should have contents that list the
+    two plugins below along with git).  
     `rm ~/.zshrc`  
     `mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc`
 * plugin: zsh-autosuggestions  
-  `git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions`
+  `git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions`  
+  (old location was `~/.config/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions`)
 * plugin: zsh-syntax-highlighting  
-  `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting`
+  `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting`  
+  (old location was `~/.config/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting`)
 
 ## submodules (obsolete)
 
