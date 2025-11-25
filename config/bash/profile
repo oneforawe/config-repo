@@ -75,6 +75,12 @@ if [ "$(uname -s)" = "Darwin" ] ; then
 		export PATH="$PATH:$ANDROID_HOME/cmdline-tools/bin"
 	fi
 
+	# .NET SDK (for C#)
+	if [ -d "/usr/local/share/dotnet/sdk" ] ; then
+		#export PATH="$PATH:/usr/local/share/dotnet/sdk"
+		export PATH="$PATH:/usr/local/share/dotnet"
+	fi
+
 fi
 
 
